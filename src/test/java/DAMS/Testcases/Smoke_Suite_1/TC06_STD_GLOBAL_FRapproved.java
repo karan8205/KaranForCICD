@@ -29,8 +29,8 @@ public class TC06_STD_GLOBAL_FRapproved extends BaseClass {
 
 	@Test(dataProvider = "getData_External", priority = 1,enabled=false)
 	public static void Functional_role_request_approved_External(HashMap<String, String> input) throws Throwable {
-		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
-				+ "External Functional role request - status approved:" + "</u></i></b>");
+//		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
+//				+ "External Functional role request - status approved:" + "</u></i></b>");
 		String select_user_type = TC02_Requests_STD_GLOBAL.login_and_select_user_Global(input.get("User_Type"));
 		String functional_role_selected =TC02_Requests_STD_GLOBAL. raise_External_functional_role(input);
 		create_and_approve_External_FR_request(input);

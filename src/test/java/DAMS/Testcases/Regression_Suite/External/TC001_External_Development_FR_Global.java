@@ -30,12 +30,12 @@ public class TC001_External_Development_FR_Global extends BaseClass {
 	@Test(dataProvider = "getData_External", priority = 0)
 	public static void development_Global_Regression_E2E_External(
 			HashMap<String, String> input) throws Throwable {
-			test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
-					+ "Creation of External Standard Functional Request:" + "</u></i></b>");
-//			TC01_Login_MFA.login_with_addressing_MFA();
-//			Thread.sleep(8000);
-			test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
-					+ "Creation of Standard Functional Request:" + "</u></i></b>");
+//			test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
+//					+ "Creation of External Standard Functional Request:" + "</u></i></b>");
+////			TC01_Login_MFA.login_with_addressing_MFA();
+////			Thread.sleep(8000);
+//			test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
+//					+ "Creation of Standard Functional Request:" + "</u></i></b>");
 			TC06_STD_GLOBAL_FRapproved.Functional_role_request_approved_External(input);
 			test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 					+ "Standard Functional Request for External- status Approved:" + "</u></i></b>");
