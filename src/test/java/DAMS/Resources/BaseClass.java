@@ -98,16 +98,24 @@ public class BaseClass {
             chromePrefs.put("download.prompt_for_download", false);
             chromePrefs.put("download.directory_upgarde", true);
             chromePrefs.put("safebrowsing.enabled", true);
+            
             ChromeOptions options = new ChromeOptions();
             options.addArguments("--remote-allow-origins=*");
             options.setAcceptInsecureCerts(true);
             options.setExperimentalOption("prefs", chromePrefs);
             options.addArguments("--force-device-scale-factor=1.2");
 //			 options.addArguments("--headless");
+         // *** IMPORTANT FOR JENKINS ***
+//            options.addArguments("--headless=new");   // Headless mode
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
             if (mode.equals("incognito")) {
                 options.addArguments("--incognito", "--disable-popup-blocking");
             }
+            WebDriverManager.chromedriver().setup();
             WebDriverManager.chromedriver().clearResolutionCache();
+           
             driver = new ChromeDriver(options);
             threadLocalDriver.set(driver);
         } else if (browserName.equals("edge")) {
