@@ -11,53 +11,51 @@ import org.testng.ITestResult;
 import java.io.IOException;
 
 public class Listeners extends BaseClass implements ITestListener {
-	public static ExtentTest test;
-	public static ExtentReports extent = ExtentReporterNG.getReportObject();
-	ThreadLocal<ExtentTest> extentTest = new ThreadLocal<ExtentTest>();
 
-	@Override
-	public void onTestStart(ITestResult result) {
-		test = extent.createTest(result.getMethod().getMethodName());
-		extentTest.set(test);
-	}
+    public static ExtentReports extent = ExtentReporterNG.getReportObject();
+    public static ExtentTest test;   // KEEP STATIC for your existing project
 
-	@Override
-	public void onTestSuccess(ITestResult result) {
-		extentTest.get().log(Status.PASS, "Test Case: "+result.getMethod().getMethodName()+ " is Passed.");
+    private static ThreadLocal<ExtentTest> extentTest = new ThreadLocal<>();
 
-	}
-	
-	@Override
-	public void onTestSkipped(ITestResult result) {
-		extentTest.get().log(Status.SKIP, "Test Case: "+result.getMethod().getMethodName()+ " is Skipped.");
+    @Override
+    public void onTestStart(ITestResult result) {
 
-	}
+        test = extent.createTest(result.getMethod().getMethodName());
+        extentTest.set(test);
+    }
 
-	@Override
-	public void onTestFailure(ITestResult result) {
-		extentTest.get().fail(result.getThrowable());
+    @Override
+    public void onTestSuccess(ITestResult result) {
+        extentTest.get().log(Status.PASS, result.getMethod().getMethodName() + " Passed");
+    }
 
-		try {
-			driver = (WebDriver) result.getTestClass().getRealClass().getField("driver").get(result.getInstance());
+    @Override
+    public void onTestSkipped(ITestResult result) {
+        extentTest.get().log(Status.SKIP, result.getMethod().getMethodName() + " Skipped");
+    }
 
-		} catch (Exception e1) {
-			e1.printStackTrace();
-		}
+    @Override
+    public void onTestFailure(ITestResult result) {
 
-		String filePath = null;
-		try {
+        extentTest.get().fail(result.getThrowable());
 
-			filePath = getScreenshot(result.getMethod().getMethodName(), driver);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		extentTest.get().addScreenCaptureFromPath(filePath, result.getMethod().getMethodName());
-	}
+        try {
+            WebDriver driver = (WebDriver) result.getTestClass()
+                    .getRealClass()
+                    .getField("driver")
+                    .get(result.getInstance());
 
-	@Override
-	public void onFinish(ITestContext context) {
-		extent.flush();
+            String path = getScreenshot(result.getMethod().getMethodName(), driver);
 
-	}
+            extentTest.get().addScreenCaptureFromPath(path);
 
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public void onFinish(ITestContext context) {
+        extent.flush();
+    }
 }
