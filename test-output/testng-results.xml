@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-12-04T00:32:22 IST" name="Suite" finished-at="2025-12-04T00:53:40 IST" duration-ms="1278302">
+    <groups>
+    </groups>
+    <test started-at="2025-12-04T00:32:22 IST" name="Test Results" finished-at="2025-12-04T00:53:40 IST" duration-ms="1278302">
+      <class name="DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global">
+        <test-method signature="Fuso_All_Global_Regression_E2E_Supplier(java.util.HashMap)[pri:0, instance:DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global@19e4fcac]" started-at="2025-12-04T00:32:22 IST" name="Fuso_All_Global_Regression_E2E_Supplier" data-provider="getData_Supplier" finished-at="2025-12-04T00:53:40 IST" duration-ms="1278067" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{NO=6, Service_ID=BF0123, User=FUSO, SpecialCase=Replacement Package, Target_COT=Root T2, User_Type=Supplier, ECU_Supplier=CGWA01T, ECU_Restriction_DA=CPC502T/CPC503T, ECU_Qualifier_for_RP=SRRR02T, SRRL02T, SRRFR02T, SRRFL02T, ECU_Qualifier_for_Root_link=CGW05T/CPC503T, Reason_for_supplier_FR=Functional role request for ECU Supplier, Role_Desc=Person/Pool-ID at the ECU supplier who is working in the development team for the related ECU project. On applying for the functional role, the user should automatically receive Supplier, Development ENHANCED, Production, After-Sales ENHANCED for all the Own ECU's, After-Sales STANDARD Certificates as Standard Permissions., User_role_DA=Development ENHANCED/After-Sales ENHANCED, Reason_for_RP=Certificate Request for Replacement Package, Reason_for_DA=Certificate Request for Diagnostic Authority, BackendTarget_COT=Backend T2B, NestT_TestingCase=Nest-T Test COT/Nest-T Test COT/Nest-T Central Authentication/Nest-T Series COT, ECU_Restriction_EA=CPC502T/CPC503T, BackendOrigin_COT=Backend T2A, ECU_Qualifier_nestT=CPC502T/CPC503T, SpecialCase_nestT=Nest-T Testing, Mode=Global, ECU_Qualifier_for_Backend_link=CPC503T/CPC502T, BackendRoot_COT=Root T2, Reason_for_nestT=Certificate Request for NEST-T, ECU_Supplier1=CPC502T, User_Example=Production,After-Sales BASIC,EPTI(Electronical Periodical Technical Inspection),TCU(Telemetics Control Unit),After-Sales ENHANCED,After-Sales STANDARD, Reason_for_ER=Certificate Request for EnhanceRightAuthority, Validity=10, Functional_role_Certificate=ECU Supplier – Development - CGWA01T, company_name=Robert Bosch, Functional_role_supplier=ECU Supplier – Development, User_role_EA=After-Sales BASIC/Development ENHANCED, Orgin_COT=Root T1}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Fuso_All_Global_Regression_E2E_Supplier -->
+      </class> <!-- DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global -->
+    </test> <!-- Test Results -->
+  </suite> <!-- Suite -->
+</testng-results>

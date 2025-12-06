@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>TestNG:  Test Results</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Test Results</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Sep 17 12:38:20 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>700 seconds (700593 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='DAMS.Testcases.Regression_Suite.Supplier.TC005_Supplier_Development_FR_ATG.development_Global_Regression_E2E_Supplier()'><b>development_Global_Regression_E2E_Supplier</b><br>Test class: DAMS.Testcases.Regression_Suite.Supplier.TC005_Supplier_Development_FR_ATG<br>Parameters: {NO=4, Service_ID=BF0123, SpecialCase=Replacement Package, Target_COT=Root E2, User_Type=Supplier, ECU_Supplier=AAGW01T, ECU_Qualifier_for_RP=AAGW01T, ECU_Qualifier_for_Root_link=AAGW01T/AAGW01T, Reason_for_supplier_FR=Functional role request for ECU Supplier - Development, Role_Desc=Person at the ECU supplier associated with ATG project who is working in the development team for the related ECU project. On applying for the functional role,the user should automatically receive Supplier,Development ENHANCED, Production, After-Sales ENHANCED for all the Own ECUs as Standard Permissions., ECU_Restriction=AAGW01T/AAGW01T, Reason_for_RP=Certificate Request for Replacement Package, Reason_for_DA=Certificate Request for Diagnostic Authority, BackendTarget_COT=Backend E2B, NestT_TestingCase=Nest-T Test COT/Nest-T Series COT, BackendOrigin_COT=Backend E2A, ECU_Qualifier_nestT=AAGW01T/ASAS01T, User_role=TCU(Telemetics Control Unit)/After-Sales BASIC, SpecialCase_nestT=Nest-T Testing, Mode=ATG, ECU_Qualifier_for_Backend_link=ALT48V01T/AAGW01T, BackendRoot_COT=Root E2, Reason_for_nestT=Certificate Request for NEST-T, ECU_Supplier1=ACM311T, User_Example=Production,After-Sales BASIC,EPTI(Electronical Periodical Technical Inspection),TCU(Telemetics Control Unit),After-Sales ENHANCED,After-Sales STANDARD, Reason_for_ER=Certificate Request for EnhanceRightAuthority, Validity=10, Functional_role_Certificate=ECU Supplier - Development - ATG - AAGW01T, company_name=Robert Bosch, Functional_role_supplier=ECU Supplier - Development - ATG, User_role_EA=Development ENHANCED/After-Sales ENHANCED, Orgin_COT=Root E1}</td>
+<td></td>
+<td>700</td>
+<td>DAMS.Testcases.Regression_Suite.Supplier.TC005_Supplier_Development_FR_ATG@33308786</td></tr>
+</table><p>
+</body>
+</html>

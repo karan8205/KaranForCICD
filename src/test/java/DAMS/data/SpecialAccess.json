@@ -1,0 +1,74 @@
+[
+	{
+		"No" :"0",
+		"Name":"Third Party Publisher",
+		"ECU_Mode": "GLOBAL",
+		"Role_Description" : "Select the 'Global' option if the ECU in the vehicle project contains T1 and T2 as test and S1 as the series chain of trust",
+		"Business_unit": "DTE",
+		"New_CompanyName":"Random by using CODE Robert_Demo_1234",
+		"New_Functional_Role":" Random by using CODE DevelopTest1234",
+		"new_Permission": "After-Sales STANDARD",
+		"New_Permission_View": "After-Sales ENHANCED",
+		"Reason_for_ThirdParty": "Certificate Request for Third Party"
+	},
+	{
+		"No" :"1",
+		"Name":"Update Global EnhanceRight",
+		"FunctionalRole":"OnBoardDiagnosticsTester Campaign - xOTA",
+		"ECU_Restriction" : "AAGW01T",
+		"ServiceID":"AE2211",
+		"Validity": "12",
+		"Reason_for_UpdateGlobalEnhance": "Certificate Request for UpdateGlobalEnhance"
+	},
+	{
+		"No" :"2",
+		"Name":"FunctionalRole View Permission",
+		"Business_unit": "DTE",
+		"FunctionalRole":"Production",
+		"ServicePrincipal_ID":"*************WE need to give Already approved value in Service Principal like TEC_DEMO_PROD_3474",
+		"PermissionType": "Default",
+		"Functional_role": "Production",
+		"Functional_role_Certificate" : "Production",
+		"BU": "DTE",
+		"Chain_Trust":"GLOBAL",
+		"Role_Desc": "Select the 'Global' option if the ECU in the vehicle project contains T1 and T2 as test and S1 as the series chain of trust",
+		"Reason": "Service Principal Request Production",
+		"User_role": "After-Sales STANDARD",
+		"ECU_Restriction": "ACM311T",
+		"Reason_for_DA": "Certificate Request Service Principal DA",
+		"Target_ECU": "ACM311T",
+		"Service_ID": "FF01",
+		"Validity": "1",
+		"Reason_for_ER": "Certificate Request Service Principal ERA"
+
+	},
+	{
+		"No" :"3",
+		"Name": "ECU_Meta_Data",
+		"Request_Type": "Cyber Security Architect",
+		"ECU": "ABG201T",
+		"new_Owner": "HARNAGA"
+	},
+	{
+		"No" :"4",
+		"ECu-Qualifier": "AAGW01T",
+		"Service_ID": "FF012334",
+		"Validity": "12",
+		"Business_unit": "DTE",
+		"User_Type" : "External",
+		"Reason_for_internal_FR": "Special Enhance Right Request",
+		"Mode": "GLOBAL",
+		"User_Type": "External",
+		"Functional_role_External": "Development External Support",
+		"Functional_role": "Test-FR01",
+		"Role_Desc": "Person/Pool-ID from an external service provider, who supports the Daimler Truck development department. This service provided is conducted by Daimler Truck. This is not the ECU supplier. On applying for the functional role, the user should automatically receive After-Sales ENHANCED for all the Cebid ECU's, After-Sales STANDARD Certificates as Standard Permissions.",
+		"BU": "DTE",
+		"company_name": "Robert Bosch",
+		"Daimler_name": "testing",
+		"Daimler_email": "testing123@gmail.com",
+		"Reason_for_External_FR": "Functional role request for Development External Support",
+		"User_role": "After-Sales STANDARD",
+		"ECU_Restriction": "ACM311T",
+		"Reason_for_DA": "Certificate Request for Diagnostic Authority"
+	}
+]

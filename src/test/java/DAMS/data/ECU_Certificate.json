@@ -1,0 +1,15 @@
+[
+	{
+		"NO":"0",
+		"Mode": "Global",
+		"User_Type": "Internal",
+		"Functional_role_supplier": "ECU Supplier - Key Management",
+		"Role_Desc": "Person/Pool-ID in the development department at Daimler Truck. Info: it does not automatically mean that this person works in the development team for the related ECU project, but this could be possible. On applying for the functional role, the user should automatically receive After-Sales ENHANCED for all the Cebid ECU's, After-Sales STANDARD Certificates as Standard Permissions.",
+		"company_name": "Robert Bosch",
+		"ECU_Supplier": "AWE102T",
+		"Select_Cot": "T1",
+		"kpm":"23124",
+		"Reason2": "Raise ECU Certificate",
+		"Reason_for_supplier_FR": "Testing"	
+	}
+]

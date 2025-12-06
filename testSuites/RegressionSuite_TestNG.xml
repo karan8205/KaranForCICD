@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite"> 
+    <listeners>
+        <listener class-name="DAMS.Resources.Listeners"/>
+        <!--<listener class-name="DAMS.Resources.FailedAll" />-->
+    </listeners>
+    <test thread-count="1" name="Test Results">
+        <classes>  
+        <!-- <class name="DAMS.Testcases.Regression_Suite.Supplier.TC002_Supplier_Development_FR_Global"></class>  -->
+        <!--  <class name="DAMS.Testcases.Regression_Suite.Internal.TC001_Internal_Development_FR_Global"></class> -->
+        <!--  <class name="DAMS.Testcases.Regression_Suite.External.TC015_FUSO_External_Development_FR_Global"></class>--> 
+         <class name="DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global"></class>
+        </classes>
+    </test> 
+</suite> <!-- Suite -->	

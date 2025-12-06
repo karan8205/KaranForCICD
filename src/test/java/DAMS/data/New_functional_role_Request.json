@@ -1,0 +1,208 @@
+[
+	{
+		"NO":"0",
+		"Mode": "Global",
+		"User_Type": "Internal",
+		"Functional_role_internal": "Bus Production Tool Development",
+		"Role_Desc": "Person/Pool-ID from production department at Daimler Truck. On applying for the functional role, the user should automatically receive Production permission for all the Cebid ECUs, After-Sales STANDARD Certificates as Standard Permissions.",
+		"BU": "BUS",
+		"Reason_for_internal_FR": "Functional role request for Bus Production Tool Development"
+	},
+	{
+		"NO":"1",
+		"Mode": "Global",
+		"User_Type": "Internal",
+		"Functional_role_internal": "Development",
+		"Role_Desc": "Person/Pool-ID in the development department at Daimler Truck. Info: it does not automatically mean that this person works in the development team for the related ECU project, but this could be possible. On applying for the functional role, the user should automatically receive After-Sales ENHANCED for all the Cebid ECU's, After-Sales STANDARD Certificates as Standard Permissions.",
+		"Reason_for_internal_FR": "Functional role request for Development"
+	},
+	{
+		"NO":"2",
+		"Mode": "Global",
+		"User_Type": "Internal",
+		"Functional_role_internal": "DiagnosticLink Tool Development",
+		"Role_Desc": "Person/Pool-ID who is responsible for DiagnosticLink Tool development. On applying for the functional role, the user should automatically receive After-Sales ENHANCED for all the Cebid ECU's, After-Sales STANDARD, After-Sales BASIC, EPTI Certificates as Standard Permissions.",
+		"BU": "DTNA",
+		"Reason_for_internal_FR": "Functional role request for DiagnosticLink Tool Development"
+	},
+	{
+		"NO":"3",
+		"Mode": "Global",
+		"User_Type": "Internal",
+		"Functional_role_internal": "Production",
+		"Role_Desc": "Person/Pool-ID in the production at Daimler Truck. On applying for the functional role, the user should automatically receive Production for all the Cebid ECU's, After-Sales STANDARD Certificates as Standard Permissions.",
+		"BU": "DTE",
+		"Reason_for_internal_FR": "Functional role request for Production"
+	},
+	{
+		"NO":"4",
+		"Mode": "Global",
+		"User_Type": "Internal",
+		"Functional_role_internal": "QM(Quality Management)",
+		"Role_Desc": "Person/Pool-ID who is working in the quality department at Daimler Truck. The QM department receives failed parts from the field for first. On applying for the functional role, the user should automatically receive After-Sales STANDARD Certificate as Standard Permission.",
+		"BU": "DTE",
+		"Reason_for_internal_FR": "Functional role request for QM"
+	},
+	{
+		"NO":"5",
+		"Mode": "Global",
+		"User_Type": "Internal",
+		"Functional_role_internal": "Vehicle Validation",
+		"Role_Desc": "Person/Pool-ID from vehicle testing department at Daimler Truck. On applying for the functional role, the user should automatically receive After-Sales ENHANCED for all the Cebid ECU's, After-Sales STANDARD Certificates as Standard Permissions.",
+		"BU": "DTE",
+		"Reason_for_internal_FR": "Functional role request for Vehicle validation"
+	},
+	{
+		"NO":"6",
+		"Mode": "Global",
+		"User_Type": "Internal",
+		"Functional_role_internal": "Xentry Tool Development",
+		"Role_Desc": "Person/Pool-ID who is working in the Xentry Tool Development for Daimler Truck. On applying for the functional role, the user should automatically receive After-Sales ENHANCED for all the Cebid ECU's, After-Sales STANDARD, After-Sales BASIC, EPTI Certificates as Standard Permissions.",
+		"BU": "DTE",
+		"Reason_for_internal_FR": "Functional role request for Xentry Tool Development"
+	},
+	{
+		"NO":"7",
+		"Mode": "Global",
+		"User_Type": "Internal",
+		"Functional_role_internal": "Component Verification - ATG",
+		"Role_Desc": "Person/Pool-ID performs Cyber-Security Testing, associated with ATG project at Daimler Truck. On applying for the functional role, the user should automatically receive After-Sales ENHANCED,After-Sales-Standard,After-Sales-Basic and TCU as Standard Permissions.",
+		"BU": "DTE",
+		"Reason_for_internal_FR": "Functional role request for  Component Verification - ATG "
+	},
+	{
+		"NO":"8",
+		"Functional_role_internal": "Development - ATG",
+		"Mode": "ATG",
+		"User_Type": "Internal",
+		"Role_Desc": "Person/Pool-ID in the development department, associated with ATG project at Daimler Truck. Info: it does not automatically mean that this person works in the development team for the related ATG ECU project, but this could be possible. On applying for the functional role, the user should automatically receive After-Sales ENHANCED as Standard Permissions.",
+		"BU": "DTE",
+		"Reason_for_internal_FR": "Functional role request for Development - ATG"
+	},
+	{
+		"NO":"9",
+		"Mode": "Global",
+		"User_Type": "Internal",
+		"Functional_role_internal": "Production - ATG",
+		"Role_Desc": "Person/Pool-ID , who is associated with ATG project supports the production department at Daimler Truck.On applying for the functional role, the user should automatically receive Production as Standard Permissions.",
+		"BU": "DTE",
+		"Reason_for_internal_FR": "Functional role request for Production - ATG"
+	},
+	{
+		"NO":"10",
+		"Mode": "Global",
+		"User_Type": "Internal",
+		"Functional_role_internal": "Vehicle Validation - ATG",
+		"Role_Desc": "Person/Pool-ID from vehicle testing department, associated with ATG project at Daimler Truck. On applying for the functional role, the user should automatically receive After-Sales ENHANCED as Standard Permissions.",
+		"BU": "DTE",
+		"Reason_for_internal_FR": "Functional role request for Vehicle validation - ATG"
+	},	
+	{
+		"NO":"11",
+		"Functional_role_External": "Vehicle Validation External Support",
+		"Role_Desc": "Person/Pool-ID from an external service provider, who supports the Daimler Truck vehicle testing department. This service provided is conducted by Daimler Truck. On applying for the functional role, the user should automatically receive After-Sales ENHANCED for all the Cebid ECU's, After-Sales STANDARD Certificates as Standard Permissions.",
+		"BU": "DTE",
+		"company_name": "Robert Bosch",
+		"Daimler_name": "testing",
+		"Daimler_email": "testing123@gmail.com",
+		"Reason_for_External_FR": "Functional role request for Vehicle Validation External Support"
+	},
+	{
+		"NO":"12",
+		"Functional_role_External": "Production External",
+		"Role_Desc": "Person/Pool-ID from an external service provider, who supports the production department at Daimler Truck. This service provided is conducted by Daimler Truck. Eg. Production diagnostic tool provider. On applying for the functional role, the user should automatically receive Production for all the Cebid ECU's, After-Sales STANDARD Certificates as Standard Permissions.",
+		"BU": "DTE",
+		"company_name": "Robert Bosch",
+		"Daimler_name": "testing",
+		"Daimler_email": "testing123@gmail.com",
+		"Reason_for_External_FR": "Functional role request for Production External"
+	},
+	{
+		"NO":"13",
+		"Functional_role_External": "QM(Quality Management) External",
+		"Role_Desc": "Person/Pool-ID from an external service provider, who supports the quality department at Daimler Truck. This service provided is conducted by Daimler Truck. On applying for the functional role, the user should automatically receive After-Sales STANDARD Certificate as Standard Permission.",
+		"BU": "DTE",
+		"company_name": "Robert Bosch",
+		"Daimler_name": "testing",
+		"Daimler_email": "testing123@gmail.com",
+		"Reason_for_External_FR": "Functional role request for QM(Quality Management) External"
+	},
+	{
+		"NO":"14",
+		"Functional_role_External": "Development External Support",
+		"Role_Desc": "Person/Pool-ID from an external service provider, who supports the Daimler Truck development department. This service provided is conducted by Daimler Truck. This is not the ECU supplier. On applying for the functional role, the user should automatically receive After-Sales ENHANCED for all the Cebid ECU's, After-Sales STANDARD Certificates as Standard Permissions.",
+		"BU": "DTE",
+		"company_name": "Robert Bosch",
+		"Daimler_name": "testing",
+		"Daimler_email": "testing123@gmail.com",
+		"Reason_for_External_FR": "Functional role request for Development External Support"
+	},
+	{
+		"NO":"15",
+		"Functional_role_External": "DiagnosticLink Tool Development External Support",
+		"Role_Desc": "Person/Pool-ID from an external service provider, who supports the Daimler Truck development department. This service provided is conducted by Daimler Truck. This is not the ECU supplier. On applying for the functional role, the user should automatically receive After-Sales ENHANCED for all the Cebid ECU's, After-Sales STANDARD Certificates as Standard Permissions.",
+		"BU": "DTNA",
+		"company_name": "Robert Bosch",
+		"Daimler_name": "testing",
+		"Daimler_email": "testing123@gmail.com",
+		"Reason_for_External_FR": "Functional role request for Development External Support"
+	},
+	{
+		"NO":"16",
+		"Mode": "Global",
+		"User_Type": "External",
+		"Functional_role_External": "Xentry Tool Development External Support",
+		"Role_Desc": "Person/Pool-ID from an external service provider, who supports the Daimler Truck development department. This service provided is conducted by Daimler Truck. This is not the ECU supplier. On applying for the functional role, the user should automatically receive After-Sales ENHANCED for all the Cebid ECU's, After-Sales STANDARD Certificates as Standard Permissions.",
+		"BU": "DTE",
+		"company_name": "Robert Bosch",
+		"Daimler_name": "testing",
+		"Daimler_email": "testing123@gmail.com",
+		"Reason_for_External_FR": "Functional role request for Development External Support"
+	},
+	{
+		"NO":"17",
+		"Mode": "ATG",
+		"User_Type": "External",
+		"Functional_role_External": "Development - ATG External",
+		"Role_Desc": "Person/Pool-ID from an external service provider in the development department, associated with ATG project at Daimler Truck. Info: it does not automatically mean that this person works in the development team for the related AP4 ECU project, but this could be possible. On applying for the functional role, the user should automatically receive After-Sales ENHANCED as Standard Permissions.",
+		"BU": "DTE",
+		"company_name": "Robert Bosch",
+		"Daimler_name": "testing",
+		"Daimler_email": "testing123@gmail.com",
+		"Reason_for_External_FR": "Functional role request for Development ATG External Support"
+	},
+	{
+		"NO":"18",
+		"Functional_role_supplier": "ECU Supplier - Key Management",
+		"Role_Desc": "Person at the ECU supplier who is responsible for managing keys at the supplier side for the related ECU project. Eg storing the ECU private key into the Key Management System (KMS) at the supplier. On applying for the functional role, the user should automatically receive Supplier, Development ENHANCED, Production, After-Sales ENHANCED for all the Cebid ECU's, After-Sales STANDARD Certificates as Standard Permissions.",
+		"company_name": "Robert Bosch",
+		"Reason_for_supplier_FR": "Functional role request for ECU Supplier - Key Management",
+		"ECU_Supplier": "AAGW01T"
+	},
+
+	{
+		"NO":"19",
+		"Functional_role_supplier": "ECU Supplier – Development",
+		"Role_Desc": "Person/Pool-ID at the ECU supplier who is working in the development team for the related ECU project. On applying for the functional role, the user should automatically receive Supplier, Development ENHANCED, Production, After-Sales ENHANCED for all the Own ECU's, After-Sales STANDARD Certificates as Standard Permissions.",
+		"company_name": "Robert Bosch",
+		"Reason_for_supplier_FR": "Functional role request for ECU Supplier - Development",
+		"ECU_Supplier": "AAGW01T",
+		"ECU_Supplier1": "ACM311T"
+	},
+	{
+		"NO":"20",
+		"Functional_role_supplier": "ECU Supplier - Warranty Return",
+		"Role_Desc": "Person/Pool-ID at the ECU supplier who is working in the warranty return analysis team for the related ECU project. The warranty return analysis team receives failed ECUs back from the field for forensic analysis. On applying for the functional role, the user should automatically receive Supplier, Development ENHANCED, Production, After-Sales ENHANCED for all the Cebid ECU's, After-Sales STANDARD Certificates as Standard Permissions.",
+		"company_name": "Robert Bosch",
+		"Reason_for_supplier_FR": "Functional role request for ECU Supplier - Warranty Return",
+		"ECU_Supplier": "AAGW01T"
+	},
+		{
+		"NO":"21",
+		"Functional_role_supplier": "ECU-Supplier - Key Management - ATG",
+		"Role_Desc": "Person at the ECU supplier who is responsible for managing keys at the supplier side for the related ECU project. Eg storing the ECU private key into the Key Management System (KMS) at the supplier. On applying for the functional role, the user should automatically receive Supplier, Development ENHANCED, Production, After-Sales ENHANCED for all the Cebid ECU's, After-Sales STANDARD Certificates as Standard Permissions.",
+		"company_name": "Robert Bosch",
+		"Reason_for_supplier_FR": "Functional role request for ECU Supplier - Key Management",
+		"ECU_Supplier": "AAGW01T"
+	}
+]
