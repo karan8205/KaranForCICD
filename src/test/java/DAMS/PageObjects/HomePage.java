@@ -235,6 +235,7 @@ public class HomePage extends AbstractComponents {
 			logger.info("User is able to view User_types in dropdown");
 		String user_type = user_type(type);
 		click_here_to_apply_for_functional_roles_click();
+		Thread.sleep(3000);
 		test.pass("Click here to apply for functional roles is enabled");
 		logger.info("Click here to apply for functional roles is enabled");
 		return user_type;

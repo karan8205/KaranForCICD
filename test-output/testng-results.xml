@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-06T22:53:18 IST" name="Suite" finished-at="2025-12-06T22:54:10 IST" duration-ms="52134">
+  <suite started-at="2025-12-08T23:49:01 IST" name="Suite" finished-at="2025-12-08T23:49:21 IST" duration-ms="19340">
     <groups>
     </groups>
-    <test started-at="2025-12-06T22:53:18 IST" name="Test Results" finished-at="2025-12-06T22:54:10 IST" duration-ms="52134">
+    <test started-at="2025-12-08T23:49:01 IST" name="Test Results" finished-at="2025-12-08T23:49:21 IST" duration-ms="19340">
       <class name="DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global">
-        <test-method signature="Fuso_All_Global_Regression_E2E_Supplier(java.util.HashMap)[pri:0, instance:DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global@19e4fcac]" started-at="2025-12-06T22:53:18 IST" name="Fuso_All_Global_Regression_E2E_Supplier" data-provider="getData_Supplier" finished-at="2025-12-06T22:54:10 IST" duration-ms="51781" status="FAIL">
+        <test-method signature="Fuso_All_Global_Regression_E2E_Supplier(java.util.HashMap)[pri:0, instance:DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global@4b79ac84]" started-at="2025-12-08T23:49:02 IST" name="Fuso_All_Global_Regression_E2E_Supplier" data-provider="getData_Supplier" finished-at="2025-12-08T23:49:21 IST" duration-ms="19040" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -15,28 +15,28 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+          <exception class="org.openqa.selenium.NoSuchSessionException">
             <message>
-              <![CDATA[element click intercepted: Element <span _ngcontent-ng-c1869840439="" class="button-text">...</span> is not clickable at point (262, 249). Other element would receive the click: <span class="mat-mdc-button-touch-target"></span>
+              <![CDATA[invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
   (Session info: chrome=143.0.7499.40)
 Build info: version: '4.3.0', revision: 'a4995e2c09*'
-System info: host: 'DESKTOP-05DVESU', ip: '192.168.1.23', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+System info: host: 'DESKTOP-05DVESU', ip: '192.168.1.7', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b8d59462d11e6f3cbeab3cbbb0beb268, clickElement {id=f.25B6F5F33036292CA411D6B81FFA77C2.d.F7953F325E3B67D8BCF15FD514BD4D5C.e.13}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59282}, goog:processID: 22552, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59282/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (b8d59462d11e6f3cbeab3cbbb0beb268)] -> xpath: //span[@class='button-text']]
-Session ID: b8d59462d11e6f3cbeab3cbbb0beb268]]>
+Command: [e433177938ecbf31df3e95ddd4b91cfb, findElement {using=xpath, value=//input[@type="password"]}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56155}, goog:processID: 26136, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56155/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e433177938ecbf31df3e95ddd4b91cfb]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span _ngcontent-ng-c1869840439="" class="button-text">...</span> is not clickable at point (262, 249). Other element would receive the click: <span class="mat-mdc-button-touch-target"></span>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
   (Session info: chrome=143.0.7499.40)
 Build info: version: '4.3.0', revision: 'a4995e2c09*'
-System info: host: 'DESKTOP-05DVESU', ip: '192.168.1.23', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+System info: host: 'DESKTOP-05DVESU', ip: '192.168.1.7', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b8d59462d11e6f3cbeab3cbbb0beb268, clickElement {id=f.25B6F5F33036292CA411D6B81FFA77C2.d.F7953F325E3B67D8BCF15FD514BD4D5C.e.13}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59282}, goog:processID: 22552, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:59282/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on WINDOWS (b8d59462d11e6f3cbeab3cbbb0beb268)] -> xpath: //span[@class='button-text']]
-Session ID: b8d59462d11e6f3cbeab3cbbb0beb268
+Command: [e433177938ecbf31df3e95ddd4b91cfb, findElement {using=xpath, value=//input[@type="password"]}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56155}, goog:processID: 26136, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56155/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e433177938ecbf31df3e95ddd4b91cfb
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -49,10 +49,18 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:569)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
-at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
-at DAMS.PageObjects.HomePage.dropBtn(HomePage.java:209)
-at DAMS.Testcases.Smoke_Suite_1.TC02_Requests_STD_GLOBAL.login_and_select_user_Global(TC02_Requests_STD_GLOBAL.java:207)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:387)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:379)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
+at DAMS.PageObjects.LoginPage.loginApplicationasRequester_MFA(LoginPage.java:58)
+at DAMS.Resources.BaseClass.login(BaseClass.java:309)
+at DAMS.Resources.BaseClass.login_MFA_Incognito(BaseClass.java:275)
+at DAMS.Testcases.Smoke_Suite_1.TC01_Login_MFA.login_with_addressing_MFA(TC01_Login_MFA.java:15)
+at DAMS.Testcases.Smoke_Suite_1.TC02_Requests_STD_GLOBAL.login_and_select_user_Global(TC02_Requests_STD_GLOBAL.java:203)
 at DAMS.Testcases.Smoke_Suite_1.TC06_STD_GLOBAL_FRapproved.create_and_approve_Supplier_FR_request(TC06_STD_GLOBAL_FRapproved.java:104)
 at DAMS.Testcases.Smoke_Suite_1.TC06_STD_GLOBAL_FRapproved.Functional_role_request_approved_Supplier(TC06_STD_GLOBAL_FRapproved.java:48)
 at DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global.Fuso_All_Global_Regression_E2E_Supplier(TC009_FUSO_Supplier_All_FR_Global.java:36)
@@ -86,7 +94,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fuso_All_Global_Regression_E2E_Supplier -->

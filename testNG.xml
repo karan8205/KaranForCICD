@@ -1,19 +1,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="DynamicRunner">
-<listeners>
+<suite name="DynamicSuite">
+   <listeners>
         <listener class-name="DAMS.Resources.Listeners"/>
         <!--<listener class-name="DAMS.Resources.FailedAll" />-->
     </listeners>
-  <test name="RunSelectedClass">
-    <classes>
-
-      <!-- All possible package paths -->
-      <class name="DAMS.Testcases.Regression_Suite.External.${CLASS}"/>
-      <class name="DAMS.Testcases.Regression_Suite.Internal.${CLASS}"/>
-      <class name="DAMS.Testcases.Regression_Suite.Supplier.${CLASS}"/>
-      <class name="DAMS.Testcases.Smoke_Suite_1.${CLASS}"/>
-
-    </classes>
-  </test>
+    <test name="RunDynamicClass">
+        <classes>
+            <class name="DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global"/>
+        </classes>
+    </test>
 
 </suite>

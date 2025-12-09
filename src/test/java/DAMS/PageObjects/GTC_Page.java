@@ -80,6 +80,8 @@ public class GTC_Page extends AbstractComponents {
 		waitForelementToBeClickable(read_and_accept_GTC);
 //		if (read_and_accept_GTC.isEnabled()) {
 //			read_and_accept_GTC.click();
+		waitForWebElementToAppear(read_and_accept_GTC);
+
 		click(read_and_accept_GTC);
 		}
 
@@ -157,7 +159,7 @@ public class GTC_Page extends AbstractComponents {
 		if (getGTCUrl().contains("gtc")) {
 			test.pass("User is successfully redirected into GTC Page");
 			logger.info("User is successfully redirected into GTC Page");
-			Thread.sleep(5000);
+			Thread.sleep(6000);
 			read_and_accept_GTC();
 			confirmation_checkbox_bfselected();
 //			test.pass("User is able to see the proceed button disabled without selecting the checkbox");
