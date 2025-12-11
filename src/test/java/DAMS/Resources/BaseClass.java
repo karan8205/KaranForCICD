@@ -264,15 +264,22 @@ public class BaseClass {
     public static void login_MFA_Incognito(String username_MFA, String password_MFA, String url)
             throws IOException, InterruptedException {
         // Encode username, password
-        String encodedUsername = Base64.getEncoder().encodeToString(username_MFA.getBytes());
-        String encodedPassword = Base64.getEncoder().encodeToString(password_MFA.getBytes());
+//        String encodedUsername = Base64.getEncoder().encodeToString(username_MFA.getBytes());
+//        String encodedPassword = Base64.getEncoder().encodeToString(password_MFA.getBytes());
 
         // Decode username, password
-        String username = new String(Base64.getDecoder().decode(encodedUsername));
-        String password = new String(Base64.getDecoder().decode(encodedPassword));
+//        String username = new String(Base64.getDecoder().decode(prop.getUsername_MFA()));
+//        String password = new String(Base64.getDecoder().decode(prop.getPassword_MFA()));
 
+    	
+    	byte[] decodedBytes = Base64.getDecoder().decode(prop.getUsername_MFA());
+        String username = new String(decodedBytes);
+    	byte [] passwordEncode = Base64.getDecoder().decode(prop.getPassword_MFA());
+    	String password = new String(passwordEncode);
+    	
+    	
         driver = initializeDriver("incognito");
-        login(username_MFA, password_MFA, url);
+        login(username, password, url);
     }
 
     public static void login_MFA_Normal(String username_MFA, String password_MFA, String url)

@@ -1,0 +1,134 @@
+<html>
+<head>
+<title>TestNG:  RunDynamicClass</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>RunDynamicClass</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>0/1/0</td>
+</tr><tr>
+<td>Started on:</td><td>Tue Dec 09 18:21:46 IST 2025</td>
+</tr>
+<tr><td>Total time:</td><td>0 seconds (312 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-failed'>
+<tr><td colspan='4' align='center'><b>FAILED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global.Fuso_All_Global_Regression_E2E_Supplier()'><b>Fuso_All_Global_Regression_E2E_Supplier</b><br>Test class: DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global<br>Parameters: {NO=6, Service_ID=BF0123, User=FUSO, SpecialCase=Replacement Package, Target_COT=Root T2, User_Type=Supplier, ECU_Supplier=CGWA01T, ECU_Restriction_DA=CPC502T/CPC503T, ECU_Qualifier_for_RP=SRRR02T, SRRL02T, SRRFR02T, SRRFL02T, ECU_Qualifier_for_Root_link=CGW05T/CPC503T, Reason_for_supplier_FR=Functional role request for ECU Supplier, Role_Desc=Person/Pool-ID at the ECU supplier who is working in the development team for the related ECU project. On applying for the functional role, the user should automatically receive Supplier, Development ENHANCED, Production, After-Sales ENHANCED for all the Own ECU's, After-Sales STANDARD Certificates as Standard Permissions., User_role_DA=Development ENHANCED/After-Sales ENHANCED, Reason_for_RP=Certificate Request for Replacement Package, Reason_for_DA=Certificate Request for Diagnostic Authority, BackendTarget_COT=Backend T2B, NestT_TestingCase=Nest-T Test COT/Nest-T Test COT/Nest-T Central Authentication/Nest-T Series COT, ECU_Restriction_EA=CPC502T/CPC503T, BackendOrigin_COT=Backend T2A, ECU_Qualifier_nestT=CPC502T/CPC503T, SpecialCase_nestT=Nest-T Testing, Mode=Global, ECU_Qualifier_for_Backend_link=CPC503T/CPC502T, BackendRoot_COT=Root T2, Reason_for_nestT=Certificate Request for NEST-T, ECU_Supplier1=CPC502T, User_Example=Production,After-Sales BASIC,EPTI(Electronical Periodical Technical Inspection),TCU(Telemetics Control Unit),After-Sales ENHANCED,After-Sales STANDARD, Reason_for_ER=Certificate Request for EnhanceRightAuthority, Validity=10, Functional_role_Certificate=ECU Supplier – Development - CGWA01T, company_name=Robert Bosch, Functional_role_supplier=ECU Supplier – Development, User_role_EA=After-Sales BASIC/Development ENHANCED, Orgin_COT=Root T1}</td>
+<td><div><pre>java.lang.IllegalArgumentException: Illegal base64 character 40
+	at java.base/java.util.Base64$Decoder.decode0(Base64.java:848)
+	at java.base/java.util.Base64$Decoder.decode(Base64.java:566)
+	at java.base/java.util.Base64$Decoder.decode(Base64.java:589)
+	at DAMS.Resources.BaseClass.login_MFA_Incognito(BaseClass.java:271)
+	at DAMS.Testcases.Smoke_Suite_1.TC01_Login_MFA.login_with_addressing_MFA(TC01_Login_MFA.java:15)
+	at DAMS.Testcases.Smoke_Suite_1.TC02_Requests_STD_GLOBAL.login_and_select_user_Global(TC02_Requests_STD_GLOBAL.java:203)
+	at DAMS.Testcases.Smoke_Suite_1.TC06_STD_GLOBAL_FRapproved.create_and_approve_Supplier_FR_request(TC06_STD_GLOBAL_FRapproved.java:104)
+	at DAMS.Testcases.Smoke_Suite_1.TC06_STD_GLOBAL_FRapproved.Functional_role_request_approved_Supplier(TC06_STD_GLOBAL_FRapproved.java:48)
+	at DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global.Fuso_All_Global_Regression_E2E_Supplier(TC009_FUSO_Supplier_All_FR_Global.java:36)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 27 stack frames</pre></div><a href='#' onClick='toggleBox("stack-trace2024711353", this, "Click to show all stack frames", "Click to hide stack frames")'>Click to show all stack frames</a>
+<div class='stack-trace' id='stack-trace2024711353'><pre>java.lang.IllegalArgumentException: Illegal base64 character 40
+	at java.base/java.util.Base64$Decoder.decode0(Base64.java:848)
+	at java.base/java.util.Base64$Decoder.decode(Base64.java:566)
+	at java.base/java.util.Base64$Decoder.decode(Base64.java:589)
+	at DAMS.Resources.BaseClass.login_MFA_Incognito(BaseClass.java:271)
+	at DAMS.Testcases.Smoke_Suite_1.TC01_Login_MFA.login_with_addressing_MFA(TC01_Login_MFA.java:15)
+	at DAMS.Testcases.Smoke_Suite_1.TC02_Requests_STD_GLOBAL.login_and_select_user_Global(TC02_Requests_STD_GLOBAL.java:203)
+	at DAMS.Testcases.Smoke_Suite_1.TC06_STD_GLOBAL_FRapproved.create_and_approve_Supplier_FR_request(TC06_STD_GLOBAL_FRapproved.java:104)
+	at DAMS.Testcases.Smoke_Suite_1.TC06_STD_GLOBAL_FRapproved.Functional_role_request_approved_Supplier(TC06_STD_GLOBAL_FRapproved.java:48)
+	at DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global.Fuso_All_Global_Regression_E2E_Supplier(TC009_FUSO_Supplier_All_FR_Global.java:36)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+	at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+	at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+	at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+	at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+	at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:766)
+	at org.testng.TestRunner.run(TestRunner.java:587)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:384)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:378)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:337)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:286)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1187)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1109)
+	at org.testng.TestNG.runSuites(TestNG.java:1039)
+	at org.testng.TestNG.run(TestNG.java:1007)
+	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
+	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
+</pre></div></td>
+<td>0</td>
+<td>DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global@19e4fcac</td></tr>
+</table><p>
+</body>
+</html>

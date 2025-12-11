@@ -2,12 +2,12 @@
 <testng-results ignored="0" total="1" passed="0" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-12-08T23:49:01 IST" name="Suite" finished-at="2025-12-08T23:49:21 IST" duration-ms="19340">
+  <suite started-at="2025-12-11T12:54:39 IST" name="Suite" finished-at="2025-12-11T12:55:06 IST" duration-ms="26902">
     <groups>
     </groups>
-    <test started-at="2025-12-08T23:49:01 IST" name="Test Results" finished-at="2025-12-08T23:49:21 IST" duration-ms="19340">
+    <test started-at="2025-12-11T12:54:39 IST" name="Test Results" finished-at="2025-12-11T12:55:06 IST" duration-ms="26902">
       <class name="DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global">
-        <test-method signature="Fuso_All_Global_Regression_E2E_Supplier(java.util.HashMap)[pri:0, instance:DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global@4b79ac84]" started-at="2025-12-08T23:49:02 IST" name="Fuso_All_Global_Regression_E2E_Supplier" data-provider="getData_Supplier" finished-at="2025-12-08T23:49:21 IST" duration-ms="19040" status="FAIL">
+        <test-method signature="Fuso_All_Global_Regression_E2E_Supplier(java.util.HashMap)[pri:0, instance:DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global@19e4fcac]" started-at="2025-12-11T12:54:39 IST" name="Fuso_All_Global_Regression_E2E_Supplier" data-provider="getData_Supplier" finished-at="2025-12-11T12:55:06 IST" duration-ms="26620" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -15,30 +15,29 @@
               </value>
             </param>
           </params>
-          <exception class="org.openqa.selenium.NoSuchSessionException">
+          <exception class="org.openqa.selenium.NoSuchWindowException">
             <message>
-              <![CDATA[invalid session id: session deleted as the browser has closed the connection
-from disconnected: not connected to DevTools
+              <![CDATA[no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=143.0.7499.40)
 Build info: version: '4.3.0', revision: 'a4995e2c09*'
-System info: host: 'DESKTOP-05DVESU', ip: '192.168.1.7', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+System info: host: 'DESKTOP-05DVESU', ip: '192.168.31.39', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e433177938ecbf31df3e95ddd4b91cfb, findElement {using=xpath, value=//input[@type="password"]}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56155}, goog:processID: 26136, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56155/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e433177938ecbf31df3e95ddd4b91cfb]]>
+Command: [ebfa3ca899653e2161c51c6d8d0a37d5, findElement {using=xpath, value=//input[@type="email"]}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64979}, goog:processID: 24048, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64979/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ebfa3ca899653e2161c51c6d8d0a37d5]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
-from disconnected: not connected to DevTools
+              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
+from unknown error: web view not found
   (Session info: chrome=143.0.7499.40)
 Build info: version: '4.3.0', revision: 'a4995e2c09*'
-System info: host: 'DESKTOP-05DVESU', ip: '192.168.1.7', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+System info: host: 'DESKTOP-05DVESU', ip: '192.168.31.39', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [e433177938ecbf31df3e95ddd4b91cfb, findElement {using=xpath, value=//input[@type="password"]}]
-Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.40 (c23ff452476d..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56155}, goog:processID: 26136, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56155/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: e433177938ecbf31df3e95ddd4b91cfb
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+Command: [ebfa3ca899653e2161c51c6d8d0a37d5, findElement {using=xpath, value=//input[@type="email"]}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 143.0.7499.40, chrome: {chromedriverVersion: 143.0.7499.42 (24bdc8c48a0c..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64979}, goog:processID: 24048, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:64979/devtoo..., se:cdpVersion: 143.0.7499.40, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: ebfa3ca899653e2161c51c6d8d0a37d5
+at jdk.internal.reflect.GeneratedConstructorAccessor18.newInstance(Unknown Source)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
@@ -55,12 +54,20 @@ at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:3
 at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:379)
 at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
-at jdk.proxy2/jdk.proxy2.$Proxy18.click(Unknown Source)
-at DAMS.PageObjects.LoginPage.loginApplicationasRequester_MFA(LoginPage.java:58)
-at DAMS.Resources.BaseClass.login(BaseClass.java:309)
-at DAMS.Resources.BaseClass.login_MFA_Incognito(BaseClass.java:275)
+at jdk.proxy2/jdk.proxy2.$Proxy18.toString(Unknown Source)
+at java.base/java.lang.String.valueOf(String.java:4220)
+at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.toString(ExpectedConditions.java:673)
+at java.base/java.lang.String.valueOf(String.java:4220)
+at java.base/java.lang.StringBuilder.append(StringBuilder.java:173)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:229)
+at DAMS.Resources.AbstractComponents.waitForelementToBeClickable(AbstractComponents.java:75)
+at DAMS.Resources.AbstractComponents.clickJS(AbstractComponents.java:209)
+at DAMS.PageObjects.LoginPage.loginApplicationasRequester_MFA(LoginPage.java:53)
+at DAMS.Resources.BaseClass.login(BaseClass.java:316)
+at DAMS.Resources.BaseClass.login_MFA_Incognito(BaseClass.java:282)
 at DAMS.Testcases.Smoke_Suite_1.TC01_Login_MFA.login_with_addressing_MFA(TC01_Login_MFA.java:15)
-at DAMS.Testcases.Smoke_Suite_1.TC02_Requests_STD_GLOBAL.login_and_select_user_Global(TC02_Requests_STD_GLOBAL.java:203)
+at DAMS.Testcases.Smoke_Suite_1.TC02_Requests_STD_GLOBAL.login_and_select_user_Global(TC02_Requests_STD_GLOBAL.java:208)
 at DAMS.Testcases.Smoke_Suite_1.TC06_STD_GLOBAL_FRapproved.create_and_approve_Supplier_FR_request(TC06_STD_GLOBAL_FRapproved.java:104)
 at DAMS.Testcases.Smoke_Suite_1.TC06_STD_GLOBAL_FRapproved.Functional_role_request_approved_Supplier(TC06_STD_GLOBAL_FRapproved.java:48)
 at DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global.Fuso_All_Global_Regression_E2E_Supplier(TC009_FUSO_Supplier_All_FR_Global.java:36)
@@ -94,7 +101,7 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
+          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Fuso_All_Global_Regression_E2E_Supplier -->

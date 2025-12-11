@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
@@ -26,7 +27,7 @@ import DAMS.Testcases.Smoke_Suite_1.TC41_NestT_TestCOT_ATG;
 import DAMS.Testcases.Smoke_Suite_1.TC43_NestT_TestCOT_ATG_Approved;
 import DAMS.Testcases.Smoke_Suite_1.TC53_ReplacementPackage_RootBackend_Swap_ATG;
 import DAMS.Testcases.Smoke_Suite_1.TC55_ReplacementPackage_RootBackend_Swap_ATG_Approved;
-
+@Listeners(DAMS.Resources.Listeners.class)
 public class TC009_External_Production_FR_ATG extends BaseClass {
 	
 	@Test(dataProvider = "getData_External", priority = 0)

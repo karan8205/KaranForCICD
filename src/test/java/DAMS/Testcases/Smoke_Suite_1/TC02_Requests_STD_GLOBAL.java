@@ -8,11 +8,16 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
+
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+
 import com.aventstack.extentreports.Status;
+
 import DAMS.Resources.BaseClass;
 
+@Listeners(DAMS.Resources.Listeners.class)
 public class TC02_Requests_STD_GLOBAL extends BaseClass {
 	
 	@Test(dataProvider = "getData_Internal", priority = 0,enabled=false)

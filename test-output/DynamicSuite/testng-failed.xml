@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [DynamicSuite]" guice-stage="DEVELOPMENT">
+  <listeners>
+    <listener class-name="DAMS.Resources.Listeners"/>
+  </listeners>
+  <test thread-count="5" name="RunDynamicClass(failed)">
+    <classes>
+      <class name="DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global">
+        <methods>
+          <include name="Fuso_All_Global_Regression_E2E_Supplier" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- DAMS.Testcases.Regression_Suite.Supplier.TC009_FUSO_Supplier_All_FR_Global -->
+    </classes>
+  </test> <!-- RunDynamicClass(failed) -->
+</suite> <!-- Failed suite [DynamicSuite] -->

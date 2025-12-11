@@ -9,6 +9,7 @@ import java.util.List;
 
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import com.aventstack.extentreports.Status;
@@ -22,7 +23,7 @@ import DAMS.Testcases.Smoke_Suite_1.TC17_NestT_TestCOT_GLOBAL;
 import DAMS.Testcases.Smoke_Suite_1.TC19_NestT_TestCOT_GLOBAL_Approved;
 import DAMS.Testcases.Smoke_Suite_1.TC31_ReplacementPackage_RootBackend_Swap_Swap_GLOBAL_Approved;
 
-
+@Listeners(DAMS.Resources.Listeners.class)
 public class TC005_External_QualityManagement_FR_Global extends BaseClass {
 
 	@Test(dataProvider = "getData_External", priority = 0)

@@ -26,7 +26,7 @@ import DAMS.Testcases.Smoke_Suite_1.TC07_STD_ATG_FRapproved;
 import DAMS.Testcases.Smoke_Suite_1.TC10_Diagnostic_Authority_GLOBAL_Approved;
 import DAMS.Testcases.Smoke_Suite_1.TC11_EnhanceRightAuthority_GLOBAL;
 import DAMS.Testcases.Smoke_Suite_1.TC13_EnhanceRightAuthority_GLOBAL_Approved;
-
+@Listeners(DAMS.Resources.Listeners.class)
 
 public class TC014_External_OverAll_Run extends BaseClass {
 
