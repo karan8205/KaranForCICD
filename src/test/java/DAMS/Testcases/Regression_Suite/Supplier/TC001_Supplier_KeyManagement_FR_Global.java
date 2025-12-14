@@ -87,7 +87,7 @@ public class TC001_Supplier_KeyManagement_FR_Global extends BaseClass {
 
 		List<HashMap<String, String>> data = getJsonDataToMap(
 				System.getProperty("user.dir") + "//src//test//java//DAMS//data_Regression///03_Supplier_End_to-end_functionality.json");
-		return new Object[][] { { data.get(0) } };
+		return new Object[][] { { data.get(1) } };
 	}
 	
 	public static void approve_DA_request(HashMap<String, String> input)

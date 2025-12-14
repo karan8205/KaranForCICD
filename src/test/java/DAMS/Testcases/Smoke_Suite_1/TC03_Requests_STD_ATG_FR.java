@@ -177,8 +177,20 @@ public class TC03_Requests_STD_ATG_FR extends BaseClass {
 
 	}
 	public static String login_and_select_user_ATG(String user_type) throws Throwable {
-	    TC01_Login_MFA.login_with_addressing_MFA();    
+//	    TC01_Login_MFA.login_with_addressing_MFA();    
 	    // hari
+		 if ("Internal".equalsIgnoreCase(user_type)) {
+		        TC01_Login_MFA.login_with_addressing_MFA_Internal();
+		    } 
+		 else if ("External".equalsIgnoreCase(user_type)) {
+		        TC01_Login_MFA.login_with_addressing_MFA_External();
+		    } 
+		 else if ("Supplier".equalsIgnoreCase(user_type)) {
+		        TC01_Login_MFA.login_with_addressing_MFA_Supplier();
+		    } 
+		 else {
+		        throw new RuntimeException("Invalid user_type passed: " + user_type);
+		    }
 	    h.dropBtn();
 	    Thread.sleep(3000);	 
 	    String select_user_type = null;

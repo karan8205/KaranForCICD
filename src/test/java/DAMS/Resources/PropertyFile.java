@@ -308,9 +308,33 @@ public class PropertyFile extends BaseClass {
         String username = pro.getProperty("username_MFA");
         return username;
     }
+    public String getUsername_MFA_Internal() {
+        String username = pro.getProperty("username_MFA_Internal");
+        return username;
+    }
+    public String getUsername_MFA_External() {
+        String username = pro.getProperty("username_MFA_External");
+        return username;
+    }
+    public String getUsername_MFA_Supplier() {
+        String username = pro.getProperty("username_MFA_Supplier");
+        return username;
+    }
 
     public String getPassword_MFA() {
         String password = pro.getProperty("password_MFA");
+        return password;
+    }
+    public String getPassword_MFA_Internal() {
+        String password = pro.getProperty("password_MFA_Internal");
+        return password;
+    }
+    public String getPassword_MFA_External() {
+        String password = pro.getProperty("password_MFA_External");
+        return password;
+    }
+    public String getPassword_MFA_Supplier() {
+        String password = pro.getProperty("password_MFA_Supplier");
         return password;
     }
 

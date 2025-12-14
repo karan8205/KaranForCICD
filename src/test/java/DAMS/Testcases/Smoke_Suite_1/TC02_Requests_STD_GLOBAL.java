@@ -8,16 +8,11 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
-
 import org.testng.annotations.DataProvider;
-import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
-
 import com.aventstack.extentreports.Status;
-
 import DAMS.Resources.BaseClass;
 
-@Listeners(DAMS.Resources.Listeners.class)
 public class TC02_Requests_STD_GLOBAL extends BaseClass {
 	
 	@Test(dataProvider = "getData_Internal", priority = 0,enabled=false)
@@ -205,7 +200,19 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 	}
 
 	public static String login_and_select_user_Global(String user_type) throws Throwable {
-	    TC01_Login_MFA.login_with_addressing_MFA();
+//	    TC01_Login_MFA.login_with_addressing_MFA();
+		   if ("Internal".equalsIgnoreCase(user_type)) {
+		        TC01_Login_MFA.login_with_addressing_MFA_Internal();
+		    } 
+		   else if ("External".equalsIgnoreCase(user_type)) {
+		        TC01_Login_MFA.login_with_addressing_MFA_External();
+		    } 
+		   else if ("Supplier".equalsIgnoreCase(user_type)) {
+		        TC01_Login_MFA.login_with_addressing_MFA_Supplier();
+		    } 
+		   else {
+		        throw new RuntimeException("Invalid user_type passed: " + user_type);
+		    }
 	    Thread.sleep(3000);
 	    waitForPageLoad(driver);
 	    // hari

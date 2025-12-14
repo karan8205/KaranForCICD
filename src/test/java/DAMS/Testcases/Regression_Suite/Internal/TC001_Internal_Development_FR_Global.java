@@ -40,50 +40,50 @@ public class TC001_Internal_Development_FR_Global extends BaseClass {
 				+ "Standard Functional Request for Internal- status Approved:" + "</u></i></b>");
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Creation of Diagnostic Authority - Internal" + "</u></i></b>");
-//		AbstractComponents.refresh();
-//		myreq.select_NewPermission_request();
-//		newper.Diagnostic_Authority_ECU_Visible_or_not_for_pending_Approved(input);
-//		req.request_Overview();
-//		Thread.sleep(1000);
-//		req.select_Applicant_type("Myself");
-//		Thread.sleep(2000);
-//		approver_overview.filter_search(prop.getStatus_pending());
-//		req.scrollForReason();	
-//		approve_DA_request(input);
-//		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
-//				+ "Diagnostic Authority for Internal- status Approved:" + "</u></i></b>");
-//		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
-//				+ "Creation of Enhance Right Authority - Internal" + "</u></i></b>");
-//		AbstractComponents.refresh();
-//		TC11_EnhanceRightAuthority_GLOBAL.create_Enhance_Right_Authority_request(input);
-//		Thread.sleep(5000);
-//		req.request_Overview();
-//		req.select_request_type("Enhance Right");
-//		req.select_Applicant_type("Myself");
-//		Thread.sleep(2000);
-//		approver_overview.filter_search(prop.getStatus_pending());
-//		req.scrollForReason();
-//		TC13_EnhanceRightAuthority_GLOBAL_Approved.approve_Enhance_Right_Authority_request(input);
-//		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
-//				+ "Enhance Right Authority for Internal- status Approved:" + "</u></i></b>");
-//		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
-//				+ "Creation of Nest-T Testing - Internal" + "</u></i></b>");
-//		AbstractComponents.refresh();
-//		myreq.select_NewPermission_request();
-//		newper.raise_nestT_Request_Multiple(input);
-//		approve_Multiple_special_cases_nestT_request(input);
-//		
-//		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
-//				+ "Nest-T Testing for Internal- status Approved:" + "</u></i></b>");
-//		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
-//				+ "Creation of Replacement Package - Internal" + "</u></i></b>");
-//		AbstractComponents.refresh();
-//		List<String >create_replacement_package_request_id_front = create_replacement_package_request_root(input);
-//		waitForPageLoad(driver);
-//		Thread.sleep(3000);
-//		approve_special_cases_Replacement_request(input,create_replacement_package_request_id_front);
-//		waitForPageLoad(driver);
-//		Thread.sleep(3000);
+		AbstractComponents.refresh();
+		myreq.select_NewPermission_request();
+		newper.Diagnostic_Authority_ECU_Visible_or_not_for_pending_Approved(input);
+		req.request_Overview();
+		Thread.sleep(1000);
+		req.select_Applicant_type("Myself");
+		Thread.sleep(2000);
+		approver_overview.filter_search(prop.getStatus_pending());
+		req.scrollForReason();	
+		approve_DA_request(input);
+		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
+				+ "Diagnostic Authority for Internal- status Approved:" + "</u></i></b>");
+		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
+				+ "Creation of Enhance Right Authority - Internal" + "</u></i></b>");
+		AbstractComponents.refresh();
+		TC11_EnhanceRightAuthority_GLOBAL.create_Enhance_Right_Authority_request(input);
+		Thread.sleep(5000);
+		req.request_Overview();
+		req.select_request_type("Enhance Right");
+		req.select_Applicant_type("Myself");
+		Thread.sleep(2000);
+		approver_overview.filter_search(prop.getStatus_pending());
+		req.scrollForReason();
+		TC13_EnhanceRightAuthority_GLOBAL_Approved.approve_Enhance_Right_Authority_request(input);
+		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
+				+ "Enhance Right Authority for Internal- status Approved:" + "</u></i></b>");
+		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
+				+ "Creation of Nest-T Testing - Internal" + "</u></i></b>");
+		AbstractComponents.refresh();
+		myreq.select_NewPermission_request();
+		newper.raise_nestT_Request_Multiple(input);
+		approve_Multiple_special_cases_nestT_request(input);
+		
+		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
+				+ "Nest-T Testing for Internal- status Approved:" + "</u></i></b>");
+		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
+				+ "Creation of Replacement Package - Internal" + "</u></i></b>");
+		AbstractComponents.refresh();
+		List<String >create_replacement_package_request_id_front = create_replacement_package_request_root(input);
+		waitForPageLoad(driver);
+		Thread.sleep(3000);
+		approve_special_cases_Replacement_request(input,create_replacement_package_request_id_front);
+		waitForPageLoad(driver);
+		Thread.sleep(3000);
 		
 		List<String >create_replacement_package_request_id_back = create_replacement_package_request_backend(input);
 		waitForPageLoad(driver);

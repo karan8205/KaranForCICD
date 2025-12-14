@@ -20,7 +20,8 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 	@Test(dataProvider = "getData_Internal")
 	public static void global_Smoke_TestSuite_E2E_Internal(
 			HashMap<String, String> input) throws Throwable {
-//		TC01_Login_MFA.login_with_addressing_MFA();
+//		TC01_Login_MFA.login_with_addressing_MFA_Internal(); 
+//		TC01_Login_MFA.login_with_addressing_MFA_External();
 //		Thread.sleep(5000);
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Creation of Internal Standard Functional Request:" + "</u></i></b>");

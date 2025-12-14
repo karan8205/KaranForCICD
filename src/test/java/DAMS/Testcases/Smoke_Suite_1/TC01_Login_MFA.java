@@ -7,16 +7,46 @@ import org.testng.annotations.Test;
 import static DAMS.Resources.Listeners.test;
 
 public class TC01_Login_MFA extends BaseClass {
+//	@Test
+//	public static void login_with_addressing_MFA() throws Throwable {
+//
+//	    String username = prop.getUsername_MFA();
+//
+//	    if (username.equalsIgnoreCase("PU_S_PID1BD7")|| username.equalsIgnoreCase("IPATHAN")) {
+//	        login_with_addressing_MFA_Internal();
+//
+//	    } else if (username.equalsIgnoreCase("HARNAGA")) {
+//	        login_with_addressing_MFA_External();
+//	        login_with_addressing_MFA_Supplier();
+//	    }
+//	    BaseClass.getScreenshot("login", driver);
+//	}	
+	
     @Test()
     public static void login_with_addressing_MFA() throws Throwable {
-//		driver = getDriver();  
-//        test.log(Status.INFO,
-//                "<span style=\"color: blue;\"><b><i><u>" + "Login with valid credentials:" + "</u></i></b>");
         BaseClass.login_MFA_Incognito(prop.getUsername_MFA(), prop.getPassword_MFA(), prop.getUrl());
         login_with_mfa();
         BaseClass.getScreenshot("login", driver);
     }
-
+    @Test()
+    public static void login_with_addressing_MFA_Internal() throws Throwable {
+        BaseClass.login_MFA_Incognito_Internal();
+        login_with_mfa();
+        BaseClass.getScreenshot("login", driver);
+    }
+    @Test()
+    public static void login_with_addressing_MFA_External() throws Throwable {
+        BaseClass.login_MFA_Incognito_External();
+        login_with_mfa();
+        BaseClass.getScreenshot("login", driver);
+    }
+    @Test()
+    public static void login_with_addressing_MFA_Supplier() throws Throwable {
+        BaseClass.login_MFA_Incognito_Supplier();
+        login_with_mfa();
+        BaseClass.getScreenshot("login", driver);
+    }
+    
     @Test(enabled = false)
     public static void login_with_addressing_MFA_normal() throws Exception {
         //	driver = getDriver();
@@ -34,7 +64,6 @@ public class TC01_Login_MFA extends BaseClass {
 //        test.pass("User enters the verification code and click on verify button");
         logger.info("User enters the verification code and click on verify button");
         h = pageObjectManager.getHomePage();
-
         softAssertionALL();
     }
 }

@@ -271,15 +271,43 @@ public class BaseClass {
 //        String username = new String(Base64.getDecoder().decode(prop.getUsername_MFA()));
 //        String password = new String(Base64.getDecoder().decode(prop.getPassword_MFA()));
 
-    	
+    //Hari	
     	byte[] decodedBytes = Base64.getDecoder().decode(prop.getUsername_MFA());
         String username = new String(decodedBytes);
     	byte [] passwordEncode = Base64.getDecoder().decode(prop.getPassword_MFA());
     	String password = new String(passwordEncode);
-    	
-    	
         driver = initializeDriver("incognito");
         login(username, password, url);
+    }
+    public static void login_MFA_Incognito_Internal()
+            throws IOException, InterruptedException {
+    //Hari	
+    	byte[] decodedBytes = Base64.getDecoder().decode(prop.getUsername_MFA_Internal());
+        String username = new String(decodedBytes);
+    	byte [] passwordEncode = Base64.getDecoder().decode(prop.getPassword_MFA_Internal());
+    	String password = new String(passwordEncode);
+        driver = initializeDriver("incognito");
+        login(username, password, prop.getUrl());
+    }
+    public static void login_MFA_Incognito_External()
+            throws IOException, InterruptedException {
+    //Hari	
+    	byte[] decodedBytes = Base64.getDecoder().decode(prop.getUsername_MFA_External());
+        String username = new String(decodedBytes);
+    	byte [] passwordEncode = Base64.getDecoder().decode(prop.getPassword_MFA_External());
+    	String password = new String(passwordEncode);
+        driver = initializeDriver("incognito");
+        login(username, password, prop.getUrl());
+    }
+    public static void login_MFA_Incognito_Supplier()
+            throws IOException, InterruptedException {
+    //Hari	
+    	byte[] decodedBytes = Base64.getDecoder().decode(prop.getUsername_MFA_Supplier());
+        String username = new String(decodedBytes);
+    	byte [] passwordEncode = Base64.getDecoder().decode(prop.getPassword_MFA_Supplier());
+    	String password = new String(passwordEncode);
+        driver = initializeDriver("incognito");
+        login(username, password, prop.getUrl());
     }
 
     public static void login_MFA_Normal(String username_MFA, String password_MFA, String url)
