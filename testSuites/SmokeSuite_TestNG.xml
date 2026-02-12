@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="DynamicSuite">
+   <listeners>
+        <listener class-name="DAMS.Resources.Listeners"/>
+        <!--<listener class-name="DAMS.Resources.FailedAll" />-->
+    </listeners>			
+    <parameter name="env" value="stg"/>
+    <test name="RunDynamicClass">
+        <classes>			
+     	 <!--<class name="DAMS.Testcases.Smoke_Suite_1.TC88_ADD_UpdateGlobalEnhance_Pending"></class>-->
+    	 <!--<class name="DAMS.Testcases.Smoke_Suite_1.TC02_Requests_STD_GLOBAL"></class>-->
+   		 <class name="DAMS.Testcases.Smoke_Suite_1.TC83_REMOVE_UpdateFR_ECU_Rejected"></class>
+       	 <!--  <class name="DAMS.Testcases.Smoke_Suite_1.TC003_ServicePrincipal_TestSuite_E2E"></class>-->
+         <!--<class name="DAMS.Testcases.Smoke_Suite_1.TC004_SpecialAccess_TestSuite_E2E"></class>-->
+         <!--<class name="DAMS.Testcases.Smoke_Suite_1.TC003_ServicePrincipal_TestSuite_E2E"></class>-->
+         <!--<class name="DAMS.Testcases.Smoke_Suite_1.TC004_SpecialAccess_TestSuite_E2E"></class>-->
+         <!--<class name="DAMS.Testcases.Smoke_Suite_1.TC001_Global_Smoke_TestSuite_E2E	"></class>	-->
+        </classes>
+    </test> 
+</suite> <!-- Suite -->

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-02-11T23:14:29 IST" name="DynamicSuite" finished-at="2026-02-12T00:04:01 IST" duration-ms="2971898">
+    <groups>
+    </groups>
+    <test started-at="2026-02-11T23:14:29 IST" name="RunDynamicClass" finished-at="2026-02-12T00:04:01 IST" duration-ms="2971898">
+      <class name="DAMS.Testcases.Regression_Suite.Internal.TC014_Internal_OverAll_Run">
+        <test-method is-config="true" signature="login()[pri:0, instance:DAMS.Testcases.Regression_Suite.Internal.TC014_Internal_OverAll_Run@1921ad94]" started-at="2026-02-11T23:14:29 IST" name="login" finished-at="2026-02-11T23:15:05 IST" duration-ms="35568" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="configure(java.lang.String, java.lang.reflect.Method)[pri:0, instance:DAMS.Testcases.Regression_Suite.Internal.TC014_Internal_OverAll_Run@1921ad94]" started-at="2026-02-11T23:15:05 IST" name="configure" finished-at="2026-02-11T23:15:06 IST" duration-ms="1008" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[stg]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public static void DAMS.Testcases.Regression_Suite.Internal.TC014_Internal_OverAll_Run.development_Global_Regression_E2E_Internal(java.util.HashMap) throws java.lang.Throwable]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configure -->
+        <test-method signature="development_Global_Regression_E2E_Internal(java.util.HashMap)[pri:0, instance:DAMS.Testcases.Regression_Suite.Internal.TC014_Internal_OverAll_Run@1921ad94]" started-at="2026-02-11T23:15:06 IST" name="development_Global_Regression_E2E_Internal" data-provider="getData_Internal" finished-at="2026-02-12T00:04:01 IST" duration-ms="2935073" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{NO=7, Service_ID=BF0123, Functional_role_internal=Development - ATG, SpecialCase=Replacement Package, Target_COT=Root E2, User_Type=Internal, ECU_Restriction_DA=ALT48V01T/AAGW01T/AAGW01T, ECU_Qualifier_for_RP=AAGW01T, ECU_Qualifier_for_Root_link=AAGW01T/AAGW01T, BU=DTE, Role_Desc=Person/Pool-ID in the development department, associated with ATG project at Daimler Truck. Info: it does not automatically mean that this person works in the development team for the related AP4 ECU project, but this could be possible. On applying for the functional role, the user should automatically receive After-Sales ENHANCED as Standard Permissions., User_role_DA=Development ENHANCED/Development ENHANCED/Production, Reason_for_RP=Replacement Request ATG, Reason_for_DA=DA Request ATG, BackendTarget_COT=Backend E2B, NestT_TestingCase=Nest-T Test COT/Nest-T Test COT/Nest-T Central Authentication, ECU_Restriction_EA=ALT48V01T/AAGW01T/AAGW01T, BackendOrigin_COT=Backend E2A, ECU_Qualifier_nestT=ADST01T/APS501T/CGWA01T, SpecialCase_nestT=Nest-T Testing, Mode=ATG, ECU_Qualifier_for_Backend_link=ALT48V01T/AAGW01T, BackendRoot_COT=Root E2, Reason_for_nestT=Certificate Request for NEST-T, Reason_for_ER=EA Request ATG, Validity=10, Reason_for_internal_FR=Functional role request for Development - ATG, User_role_EA=Development ENHANCED/Development ENHANCED/Production, Orgin_COT=Root E1}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- development_Global_Regression_E2E_Internal -->
+      </class> <!-- DAMS.Testcases.Regression_Suite.Internal.TC014_Internal_OverAll_Run -->
+    </test> <!-- RunDynamicClass -->
+  </suite> <!-- DynamicSuite -->
+</testng-results>

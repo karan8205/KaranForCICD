@@ -1,0 +1,84 @@
+<html>
+<head>
+<title>TestNG:  RunDynamicClass</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>RunDynamicClass</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>1/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Wed Feb 11 23:14:29 IST 2026</td>
+</tr>
+<tr><td>Total time:</td><td>2971 seconds (2971898 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='DAMS.Testcases.Regression_Suite.Internal.TC014_Internal_OverAll_Run.development_Global_Regression_E2E_Internal()'><b>development_Global_Regression_E2E_Internal</b><br>Test class: DAMS.Testcases.Regression_Suite.Internal.TC014_Internal_OverAll_Run<br>Parameters: {NO=7, Service_ID=BF0123, Functional_role_internal=Development - ATG, SpecialCase=Replacement Package, Target_COT=Root E2, User_Type=Internal, ECU_Restriction_DA=ALT48V01T/AAGW01T/AAGW01T, ECU_Qualifier_for_RP=AAGW01T, ECU_Qualifier_for_Root_link=AAGW01T/AAGW01T, BU=DTE, Role_Desc=Person/Pool-ID in the development department, associated with ATG project at Daimler Truck. Info: it does not automatically mean that this person works in the development team for the related AP4 ECU project, but this could be possible. On applying for the functional role, the user should automatically receive After-Sales ENHANCED as Standard Permissions., User_role_DA=Development ENHANCED/Development ENHANCED/Production, Reason_for_RP=Replacement Request ATG, Reason_for_DA=DA Request ATG, BackendTarget_COT=Backend E2B, NestT_TestingCase=Nest-T Test COT/Nest-T Test COT/Nest-T Central Authentication, ECU_Restriction_EA=ALT48V01T/AAGW01T/AAGW01T, BackendOrigin_COT=Backend E2A, ECU_Qualifier_nestT=ADST01T/APS501T/CGWA01T, SpecialCase_nestT=Nest-T Testing, Mode=ATG, ECU_Qualifier_for_Backend_link=ALT48V01T/AAGW01T, BackendRoot_COT=Root E2, Reason_for_nestT=Certificate Request for NEST-T, Reason_for_ER=EA Request ATG, Validity=10, Reason_for_internal_FR=Functional role request for Development - ATG, User_role_EA=Development ENHANCED/Development ENHANCED/Production, Orgin_COT=Root E1}</td>
+<td></td>
+<td>2935</td>
+<td>DAMS.Testcases.Regression_Suite.Internal.TC014_Internal_OverAll_Run@1921ad94</td></tr>
+</table><p>
+</body>
+</html>

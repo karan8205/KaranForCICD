@@ -1,0 +1,36 @@
+[
+	{
+		"NO":"0",
+		"User_Type":"Technical_User",
+		"Functional_role": "Production",
+		"BU": "DTE",
+		"Chain_Trust":"GLOBAL",
+		"Role_Desc": "Select the 'Global' option if the ECU in the vehicle project contains T1 and T2 as test and S1 as the series chain of trust",
+		"Reason": "Service Principal Request Production",
+		"User_role": "Development ENHANCED",
+		"User_role_EA": "After-Sales STANDARD",
+		"ECU_Restriction": "ACM311T",
+		"Reason_for_DA": "Certificate Request Service Principal DA",
+		"Target_ECU": "ACM311T",
+		"Service_ID": "FF01",
+		"Validity": "1",
+		"Reason_for_ER": "Certificate Request Service Principal ERA"
+	},
+	{
+		"NO":"1",
+		"Functional_role": "OnBoardDiagnosticsTester Campaign - xOTA",
+		"Functional_role_Certificate" : "OnBoardDiagnosticsTester Campaign - xOTA",
+		"Special_Case": "FOTA",
+		"Diagnostic_Permission": "TCU",
+		"BU": "DTE",
+		"Chain_Trust":"GLOBAL",
+		"Role_Desc": "Select the 'Global' option if the ECU in the vehicle project contains T1 and T2 as test and S1 as the series chain of trust",
+		"Reason": "Service Principal Request XOTA",
+		"User_role": "Development ENHANCED",
+		"ECU_Restriction": "ACM311T",
+		"Reason_for_FOTA": "Certificate Request Service Principal FOTA",
+		"Service_ID": "AE1201",
+		"Validity": "1",
+		"Enhance_Validity":"12"
+	}
+]

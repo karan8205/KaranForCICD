@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="DynamicSuite">
+	
+   <listeners>
+        <listener class-name="DAMS.Resources.Listeners"/>
+        <!--<listener class-name="DAMS.Resources.FailedAll" />-->
+    </listeners>
+    <parameter name="env" value="stg"/>
+    <test name="RunDynamicClass">
+        <classes>  
+         <!--<class name="DAMS.Testcases.Regression_Suite.Supplier.TC002_Supplier_Development_FR_Global"></class> -->
+       <class name="DAMS.Testcases.Regression_Suite.Internal.TC014_Internal_OverAll_Run"></class> 
+        <!--  <class name="DAMS.Testcases.Regression_Suite.External.TC015_FUSO_External_Development_FR_Global"></class>--> 
+  <!-- <class name="DAMS.Testcases.Regression_Suite.Supplier.TC001_Supplier_KeyManagement_FR_Global"></class>   -->
+        </classes>
+    </test> 
+</suite> <!-- Suite -->			
