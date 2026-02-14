@@ -14,7 +14,7 @@ pipeline {
     }
     environment {
          PROJECT_NAME = 'dams-integration-test'
-         PROJECT_URL = 'https://git.t3.daimlertruck.com/DAM/ui-automation-testing.git'
+         PROJECT_URL = 'https://github.com/karan8205/KaranForCICD.git'
          DISABLE = 'true'
          SYNOPSYS_DETECT_LOCATION= 'C:/tools'
          EMAIL_TO = 'munisekhar.valasa_reddy@daimlertruck.com;nilesh.mittal@daimlertruck.com;vikash.mohan@daimlertruck.com;akash.bhattacharjee@daimlertruck.com;pargavi.m@daimlertruck.com;imran_khan.pathan@daimlertruck.com'
@@ -71,7 +71,7 @@ pipeline {
                       if (params.className && params.className.trim() != '') {
                           sh "mvn test ${testCmd}"
                       } else {
-                          sh "mvn test -PRegression -Denv=${params.env}"
+                          sh "mvn test -Dsurefire.suiteXmlFiles=testSuites/RegressionSuite_TestNG.xml -Denv=${params.env}"
                       }
                   }
                 }
