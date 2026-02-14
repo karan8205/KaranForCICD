@@ -8,7 +8,7 @@ pipeline {
         timeout(time: 800, unit: 'MINUTES')
     }
     parameters {
-        choice(name: 'env', choices: ['QA', 'DEV', 'UAT', 'PROD'], description: 'Select the Environment')
+        choice(name: 'env', choices: ['STG','QA', 'DEV', 'UAT', 'PROD'], description: 'Select the Environment')
         string(name: 'className', defaultValue: '', description: 'Enter Test Class Name (e.g., TC01_Login)')
         string(name: 'methodName', defaultValue: '', description: 'Enter Method Name (Optional)')
     }
