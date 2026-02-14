@@ -34,13 +34,6 @@ pipeline {
                  bat 'echo Method Name: ${params.methodName}'
            }
         }
-	    stage('Build'){
-            steps{
-               configFileProvider([configFile(fileId: 'c57ce599-7a28-4b77-95f5-3caca08d0037', variable: 'MAVEN_SETTINGS')]) {
-                    bat 'mvn -U  clean install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true'
-               }
-            }
-        }
         stage('Integration Test'){
              steps{
                 configFileProvider([configFile(fileId: 'c57ce599-7a28-4b77-95f5-3caca08d0037', variable: 'MAVEN_SETTINGS')]) {
