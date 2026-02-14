@@ -2,8 +2,8 @@ package DAMS.Testcases.Smoke_Suite_1;
 
 import static DAMS.Resources.Listeners.test;
 
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
+// import java.awt.Robot;
+// import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -210,9 +210,9 @@ public class TC03_Requests_STD_ATG_FR extends BaseClass {
 		logger.info("User validates the gtc page");
 		Thread.sleep(5000);
 
-//		logger.info("About to zoom out");
-//		JavascriptExecutor js = (JavascriptExecutor) driver;
-//		js.executeScript("document.body.style.zoom='80%'");
+		// logger.info("About to zoom out");
+		// JavascriptExecutor js = (JavascriptExecutor) driver;
+		// js.executeScript("document.body.style.zoom='80%'");
 		newrequest.select_vehicle_program_ATG(user_type);
 		newrequest.functional_role_page_validation(prop.get_for_whom_txt(), prop.get_myself_txt(),
 				prop.get_Functional_role_txt());

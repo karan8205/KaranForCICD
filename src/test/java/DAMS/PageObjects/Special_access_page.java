@@ -2,9 +2,9 @@ package DAMS.PageObjects;
 
 import static DAMS.Resources.Listeners.test;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
+// import java.awt.AWTException;
+// import java.awt.Robot;
+// import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -71,13 +71,13 @@ public class Special_access_page extends AbstractComponents {
 
 	@FindBy(xpath = "//*[text()=\"Update Functional Role (ECU Qualifier)\"]/../../../descendant::span[text()=\"New Request\"]")
 	private WebElement New_Request_update;
-//(//*[text()="Update Functional Role (ECU Qualifier)"]/../../../../descendant::span[text()="New Request"])[2]
+	// (//*[text()="Update Functional Role (ECU
+	// Qualifier)"]/../../../../descendant::span[text()="New Request"])[2]
 	@FindBy(xpath = "//*[text()=\" Update ECU Qualifiers \"]")
 	private WebElement Update_ECU_Qualifiers;
 
 	@FindBy(xpath = "//*[text()=\"Update Functional Role (ECU Qualifier)\"]/../../../descendant::span[text()=\"Request Overview\"]")
 	private WebElement Request_Overview_update;
-	
 
 	@FindBy(xpath = "//*[text()=\"View Permissions\"]")
 	private WebElement View_Permissions;
@@ -130,12 +130,10 @@ public class Special_access_page extends AbstractComponents {
 	private WebElement resaon_input;
 
 	// Special Enhance Right Request--->request overview
-	
-	
 
 	@FindBy(xpath = "//*[@placeholder='Please select ECU Chain of Trust Type']")
 	private WebElement ECU_Chain;
-	
+
 	@FindBy(xpath = "//*[text()=\" Special Access Overview\"]")
 	private WebElement Special_Access_Overview;
 
@@ -284,7 +282,7 @@ public class Special_access_page extends AbstractComponents {
 
 	@FindBy(xpath = "//*[text()=\"Add\"]")
 	private WebElement Add;
-	
+
 	@FindBy(xpath = "(//div[@class='mat-tab-label-content'])[last()]")
 	private WebElement Delete;
 
@@ -359,7 +357,7 @@ public class Special_access_page extends AbstractComponents {
 
 	@FindBy(xpath = "//span[text()=\"Please select your business unit\"]")
 	private WebElement Publisher_Onboarding_Business_Unit_input;
-	
+
 	@FindBy(xpath = "(//mat-select[@placeholder='Please select an option'])[last()]")
 	private WebElement View_Publisher_Onboarding_Business_Unit_input;
 
@@ -374,7 +372,7 @@ public class Special_access_page extends AbstractComponents {
 
 	@FindBy(xpath = "//span[text()=\"Enter the Functional Role\"]")
 	private WebElement Publisher_Onboarding_New_Functional_Role_input;
-	
+
 	@FindBy(xpath = "//*[@placeholder=\"Enter the Functional Role\"]")
 	private WebElement new_Functional_role;
 
@@ -383,10 +381,10 @@ public class Special_access_page extends AbstractComponents {
 
 	@FindBy(xpath = "//*[@placeholder=\"Please select an option\" and @aria-required=\"true\" ]")
 	private WebElement Publisher_Onboarding_New_Permission_input;
-	
+
 	@FindBy(xpath = "(//mat-select[@placeholder='Please select an option'])[last()]")
 	private WebElement View_onboardingNewPermission;
-	
+
 	@FindBy(xpath = "//*[@id=\"reason\"]")
 	private WebElement Publisher_Onboarding_Remark;
 
@@ -453,24 +451,24 @@ public class Special_access_page extends AbstractComponents {
 
 	@FindBy(xpath = "(//mat-select[@placeholder=\"Please select an option\"])[last()]")
 	private WebElement View_Publisher_business_unit_dropdown;
-	
+
 	@FindBy(xpath = "//span[text()=\"Confirm Delete Request\"]")
 	private WebElement confirm_delete_request;
-	
+
 	@FindBy(xpath = "//p[text()=\"Are you sure you want to delete ?\"]")
 	private WebElement confirm_delete;
-	
+
 	@FindBy(xpath = "//span[text()=\"Back\"]")
 	private WebElement delete_back;
-	
+
 	@FindBy(xpath = "//span[text()=\"Ok\"]")
 	private WebElement delete_ok;
-	
+
 	@FindBy(xpath = " //div[text()=\" 428 Precondition Required :  Functional Role already exists! \"]")
 	private WebElement error_message;
 
 	// Update Global Enhanced Right
-	
+
 	@FindBy(xpath = "//*[text()='Update Global EnhanceRight']")
 	private WebElement Update_Global_EnhanceRight;
 
@@ -545,124 +543,121 @@ public class Special_access_page extends AbstractComponents {
 
 	@FindBy(xpath = "//span[text()=\"Delete\"]")
 	private WebElement Gloabl_delete_button;
-	
-	
+
 	// view permission
 	@FindBy(xpath = "//mat-panel-title[text()='Functional Role Permissions']")
 	private WebElement functionalRolePermission;
-	
+
 	@FindBy(xpath = "//a//span[text()='View Permissions']")
 	private WebElement FR_view_Permission;
-	
+
 	@FindBy(xpath = "//mat-select[@formcontrolname='bu']")
 	private WebElement FR_view_BU;
-	
+
 	@FindBy(xpath = "//mat-select[@formcontrolname='funcRole']")
 	private WebElement FR_view_FuncRole;
-	
+
 	@FindBy(xpath = "//mat-select[@formcontrolname='techUserId']")
 	private WebElement FR_view_TechUserId;
-	
+
 	@FindBy(xpath = "//mat-select[@formcontrolname='permissionType']")
 	private WebElement FR_view_PermissionType;
-	
+
 	@FindBy(xpath = "//button//span[text()='View Permissions']")
 	private WebElement FR_view_PermissionBtn;
-	
+
 	@FindBy(xpath = "(//span[@id='normalCols2'])[1]")
 	private WebElement publisherTxt;
-	
+
 	@FindBy(xpath = "//*[@id='vehicleProgramDesc']")
 	private WebElement role_description_text;
-	
+
 	@FindBy(xpath = "(//mat-select[@placeholder='Please select ECU Chain of Trust Type'])[last()]")
 	private WebElement ECU_Type_ViewPublisher;
-	
+
 	@FindBy(xpath = "//span[text()='View']")
 	private WebElement ViewBtn_Publisher;
-	
+
 	@FindBy(xpath = "//div[text()=' Items per page: ']")
 	private WebElement Itemperpage;
-	
+
 	@FindBy(xpath = "//span[text()='Edit']")
 	private WebElement Editpublisher;
-	
+
 	@FindBy(xpath = "//span[text()='Refresh']")
 	private WebElement refresh_button;
-	
+
 	@FindBy(xpath = "(//table/tbody/tr/td[contains(@class,\"Approval-Status\")])[1]")
 	private WebElement Request_Overview_approval_status_txt;
-	
+
 	@FindBy(xpath = "//span[text()='Close']")
 	private WebElement CloseHyperlink;
-	
-	//New Approval Level 2
+
+	// New Approval Level 2
 	@FindBy(xpath = "//button[text()=' Approval Level 2 ']")
 	private WebElement ApprovalLevel2;
-	
-	//Old Approval Level 2
-//	@FindBy(xpath = "//p[text()='Approval Level 2']")
-//	private WebElement ApprovalLevel2;
-	
+
+	// Old Approval Level 2
+	// @FindBy(xpath = "//p[text()='Approval Level 2']")
+	// private WebElement ApprovalLevel2;
+
 	@FindBy(xpath = "//span[text()='Delete']")
 	private WebElement Delete_UpdateGlobal;
-	
+
 	@FindBy(xpath = "//span[text()='Ok']")
 	private WebElement Ok_UpdateGlobal;
-	
+
 	// meta data
-	
+
 	@FindBy(xpath = "//*[text()='ECU Metadata']")
 	private WebElement ECU_Meta_Data;
-	
+
 	@FindBy(xpath = "//a[contains(@href,\"ecu-metadata\")]")
 	private WebElement ECU_Meta_Data_Request;
-	
+
 	@FindBy(xpath = "//a[contains(@href,\"ecu-metadata-overview\")]")
 	private WebElement ECU_Meta_Data_Request_Overview;
-	
+
 	@FindBy(xpath = "(//mat-select[@placeholder='Please select the required ECU'])[1]")
 	private WebElement Meta_Data_Request_Type;
-	
+
 	@FindBy(xpath = "(//mat-select[@placeholder='Please select the required ECU'])[2]")
 	private WebElement Meta_Data_ECU;
-	
+
 	@FindBy(xpath = "//input[@id='architect_name']")
 	private WebElement Meta_Data_New_Owner;
-	
+
 	@FindBy(xpath = "//input[@formcontrolname='currentOwner']")
 	private WebElement Meta_Data_Existing_Owner;
-	
+
 	@FindBy(xpath = "//table/tbody/tr/td[contains(@class,\"New-Owner\")]")
 	private WebElement Meta_Data_New_Owner_txt;
-	
+
 	@FindBy(xpath = "//div[text()='Approval Status']")
 	private WebElement Approver_Overview_Approval_Status;
-	
-	
+
 	@FindBy(xpath = "//input[@placeholder='Search full records...']")
 	private WebElement RequestSearch_Here;
-	
-	
+
 	public void scroll_to_owner() {
 		Scrollright_waitForWebElementToAppear(Meta_Data_New_Owner_txt);
 	}
-	
-	
+
 	public void select_ECU_MetaData() {
 		waitForWebElementToAppear(ECU_Meta_Data);
 		click(ECU_Meta_Data);
 		waitForWebElementToAppear(ECU_Meta_Data_Request);
 		ECU_Meta_Data_Request.click();
 	}
-	
+
 	public void select_MetaData_Request_OverView() {
-//		waitForWebElementToAppear(ECU_Meta_Data);
-//		click(ECU_Meta_Data);
+		// waitForWebElementToAppear(ECU_Meta_Data);
+		// click(ECU_Meta_Data);
 		waitForWebElementToAppear(ECU_Meta_Data_Request_Overview);
 		click(ECU_Meta_Data_Request_Overview);
-	
+
 	}
+
 	public void select_ECU_Request_Type(String value) throws InterruptedException {
 		waitForWebElementToAppear(Meta_Data_Request_Type);
 		click(Meta_Data_Request_Type);
@@ -671,25 +666,24 @@ public class Special_access_page extends AbstractComponents {
 		clickelementmatchingtext(Functional_role_type, value);
 
 	}
-	
+
 	public void select_New_Owner(String value) throws InterruptedException {
 		waitForWebElementToAppear(Meta_Data_New_Owner);
 		click(Meta_Data_New_Owner);
-		
-//		String name = Meta_Data_Existing_Owner.getText().trim();
+
+		// String name = Meta_Data_Existing_Owner.getText().trim();
 		String existingOwner = Meta_Data_Existing_Owner.getAttribute("value");
-//		logger.info(name);
+		// logger.info(name);
 		logger.info(existingOwner);
-		if(existingOwner.equalsIgnoreCase("HARNAGA")) {
+		if (existingOwner.equalsIgnoreCase("HARNAGA")) {
 			Meta_Data_New_Owner.sendKeys("IPATHAN");
+		} else {
+			Meta_Data_New_Owner.sendKeys("HARNAGA");
 		}
-		else {
-		Meta_Data_New_Owner.sendKeys("HARNAGA");
-		}
-//		clickelementmatchingtext(Functional_role_type, value);
+		// clickelementmatchingtext(Functional_role_type, value);
 
 	}
-	
+
 	public void select_ECU_Qualifier(String value) throws InterruptedException {
 		waitForWebElementToAppear(Meta_Data_ECU);
 		click(Meta_Data_ECU);
@@ -698,46 +692,44 @@ public class Special_access_page extends AbstractComponents {
 		clickelementmatchingtext(Functional_role_type, value);
 
 	}
-	
-	
-	
-	public void selectUpdate_Global_EA() throws AWTException {
+
+	public void selectUpdate_Global_EA() {
 		waitForWebElementToAppear(Update_Global_EnhanceRight);
 		click(Update_Global_EnhanceRight);
 		waitForWebElementToAppear(Update_Global_EnhanceRight_new_request);
 		click(Update_Global_EnhanceRight_new_request);
-		
+
 	}
-	
-	
+
 	public String getPublisherTxt() {
 		return publisherTxt.getText().trim();
 	}
-	
+
 	public void click_Permission() {
 		click(FR_view_PermissionBtn);
 	}
-	
+
 	public void FR_ViewPermissionType(String name) throws Throwable {
 		FR_view_PermissionType.click();
 		clickelementmatchingtext(Functional_role_type, name);
 	}
-	
+
 	public void FR_ViewTechUserId(String name) throws Throwable {
 		FR_view_TechUserId.click();
 		clickelementmatchingtext(Functional_role_type, name);
 	}
-	
+
 	public void FR_Viewbusiness_unit(String name) throws Throwable {
 		FR_view_BU.click();
 		clickelementmatchingtext(Functional_role_type, name);
 	}
+
 	public void FR_View_FuncRole(String name) throws Throwable {
 		FR_view_FuncRole.click();
 		clickelementmatchingtext(Functional_role_type, name);
 	}
-	
-	public void  selectFR_Permission() {
+
+	public void selectFR_Permission() {
 		waitForWebElementToAppear(Functional_Role_Permissions);
 		click(functionalRolePermission);
 		waitForWebElementToAppear(FR_view_Permission);
@@ -775,13 +767,10 @@ public class Special_access_page extends AbstractComponents {
 	}
 
 	public String applicant_number_txt() {
-		
+
 		waitForWebElementToAppear(applicant_number_txt);
 		return applicant_number_txt.getText();
 	}
-	
-	
-	
 
 	public String Functional_role_txt() {
 		waitForWebElementToAppear(Functional_role_txt);
@@ -860,19 +849,19 @@ public class Special_access_page extends AbstractComponents {
 		return Reason_for_Special_Enhance_Request_txt.getText();
 
 	}
-	
-	public void clickSpecialAccess() throws InterruptedException, AWTException {
+
+	public void clickSpecialAccess() throws InterruptedException {
 		Thread.sleep(4000);
 		waitForPageLoad(driver);
 		waitForWebElementToAppear(Special_Access);
 		waitForelementToBeClickable(Special_Access);
-//		windowZoomOut();
+		// windowZoomOut();
 		clickJS(Special_Access);
 		Thread.sleep(2000);
 	}
 
 	public void special_access() {
-		
+
 		waitForWebElementToAppear(Special_EnhanceRight);
 		waitForWebElementToAppear(Update_Functional_Role);
 		waitForWebElementToAppear(Functional_Role_Permissions);
@@ -882,19 +871,19 @@ public class Special_access_page extends AbstractComponents {
 		waitForWebElementToAppear(Special_EnhanceRight);
 		waitForelementToBeClickable(Special_EnhanceRight);
 		Thread.sleep(2000);
-		if(Special_EnhanceRight.getAttribute("aria-expanded").equals("false")) {
-		click(Special_EnhanceRight);
+		if (Special_EnhanceRight.getAttribute("aria-expanded").equals("false")) {
+			click(Special_EnhanceRight);
 		}
 
 	}
 
 	public void update_functional_role() throws InterruptedException {
-//		special_access();
+		// special_access();
 		Thread.sleep(3000);
 		waitForWebElementToAppear(Functional_Role_Permissions);
 		scrollDown(Functional_Role_Permissions);
 		clickJS(Update_Functional_Role);
-//		waitForWebElementToAppear(Update_ECU_Qualifiers);
+		// waitForWebElementToAppear(Update_ECU_Qualifiers);
 	}
 
 	public void Update_ECU_Qualifiers() {
@@ -910,10 +899,11 @@ public class Special_access_page extends AbstractComponents {
 	}
 
 	public void raise_Special_Enhance_Right_Request(String functional_role, String user_role, String ecu_qualifier,
-			String service_ID, String validity, String reason,String mode) throws Throwable {
+			String service_ID, String validity, String reason, String mode) throws Throwable {
 		waitForWebElementToAppear(New_Request);
 		clickJS(New_Request);
-		logger.info(functional_role+"\t"+user_role+"\t"+ecu_qualifier+"\t"+service_ID+"\t"+validity+reason+"\t"+mode);
+		logger.info(functional_role + "\t" + user_role + "\t" + ecu_qualifier + "\t" + service_ID + "\t" + validity
+				+ reason + "\t" + mode);
 		selectECU_Chain(mode);
 		functional_role(functional_role);
 		user_role(user_role);
@@ -926,53 +916,54 @@ public class Special_access_page extends AbstractComponents {
 		test.pass("User is able to raise Special Enhanced right");
 		logger.info("User is able to raise Special Enhanced right");
 	}
+
 	public void raise_Special_Enhance_Right_Request_Multiple(HashMap<String, String> input) throws Throwable {
 		waitForWebElementToAppear(New_Request);
 		clickJS(New_Request);
-//		logger.info(functional_role+"\t"+user_role+"\t"+ecu_qualifier+"\t"+service_ID+"\t"+validity+reason+"\t"+mode);
+		// logger.info(functional_role+"\t"+user_role+"\t"+ecu_qualifier+"\t"+service_ID+"\t"+validity+reason+"\t"+mode);
 		String functionalrole_1 = input.get("Functional_role");
-		String[] fr=functionalrole_1.split("/");
+		String[] fr = functionalrole_1.split("/");
 		String user_roles = input.get("User_role");
-		String[] ur=user_roles.split("/");
+		String[] ur = user_roles.split("/");
 		Thread.sleep(1000);
 		String ECU_Restrictions = input.get("Ecu-Qualifier");
-		String [] ECU = ECU_Restrictions.split("/");
+		String[] ECU = ECU_Restrictions.split("/");
 		Thread.sleep(500);
-		logger.info("user roles : "+Arrays.toString(ur));
-		for(int i=0;i<ur.length;i++) {
-			String functional_role =fr[i];
+		logger.info("user roles : " + Arrays.toString(ur));
+		for (int i = 0; i < ur.length; i++) {
+			String functional_role = fr[i];
 			Thread.sleep(1000);
-			String user_role_1 =ur[i];	
-			String ecu_qualifier1=ECU[i];
-		selectECU_Chain(input.get("Mode"));
-		Thread.sleep(1000);
-		functional_role(functional_role);
-		Thread.sleep(1000);
-		user_role(user_role_1);
-		Ecu_qualifier(ecu_qualifier1);
-		type(Enter_Service_ID, input.get("Service_ID"));
-		type(Number_Of_Days, input.get("Validity"));
-		Thread.sleep(2000);
-		type(resaon_input, input.get("Reason_for_DA"));
-		clickJS(Submit);
+			String user_role_1 = ur[i];
+			String ecu_qualifier1 = ECU[i];
+			selectECU_Chain(input.get("Mode"));
+			Thread.sleep(1000);
+			functional_role(functional_role);
+			Thread.sleep(1000);
+			user_role(user_role_1);
+			Ecu_qualifier(ecu_qualifier1);
+			type(Enter_Service_ID, input.get("Service_ID"));
+			type(Number_Of_Days, input.get("Validity"));
+			Thread.sleep(2000);
+			type(resaon_input, input.get("Reason_for_DA"));
+			clickJS(Submit);
 		}
 		test.pass("User is able to raise Special Enhanced right");
 		logger.info("User is able to raise Special Enhanced right");
 	}
-	public void validate_Special_Enhance_Right_ECU(String functional_role, String user_role, String ecu_qualifier,String mode) throws Throwable {
+
+	public void validate_Special_Enhance_Right_ECU(String functional_role, String user_role, String ecu_qualifier,
+			String mode) throws Throwable {
 		waitForWebElementToAppear(New_Request);
 		clickJS(New_Request);
-		logger.info(functional_role+"\t"+user_role+"\t"+ecu_qualifier+"\t"+mode);
+		logger.info(functional_role + "\t" + user_role + "\t" + ecu_qualifier + "\t" + mode);
 		selectECU_Chain(mode);
 		functional_role(functional_role);
 		user_role(user_role);
-//		Ecu_qualifier(ecu_qualifier);
+		// Ecu_qualifier(ecu_qualifier);
 		Thread.sleep(2000);
 		waitForWebElementToAppear(Please_select_the_required_ECU);
 		click(Please_select_the_required_ECU);
-		check_elementText(Functional_role_type,ecu_qualifier);
-		
-		
+		check_elementText(Functional_role_type, ecu_qualifier);
 
 	}
 
@@ -988,6 +979,7 @@ public class Special_access_page extends AbstractComponents {
 		}
 
 	}
+
 	public String role_desc_text() {
 		try {
 			scrollDown(role_description_text);
@@ -997,18 +989,18 @@ public class Special_access_page extends AbstractComponents {
 			return role_description_text.getText();
 		}
 	}
-	
-	public void selectECU_Chain(String name) throws Throwable{
-		Thread.sleep(2000); 
+
+	public void selectECU_Chain(String name) throws Throwable {
+		Thread.sleep(2000);
 		waitForPageLoad(driver);
 		waitForWebElementToAppear(ECU_Chain);
 		waitForelementToBeClickable(ECU_Chain);
 		clickJS(ECU_Chain);
 		clickelementmatchingtext(Functional_role_type, name);
 	}
-	
-	public void selectECU_Chain_ViewPublisher(String name) throws Throwable{
-//		waitForWebElementToAppear(ECU_Type_ViewPublisher);
+
+	public void selectECU_Chain_ViewPublisher(String name) throws Throwable {
+		// waitForWebElementToAppear(ECU_Type_ViewPublisher);
 		waitForPageLoad(driver);
 		waitForWebElementToAppear(ECU_Type_ViewPublisher);
 		waitForelementToBeClickable(ECU_Type_ViewPublisher);
@@ -1025,18 +1017,18 @@ public class Special_access_page extends AbstractComponents {
 		String xpathExpression = String.format("//span[text()=' %s ']", name);
 		clickJS(driver.findElement(By.xpath(xpathExpression)));
 		return name;
-//		clickelementmatchingtext(Functional_role_type, name);
+		// clickelementmatchingtext(Functional_role_type, name);
 	}
 
 	public void business_unit(String name) throws Throwable {
 		Please_select_your_business_unit.click();
-		
+
 		clickelementmatchingtext(Functional_role_type, name);
 	}
 
 	public void user_role(String name) throws Throwable {
 		click(please_Select_Your_user_role);
-		
+
 		clickelementmatchingtext(Functional_role_type, name);
 	}
 
@@ -1059,7 +1051,7 @@ public class Special_access_page extends AbstractComponents {
 			Thread.sleep(100);
 			WebElement txt = elements.get(i);
 			String usertype = txt.getText().trim();
-			logger.info(usertype+" "+name);
+			logger.info(usertype + " " + name);
 			if (usertype.contains(name)) {
 				usertype1 = usertype;
 				txt.click();
@@ -1072,29 +1064,27 @@ public class Special_access_page extends AbstractComponents {
 
 	public String check_elementText(List<WebElement> elements, String name) throws InterruptedException {
 		String usertype1 = null;
-		boolean res=true;
+		boolean res = true;
 		for (int i = 0; i < elements.size(); i++) {
 			Thread.sleep(100);
 			WebElement txt = elements.get(i);
 			String usertype = txt.getText().trim();
-			logger.info(usertype+" "+name);
+			logger.info(usertype + " " + name);
 			if (usertype.equals(name)) {
-				res=false;
+				res = false;
 				break;
 			}
 		}
-		if(res) {
-			logger.info(name+" ECU Not Present");
-			test.pass(name+" ECU Not Present");
-		}
-		else {
-			logger.info(name+" ECU Is Present");
-			test.fail(name+" ECU Is Present");
+		if (res) {
+			logger.info(name + " ECU Not Present");
+			test.pass(name + " ECU Not Present");
+		} else {
+			logger.info(name + " ECU Is Present");
+			test.fail(name + " ECU Is Present");
 		}
 		return usertype1;
 	}
-	
-	
+
 	public void Special_Access_Overview() {
 		waitForWebElementToAppear(Special_Access_Overview);
 		waitForWebElementToAppear(Applicant);
@@ -1111,9 +1101,6 @@ public class Special_access_page extends AbstractComponents {
 		waitForWebElementToAppear(search_here);
 	}
 
-	
-	
-	
 	public void ECU_Qualifier_Update_Overview() throws Throwable {
 		Thread.sleep(3000);
 		waitForWebElementToAppear(ECU_Qualifier_Update_For_Functional_Role);
@@ -1136,10 +1123,10 @@ public class Special_access_page extends AbstractComponents {
 		waitForelementToBeClickable(SpecialEnhance_Request_Overview);
 		clickJS(SpecialEnhance_Request_Overview);
 		Thread.sleep(2000);
-//		applicant_number = applicant_number_txt();
-//		Req_search_here(applicant_number);
-		Thread.sleep(2000);	
-		Scrollright_waitForWebElementToAppear(Request_Overview_approval_status_txt);	
+		// applicant_number = applicant_number_txt();
+		// Req_search_here(applicant_number);
+		Thread.sleep(2000);
+		Scrollright_waitForWebElementToAppear(Request_Overview_approval_status_txt);
 		refresh_button.click();
 		Thread.sleep(2000);
 		click(Request_Overview_approval_status_txt);
@@ -1148,11 +1135,11 @@ public class Special_access_page extends AbstractComponents {
 		Thread.sleep(3000);
 		click(CloseHyperlink);
 	}
-	
+
 	public void Approveroverviewhyperlink() throws InterruptedException {
 		Thread.sleep(2000);
 		if (!Approver_Overview_Approval_Status.isDisplayed()) {
-		    Scrollright_waitForWebElementToAppear(Approver_Overview_Approval_Status);
+			Scrollright_waitForWebElementToAppear(Approver_Overview_Approval_Status);
 		}
 		refresh_button.click();
 		Thread.sleep(2000);
@@ -1162,9 +1149,9 @@ public class Special_access_page extends AbstractComponents {
 		Thread.sleep(3000);
 		click(CloseHyperlink);
 	}
-	
+
 	public void approvalLinkCheck() throws Throwable {
-		Scrollright_waitForWebElementToAppear(Request_Overview_approval_status_txt);	
+		Scrollright_waitForWebElementToAppear(Request_Overview_approval_status_txt);
 		refresh_button.click();
 		Thread.sleep(2000);
 		click(Request_Overview_approval_status_txt);
@@ -1178,11 +1165,11 @@ public class Special_access_page extends AbstractComponents {
 		waitForelementToBeClickable(Request_Overview_update);
 		click(Request_Overview_update);
 		Thread.sleep(2000);
-		
+
 		applicant_number = applicant_number_txt();
 		Req_search_here(applicant_number);
-		Thread.sleep(2000);	
-		Scrollright_waitForWebElementToAppear(Request_Overview_approval_status_txt);	
+		Thread.sleep(2000);
+		Scrollright_waitForWebElementToAppear(Request_Overview_approval_status_txt);
 		refresh_button.click();
 		Thread.sleep(2000);
 		click(Request_Overview_approval_status_txt);
@@ -1194,6 +1181,7 @@ public class Special_access_page extends AbstractComponents {
 		clickJS(Authorization_dropdown);
 		clickelementmatchingtext(Authorization_List, applicant_type);
 	}
+
 	public void selectRequest_type(String applicant_type) throws Throwable {
 		clickJS(Authorization_dropdown);
 		clickelementmatchingtext(Authorization_List, applicant_type);
@@ -1212,7 +1200,7 @@ public class Special_access_page extends AbstractComponents {
 		waitForWebElementToAppear(Request_Overview_Approval_status);
 		waitForWebElementToAppear(Request_Overview_Service_ID);
 		waitForWebElementToAppear(Validity_days);
-//		waitForWebElementToAppear(Reason_for_Special_Enhance_Request);
+		// waitForWebElementToAppear(Reason_for_Special_Enhance_Request);
 		waitForWebElementToAppear(Reason_for_Rejection);
 		waitForWebElementToAppear(Request_Overview_Request_Date);
 		waitForWebElementToAppear(Approval_Date);
@@ -1235,9 +1223,9 @@ public class Special_access_page extends AbstractComponents {
 	public List<String> request_Overview_table_validation(String applicant_type) throws Throwable {
 		Thread.sleep(4000);
 		SpecialEnhance_request_Overview();
-//		Special_Access_Overview();
-//		select_applicant_type(applicant_type);
-//		Special_Access_Overview_list_of_Column();
+		// Special_Access_Overview();
+		// select_applicant_type(applicant_type);
+		// Special_Access_Overview_list_of_Column();
 		requesterID = requester_Id_txt();
 		username = username_txt();
 		department = department_txt();
@@ -1262,16 +1250,16 @@ public class Special_access_page extends AbstractComponents {
 	public void search_here_UserID(Object values) {
 		type(search_here, values);
 	}
-	
+
 	public void search_here(Object values) {
 		waitForWebElementToAppear(search_here);
 		type(search_here, values);
 	}
-	
+
 	public void refreshBtn() {
 		refresh_button.click();
 	}
-	
+
 	public void Req_search_here(Object values) {
 		waitForWebElementToAppear(RequestSearch_Here);
 		type(RequestSearch_Here, values);
@@ -1281,15 +1269,16 @@ public class Special_access_page extends AbstractComponents {
 			String approval_date, String rejection_txt, String request_type, String user_ID) throws Throwable {
 		refresh();
 		Thread.sleep(2000);
-//		special_access();
+		// special_access();
 		Special_Enhanced_right();
 		SpecialEnhance_request_Overview();
-//		select_applicant_type(request_type);
-//		search_here_UserID(user_ID);
+		// select_applicant_type(request_type);
+		// search_here_UserID(user_ID);
 		approval_status_txt().equals(approval_status);
 		Approval_date_txt().equals(approval_date);
 		Approver_Reason_txt().equals(rejection_txt);
 	}
+
 	public void navigate_to_request_Overview_page_and_Update_EA(String user_ID) throws Throwable {
 		clickSpecialAccess();
 		special_access();
@@ -1306,55 +1295,55 @@ public class Special_access_page extends AbstractComponents {
 		click(ApprovalLevel2);
 		Thread.sleep(3000);
 		click(CloseHyperlink);
-//		Thread.sleep(1000);
-//		click(Pending);
+		// Thread.sleep(1000);
+		// click(Pending);
 	}
+
 	public void navigate_to_ECU_Qualifier_update_page_and_verify_approval_status(String approval_status,
 			String approval_date, String rejection_txt, String request_type, String user_ID) throws Throwable {
 		Thread.sleep(300);
-//		update_functional_role();
-//		Update_ECU_Qualifiers();
-//		request_Overview_update();
-//		Thread.sleep(3000);
-//		waitForWebElementToAppear(ECU_Qualifier_Update_For_Functional_Role);
+		// update_functional_role();
+		// Update_ECU_Qualifiers();
+		// request_Overview_update();
+		// Thread.sleep(3000);
+		// waitForWebElementToAppear(ECU_Qualifier_Update_For_Functional_Role);
 		select_applicant_type(request_type);
 		search_here_UserID(user_ID);
 		approval_status_txt().equals(approval_status);
 		Approval_date_txt().equals(approval_date);
 		Approver_Reason_txt().equals(rejection_txt);
 	}
-	
-	
 
-	public void add_UpdateEnhanceRaise(String functional_role, String ecu_qualifier, String Service_id,String validity, String reason)
+	public void add_UpdateEnhanceRaise(String functional_role, String ecu_qualifier, String Service_id, String validity,
+			String reason)
 			throws Throwable {
-		clickJS(Add);	
-		
-		logger.info(functional_role+"\t"+Service_id+"\t"+ecu_qualifier+"\t"+reason+"\t"+validity);
+		clickJS(Add);
+
+		logger.info(functional_role + "\t" + Service_id + "\t" + ecu_qualifier + "\t" + reason + "\t" + validity);
 		functional_role(functional_role);
 		Ecu_qualifier(ecu_qualifier);
 		type(Enter_Service_ID, Service_id);
-		type(Number_Of_Days,validity );
+		type(Number_Of_Days, validity);
 		//
 		type(resaon_input, reason);
 		Thread.sleep(2000);
 		waitForelementToBeClickable(Submit);
 		click(Submit);
-		
+
 		//
-	
+
 		test.pass("User is able to raise request for Add Functional role");
 		logger.info("User is able to raise request for Add Functional role");
 	}
-	
+
 	public void delete_UpdateEnhanceRaise()
 			throws Throwable {
 		Thread.sleep(2000);
-		clickJS(Delete);	
+		clickJS(Delete);
 		Thread.sleep(2000);
 		ECU_QUAlifier_txt = ECU_QUalifier_txt();
 		search_here(ECU_QUAlifier_txt);
-//		search_here(id);
+		// search_here(id);
 		Thread.sleep(2000);
 		clickJS(Delete_UpdateGlobal);
 		Thread.sleep(2000);
@@ -1362,9 +1351,9 @@ public class Special_access_page extends AbstractComponents {
 		test.pass("User is able to Delete the Functional role");
 		logger.info("User is able to Delete the Functional role");
 	}
-	
+
 	public String Validate_Add_Update_EnhanceRight() throws InterruptedException {
-    Thread.sleep(2000);
+		Thread.sleep(2000);
 		Update_Global_EnhanceRight.click();
 		Thread.sleep(1000);
 		Update_Global_EnhanceRight_request_Overview.click();
@@ -1380,18 +1369,18 @@ public class Special_access_page extends AbstractComponents {
 		Thread.sleep(3000);
 		click(CloseHyperlink);
 		Thread.sleep(1000);
-//		click(Pending);
+		// click(Pending);
 
 		return applicant_number;
-		
+
 	}
-	
-	
-	public void add_functional_role(String functional_role, String business_unit, String ecu_qualifier, String reason,String mode)
+
+	public void add_functional_role(String functional_role, String business_unit, String ecu_qualifier, String reason,
+			String mode)
 			throws Throwable {
 		clickJS(New_Request_update);
 		Thread.sleep(2000);
-		logger.info(functional_role+"\t"+business_unit+"\t"+ecu_qualifier+"\t"+reason);
+		logger.info(functional_role + "\t" + business_unit + "\t" + ecu_qualifier + "\t" + reason);
 		selectECU_Chain(mode);
 		business_unit(business_unit);
 		functional_role(functional_role);
@@ -1401,14 +1390,15 @@ public class Special_access_page extends AbstractComponents {
 		test.pass("User is able to raise request for Add Functional role");
 		logger.info("User is able to raise request for Add Functional role");
 	}
-	
-	public void remove_functional_role(String functional_role, String business_unit, String ecu_qualifier, String reason,String mode)
+
+	public void remove_functional_role(String functional_role, String business_unit, String ecu_qualifier,
+			String reason, String mode)
 			throws Throwable {
 		clickJS(New_Request_update);
 		Thread.sleep(2000);
 		Remove.click();
 		Thread.sleep(2000);
-		logger.info(functional_role+"\t"+business_unit+"\t"+ecu_qualifier+"\t"+reason);
+		logger.info(functional_role + "\t" + business_unit + "\t" + ecu_qualifier + "\t" + reason);
 		selectECU_Chain(mode);
 		business_unit(business_unit);
 		functional_role(functional_role);
@@ -1426,11 +1416,11 @@ public class Special_access_page extends AbstractComponents {
 			waitForWebElementToAppear(Submit);
 			waitForelementToBeClickable(Submit);
 			Submit.click();
-//			click(Submit);
+			// click(Submit);
 		} catch (org.openqa.selenium.StaleElementReferenceException ex) {
 			scrollDown(Submit);
 			waitForWebElementToAppear(Submit);
-		
+
 			clickJS(Submit);
 
 		}
@@ -1460,7 +1450,8 @@ public class Special_access_page extends AbstractComponents {
 	String Reason_for_Updating_Functional_Role;
 	String ECU_QUAlifier_txt;
 
-	public List<String> ECU_Qualifier_Update_for_Request_Overview_UpdateFunctional(String applicant_type) throws Throwable {
+	public List<String> ECU_Qualifier_Update_for_Request_Overview_UpdateFunctional(String applicant_type)
+			throws Throwable {
 		Thread.sleep(3000);
 		refresh();
 		waitForPageLoad(driver);
@@ -1480,12 +1471,10 @@ public class Special_access_page extends AbstractComponents {
 		Approver_Reason = Approver_Reason_txt();
 		Request_date = Request_date_txt();
 		Approval_date = Approval_date_txt();
-		return Arrays.asList(approval_status, requesterID, username, department, action_Type,applicant_number,
+		return Arrays.asList(approval_status, requesterID, username, department, action_Type, applicant_number,
 				functional_role, Reason_for_Updating_Functional_Role, ECU_QUAlifier_txt, Approver_Reason, Request_date,
 				Approval_date);
 	}
-	
-
 
 	public void Third_Party_Publisher() throws InterruptedException {
 		scrollDown(Third_Party_Publisher);
@@ -1496,8 +1485,7 @@ public class Special_access_page extends AbstractComponents {
 		waitForWebElementToAppear(Third_Party_Publisher_new_request);
 		click(Third_Party_Publisher_new_request);
 		Thread.sleep(5000);
-		
-		
+
 	}
 
 	public void raise_Publisher_Onboarding_Request() throws Throwable {
@@ -1538,6 +1526,7 @@ public class Special_access_page extends AbstractComponents {
 		clickJS(Publisher_Onboarding_Business_Unit_input);
 		clickelementmatchingtext(Functional_role_type, name);
 	}
+
 	public void view_publisher_Onboarding_business_unit(String name) throws Throwable {
 		Thread.sleep(5000);
 		waitForWebElementToAppear(View_Publisher_Onboarding_Business_Unit_input);
@@ -1545,12 +1534,14 @@ public class Special_access_page extends AbstractComponents {
 		clickJS(View_Publisher_Onboarding_Business_Unit_input);
 		clickelementmatchingtext(Functional_role_type, name);
 	}
+
 	public void viewBtn() throws InterruptedException {
 		waitForelementToBeClickable(ViewBtn_Publisher);
 		clickJS(ViewBtn_Publisher);
 		Thread.sleep(5000);
-//		scrollDown(Itemperpage);
+		// scrollDown(Itemperpage);
 	}
+
 	public void edit_publisheronboarding() throws InterruptedException {
 		waitForelementToBeClickable(Editpublisher);
 		clickJS(Editpublisher);
@@ -1563,13 +1554,13 @@ public class Special_access_page extends AbstractComponents {
 		type(Publisher_Onboarding_Publisher_Name_input, name);
 
 	}
-	public void new_Functional_role_select (String name) throws Throwable {
+
+	public void new_Functional_role_select(String name) throws Throwable {
 
 		clickJS(new_Functional_role);
 		type(new_Functional_role, name);
 
 	}
-	
 
 	public List<String> publisher_Onboarding_new_permission(String[] optionsToSelect) throws Throwable {
 		List<String> selectedValues = new ArrayList<String>();
@@ -1580,7 +1571,7 @@ public class Special_access_page extends AbstractComponents {
 		for (String optionText : optionsToSelect) {
 			for (WebElement option : Functional_role_type) {
 				Thread.sleep(1000);
-				logger.info("data : "+optionText+"\t ui : "+option.getText());
+				logger.info("data : " + optionText + "\t ui : " + option.getText());
 				if (option.getText().equals(optionText)) {
 					clickJS(option);
 					selectedValues.add(option.getText());
@@ -1594,10 +1585,10 @@ public class Special_access_page extends AbstractComponents {
 		ClickTab();
 		return selectedValues;
 	}
-	
+
 	public List<String> view_publisher_Onboarding_new_permission(String[] optionsToSelect) throws Throwable {
 		List<String> selectedValues = new ArrayList<String>();
-//		AbstractComponents.waitForelementToBeClickable(View_onboardingNewPermission);
+		// AbstractComponents.waitForelementToBeClickable(View_onboardingNewPermission);
 		Thread.sleep(2000);
 		click(View_Publisher_Edit);
 		Thread.sleep(3000);
@@ -1620,7 +1611,6 @@ public class Special_access_page extends AbstractComponents {
 		return selectedValues;
 	}
 
-	
 	public void View_Publisher_Onboarding(String functional_role, List<String> raise_Publisher_Onboarding_Request,
 			String reason_txt2, String business_unit, String edit_reason) throws InterruptedException {
 		implicitWait(30);
@@ -1695,48 +1685,51 @@ public class Special_access_page extends AbstractComponents {
 		AbstractComponents.waitForelementToBeClickable(Publisher_Onboarding_submit);
 		Thread.sleep(2000);
 		refresh();
-//		waitForWebElementToAppear(Publisher_Onboarding_Remark_input);
+		// waitForWebElementToAppear(Publisher_Onboarding_Remark_input);
 		return reason;
 	}
+
 	public String provide_reason(String reason) throws InterruptedException {
 		clickJS(Publisher_Onboarding_Remark_input);
 		type(Publisher_Onboarding_Remark_input, reason);
 		Thread.sleep(1000);
 		return reason;
 	}
+
 	public void submit() throws InterruptedException {
 		try {
 			clickJS(Publisher_Onboarding_submit);
-//		refresh();
-		}catch(Exception ex) {
+			// refresh();
+		} catch (Exception ex) {
 			focusClick(Publisher_Onboarding_submit);
 			refresh();
 		}
 	}
+
 	public void viewPublisher_Submit() throws InterruptedException {
 		try {
 			clickJS(View_Publisher_Onboarding_submit);
-//		refresh();
-		}catch(Exception ex) {
+			// refresh();
+		} catch (Exception ex) {
 			focusClick(View_Publisher_Onboarding_submit);
 			refresh();
 		}
 	}
-	
+
 	public void view_PublisherOnboarding(String reason) throws InterruptedException {
 		ECU_Type_ViewPublisher.click();
-		
+
 	}
 
 	public void delete_TPP() {
-	clickJS(Gloabl_delete_button);
-	waitForWebElementToAppear(confirm_delete_request);
-	waitForWebElementToAppear(confirm_delete);
-	waitForWebElementToAppear(delete_back);
-	waitForWebElementToAppear(delete_ok);
-	clickJS(delete_ok);
-}
-	
+		clickJS(Gloabl_delete_button);
+		waitForWebElementToAppear(confirm_delete_request);
+		waitForWebElementToAppear(confirm_delete);
+		waitForWebElementToAppear(delete_back);
+		waitForWebElementToAppear(delete_ok);
+		clickJS(delete_ok);
+	}
+
 	public void error_message_validation() throws InterruptedException {
 		Assert.assertEquals(error_message.getText(), "428 Precondition Required : Functional Role already exists!");
 	}
