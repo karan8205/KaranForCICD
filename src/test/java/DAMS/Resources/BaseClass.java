@@ -1,8 +1,8 @@
 package DAMS.Resources;
 
-import java.awt.AWTException;
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
+// import java.awt.AWTException;
+// import java.awt.Robot;
+// import java.awt.event.KeyEvent;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -82,55 +82,56 @@ public class BaseClass {
     public static ReadView_Permission read;
     public static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
 
-//    public static WebDriver initializeDriver(String mode) throws IOException {
-//        logger = Logger.getLogger("DAMS");
-//        PropertyConfigurator.configure("log4j.properties");
-//        Properties prop = new Properties();
-//        FileInputStream fis = new FileInputStream("./Configuration/config.properties");
-//        prop.load(fis);
-//        // String browserName = System.getProperty("browser")!=null ?
-//        // System.getProperty("browser") :prop.getProperty("browser");
-//        String browserName = prop.getProperty("browser");
-//        if (browserName.equals("chrome")) {
-//            downloadPath = System.getProperty("user.dir");
-//            System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
-//            Map<String, Object> chromePrefs = new HashMap<String, Object>();
-//            chromePrefs.put("profile.default_content_settings.popups", 0);
-//            chromePrefs.put("download.default_directory", downloadPath);
-//            chromePrefs.put("download.prompt_for_download", false);
-//            chromePrefs.put("download.directory_upgarde", true);
-//            chromePrefs.put("safebrowsing.enabled", true);
-//
-//            ChromeOptions options = new ChromeOptions();
-//            options.addArguments("--remote-allow-origins=*");
-//            options.setAcceptInsecureCerts(true);
-//            options.setExperimentalOption("prefs", chromePrefs);
-////            options.addArguments("--force-device-scale-factor=1.2");
-//             options.addArguments("--headless");
-//            // *** IMPORTANT FOR JENKINS ***
-////             options.addArguments("--headless=new"); // Headless mode
-//            options.addArguments("--window-size=1920,1080");
-//            options.addArguments("--no-sandbox");
-//            options.addArguments("--disable-dev-shm-usage");
-//            options.addArguments("--disable-gpu");
-//            if (mode.equals("incognito")) {  //incognito
-//                options.addArguments("--incognito", "--disable-popup-blocking");
-//            }
-//            WebDriverManager.chromedriver().setup();
-//            WebDriverManager.chromedriver().clearResolutionCache();
-//
-//            driver = new ChromeDriver(options);
-//            threadLocalDriver.set(driver);
-//        } else if (browserName.equals("edge")) {
-//            System.setProperty("webdriver.edge.driver", "./Drivers/msedgedriver.exe");
-//            driver = new EdgeDriver();
-//
-//        }
-////        driver.manage().window().maximize();
-//        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-//        driver.manage().deleteAllCookies();
-//        return driver;
-//    }
+    // public static WebDriver initializeDriver(String mode) throws IOException {
+    // logger = Logger.getLogger("DAMS");
+    // PropertyConfigurator.configure("log4j.properties");
+    // Properties prop = new Properties();
+    // FileInputStream fis = new
+    // FileInputStream("./Configuration/config.properties");
+    // prop.load(fis);
+    // // String browserName = System.getProperty("browser")!=null ?
+    // // System.getProperty("browser") :prop.getProperty("browser");
+    // String browserName = prop.getProperty("browser");
+    // if (browserName.equals("chrome")) {
+    // downloadPath = System.getProperty("user.dir");
+    // System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
+    // Map<String, Object> chromePrefs = new HashMap<String, Object>();
+    // chromePrefs.put("profile.default_content_settings.popups", 0);
+    // chromePrefs.put("download.default_directory", downloadPath);
+    // chromePrefs.put("download.prompt_for_download", false);
+    // chromePrefs.put("download.directory_upgarde", true);
+    // chromePrefs.put("safebrowsing.enabled", true);
+    //
+    // ChromeOptions options = new ChromeOptions();
+    // options.addArguments("--remote-allow-origins=*");
+    // options.setAcceptInsecureCerts(true);
+    // options.setExperimentalOption("prefs", chromePrefs);
+    //// options.addArguments("--force-device-scale-factor=1.2");
+    // options.addArguments("--headless");
+    // // *** IMPORTANT FOR JENKINS ***
+    //// options.addArguments("--headless=new"); // Headless mode
+    // options.addArguments("--window-size=1920,1080");
+    // options.addArguments("--no-sandbox");
+    // options.addArguments("--disable-dev-shm-usage");
+    // options.addArguments("--disable-gpu");
+    // if (mode.equals("incognito")) { //incognito
+    // options.addArguments("--incognito", "--disable-popup-blocking");
+    // }
+    // WebDriverManager.chromedriver().setup();
+    // WebDriverManager.chromedriver().clearResolutionCache();
+    //
+    // driver = new ChromeDriver(options);
+    // threadLocalDriver.set(driver);
+    // } else if (browserName.equals("edge")) {
+    // System.setProperty("webdriver.edge.driver", "./Drivers/msedgedriver.exe");
+    // driver = new EdgeDriver();
+    //
+    // }
+    //// driver.manage().window().maximize();
+    // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+    // driver.manage().deleteAllCookies();
+    // return driver;
+    // }
     public static WebDriver initializeDriver(String mode) throws IOException {
 
         logger = Logger.getLogger("DAMS");
@@ -159,7 +160,7 @@ public class BaseClass {
 
             // ✅ HEADLESS FIX FOR CHROME 143
             if ("true".equalsIgnoreCase(prop.getProperty("headless"))) {
-                options.addArguments("--headless=new");      // ✅ MUST
+                options.addArguments("--headless=new"); // ✅ MUST
                 options.addArguments("--window-size=1920,1080"); // force desktop
                 options.addArguments("--no-sandbox");
                 options.addArguments("--disable-dev-shm-usage");
@@ -184,7 +185,6 @@ public class BaseClass {
         driver.manage().deleteAllCookies();
         return driver;
     }
-
 
     public static WebDriver getDriver() {
         return threadLocalDriver.get(); // Retrieve WebDriver instance specific to the current thread
@@ -226,7 +226,7 @@ public class BaseClass {
     //
     // }
 
-    public static void windowZoomOut() throws AWTException, InterruptedException {
+    public static void windowZoomOut() throws  InterruptedException {
         Thread.sleep(2000);
         JavascriptExecutor js = (JavascriptExecutor) driver;
         js.executeScript("document.body.style.zoom='70%'");
@@ -575,33 +575,22 @@ public class BaseClass {
 
     }
 
-    public static void minimize_window() throws AWTException {
-        Robot robot = new Robot();
-        for (int i = 0; i < 3; i++) {
-            robot.keyPress(KeyEvent.VK_CONTROL);
-            robot.keyPress(KeyEvent.VK_SUBTRACT);
-            robot.keyRelease(KeyEvent.VK_SUBTRACT);
-            robot.keyRelease(KeyEvent.VK_CONTROL);
-        }
-
+    public static void minimize_window() throws InterruptedException {
+        Thread.sleep(2000);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.body.style.zoom='80%'");
     }
 
     public static void ClickTab() throws Throwable {
-        Robot robot = new Robot();
         Thread.sleep(2000);
-        robot.keyPress(KeyEvent.VK_TAB);
-        robot.keyRelease(KeyEvent.VK_TAB);
+        org.openqa.selenium.interactions.Actions actions = new org.openqa.selenium.interactions.Actions(driver);
+        actions.sendKeys(org.openqa.selenium.Keys.TAB).build().perform();
     }
 
-    public static void maximize_window() throws AWTException {
-        Robot robot = new Robot();
-        for (int i = 0; i < 3; i++) {
-            robot.keyPress(KeyEvent.VK_CONTROL);
-            robot.keyPress(KeyEvent.VK_ADD);
-            robot.keyRelease(KeyEvent.VK_ADD);
-            robot.keyRelease(KeyEvent.VK_CONTROL);
-        }
-
+    public static void maximize_window() throws InterruptedException {
+        Thread.sleep(2000);
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.body.style.zoom='100%'");
     }
 
     public static String[] extract_column_values_from_Global_table(List<WebElement> element) {

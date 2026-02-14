@@ -2,8 +2,8 @@ package DAMS.Testcases.Smoke_Suite_1;
 
 import static DAMS.Resources.Listeners.test;
 
-import java.awt.Robot;
-import java.awt.event.KeyEvent;
+// import java.awt.Robot;
+// import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.Base64;
@@ -19,7 +19,7 @@ import com.aventstack.extentreports.Status;
 import DAMS.Resources.BaseClass;
 
 public class TC02_Requests_STD_GLOBAL extends BaseClass {
-	
+
 	@Test(dataProvider = "getData_Internal", priority = 0)
 	public static void apply_internal_functional_role_create_test_case(HashMap<String, String> input) throws Throwable {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
@@ -49,7 +49,7 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 	public static void apply_supplier_functional_role_create_test_case(HashMap<String, String> input) throws Throwable {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Supplier Functional role request - status pending:" + "</u></i></b>");
-	
+
 		String select_user_type = login_and_select_user_Global(prop.get_User_type_Supplier());
 		String functional_role_selected = raise_Supplier_functional_role(input);
 		test.pass("Raised request for the functional role " + functional_role_selected);
@@ -58,7 +58,7 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 		softAssertionALL();
 	}
 
-	@Test(dataProvider = "getData_Supplier",enabled=false)
+	@Test(dataProvider = "getData_Supplier", enabled = false)
 	public static List<Object> apply_supplier_functional_role_create_test_case_myDeputy(HashMap<String, String> input)
 			throws Throwable {
 		TC01_Login_MFA.login_with_addressing_MFA_Supplier();
@@ -111,7 +111,7 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 
 	public static List<Object> functional_role_Overview_table_validation(String select_user_type) throws Throwable {
 		f.functional_role_overview_enabled_validation();
-		
+
 		List<Object> functional_role_Overview_table_validation = f.functional_role_Overview_table_validation("Myself",
 				prop.getUser_name(), select_user_type);
 		softassertTrue(s, (boolean) functional_role_Overview_table_validation.get(0).equals(prop.getStatus_pending()));
@@ -125,36 +125,39 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 
 	}
 
-//	public static String login_and_select_user(String user_type) throws Throwable {
-//		TC01_Login_MFA.login_with_addressing_MFA_Supplier(user_type);
-//		h.dropBtn();
-//		String select_user_type = h.select_user_type(user_type);
-//		test.log(Status.INFO, "User is able to select the type:" + "<span style=\"color: blue;\"><b><i><u>"
-//				+ select_user_type + "</u></i></b>");
-//		gtc.gtc_page_validation();
-//		test.info("Validate the gtc page");
-//		logger.info("Validate the gtc page");
-//		Thread.sleep(2000);
-//		Robot robot = new Robot();
-//		logger.info("About to zoom out");
-//		for (int i = 0; i < 3; i++) {
-//			robot.keyPress(KeyEvent.VK_CONTROL);
-//			robot.keyPress(KeyEvent.VK_SUBTRACT);
-//			robot.keyRelease(KeyEvent.VK_SUBTRACT);
-//			robot.keyRelease(KeyEvent.VK_CONTROL);
-//		}
-//		newrequest.select_vehicle_program_global();
-////		newrequest.select_vehicle_program_AP4();
-//		
-//		newrequest.functional_role_page_validation(prop.get_for_whom_txt(), prop.get_myself_txt(),
-//				prop.get_Functional_role_txt());
-//		
-//		test.pass("Validate the functional role page");
-//		logger.info("Validate the functional role page");
-//		logger.info("*************"+select_user_type);
-//
-//		return select_user_type;
-//	}
+	// public static String login_and_select_user(String user_type) throws Throwable
+	// {
+	// TC01_Login_MFA.login_with_addressing_MFA_Supplier(user_type);
+	// h.dropBtn();
+	// String select_user_type = h.select_user_type(user_type);
+	// test.log(Status.INFO, "User is able to select the type:" + "<span
+	// style=\"color: blue;\"><b><i><u>"
+	// + select_user_type + "</u></i></b>");
+	// gtc.gtc_page_validation();
+	// test.info("Validate the gtc page");
+	// logger.info("Validate the gtc page");
+	// Thread.sleep(2000);
+	// Robot robot = new Robot();
+	// logger.info("About to zoom out");
+	// for (int i = 0; i < 3; i++) {
+	// robot.keyPress(KeyEvent.VK_CONTROL);
+	// robot.keyPress(KeyEvent.VK_SUBTRACT);
+	// robot.keyRelease(KeyEvent.VK_SUBTRACT);
+	// robot.keyRelease(KeyEvent.VK_CONTROL);
+	// }
+	// newrequest.select_vehicle_program_global();
+	//// newrequest.select_vehicle_program_AP4();
+	//
+	// newrequest.functional_role_page_validation(prop.get_for_whom_txt(),
+	// prop.get_myself_txt(),
+	// prop.get_Functional_role_txt());
+	//
+	// test.pass("Validate the functional role page");
+	// logger.info("Validate the functional role page");
+	// logger.info("*************"+select_user_type);
+	//
+	// return select_user_type;
+	// }
 
 	public static String raise_Internal_functional_role(HashMap<String, String> input) throws Throwable {
 		String functional_role_selected = newrequest.raise_Internal_functional_role_request(
@@ -205,98 +208,90 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 	}
 
 	public static String login_and_select_user_Global(String user_type) throws Throwable {
-//	    TC01_Login_MFA.login_with_addressing_MFA();
-		   if ("Internal".equalsIgnoreCase(user_type)) {
-		     
-		        TC01_Login_MFA.login_with_addressing_MFA_Internal();
-		    } 
-		   else if ("External".equalsIgnoreCase(user_type)) {
-		        
-		        TC01_Login_MFA.login_with_addressing_MFA_External();
-		    } 
-		   else if ("Supplier".equalsIgnoreCase(user_type)) {
-			
-		        TC01_Login_MFA.login_with_addressing_MFA_Supplier();
-		    } 
-		   else {
-		        throw new RuntimeException("Invalid user_type passed: " + user_type);
-		    }
-	    Thread.sleep(3000);
-	    waitForPageLoad(driver);
-	    // hari
-//	    h.dropBtn();
+		// TC01_Login_MFA.login_with_addressing_MFA();
+		if ("Internal".equalsIgnoreCase(user_type)) {
 
-	    String select_user_type = null;
+			TC01_Login_MFA.login_with_addressing_MFA_Internal();
+		} else if ("External".equalsIgnoreCase(user_type)) {
 
-	    if ("Internal".equalsIgnoreCase(user_type)) {
-	        h.click_here_to_apply_for_functional_roles_click();
-	        select_user_type = user_type;
-	    } else {
-	    	
-	        select_user_type = h.select_user_type(user_type);
-	        test.log(Status.INFO, "User is selects the type:" + "<span style=\"color: blue;\"><b><i><u>"
-	                + select_user_type + "</u></i></b>");
-	    }
-	    
-	    Thread.sleep(3000);
-	    gtc.gtc_page_validation();
-	    test.info("User validates the gtc page");
-	    logger.info("User validates the gtc page");
-	    Thread.sleep(5000);
+			TC01_Login_MFA.login_with_addressing_MFA_External();
+		} else if ("Supplier".equalsIgnoreCase(user_type)) {
 
-//	    JavascriptExecutor js = (JavascriptExecutor) driver;
-//	    js.executeScript("document.body.style.zoom='80%'");
-	    
-	    newrequest.select_vehicle_program_global(user_type);        
-	    newrequest.functional_role_page_validation(prop.get_for_whom_txt(), prop.get_myself_txt(),
-	            prop.get_Functional_role_txt());
-	    
-	    test.pass("validates the functional role page");
-	    logger.info("validates the functional role page");
-	    logger.info("*************" + select_user_type);
-	    
-	    return select_user_type;
+			TC01_Login_MFA.login_with_addressing_MFA_Supplier();
+		} else {
+			throw new RuntimeException("Invalid user_type passed: " + user_type);
+		}
+		Thread.sleep(3000);
+		waitForPageLoad(driver);
+		// hari
+		// h.dropBtn();
+
+		String select_user_type = null;
+
+		if ("Internal".equalsIgnoreCase(user_type)) {
+			h.click_here_to_apply_for_functional_roles_click();
+			select_user_type = user_type;
+		} else {
+
+			select_user_type = h.select_user_type(user_type);
+			test.log(Status.INFO, "User is selects the type:" + "<span style=\"color: blue;\"><b><i><u>"
+					+ select_user_type + "</u></i></b>");
+		}
+
+		Thread.sleep(3000);
+		gtc.gtc_page_validation();
+		test.info("User validates the gtc page");
+		logger.info("User validates the gtc page");
+		Thread.sleep(5000);
+
+		// JavascriptExecutor js = (JavascriptExecutor) driver;
+		// js.executeScript("document.body.style.zoom='80%'");
+
+		newrequest.select_vehicle_program_global(user_type);
+		newrequest.functional_role_page_validation(prop.get_for_whom_txt(), prop.get_myself_txt(),
+				prop.get_Functional_role_txt());
+
+		test.pass("validates the functional role page");
+		logger.info("validates the functional role page");
+		logger.info("*************" + select_user_type);
+
+		return select_user_type;
 	}
+
 	public static String select_user_Global(String user_type) throws Throwable {
-	    
-	    
-	    // hari
-	    h.dropBtn();
 
-	    String select_user_type = null;
+		// hari
+		h.dropBtn();
 
-	    if ("Internal".equalsIgnoreCase(user_type)) {
-	        h.click_here_to_apply_for_functional_roles_click();
-	        select_user_type = user_type;
-	    } else {
-	        select_user_type = h.select_user_type(user_type);
-	        test.log(Status.INFO, "User is selects the type:" + "<span style=\"color: blue;\"><b><i><u>"
-	                + select_user_type + "</u></i></b>");
-	    }
-	    
-	    Thread.sleep(3000);
-	    gtc.gtc_page_validation();
-	    test.info("User validates the gtc page");
-	    logger.info("User validates the gtc page");
-	    Thread.sleep(5000);
+		String select_user_type = null;
 
-	    Robot robot = new Robot();
-	    logger.info("About to zoom out");
-	    for (int i = 0; i < 3; i++) {
-	        robot.keyPress(KeyEvent.VK_CONTROL);
-	        robot.keyPress(KeyEvent.VK_SUBTRACT);
-	        robot.keyRelease(KeyEvent.VK_SUBTRACT);
-	        robot.keyRelease(KeyEvent.VK_CONTROL);
-	    }
-	    
-	    newrequest.select_vehicle_program_global(user_type);        
-	    newrequest.functional_role_page_validation(prop.get_for_whom_txt(), prop.get_myself_txt(),
-	            prop.get_Functional_role_txt());
-	    
-	    test.pass("validates the functional role page");
-	    logger.info("validates the functional role page");
-	    logger.info("*************" + select_user_type);
-	    
-	    return select_user_type;
+		if ("Internal".equalsIgnoreCase(user_type)) {
+			h.click_here_to_apply_for_functional_roles_click();
+			select_user_type = user_type;
+		} else {
+			select_user_type = h.select_user_type(user_type);
+			test.log(Status.INFO, "User is selects the type:" + "<span style=\"color: blue;\"><b><i><u>"
+					+ select_user_type + "</u></i></b>");
+		}
+
+		Thread.sleep(3000);
+		gtc.gtc_page_validation();
+		test.info("User validates the gtc page");
+		logger.info("User validates the gtc page");
+		Thread.sleep(5000);
+
+		logger.info("About to zoom out");
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("document.body.style.zoom='80%'");
+
+		newrequest.select_vehicle_program_global(user_type);
+		newrequest.functional_role_page_validation(prop.get_for_whom_txt(), prop.get_myself_txt(),
+				prop.get_Functional_role_txt());
+
+		test.pass("validates the functional role page");
+		logger.info("validates the functional role page");
+		logger.info("*************" + select_user_type);
+
+		return select_user_type;
 	}
 }

@@ -2,7 +2,8 @@ package DAMS.Testcases.Regression_Suite.Internal;
 
 import static DAMS.Resources.Listeners.test;
 
-import java.awt.Robot;
+
+
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
@@ -276,7 +277,6 @@ public class TC014_Internal_OverAll_Run extends BaseClass {
 	    logger.info("User validates the gtc page");
 	    Thread.sleep(5000);
 
-	    Robot robot = new Robot();
 	    logger.info("About to zoom out");
 	    JavascriptExecutor js = (JavascriptExecutor) driver;
 	    js.executeScript("document.body.style.zoom='80%'"); 	    

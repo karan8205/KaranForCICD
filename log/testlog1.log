@@ -18363,3 +18363,644 @@
 2026-02-12 00:03:18,704 [main] INFO DAMS - Element Not Enabled
 2026-02-12 00:03:22,159 [main] INFO DAMS - User is able to view navigate to request role overview page and check if the status is appproved after 2nd level approval
 2026-02-12 00:03:34,792 [main] INFO DAMS - Clicked
+2026-02-14 16:09:31,086 [main] INFO DAMS - User is login to application
+2026-02-14 16:09:31,110 [main] INFO DAMS - USER TYPE External
+2026-02-14 16:09:31,110 [main] INFO DAMS - m6kxhsnb6hssxztq
+2026-02-14 16:09:32,975 [main] INFO DAMS - User enters the verification code and click on verify button
+2026-02-14 16:10:09,371 [main] INFO DAMS - 1
+2026-02-14 16:10:17,793 [main] INFO DAMS - External
+2026-02-14 16:10:17,862 [main] INFO DAMS - Supplier
+2026-02-14 16:10:17,874 [main] INFO DAMS - User is able to view User_types in dropdown
+2026-02-14 16:10:21,404 [main] INFO DAMS - Click here to apply for functional roles is enabled
+2026-02-14 16:10:25,426 [main] INFO DAMS - https://dams-stg.azurewebsites.net/dams/#/
+2026-02-14 16:10:25,426 [main] INFO DAMS - User is successfully redirected into GTC Page
+2026-02-14 16:10:51,022 [main] INFO DAMS - Proceed Button Clicked
+2026-02-14 16:10:51,023 [main] INFO DAMS - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-14 16:10:51,024 [main] INFO DAMS - User validates the gtc page
+2026-02-14 16:10:56,364 [main] INFO DAMS - About to zoom out
+2026-02-14 16:10:56,373 [main] INFO DAMS - User is Select the ECU Chain of Trust Type
+2026-02-14 16:11:03,028 [main] INFO DAMS - validates the functional role page
+2026-02-14 16:11:03,028 [main] INFO DAMS - *************External
+2026-02-14 16:11:05,593 [main] INFO DAMS - functional Role : Development External Support
+2026-02-14 16:11:05,593 [main] INFO DAMS - User Type :Development External Support
+2026-02-14 16:11:05,620 [main] INFO DAMS - user type Bus Production Tool Development External name Development External Support
+2026-02-14 16:11:05,650 [main] INFO DAMS - user type Development External Support name Development External Support
+2026-02-14 16:11:06,906 [main] INFO DAMS - ****** Company Selection *********
+2026-02-14 16:11:11,304 [main] INFO DAMS - user type A&D Technology name Robert Bosch
+2026-02-14 16:11:11,356 [main] INFO DAMS - user type Actalent name Robert Bosch
+2026-02-14 16:11:11,413 [main] INFO DAMS - user type ADC Automotive Distance name Robert Bosch
+2026-02-14 16:11:11,473 [main] INFO DAMS - user type AKKODIS name Robert Bosch
+2026-02-14 16:11:11,527 [main] INFO DAMS - user type Anstalt für Verbrennungskraftmaschinen List (AVL) name Robert Bosch
+2026-02-14 16:11:11,581 [main] INFO DAMS - user type APTIV COMPONENTS INDIA PVT.LTD name Robert Bosch
+2026-02-14 16:11:11,636 [main] INFO DAMS - user type ARTECH name Robert Bosch
+2026-02-14 16:11:11,693 [main] INFO DAMS - user type ASK Industries S.p.A. name Robert Bosch
+2026-02-14 16:11:11,754 [main] INFO DAMS - user type AUO Corporation name Robert Bosch
+2026-02-14 16:11:11,806 [main] INFO DAMS - user type BCS Automotive Interface Solutions name Robert Bosch
+2026-02-14 16:11:11,862 [main] INFO DAMS - user type Bendix name Robert Bosch
+2026-02-14 16:11:11,924 [main] INFO DAMS - user type Calex name Robert Bosch
+2026-02-14 16:11:11,981 [main] INFO DAMS - user type Calex-DCDC name Robert Bosch
+2026-02-14 16:11:12,036 [main] INFO DAMS - user type CellCentric name Robert Bosch
+2026-02-14 16:11:12,091 [main] INFO DAMS - user type Contemporary Amperex name Robert Bosch
+2026-02-14 16:11:12,150 [main] INFO DAMS - user type Continental name Robert Bosch
+2026-02-14 16:11:12,207 [main] INFO DAMS - user type DAIMIA name Robert Bosch
+2026-02-14 16:11:12,275 [main] INFO DAMS - user type Danfoss name Robert Bosch
+2026-02-14 16:11:12,324 [main] INFO DAMS - user type Engbras Software e Projetos name Robert Bosch
+2026-02-14 16:11:12,375 [main] INFO DAMS - user type FEV GmBH name Robert Bosch
+2026-02-14 16:11:12,424 [main] INFO DAMS - user type Knorr-Bremse Systeme für name Robert Bosch
+2026-02-14 16:11:12,481 [main] INFO DAMS - user type Marquardt GmbH name Robert Bosch
+2026-02-14 16:11:12,538 [main] INFO DAMS - user type Meta System S.p.A. name Robert Bosch
+2026-02-14 16:11:12,591 [main] INFO DAMS - user type Munich Electrification name Robert Bosch
+2026-02-14 16:11:12,643 [main] INFO DAMS - user type Murata name Robert Bosch
+2026-02-14 16:11:12,694 [main] INFO DAMS - user type Optimabit name Robert Bosch
+2026-02-14 16:11:12,748 [main] INFO DAMS - user type Robert Bosch name Robert Bosch
+2026-02-14 16:11:13,843 [main] INFO DAMS - ******** Company Selected ***********Robert Bosch
+2026-02-14 16:11:20,395 [main] INFO DAMS - BU : DTE
+2026-02-14 16:11:20,441 [main] INFO DAMS - user type BUS name DTE
+2026-02-14 16:11:20,478 [main] INFO DAMS - user type DTE name DTE
+2026-02-14 16:11:23,887 [main] INFO DAMS - Request created and in pending status Development External Support
+2026-02-14 16:12:08,448 [main] INFO DAMS - User is able to view the approval status as pending once the request created
+2026-02-14 16:12:08,448 [main] INFO DAMS - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 4193, HARNAGA, Technical_User_Owner, N/A, Hariharan Nagarajan, TT/IGX-24, External, Development External Support, DTE, Robert Bosch, null, true, 02/14/2026, N/A, N/A, Robert Bosch, N/A]</u></i></b>
+2026-02-14 16:12:52,462 [main] INFO DAMS - User is able to view the approval status as pending once the request created
+2026-02-14 16:12:52,462 [main] INFO DAMS - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 4193, HARNAGA, Technical_User_Owner, N/A, Hariharan Nagarajan, TT/IGX-24, External, Development External Support, DTE, Robert Bosch, null, true, 02/14/2026, N/A, N/A, Robert Bosch, N/A]</u></i></b>
+2026-02-14 16:12:52,464 [main] INFO DAMS - User is able to raise the request for the functional role null
+2026-02-14 16:12:53,748 [main] INFO DAMS - Clicked
+2026-02-14 16:12:58,818 [main] INFO DAMS - ***Authorization_List: Functional Role
+2026-02-14 16:12:58,980 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:12:58,980 [main] INFO DAMS - Functional Role
+2026-02-14 16:12:59,070 [main] INFO DAMS - Functional Role
+2026-02-14 16:12:59,070 [main] INFO DAMS - Functional Role
+2026-02-14 16:13:18,831 [main] INFO DAMS - User is able to approve 1st level approval
+2026-02-14 16:13:48,064 [main] INFO DAMS - User navigate to Functional role overview page and check if the status is pending after 1st level approval
+2026-02-14 16:13:49,334 [main] INFO DAMS - Clicked
+2026-02-14 16:13:54,382 [main] INFO DAMS - ***Authorization_List: Functional Role
+2026-02-14 16:13:54,543 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:13:54,543 [main] INFO DAMS - Functional Role
+2026-02-14 16:13:54,634 [main] INFO DAMS - Functional Role
+2026-02-14 16:13:54,634 [main] INFO DAMS - Functional Role
+2026-02-14 16:14:13,811 [main] INFO DAMS - User is able to approve 2nd level approval
+2026-02-14 16:14:32,890 [main] INFO DAMS - Requestor details : []
+2026-02-14 16:14:32,893 [main] INFO DAMS - Verified the Certificate of the Functional role
+2026-02-14 16:14:43,682 [main] INFO DAMS - User is able to view the Standard Certificate for the raised functional roleAfter-Sales ENHANCED,After-Sales STANDARD
+2026-02-14 16:15:10,900 [main] INFO DAMS - User is able to select New permission request
+2026-02-14 16:15:12,427 [main] INFO DAMS - value selected : Development External Support
+2026-02-14 16:15:12,428 [main] INFO DAMS - [ACM311T]
+2026-02-14 16:15:12,428 [main] INFO DAMS - [Development ENHANCED]
+2026-02-14 16:15:15,448 [main] INFO DAMS - **** functional role value :Development External Support
+2026-02-14 16:15:16,856 [main] INFO DAMS - Development ENHANCED
+2026-02-14 16:15:20,752 [main] INFO DAMS - usertype: Development ENHANCED *** name : Development ENHANCED
+2026-02-14 16:15:27,393 [main] INFO DAMS - usertype: AAGW01T *** name : ACM311T
+2026-02-14 16:15:28,981 [main] INFO DAMS - usertype: ACM311T *** name : ACM311T
+2026-02-14 16:15:29,673 [main] INFO DAMS - selcted ECU is ACM311T
+2026-02-14 16:15:32,685 [main] INFO DAMS - reason : Certificate Request for Diagnostic Authority
+2026-02-14 16:15:53,878 [main] INFO DAMS - Myself
+2026-02-14 16:16:14,038 [main] INFO DAMS - 1
+2026-02-14 16:16:14,038 [main] INFO DAMS -  ************* Development ENHANCED
+2026-02-14 16:16:14,039 [main] INFO DAMS -  ************* 11838
+2026-02-14 16:16:15,240 [main] INFO DAMS - Clicked
+2026-02-14 16:16:22,303 [main] INFO DAMS - ***Authorization_List: Diagnostic Authority
+2026-02-14 16:16:22,415 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:16:22,415 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:16:22,459 [main] INFO DAMS - Functional Role
+2026-02-14 16:16:22,459 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:16:22,502 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:16:22,502 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:16:41,690 [main] INFO DAMS - View the approval status as Approved after 1st level approval
+2026-02-14 16:17:00,336 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:17:50,980 [main] INFO DAMS - View navigate to request overview page and status is pending after 1st level approval
+2026-02-14 16:17:52,163 [main] INFO DAMS - Clicked
+2026-02-14 16:17:59,227 [main] INFO DAMS - ***Authorization_List: Diagnostic Authority
+2026-02-14 16:17:59,407 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:17:59,409 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:17:59,494 [main] INFO DAMS - Functional Role
+2026-02-14 16:17:59,494 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:17:59,561 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:17:59,561 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:18:18,940 [main] INFO DAMS - View the approval status as Approved after 2nd level approval
+2026-02-14 16:18:37,644 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:19:00,563 [main] INFO DAMS - Element Not Enabled
+2026-02-14 16:19:26,094 [main] INFO DAMS - View navigae to request overview page and status is approved after 2nd level approval
+2026-02-14 16:19:26,094 [main] INFO DAMS - Verify selected ecu is not visible when the status is in approved
+2026-02-14 16:19:44,117 [main] INFO DAMS - Enhance_Right_Authority_request
+2026-02-14 16:19:53,799 [main] INFO DAMS - User is able to select New permission request
+2026-02-14 16:19:58,463 [main] INFO DAMS - functional role selectedDevelopment External Support
+2026-02-14 16:19:58,463 [main] INFO DAMS - [ACM311T]
+2026-02-14 16:19:58,464 [main] INFO DAMS - [Development ENHANCED]
+2026-02-14 16:20:00,480 [main] INFO DAMS - **** functional role value :Development External Support
+2026-02-14 16:20:01,885 [main] INFO DAMS - Development ENHANCED
+2026-02-14 16:20:10,034 [main] INFO DAMS - usertype: ACM311T *** name : ACM311T
+2026-02-14 16:20:10,756 [main] INFO DAMS - ECU selectedACM311T
+2026-02-14 16:20:11,389 [main] INFO DAMS - User is able to enter serviceID,validity and reason
+2026-02-14 16:20:11,469 [main] INFO DAMS - EnhancedRightAuthority Request is Created
+2026-02-14 16:20:35,215 [main] INFO DAMS - Enhance Right
+2026-02-14 16:20:47,567 [main] INFO DAMS - Myself
+2026-02-14 16:21:08,304 [main] INFO DAMS - EA Request Number : [1293]
+2026-02-14 16:21:08,304 [main] INFO DAMS - EA User Role : [Development ENHANCED]
+2026-02-14 16:21:09,533 [main] INFO DAMS - Clicked
+2026-02-14 16:21:14,611 [main] INFO DAMS - ***Authorization_List: Enhance Right
+2026-02-14 16:21:14,790 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:21:14,790 [main] INFO DAMS - Enhance Right
+2026-02-14 16:21:14,875 [main] INFO DAMS - Functional Role
+2026-02-14 16:21:14,875 [main] INFO DAMS - Enhance Right
+2026-02-14 16:21:14,961 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:21:14,961 [main] INFO DAMS - Enhance Right
+2026-02-14 16:21:15,051 [main] INFO DAMS - ECU Certificate Request
+2026-02-14 16:21:15,051 [main] INFO DAMS - Enhance Right
+2026-02-14 16:21:15,109 [main] INFO DAMS - Enhance Right
+2026-02-14 16:21:15,109 [main] INFO DAMS - Enhance Right
+2026-02-14 16:21:52,647 [main] INFO DAMS - View the approval status as Approved after 1st level approval
+2026-02-14 16:22:03,982 [main] INFO DAMS - Enhance Right
+2026-02-14 16:22:10,261 [main] INFO DAMS - Enhance Right
+2026-02-14 16:22:22,625 [main] INFO DAMS - Myself
+2026-02-14 16:22:42,210 [main] INFO DAMS - View navigate to request overview page and status is pending after 1st level approval
+2026-02-14 16:22:43,489 [main] INFO DAMS - Clicked
+2026-02-14 16:22:48,565 [main] INFO DAMS - ***Authorization_List: Enhance Right
+2026-02-14 16:22:48,726 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:22:48,726 [main] INFO DAMS - Enhance Right
+2026-02-14 16:22:48,813 [main] INFO DAMS - Functional Role
+2026-02-14 16:22:48,813 [main] INFO DAMS - Enhance Right
+2026-02-14 16:22:48,888 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:22:48,888 [main] INFO DAMS - Enhance Right
+2026-02-14 16:22:48,963 [main] INFO DAMS - ECU Certificate Request
+2026-02-14 16:22:48,963 [main] INFO DAMS - Enhance Right
+2026-02-14 16:22:49,023 [main] INFO DAMS - Enhance Right
+2026-02-14 16:22:49,023 [main] INFO DAMS - Enhance Right
+2026-02-14 16:23:19,975 [main] INFO DAMS - View the approval status as Approved after 2nd level approval
+2026-02-14 16:23:31,309 [main] INFO DAMS - Enhance Right
+2026-02-14 16:23:37,675 [main] INFO DAMS - Enhance Right
+2026-02-14 16:23:50,054 [main] INFO DAMS - Myself
+2026-02-14 16:24:09,728 [main] INFO DAMS - View navigate to request overview page and status is approved after 2nd level approval
+2026-02-14 16:24:21,172 [main] INFO DAMS - Replacement package request
+2026-02-14 16:24:30,746 [main] INFO DAMS - User is able to select New permission request
+2026-02-14 16:24:34,031 [main] INFO DAMS - **** functional role value :Development External Support
+2026-02-14 16:24:39,335 [main] INFO DAMS - usertype: Nest-T Testing *** name : Replacement Package
+2026-02-14 16:24:40,928 [main] INFO DAMS - usertype: Replacement Package *** name : Replacement Package
+2026-02-14 16:24:41,615 [main] INFO DAMS - SpecialCase:  Replacement Package
+2026-02-14 16:24:53,901 [main] INFO DAMS - usertype: Root T1 *** name : Root T1
+2026-02-14 16:24:54,593 [main] INFO DAMS - User selected the origin_cot: Root T1
+2026-02-14 16:25:02,941 [main] INFO DAMS - usertype: AAGW01T *** name : AAGW01T
+2026-02-14 16:25:05,746 [main] INFO DAMS - Certificate Request for Replacement Package
+2026-02-14 16:25:19,291 [main] INFO DAMS - usertype: Root T1 *** name : Root T1
+2026-02-14 16:25:19,979 [main] INFO DAMS - User selected the origin_cot: Root T1
+2026-02-14 16:25:28,198 [main] INFO DAMS - usertype: AAGW01T *** name : AAGW01T
+2026-02-14 16:25:30,939 [main] INFO DAMS - Certificate Request for Replacement Package
+2026-02-14 16:25:32,282 [main] INFO DAMS - Replacement Package SpecialCase Request is Created
+2026-02-14 16:25:34,379 [main] INFO DAMS - Request overview tab enabled
+2026-02-14 16:25:51,198 [main] INFO DAMS - Replacement Package
+2026-02-14 16:26:10,366 [main] INFO DAMS - User is able to view the approval status as pending once the Replacement package request created
+2026-02-14 16:26:14,616 [main] INFO DAMS - Clicked
+2026-02-14 16:26:48,164 [main] INFO DAMS - ***Authorization_List: Replacement Package
+2026-02-14 16:26:48,327 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:26:48,327 [main] INFO DAMS - Replacement Package
+2026-02-14 16:26:48,404 [main] INFO DAMS - Functional Role
+2026-02-14 16:26:48,404 [main] INFO DAMS - Replacement Package
+2026-02-14 16:26:48,509 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:26:48,511 [main] INFO DAMS - Replacement Package
+2026-02-14 16:26:48,582 [main] INFO DAMS - ECU Certificate Request
+2026-02-14 16:26:48,582 [main] INFO DAMS - Replacement Package
+2026-02-14 16:26:48,679 [main] INFO DAMS - Enhance Right
+2026-02-14 16:26:48,679 [main] INFO DAMS - Replacement Package
+2026-02-14 16:26:48,764 [main] INFO DAMS - FOTA
+2026-02-14 16:26:48,764 [main] INFO DAMS - Replacement Package
+2026-02-14 16:26:48,849 [main] INFO DAMS - Nest T Testing
+2026-02-14 16:26:48,849 [main] INFO DAMS - Replacement Package
+2026-02-14 16:26:48,926 [main] INFO DAMS - Onboard New ECU
+2026-02-14 16:26:48,926 [main] INFO DAMS - Replacement Package
+2026-02-14 16:26:49,006 [main] INFO DAMS - Replacement Package
+2026-02-14 16:26:49,006 [main] INFO DAMS - Replacement Package
+2026-02-14 16:27:02,729 [main] INFO DAMS - Clicked
+2026-02-14 16:27:30,031 [main] INFO DAMS - ***Authorization_List: Replacement Package
+2026-02-14 16:27:30,211 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:27:30,212 [main] INFO DAMS - Replacement Package
+2026-02-14 16:27:30,296 [main] INFO DAMS - Functional Role
+2026-02-14 16:27:30,296 [main] INFO DAMS - Replacement Package
+2026-02-14 16:27:30,390 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:27:30,390 [main] INFO DAMS - Replacement Package
+2026-02-14 16:27:30,481 [main] INFO DAMS - ECU Certificate Request
+2026-02-14 16:27:30,481 [main] INFO DAMS - Replacement Package
+2026-02-14 16:27:30,556 [main] INFO DAMS - Enhance Right
+2026-02-14 16:27:30,564 [main] INFO DAMS - Replacement Package
+2026-02-14 16:27:30,662 [main] INFO DAMS - FOTA
+2026-02-14 16:27:30,662 [main] INFO DAMS - Replacement Package
+2026-02-14 16:27:30,732 [main] INFO DAMS - Nest T Testing
+2026-02-14 16:27:30,732 [main] INFO DAMS - Replacement Package
+2026-02-14 16:27:30,806 [main] INFO DAMS - Onboard New ECU
+2026-02-14 16:27:30,806 [main] INFO DAMS - Replacement Package
+2026-02-14 16:27:30,879 [main] INFO DAMS - Replacement Package
+2026-02-14 16:27:30,879 [main] INFO DAMS - Replacement Package
+2026-02-14 16:27:45,621 [main] INFO DAMS - User is able to view the approval status as Approved after 1st level approval
+2026-02-14 16:28:04,327 [main] INFO DAMS - Replacement Package
+2026-02-14 16:28:27,536 [main] INFO DAMS - Element Not Enabled
+2026-02-14 16:28:30,923 [main] INFO DAMS - User is able to view navigate to request role overview page and check if the status is pending after 1st level approval
+2026-02-14 16:28:32,214 [main] INFO DAMS - Clicked
+2026-02-14 16:28:53,489 [main] INFO DAMS - ***Authorization_List: Replacement Package
+2026-02-14 16:28:53,595 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:28:53,595 [main] INFO DAMS - Replacement Package
+2026-02-14 16:28:53,645 [main] INFO DAMS - Functional Role
+2026-02-14 16:28:53,645 [main] INFO DAMS - Replacement Package
+2026-02-14 16:28:53,728 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:28:53,728 [main] INFO DAMS - Replacement Package
+2026-02-14 16:28:53,791 [main] INFO DAMS - ECU Certificate Request
+2026-02-14 16:28:53,791 [main] INFO DAMS - Replacement Package
+2026-02-14 16:28:53,866 [main] INFO DAMS - Enhance Right
+2026-02-14 16:28:53,866 [main] INFO DAMS - Replacement Package
+2026-02-14 16:28:53,940 [main] INFO DAMS - FOTA
+2026-02-14 16:28:53,940 [main] INFO DAMS - Replacement Package
+2026-02-14 16:28:54,013 [main] INFO DAMS - Nest T Testing
+2026-02-14 16:28:54,013 [main] INFO DAMS - Replacement Package
+2026-02-14 16:28:54,094 [main] INFO DAMS - Onboard New ECU
+2026-02-14 16:28:54,094 [main] INFO DAMS - Replacement Package
+2026-02-14 16:28:54,179 [main] INFO DAMS - Replacement Package
+2026-02-14 16:28:54,179 [main] INFO DAMS - Replacement Package
+2026-02-14 16:29:07,711 [main] INFO DAMS - Clicked
+2026-02-14 16:29:45,892 [main] INFO DAMS - ***Authorization_List: Replacement Package
+2026-02-14 16:29:46,075 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:29:46,075 [main] INFO DAMS - Replacement Package
+2026-02-14 16:29:46,169 [main] INFO DAMS - Functional Role
+2026-02-14 16:29:46,171 [main] INFO DAMS - Replacement Package
+2026-02-14 16:29:46,248 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:29:46,248 [main] INFO DAMS - Replacement Package
+2026-02-14 16:29:46,316 [main] INFO DAMS - ECU Certificate Request
+2026-02-14 16:29:46,316 [main] INFO DAMS - Replacement Package
+2026-02-14 16:29:46,407 [main] INFO DAMS - Enhance Right
+2026-02-14 16:29:46,407 [main] INFO DAMS - Replacement Package
+2026-02-14 16:29:46,482 [main] INFO DAMS - FOTA
+2026-02-14 16:29:46,482 [main] INFO DAMS - Replacement Package
+2026-02-14 16:29:46,572 [main] INFO DAMS - Nest T Testing
+2026-02-14 16:29:46,572 [main] INFO DAMS - Replacement Package
+2026-02-14 16:29:46,639 [main] INFO DAMS - Onboard New ECU
+2026-02-14 16:29:46,639 [main] INFO DAMS - Replacement Package
+2026-02-14 16:29:46,725 [main] INFO DAMS - Replacement Package
+2026-02-14 16:29:46,725 [main] INFO DAMS - Replacement Package
+2026-02-14 16:30:01,376 [main] INFO DAMS - User is able to view the approval status as Approved after 2nd level approval
+2026-02-14 16:30:20,182 [main] INFO DAMS - Replacement Package
+2026-02-14 16:30:43,366 [main] INFO DAMS - Element Not Enabled
+2026-02-14 16:30:46,690 [main] INFO DAMS - User is able to view navigate to request role overview page and check if the status is appproved after 2nd level approval
+2026-02-14 16:30:49,725 [main] INFO DAMS - Replacement package request
+2026-02-14 16:30:59,252 [main] INFO DAMS - User is able to select New permission request
+2026-02-14 16:31:01,395 [main] INFO DAMS - **** functional role value :Development External Support
+2026-02-14 16:31:06,248 [main] INFO DAMS - usertype: Nest-T Testing *** name : Replacement Package
+2026-02-14 16:31:07,806 [main] INFO DAMS - usertype: Replacement Package *** name : Replacement Package
+2026-02-14 16:31:08,455 [main] INFO DAMS - SpecialCase:  Replacement Package
+2026-02-14 16:31:21,347 [main] INFO DAMS - usertype: Root T1 *** name : Root T2
+2026-02-14 16:31:22,940 [main] INFO DAMS - usertype: Root T2 *** name : Root T2
+2026-02-14 16:31:28,650 [main] INFO DAMS - usertype: Backend T2A *** name : Backend T2A
+2026-02-14 16:31:32,712 [main] INFO DAMS - usertype: Backend T2B *** name : Backend T2B
+2026-02-14 16:31:38,425 [main] INFO DAMS - usertype: AAGW01T *** name : ALT48V01T
+2026-02-14 16:31:39,986 [main] INFO DAMS - usertype: ACM311T *** name : ALT48V01T
+2026-02-14 16:31:41,563 [main] INFO DAMS - usertype: ALT48V01T *** name : ALT48V01T
+2026-02-14 16:31:44,359 [main] INFO DAMS - Certificate Request for Replacement Package
+2026-02-14 16:31:58,816 [main] INFO DAMS - usertype: Root T1 *** name : Root T2
+2026-02-14 16:32:00,401 [main] INFO DAMS - usertype: Root T2 *** name : Root T2
+2026-02-14 16:32:06,088 [main] INFO DAMS - usertype: Backend T2A *** name : Backend T2A
+2026-02-14 16:32:10,101 [main] INFO DAMS - usertype: Backend T2B *** name : Backend T2B
+2026-02-14 16:32:15,782 [main] INFO DAMS - usertype: AAGW01T *** name : AAGW01T
+2026-02-14 16:32:18,532 [main] INFO DAMS - Certificate Request for Replacement Package
+2026-02-14 16:32:19,986 [main] INFO DAMS - Replacement Package SpecialCase Request is Created
+2026-02-14 16:32:22,088 [main] INFO DAMS - Request overview tab enabled
+2026-02-14 16:32:38,891 [main] INFO DAMS - Replacement Package
+2026-02-14 16:32:58,223 [main] INFO DAMS - User is able to view the approval status as pending once the Replacement package request created
+2026-02-14 16:32:59,516 [main] INFO DAMS - Clicked
+2026-02-14 16:33:29,381 [main] INFO DAMS - ***Authorization_List: Replacement Package
+2026-02-14 16:33:29,535 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:33:29,535 [main] INFO DAMS - Replacement Package
+2026-02-14 16:33:29,577 [main] INFO DAMS - Functional Role
+2026-02-14 16:33:29,577 [main] INFO DAMS - Replacement Package
+2026-02-14 16:33:29,670 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:33:29,677 [main] INFO DAMS - Replacement Package
+2026-02-14 16:33:29,761 [main] INFO DAMS - ECU Certificate Request
+2026-02-14 16:33:29,761 [main] INFO DAMS - Replacement Package
+2026-02-14 16:33:29,833 [main] INFO DAMS - Enhance Right
+2026-02-14 16:33:29,833 [main] INFO DAMS - Replacement Package
+2026-02-14 16:33:29,892 [main] INFO DAMS - FOTA
+2026-02-14 16:33:29,892 [main] INFO DAMS - Replacement Package
+2026-02-14 16:33:29,970 [main] INFO DAMS - Nest T Testing
+2026-02-14 16:33:29,970 [main] INFO DAMS - Replacement Package
+2026-02-14 16:33:30,033 [main] INFO DAMS - Onboard New ECU
+2026-02-14 16:33:30,033 [main] INFO DAMS - Replacement Package
+2026-02-14 16:33:30,109 [main] INFO DAMS - Replacement Package
+2026-02-14 16:33:30,110 [main] INFO DAMS - Replacement Package
+2026-02-14 16:33:43,915 [main] INFO DAMS - Clicked
+2026-02-14 16:34:10,161 [main] INFO DAMS - ***Authorization_List: Replacement Package
+2026-02-14 16:34:10,338 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:34:10,340 [main] INFO DAMS - Replacement Package
+2026-02-14 16:34:10,395 [main] INFO DAMS - Functional Role
+2026-02-14 16:34:10,403 [main] INFO DAMS - Replacement Package
+2026-02-14 16:34:10,455 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:34:10,455 [main] INFO DAMS - Replacement Package
+2026-02-14 16:34:10,542 [main] INFO DAMS - ECU Certificate Request
+2026-02-14 16:34:10,543 [main] INFO DAMS - Replacement Package
+2026-02-14 16:34:10,632 [main] INFO DAMS - Enhance Right
+2026-02-14 16:34:10,632 [main] INFO DAMS - Replacement Package
+2026-02-14 16:34:10,707 [main] INFO DAMS - FOTA
+2026-02-14 16:34:10,707 [main] INFO DAMS - Replacement Package
+2026-02-14 16:34:10,781 [main] INFO DAMS - Nest T Testing
+2026-02-14 16:34:10,781 [main] INFO DAMS - Replacement Package
+2026-02-14 16:34:10,867 [main] INFO DAMS - Onboard New ECU
+2026-02-14 16:34:10,867 [main] INFO DAMS - Replacement Package
+2026-02-14 16:34:10,935 [main] INFO DAMS - Replacement Package
+2026-02-14 16:34:10,935 [main] INFO DAMS - Replacement Package
+2026-02-14 16:34:25,691 [main] INFO DAMS - User is able to view the approval status as Approved after 1st level approval
+2026-02-14 16:34:44,583 [main] INFO DAMS - Replacement Package
+2026-02-14 16:35:08,009 [main] INFO DAMS - Element Not Enabled
+2026-02-14 16:35:11,334 [main] INFO DAMS - User is able to view navigate to request role overview page and check if the status is pending after 1st level approval
+2026-02-14 16:35:12,591 [main] INFO DAMS - Clicked
+2026-02-14 16:35:33,221 [main] INFO DAMS - ***Authorization_List: Replacement Package
+2026-02-14 16:35:33,568 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:35:33,568 [main] INFO DAMS - Replacement Package
+2026-02-14 16:35:33,645 [main] INFO DAMS - Functional Role
+2026-02-14 16:35:33,645 [main] INFO DAMS - Replacement Package
+2026-02-14 16:35:33,717 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:35:33,717 [main] INFO DAMS - Replacement Package
+2026-02-14 16:35:33,781 [main] INFO DAMS - ECU Certificate Request
+2026-02-14 16:35:33,781 [main] INFO DAMS - Replacement Package
+2026-02-14 16:35:33,862 [main] INFO DAMS - Enhance Right
+2026-02-14 16:35:33,870 [main] INFO DAMS - Replacement Package
+2026-02-14 16:35:33,933 [main] INFO DAMS - FOTA
+2026-02-14 16:35:33,933 [main] INFO DAMS - Replacement Package
+2026-02-14 16:35:34,019 [main] INFO DAMS - Nest T Testing
+2026-02-14 16:35:34,020 [main] INFO DAMS - Replacement Package
+2026-02-14 16:35:34,096 [main] INFO DAMS - Onboard New ECU
+2026-02-14 16:35:34,096 [main] INFO DAMS - Replacement Package
+2026-02-14 16:35:34,160 [main] INFO DAMS - Replacement Package
+2026-02-14 16:35:34,163 [main] INFO DAMS - Replacement Package
+2026-02-14 16:35:47,855 [main] INFO DAMS - Clicked
+2026-02-14 16:36:13,375 [main] INFO DAMS - ***Authorization_List: Replacement Package
+2026-02-14 16:36:13,468 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:36:13,468 [main] INFO DAMS - Replacement Package
+2026-02-14 16:36:13,513 [main] INFO DAMS - Functional Role
+2026-02-14 16:36:13,513 [main] INFO DAMS - Replacement Package
+2026-02-14 16:36:13,555 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:36:13,555 [main] INFO DAMS - Replacement Package
+2026-02-14 16:36:13,602 [main] INFO DAMS - ECU Certificate Request
+2026-02-14 16:36:13,602 [main] INFO DAMS - Replacement Package
+2026-02-14 16:36:13,653 [main] INFO DAMS - Enhance Right
+2026-02-14 16:36:13,653 [main] INFO DAMS - Replacement Package
+2026-02-14 16:36:13,738 [main] INFO DAMS - FOTA
+2026-02-14 16:36:13,738 [main] INFO DAMS - Replacement Package
+2026-02-14 16:36:13,819 [main] INFO DAMS - Nest T Testing
+2026-02-14 16:36:13,820 [main] INFO DAMS - Replacement Package
+2026-02-14 16:36:13,902 [main] INFO DAMS - Onboard New ECU
+2026-02-14 16:36:13,902 [main] INFO DAMS - Replacement Package
+2026-02-14 16:36:13,980 [main] INFO DAMS - Replacement Package
+2026-02-14 16:36:13,980 [main] INFO DAMS - Replacement Package
+2026-02-14 16:36:28,406 [main] INFO DAMS - User is able to view the approval status as Approved after 2nd level approval
+2026-02-14 16:36:46,992 [main] INFO DAMS - Replacement Package
+2026-02-14 16:37:10,367 [main] INFO DAMS - Element Not Enabled
+2026-02-14 16:37:13,700 [main] INFO DAMS - User is able to view navigate to request role overview page and check if the status is appproved after 2nd level approval
+2026-02-14 16:37:16,713 [main] INFO DAMS - Replacement package request
+2026-02-14 16:37:26,318 [main] INFO DAMS - User is able to select New permission request
+2026-02-14 16:37:28,584 [main] INFO DAMS - **** functional role value :Development External Support
+2026-02-14 16:37:33,740 [main] INFO DAMS - usertype: Nest-T Testing *** name : Replacement Package
+2026-02-14 16:37:35,292 [main] INFO DAMS - usertype: Replacement Package *** name : Replacement Package
+2026-02-14 16:37:35,938 [main] INFO DAMS - SpecialCase:  Replacement Package
+2026-02-14 16:37:43,475 [main] INFO DAMS - usertype: Root T1 *** name : Root T1
+2026-02-14 16:37:44,066 [main] INFO DAMS - User selected the origin_cot: Root T1
+2026-02-14 16:37:54,825 [main] INFO DAMS - usertype: Root T1 *** name : Root T2
+2026-02-14 16:37:56,371 [main] INFO DAMS - usertype: Root T2 *** name : Root T2
+2026-02-14 16:38:02,027 [main] INFO DAMS - usertype: Backend T2A *** name : Backend T2A
+2026-02-14 16:38:06,060 [main] INFO DAMS - usertype: Backend T2B *** name : Backend T2B
+2026-02-14 16:38:11,621 [main] INFO DAMS - usertype: AAGW01T *** name : AAGW01T
+2026-02-14 16:38:12,407 [main] INFO DAMS - Certificate Request for Replacement Package
+2026-02-14 16:38:14,872 [main] INFO DAMS - Replacement Package SpecialCase Request is Created
+2026-02-14 16:38:16,973 [main] INFO DAMS - Request overview tab enabled
+2026-02-14 16:38:33,694 [main] INFO DAMS - Replacement Package
+2026-02-14 16:38:52,833 [main] INFO DAMS - User is able to view the approval status as pending once the Replacement package request created
+2026-02-14 16:38:57,171 [main] INFO DAMS - Clicked
+2026-02-14 16:39:18,514 [main] INFO DAMS - ***Authorization_List: Replacement Package
+2026-02-14 16:39:18,699 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:39:18,699 [main] INFO DAMS - Replacement Package
+2026-02-14 16:39:18,780 [main] INFO DAMS - Functional Role
+2026-02-14 16:39:18,780 [main] INFO DAMS - Replacement Package
+2026-02-14 16:39:18,863 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:39:18,863 [main] INFO DAMS - Replacement Package
+2026-02-14 16:39:18,943 [main] INFO DAMS - ECU Certificate Request
+2026-02-14 16:39:18,944 [main] INFO DAMS - Replacement Package
+2026-02-14 16:39:19,031 [main] INFO DAMS - Enhance Right
+2026-02-14 16:39:19,031 [main] INFO DAMS - Replacement Package
+2026-02-14 16:39:19,110 [main] INFO DAMS - FOTA
+2026-02-14 16:39:19,111 [main] INFO DAMS - Replacement Package
+2026-02-14 16:39:19,191 [main] INFO DAMS - Nest T Testing
+2026-02-14 16:39:19,192 [main] INFO DAMS - Replacement Package
+2026-02-14 16:39:19,266 [main] INFO DAMS - Onboard New ECU
+2026-02-14 16:39:19,266 [main] INFO DAMS - Replacement Package
+2026-02-14 16:39:19,340 [main] INFO DAMS - Replacement Package
+2026-02-14 16:39:19,340 [main] INFO DAMS - Replacement Package
+2026-02-14 16:39:33,980 [main] INFO DAMS - User is able to view the approval status as Approved after 1st level approval
+2026-02-14 16:39:52,646 [main] INFO DAMS - Replacement Package
+2026-02-14 16:40:16,083 [main] INFO DAMS - Element Not Enabled
+2026-02-14 16:40:19,387 [main] INFO DAMS - User is able to view navigate to request role overview page and check if the status is pending after 1st level approval
+2026-02-14 16:40:20,662 [main] INFO DAMS - Clicked
+2026-02-14 16:40:37,901 [main] INFO DAMS - ***Authorization_List: Replacement Package
+2026-02-14 16:40:38,072 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:40:38,072 [main] INFO DAMS - Replacement Package
+2026-02-14 16:40:38,156 [main] INFO DAMS - Functional Role
+2026-02-14 16:40:38,157 [main] INFO DAMS - Replacement Package
+2026-02-14 16:40:38,221 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:40:38,221 [main] INFO DAMS - Replacement Package
+2026-02-14 16:40:38,289 [main] INFO DAMS - ECU Certificate Request
+2026-02-14 16:40:38,291 [main] INFO DAMS - Replacement Package
+2026-02-14 16:40:38,365 [main] INFO DAMS - Enhance Right
+2026-02-14 16:40:38,366 [main] INFO DAMS - Replacement Package
+2026-02-14 16:40:38,437 [main] INFO DAMS - FOTA
+2026-02-14 16:40:38,437 [main] INFO DAMS - Replacement Package
+2026-02-14 16:40:38,510 [main] INFO DAMS - Nest T Testing
+2026-02-14 16:40:38,511 [main] INFO DAMS - Replacement Package
+2026-02-14 16:40:38,583 [main] INFO DAMS - Onboard New ECU
+2026-02-14 16:40:38,583 [main] INFO DAMS - Replacement Package
+2026-02-14 16:40:38,661 [main] INFO DAMS - Replacement Package
+2026-02-14 16:40:38,661 [main] INFO DAMS - Replacement Package
+2026-02-14 16:40:53,381 [main] INFO DAMS - User is able to view the approval status as Approved after 2nd level approval
+2026-02-14 16:41:11,795 [main] INFO DAMS - Replacement Package
+2026-02-14 16:41:35,067 [main] INFO DAMS - Element Not Enabled
+2026-02-14 16:41:38,282 [main] INFO DAMS - User is able to view navigate to request role overview page and check if the status is appproved after 2nd level approval
+2026-02-14 16:41:48,416 [main] INFO DAMS - Clicked
+2026-02-14 16:42:20,862 [main] INFO DAMS - https://dams-stg.azurewebsites.net/dams/#/
+2026-02-14 16:42:20,863 [main] INFO DAMS - User is successfully redirected into GTC Page
+2026-02-14 16:42:27,559 [main] INFO DAMS - Proceed Button Clicked
+2026-02-14 16:42:27,559 [main] INFO DAMS - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-14 16:42:27,559 [main] INFO DAMS - User validates the gtc page
+2026-02-14 16:42:32,571 [main] INFO DAMS - About to zoom out
+2026-02-14 16:42:32,596 [main] INFO DAMS - User is Select the ECU Chain of Trust Type
+2026-02-14 16:42:39,326 [main] INFO DAMS - validates the functional role page
+2026-02-14 16:42:39,327 [main] INFO DAMS - *************Internal
+2026-02-14 16:42:41,839 [main] INFO DAMS - functional Role : Development - ATG External
+2026-02-14 16:42:41,839 [main] INFO DAMS - User Type :Development - ATG External
+2026-02-14 16:42:41,867 [main] INFO DAMS - user type Component Verification - ATG External name Development - ATG External
+2026-02-14 16:42:41,915 [main] INFO DAMS - user type Development - ATG External name Development - ATG External
+2026-02-14 16:42:43,141 [main] INFO DAMS - ****** Company Selection *********
+2026-02-14 16:42:47,505 [main] INFO DAMS - user type A&D Technology name Robert Bosch
+2026-02-14 16:42:47,561 [main] INFO DAMS - user type Actalent name Robert Bosch
+2026-02-14 16:42:47,618 [main] INFO DAMS - user type ADC Automotive Distance name Robert Bosch
+2026-02-14 16:42:47,671 [main] INFO DAMS - user type AKKODIS name Robert Bosch
+2026-02-14 16:42:47,729 [main] INFO DAMS - user type Anstalt für Verbrennungskraftmaschinen List (AVL) name Robert Bosch
+2026-02-14 16:42:47,774 [main] INFO DAMS - user type APTIV COMPONENTS INDIA PVT.LTD name Robert Bosch
+2026-02-14 16:42:47,832 [main] INFO DAMS - user type ARTECH name Robert Bosch
+2026-02-14 16:42:47,889 [main] INFO DAMS - user type ASK Industries S.p.A. name Robert Bosch
+2026-02-14 16:42:47,947 [main] INFO DAMS - user type AUO Corporation name Robert Bosch
+2026-02-14 16:42:47,999 [main] INFO DAMS - user type BCS Automotive Interface Solutions name Robert Bosch
+2026-02-14 16:42:48,031 [main] INFO DAMS - user type Bendix name Robert Bosch
+2026-02-14 16:42:48,062 [main] INFO DAMS - user type Calex name Robert Bosch
+2026-02-14 16:42:48,099 [main] INFO DAMS - user type Calex-DCDC name Robert Bosch
+2026-02-14 16:42:48,181 [main] INFO DAMS - user type CellCentric name Robert Bosch
+2026-02-14 16:42:48,231 [main] INFO DAMS - user type Contemporary Amperex name Robert Bosch
+2026-02-14 16:42:48,280 [main] INFO DAMS - user type Continental name Robert Bosch
+2026-02-14 16:42:48,328 [main] INFO DAMS - user type DAIMIA name Robert Bosch
+2026-02-14 16:42:48,381 [main] INFO DAMS - user type Danfoss name Robert Bosch
+2026-02-14 16:42:48,439 [main] INFO DAMS - user type Engbras Software e Projetos name Robert Bosch
+2026-02-14 16:42:48,498 [main] INFO DAMS - user type FEV GmBH name Robert Bosch
+2026-02-14 16:42:48,558 [main] INFO DAMS - user type Knorr-Bremse Systeme für name Robert Bosch
+2026-02-14 16:42:48,614 [main] INFO DAMS - user type Marquardt GmbH name Robert Bosch
+2026-02-14 16:42:48,669 [main] INFO DAMS - user type Meta System S.p.A. name Robert Bosch
+2026-02-14 16:42:48,733 [main] INFO DAMS - user type Munich Electrification name Robert Bosch
+2026-02-14 16:42:48,766 [main] INFO DAMS - user type Murata name Robert Bosch
+2026-02-14 16:42:48,797 [main] INFO DAMS - user type Optimabit name Robert Bosch
+2026-02-14 16:42:48,822 [main] INFO DAMS - user type Robert Bosch name Robert Bosch
+2026-02-14 16:42:49,891 [main] INFO DAMS - ******** Company Selected ***********Robert Bosch
+2026-02-14 16:42:56,469 [main] INFO DAMS - BU : DTE
+2026-02-14 16:42:56,517 [main] INFO DAMS - user type BUS name DTE
+2026-02-14 16:42:56,564 [main] INFO DAMS - user type DTE name DTE
+2026-02-14 16:42:59,979 [main] INFO DAMS - User is able to raise the request for the functional role Development - ATG External
+2026-02-14 16:43:44,448 [main] INFO DAMS - View the approval status as pending once the request created
+2026-02-14 16:43:44,449 [main] INFO DAMS - Requester details : <span style="color: blue;"><b><i><u>[PENDING, 4195, HARNAGA, Technical_User_Owner, N/A, Hariharan Nagarajan, TT/IGX-24, External, Development - ATG External, DTE, Robert Bosch, null, true, 02/14/2026, N/A, N/A, Robert Bosch, N/A]</u></i></b>
+2026-02-14 16:43:44,450 [main] INFO DAMS - Raise the request for the functional role null
+2026-02-14 16:43:45,733 [main] INFO DAMS - Clicked
+2026-02-14 16:43:50,802 [main] INFO DAMS - ***Authorization_List: Functional Role
+2026-02-14 16:43:50,964 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:43:50,966 [main] INFO DAMS - Functional Role
+2026-02-14 16:43:51,041 [main] INFO DAMS - Functional Role
+2026-02-14 16:43:51,041 [main] INFO DAMS - Functional Role
+2026-02-14 16:44:10,729 [main] INFO DAMS - User is able to approve 1st level approval
+2026-02-14 16:44:40,084 [main] INFO DAMS - Navigate to FR overview page and status is pending after 1st level approval
+2026-02-14 16:44:41,374 [main] INFO DAMS - Clicked
+2026-02-14 16:44:46,429 [main] INFO DAMS - ***Authorization_List: Functional Role
+2026-02-14 16:44:46,592 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:44:46,592 [main] INFO DAMS - Functional Role
+2026-02-14 16:44:46,639 [main] INFO DAMS - Functional Role
+2026-02-14 16:44:46,640 [main] INFO DAMS - Functional Role
+2026-02-14 16:45:06,464 [main] INFO DAMS - User is able to approve 2nd level approval
+2026-02-14 16:45:25,200 [main] INFO DAMS - Requestor details : []
+2026-02-14 16:45:25,201 [main] INFO DAMS - Verified the Certificate of the Functional role
+2026-02-14 16:45:35,944 [main] INFO DAMS - View the Standard Certificate for the raised functional roleAfter-Sales ENHANCED
+2026-02-14 16:45:54,755 [main] INFO DAMS - User is able to select New permission request
+2026-02-14 16:45:56,260 [main] INFO DAMS - value selected : Development - ATG External
+2026-02-14 16:45:56,260 [main] INFO DAMS - [AAGW01T]
+2026-02-14 16:45:56,260 [main] INFO DAMS - [Development ENHANCED]
+2026-02-14 16:45:59,276 [main] INFO DAMS - **** functional role value :Development - ATG External
+2026-02-14 16:46:00,747 [main] INFO DAMS - Development ENHANCED
+2026-02-14 16:46:04,642 [main] INFO DAMS - usertype: Development ENHANCED *** name : Development ENHANCED
+2026-02-14 16:46:11,209 [main] INFO DAMS - usertype: AAGW01T *** name : AAGW01T
+2026-02-14 16:46:11,909 [main] INFO DAMS - selcted ECU is AAGW01T
+2026-02-14 16:46:14,925 [main] INFO DAMS - reason : Certificate Request for Diagnostic Authority
+2026-02-14 16:46:36,005 [main] INFO DAMS - Myself
+2026-02-14 16:46:56,487 [main] INFO DAMS - 1
+2026-02-14 16:46:56,487 [main] INFO DAMS -  ************* Development ENHANCED
+2026-02-14 16:46:56,487 [main] INFO DAMS -  ************* 11841
+2026-02-14 16:46:57,750 [main] INFO DAMS - Clicked
+2026-02-14 16:47:04,849 [main] INFO DAMS - ***Authorization_List: Diagnostic Authority
+2026-02-14 16:47:05,017 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:47:05,017 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:47:05,095 [main] INFO DAMS - Functional Role
+2026-02-14 16:47:05,097 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:47:05,175 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:47:05,176 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:47:24,458 [main] INFO DAMS - View the approval status as Approved after 1st level approval
+2026-02-14 16:47:43,113 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:48:18,888 [main] INFO DAMS - View navigate to request overview page and status is pending after 1st level approval
+2026-02-14 16:48:20,106 [main] INFO DAMS - Clicked
+2026-02-14 16:48:27,184 [main] INFO DAMS - ***Authorization_List: Diagnostic Authority
+2026-02-14 16:48:27,379 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:48:27,379 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:48:27,464 [main] INFO DAMS - Functional Role
+2026-02-14 16:48:27,464 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:48:27,536 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:48:27,536 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:48:46,922 [main] INFO DAMS - View the approval status as Approved after 2nd level approval
+2026-02-14 16:49:05,644 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:49:28,919 [main] INFO DAMS - Element Not Enabled
+2026-02-14 16:49:43,438 [main] INFO DAMS - View navigae to request overview page and status is approved after 2nd level approval
+2026-02-14 16:49:43,438 [main] INFO DAMS - Verify selected ecu is not visible when the status is in approved
+2026-02-14 16:49:49,378 [main] INFO DAMS - Enhance_Right_Authority_request
+2026-02-14 16:49:59,831 [main] INFO DAMS - User is able to select New permission request
+2026-02-14 16:50:04,470 [main] INFO DAMS - functional role selectedDevelopment - ATG External
+2026-02-14 16:50:04,470 [main] INFO DAMS - [AAGW01T]
+2026-02-14 16:50:04,470 [main] INFO DAMS - [Development ENHANCED]
+2026-02-14 16:50:06,475 [main] INFO DAMS - **** functional role value :Development - ATG External
+2026-02-14 16:50:07,929 [main] INFO DAMS - Development ENHANCED
+2026-02-14 16:50:16,285 [main] INFO DAMS - usertype: AAGW01T *** name : AAGW01T
+2026-02-14 16:50:17,005 [main] INFO DAMS - ECU selectedAAGW01T
+2026-02-14 16:50:17,911 [main] INFO DAMS - User is able to enter serviceID,validity and reason
+2026-02-14 16:50:18,069 [main] INFO DAMS - EnhancedRightAuthority Request is Created
+2026-02-14 16:50:41,781 [main] INFO DAMS - Enhance Right
+2026-02-14 16:50:54,169 [main] INFO DAMS - Myself
+2026-02-14 16:51:15,197 [main] INFO DAMS - EA Request Number : [1294]
+2026-02-14 16:51:15,197 [main] INFO DAMS - EA User Role : [Development ENHANCED]
+2026-02-14 16:51:16,475 [main] INFO DAMS - Clicked
+2026-02-14 16:51:21,537 [main] INFO DAMS - ***Authorization_List: Enhance Right
+2026-02-14 16:51:21,730 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:51:21,731 [main] INFO DAMS - Enhance Right
+2026-02-14 16:51:21,821 [main] INFO DAMS - Functional Role
+2026-02-14 16:51:21,821 [main] INFO DAMS - Enhance Right
+2026-02-14 16:51:21,898 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:51:21,898 [main] INFO DAMS - Enhance Right
+2026-02-14 16:51:21,984 [main] INFO DAMS - ECU Certificate Request
+2026-02-14 16:51:21,985 [main] INFO DAMS - Enhance Right
+2026-02-14 16:51:22,068 [main] INFO DAMS - Enhance Right
+2026-02-14 16:51:22,068 [main] INFO DAMS - Enhance Right
+2026-02-14 16:51:55,759 [main] INFO DAMS - View the approval status as Approved after 1st level approval
+2026-02-14 16:52:07,260 [main] INFO DAMS - Enhance Right
+2026-02-14 16:52:13,553 [main] INFO DAMS - Enhance Right
+2026-02-14 16:52:25,980 [main] INFO DAMS - Myself
+2026-02-14 16:52:45,673 [main] INFO DAMS - View navigate to request overview page and status is pending after 1st level approval
+2026-02-14 16:52:46,928 [main] INFO DAMS - Clicked
+2026-02-14 16:52:51,976 [main] INFO DAMS - ***Authorization_List: Enhance Right
+2026-02-14 16:52:52,118 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:52:52,120 [main] INFO DAMS - Enhance Right
+2026-02-14 16:52:52,208 [main] INFO DAMS - Functional Role
+2026-02-14 16:52:52,208 [main] INFO DAMS - Enhance Right
+2026-02-14 16:52:52,290 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:52:52,290 [main] INFO DAMS - Enhance Right
+2026-02-14 16:52:52,366 [main] INFO DAMS - ECU Certificate Request
+2026-02-14 16:52:52,367 [main] INFO DAMS - Enhance Right
+2026-02-14 16:52:52,455 [main] INFO DAMS - Enhance Right
+2026-02-14 16:52:52,456 [main] INFO DAMS - Enhance Right
+2026-02-14 16:53:24,702 [main] INFO DAMS - View the approval status as Approved after 2nd level approval
+2026-02-14 16:53:36,075 [main] INFO DAMS - Enhance Right
+2026-02-14 16:53:42,416 [main] INFO DAMS - Enhance Right
+2026-02-14 16:53:54,922 [main] INFO DAMS - Myself
+2026-02-14 16:54:14,580 [main] INFO DAMS - View navigate to request overview page and status is approved after 2nd level approval
+2026-02-14 16:54:17,567 [main] INFO DAMS - Replacement package request
+2026-02-14 16:54:27,083 [main] INFO DAMS - User is able to select New permission request
+2026-02-14 16:54:29,257 [main] INFO DAMS - **** functional role value :Development - ATG External
+2026-02-14 16:54:34,166 [main] INFO DAMS - usertype: Nest-T Testing *** name : Replacement Package
+2026-02-14 16:54:35,694 [main] INFO DAMS - usertype: Replacement Package *** name : Replacement Package
+2026-02-14 16:54:36,292 [main] INFO DAMS - SpecialCase:  Replacement Package
+2026-02-14 16:54:48,169 [main] INFO DAMS - usertype: Root E2 *** name : Root E1
+2026-02-14 16:54:49,738 [main] INFO DAMS - usertype: Root E1 *** name : Root E1
+2026-02-14 16:54:50,480 [main] INFO DAMS - User selected the origin_cot: Root E1
+2026-02-14 16:54:58,919 [main] INFO DAMS - usertype: AAGW01T *** name : AAGW01T
+2026-02-14 16:55:01,699 [main] INFO DAMS - Certificate Request for Replacement Package
+2026-02-14 16:55:03,011 [main] INFO DAMS - Replacement Package SpecialCase Request is Created
+2026-02-14 16:55:05,090 [main] INFO DAMS - Request overview tab enabled
+2026-02-14 16:55:21,735 [main] INFO DAMS - Replacement Package
+2026-02-14 16:55:40,364 [main] INFO DAMS - User is able to view the approval status as pending once the Replacement package request created
+2026-02-14 16:55:44,659 [main] INFO DAMS - Clicked
+2026-02-14 16:56:03,022 [main] INFO DAMS - ***Authorization_List: Replacement Package
+2026-02-14 16:56:03,118 [main] INFO DAMS - Pending Permission Requests
+2026-02-14 16:56:03,118 [main] INFO DAMS - Replacement Package
+2026-02-14 16:56:03,163 [main] INFO DAMS - Functional Role
+2026-02-14 16:56:03,163 [main] INFO DAMS - Replacement Package
+2026-02-14 16:56:03,204 [main] INFO DAMS - Diagnostic Authority
+2026-02-14 16:56:03,204 [main] INFO DAMS - Replacement Package
+2026-02-14 16:56:03,247 [main] INFO DAMS - ECU Certificate Request
+2026-02-14 16:56:03,247 [main] INFO DAMS - Replacement Package
+2026-02-14 16:56:03,288 [main] INFO DAMS - Enhance Right
+2026-02-14 16:56:03,288 [main] INFO DAMS - Replacement Package
+2026-02-14 16:56:03,328 [main] INFO DAMS - FOTA
+2026-02-14 16:56:03,328 [main] INFO DAMS - Replacement Package
+2026-02-14 16:56:03,355 [main] INFO DAMS - Nest T Testing
+2026-02-14 16:56:03,355 [main] INFO DAMS - Replacement Package
+2026-02-14 16:56:03,398 [main] INFO DAMS - Onboard New ECU
+2026-02-14 16:56:03,398 [main] INFO DAMS - Replacement Package
+2026-02-14 16:56:03,438 [main] INFO DAMS - Replacement Package
+2026-02-14 16:56:03,438 [main] INFO DAMS - Replacement Package
+2026-02-14 16:56:20,367 [main] INFO DAMS - User is able to view the approval status as Approved after 1st level approval
