@@ -1,11 +1,16 @@
 pipeline {
     agent {
-        label 'DAMS'
+        label 'DAMS' 
     }
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))
         timestamps()
         timeout(time: 800, unit: 'MINUTES')
+    }
+    parameters {
+        choice(name: 'env', choices: ['QA', 'DEV', 'UAT', 'PROD'], description: 'Select the Environment')
+        string(name: 'className', defaultValue: '', description: 'Enter Test Class Name (e.g., TC01_Login)')
+        string(name: 'methodName', defaultValue: '', description: 'Enter Method Name (Optional)')
     }
     environment {
          PROJECT_NAME = 'dams-integration-test'
@@ -24,6 +29,9 @@ pipeline {
                  sh 'echo Project Name=$PROJECT_NAME'
                  sh 'echo Project URL =$PROJECT_URL'
                  sh 'java -version'
+                 sh 'echo Environment: ${params.env}'
+                 sh 'echo Class Name: ${params.className}'
+                 sh 'echo Method Name: ${params.methodName}'
            }
         }
 	    stage('Build'){
@@ -34,20 +42,42 @@ pipeline {
             }
         }
         stage('Integration Test'){
-             when {
-                 anyOf {
-                   branch 'main';
-                   branch 'development';
-                   branch 'master'
-                 }
-             }
              steps{
                 configFileProvider([configFile(fileId: 'c57ce599-7a28-4b77-95f5-3caca08d0037', variable: 'MAVEN_SETTINGS')]) {
-                  sh 'mvn  test -PRegression'
+                  script {
+                      def testCmd = "-Denv=${params.env}"
+                      if (params.className && params.className.trim() != '') {
+                          if (params.methodName && params.methodName.trim() != '') {
+                              testCmd = "${testCmd} -Dtest=${params.className}#${params.methodName}"
+                          } else {
+                              testCmd = "${testCmd} -Dtest=${params.className}"
+                          }
+                      } else {
+                          // Default behavior if no class specified - run default suite or error out?
+                          // Falling back to existing profile or default suite if className is empty
+                          // Assuming user usually provides className as requested. 
+                          // If empty, we can run a default suite or just parameterize regression.
+                          // Preserving old behavior if empty? The old one ran -PRegression.
+                          // Let's assume if empty, run -PRegression or similar.
+                          // But user asked to "pass parameter", implying they will use it.
+                          // I will add a check.
+                          testCmd = "${testCmd} -PRegression"
+                      }
+                      
+                      // Using the logic: mvn test -Denv=... -Dtest=...
+                      // Note: -PRegression is kept as fallback or if user wants full suite.
+                      // If user provides className, we typically don't need -PRegression unless it sets config.
+                       
+                      if (params.className && params.className.trim() != '') {
+                          sh "mvn test ${testCmd}"
+                      } else {
+                          sh "mvn test -PRegression -Denv=${params.env}"
+                      }
+                  }
                 }
              }
              post{
-                  always {
+                  always { 
                      testNG(reportFilenamePattern: 'target/surefire-reports/*.xml')
                   }
              }
@@ -57,7 +87,7 @@ pipeline {
     	always{
     	   script{
     	     if ("${env.BRANCH_NAME}" == 'master' || "${env.BRANCH_NAME}" == 'development' || "${env.BRANCH_NAME}" == 'main') {
-    	         emailext body: 'Check console output at $BUILD_URL \n\n to view the results. \n\n ${CHANGES} \n\n ',
+    	         emailext body: 'Check console output at $BUILD_URL \n\n to view the results. \n\n ${CHANGES} \n\n ', 
                                    to: "${EMAIL_TO}",
                                    subject: """${currentBuild.currentResult} DAMS IntegrationTest in T3 Jenkins: ${env.JOB_NAME} - #$BUILD_NUMBER"""
     	     }
