@@ -26,12 +26,12 @@ pipeline {
     stages {
         stage('Initialize'){
            steps{
-                 sh 'echo Project Name=$PROJECT_NAME'
-                 sh 'echo Project URL =$PROJECT_URL'
-                 sh 'java -version'
-                 sh 'echo Environment: ${params.env}'
-                 sh 'echo Class Name: ${params.className}'
-                 sh 'echo Method Name: ${params.methodName}'
+                 bat 'echo Project Name=$PROJECT_NAME'
+                 bat 'echo Project URL =$PROJECT_URL'
+                 bat 'java -version'
+                 bat 'echo Environment: ${params.env}'
+                 bat 'echo Class Name: ${params.className}'
+                 bat 'echo Method Name: ${params.methodName}'
            }
         }
 	    stage('Build'){
