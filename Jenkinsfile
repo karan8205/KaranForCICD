@@ -17,7 +17,7 @@ pipeline {
          PROJECT_URL = 'https://github.com/karan8205/KaranForCICD.git'
          DISABLE = 'true'
          SYNOPSYS_DETECT_LOCATION= 'C:/tools'
-         EMAIL_TO = 'munisekhar.valasa_reddy@daimlertruck.com;nilesh.mittal@daimlertruck.com;vikash.mohan@daimlertruck.com;akash.bhattacharjee@daimlertruck.com;pargavi.m@daimlertruck.com;imran_khan.pathan@daimlertruck.com'
+         EMAIL_TO = 'karan.mkdm2002@gmail.com'
     }
     /* for Shared T3 Jenkins
     tools {
@@ -37,7 +37,7 @@ pipeline {
 	    stage('Build'){
             steps{
                configFileProvider([configFile(fileId: 'c57ce599-7a28-4b77-95f5-3caca08d0037', variable: 'MAVEN_SETTINGS')]) {
-                    sh 'mvn -U  clean install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true'
+                    bat 'mvn -U  clean install -Dmaven.test.skip=true -Dmaven.javadoc.skip=true'
                }
             }
         }
@@ -69,9 +69,9 @@ pipeline {
                       // If user provides className, we typically don't need -PRegression unless it sets config.
                        
                       if (params.className && params.className.trim() != '') {
-                          sh "mvn test ${testCmd}"
+                          bat "mvn test ${testCmd}"
                       } else {
-                          sh "mvn test -Dsurefire.suiteXmlFiles=testSuites/RegressionSuite_TestNG.xml -Denv=${params.env}"
+                          bat "mvn test -Dsurefire.suiteXmlFiles=testSuites/RegressionSuite_TestNG.xml -Denv=${params.env}"
                       }
                   }
                 }
