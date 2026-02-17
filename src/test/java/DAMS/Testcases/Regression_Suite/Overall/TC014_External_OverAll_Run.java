@@ -1,4 +1,4 @@
-package DAMS.Testcases.Regression_Suite.External;
+package DAMS.Testcases.Regression_Suite.Overall;
 
 import static DAMS.Resources.Listeners.test;
 
@@ -50,7 +50,7 @@ public class TC014_External_OverAll_Run extends BaseClass {
 	}
 
 	@Test(dataProvider = "getData_External", priority = 0)
-	public static void development_Global_Regression_E2E_External(HashMap<String, String> input) throws Throwable {
+	public static void Overall_Global_ATG_Regression_E2E_External(HashMap<String, String> input) throws Throwable {
 		try {
 			System.out.println("\n" + input + "\n");
 			String Functional_Role = input.get("Functional_role_External");
@@ -75,6 +75,7 @@ public class TC014_External_OverAll_Run extends BaseClass {
 			AbstractComponents.refresh();
 			waitForPageLoad(driver);
 			myreq.select_NewPermission_request();
+			if(!Functional_Role.equalsIgnoreCase("Production - ATG External")) {
 			newper.Diagnostic_Authority_External_Created(input);
 			req.request_Overview();
 			Thread.sleep(3000);
@@ -87,6 +88,7 @@ public class TC014_External_OverAll_Run extends BaseClass {
 			test.log(Status.PASS, "<span style=\"color: blue;\"><b><i><u>" + "***************" + applicantNumber
 					+ " DA Approved *************" + "</u></i></b>");
 			logger.info("Verify selected ecu is not visible when the status is in approved");
+			}
 			test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 					+ "Creation of Enhance Right Authority - Internal" + "</u></i></b>");
 			AbstractComponents.refresh();
@@ -162,7 +164,8 @@ public class TC014_External_OverAll_Run extends BaseClass {
 		List<HashMap<String, String>> data = getJsonDataToMap(
 				System.getProperty("user.dir")
 						+ "//src//test//java//DAMS//data_Regression//02_External_End_to-end_functionality.json");
-		return new Object[][] { { data.get(0) }, { data.get(7) }, { data.get(1) } };
+		return new Object[][] {{data.get(0)},{data.get(1)},{data.get(2)},{data.get(3)},{data.get(4)},{data.get(5)},
+							   {data.get(6)},{data.get(7)},{data.get(8)},{data.get(9)},{data.get(10)}};
 	}
 
 	public static void approve_Multiple_special_cases_nestT_request(HashMap<String, String> input) throws Throwable {
@@ -208,55 +211,6 @@ public class TC014_External_OverAll_Run extends BaseClass {
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");
 		return replacement_package_table_input;
 	}
-
-	// public static List<String>
-	// create_replacement_package_request_root(HashMap<String, String> input) throws
-	// Throwable {
-	// test.info("Replacement package request");
-	// logger.info("Replacement package request");
-	// myreq.select_NewPermission_request();
-	// boolean request_Overview_enabled =
-	// newper.raise_replacement_package_Request(input.get("Functional_role_internal"),input.get("SpecialCase"),
-	// input.get("Orgin_COT"), input.get("Reason_for_RP"), input.get("Target_COT"),
-	// input.get("ECU_Qualifier_for_Root_link"));
-	// Assert.assertTrue(request_Overview_enabled);
-	// test.info("Request overview tab enabled");
-	// logger.info("Request overview tab enabled");
-	// List<String> replacement_package_table_input = req
-	// .multiple_Request_Table_Validation_for_replacement_package("Replacement
-	// Package", prop.getUser_name());
-	//// Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
-	// test.pass("User is able to view the approval status as pending once the
-	// Replacement package request created");
-	// logger.info("User is able to view the approval status as pending once the
-	// Replacement package request created");
-	// return replacement_package_table_input;
-	// }
-	//
-	// public static List<String>
-	// create_replacement_package_request_backend(HashMap<String, String> input)
-	// throws Throwable {
-	// test.info("Replacement package request");
-	// logger.info("Replacement package request");
-	// myreq.select_NewPermission_request();
-	// boolean request_Overview_enabled =
-	// newper.raise_replacement_package_Request(input.get("Functional_role_internal"),input.get("SpecialCase"),
-	// input.get("Reason_for_RP"),
-	// input.get("ECU_Qualifier_for_Backend_link"),input.get("BackendRoot_COT"),input.get("BackendOrigin_COT"),input.get("BackendTarget_COT"));
-	// Assert.assertTrue(request_Overview_enabled);
-	// test.info("Request overview tab enabled");
-	// logger.info("Request overview tab enabled");
-	// List<String> replacement_package_table_input = req
-	// .multiple_Request_Table_Validation_for_replacement_package("Replacement
-	// Package", prop.getUser_name());
-	//// Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
-	// test.pass("User is able to view the approval status as pending once the
-	// Replacement package request created");
-	// logger.info("User is able to view the approval status as pending once the
-	// Replacement package request created");
-	// return replacement_package_table_input;
-	// }
-	//
 
 	public static void approve_special_cases_Replacement_request(HashMap<String, String> input,
 			List<String> create_special_cases_Replacement_request) throws Throwable {

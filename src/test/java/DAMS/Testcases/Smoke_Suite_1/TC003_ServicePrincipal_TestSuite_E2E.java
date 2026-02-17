@@ -18,7 +18,7 @@ import DAMS.Resources.SoftAssertUtil;
 
 public class TC003_ServicePrincipal_TestSuite_E2E extends BaseClass {
 
-	@Test(dataProvider = "getData_ServicePrincipal_Production", priority = 0,enabled=false)
+	@Test(dataProvider = "getData_ServicePrincipal_Production", priority = 0)
 	public static void service_Principal_Production_E2E(
 			HashMap<String, String> input) throws Throwable {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"+ "ServicePrincipal DA request Created- status pending:" + "</u></i></b>");

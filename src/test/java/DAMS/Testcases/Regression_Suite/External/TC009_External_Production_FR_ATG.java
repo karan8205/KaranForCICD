@@ -43,18 +43,7 @@ public class TC009_External_Production_FR_ATG extends BaseClass {
 				+ "Standard Functional Request for External- status Approved:" + "</u></i></b>");
 		AbstractComponents.refresh();
 		myreq.select_NewPermission_request();
-		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
-				+ "Creation of Diagnostic Authority - External" + "</u></i></b>");
-		newper.Diagnostic_Authority_External_Created(input);
-		req.request_Overview();
-		Thread.sleep(1000);
-		req.select_Applicant_type("Myself");
-		approver_overview.filter_search(prop.getStatus_pending());
-		req.scrollForReason();
-		approve_DA_request(input);
-		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
-				+ "Diagnostic Authority for External- status Approved:" + "</u></i></b>");
-		AbstractComponents.refresh();
+//		AbstractComponents.refresh();
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Creation of Enhance Right Authority - External" + "</u></i></b>");
 		TC11_EnhanceRightAuthority_GLOBAL.create_Enhance_Right_Authority_request_External(input);
