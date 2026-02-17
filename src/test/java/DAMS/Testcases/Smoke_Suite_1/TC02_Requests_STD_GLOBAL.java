@@ -125,40 +125,6 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 
 	}
 
-	// public static String login_and_select_user(String user_type) throws Throwable
-	// {
-	// TC01_Login_MFA.login_with_addressing_MFA_Supplier(user_type);
-	// h.dropBtn();
-	// String select_user_type = h.select_user_type(user_type);
-	// test.log(Status.INFO, "User is able to select the type:" + "<span
-	// style=\"color: blue;\"><b><i><u>"
-	// + select_user_type + "</u></i></b>");
-	// gtc.gtc_page_validation();
-	// test.info("Validate the gtc page");
-	// logger.info("Validate the gtc page");
-	// Thread.sleep(2000);
-	// Robot robot = new Robot();
-	// logger.info("About to zoom out");
-	// for (int i = 0; i < 3; i++) {
-	// robot.keyPress(KeyEvent.VK_CONTROL);
-	// robot.keyPress(KeyEvent.VK_SUBTRACT);
-	// robot.keyRelease(KeyEvent.VK_SUBTRACT);
-	// robot.keyRelease(KeyEvent.VK_CONTROL);
-	// }
-	// newrequest.select_vehicle_program_global();
-	//// newrequest.select_vehicle_program_AP4();
-	//
-	// newrequest.functional_role_page_validation(prop.get_for_whom_txt(),
-	// prop.get_myself_txt(),
-	// prop.get_Functional_role_txt());
-	//
-	// test.pass("Validate the functional role page");
-	// logger.info("Validate the functional role page");
-	// logger.info("*************"+select_user_type);
-	//
-	// return select_user_type;
-	// }
-
 	public static String raise_Internal_functional_role(HashMap<String, String> input) throws Throwable {
 		String functional_role_selected = newrequest.raise_Internal_functional_role_request(
 				prop.get_vehicle_validation(), prop.get_Production(), prop.get_Xentry(), prop.get_QM(),
