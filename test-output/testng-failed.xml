@@ -7,13 +7,13 @@
   </listeners>
   <test thread-count="5" name="RunDynamicClass(failed)">
     <classes>
-      <class name="DAMS.Testcases.Regression_Suite.Internal.TC014_Internal_OverAll_Run">
+      <class name="DAMS.Testcases.Regression_Suite.Overall.TC014_Supplier_OverAll_Run">
         <methods>
-          <include name="development_Global_Regression_E2E_Internal" invocation-numbers="0 1"/>
           <include name="login"/>
+          <include name="Overall_Global_ATG_Regression_E2E_Supplier" invocation-numbers="7 8 9 10"/>
           <include name="configure"/>
         </methods>
-      </class> <!-- DAMS.Testcases.Regression_Suite.Internal.TC014_Internal_OverAll_Run -->
+      </class> <!-- DAMS.Testcases.Regression_Suite.Overall.TC014_Supplier_OverAll_Run -->
     </classes>
   </test> <!-- RunDynamicClass(failed) -->
 </suite> <!-- Failed suite [DynamicSuite] -->

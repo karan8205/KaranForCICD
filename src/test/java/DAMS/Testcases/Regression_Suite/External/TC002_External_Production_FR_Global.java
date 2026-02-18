@@ -83,7 +83,7 @@ public class TC002_External_Production_FR_Global extends BaseClass {
 
 		List<HashMap<String, String>> data = getJsonDataToMap(
 				System.getProperty("user.dir") + "//src//test//java//DAMS//data_Regression//02_External_End_to-end_functionality.json");
-		return new Object[][] { { data.get(0) } };
+		return new Object[][] { { data.get(1) } };
 
 	}
 	
