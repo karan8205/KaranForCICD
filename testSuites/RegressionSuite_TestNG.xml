@@ -9,7 +9,7 @@
     <test name="RunDynamicClass">
         <classes>  
          <!--<class name="DAMS.Testcases.Regression_Suite.Supplier.TC002_Supplier_Development_FR_Global"></class> -->
-       <class name="DAMS.Testcases.Regression_Suite.External.TC014_External_OverAll_Run"></class> 
+       <class name="DAMS.Testcases.Regression_Suite.Overall.TC014_Supplier_OverAll_Run"></class> 
         <!--  <class name="DAMS.Testcases.Regression_Suite.External.TC015_FUSO_External_Development_FR_Global"></class>--> 
   <!-- <class name="DAMS.Testcases.Regression_Suite.Supplier.TC001_Supplier_KeyManagement_FR_Global"></class>   -->
         </classes>

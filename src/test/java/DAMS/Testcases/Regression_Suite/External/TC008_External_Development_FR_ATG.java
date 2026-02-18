@@ -94,7 +94,7 @@ public class TC008_External_Development_FR_ATG extends BaseClass {
 
 		List<HashMap<String, String>> data = getJsonDataToMap(
 				System.getProperty("user.dir") + "//src//test//java//DAMS//data_Regression//02_External_End_to-end_functionality.json");
-		return new Object[][] { { data.get(0) } };
+		return new Object[][] {{data.get(7)}};
 
 	}
 	

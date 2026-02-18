@@ -12371,3 +12371,240 @@
 2026-02-14 16:56:03,438 - DAMS -INFO - Replacement Package
 2026-02-14 16:56:03,438 - DAMS -INFO - Replacement Package
 2026-02-14 16:56:20,367 - DAMS -INFO - User is able to view the approval status as Approved after 1st level approval
+2026-02-17 18:22:15,529 - DAMS -INFO - 0
+2026-02-17 18:24:09,728 - DAMS -INFO - User is login to application
+2026-02-17 18:24:09,734 - DAMS -INFO - USER TYPE Internal
+2026-02-17 18:24:09,734 - DAMS -INFO - b2q5zydq7yvjcdrf
+2026-02-17 18:24:11,056 - DAMS -INFO - User enters the verification code and click on verify button
+2026-02-17 18:24:25,783 - DAMS -INFO - 2
+2026-02-17 18:24:41,846 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/functional-role/gtc
+2026-02-17 18:24:41,846 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-17 18:24:48,411 - DAMS -INFO - Proceed Button Clicked
+2026-02-17 18:24:48,411 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-17 18:24:48,411 - DAMS -INFO - User validates the gtc page
+2026-02-17 18:24:53,422 - DAMS -INFO - About to zoom out
+2026-02-17 18:24:53,448 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-17 18:25:00,077 - DAMS -INFO - validates the functional role page
+2026-02-17 18:25:00,077 - DAMS -INFO - *************Internal
+2026-02-17 18:25:02,511 - DAMS -INFO - ***Functional role : Xentry Tool Development
+2026-02-17 18:25:02,526 - DAMS -INFO - User Type :Development
+2026-02-17 18:25:02,548 - DAMS -INFO - user type Bus Production Tool Development name Development
+2026-02-17 18:25:02,576 - DAMS -INFO - user type Development name Development
+2026-02-17 18:25:03,698 - DAMS -INFO - Development
+2026-02-17 18:25:10,250 - DAMS -INFO - BU : DTE
+2026-02-17 18:25:10,282 - DAMS -INFO - user type BUS name DTE
+2026-02-17 18:25:10,326 - DAMS -INFO - user type DTE name DTE
+2026-02-17 18:25:13,669 - DAMS -INFO - Request created and in pending status Development
+2026-02-17 18:25:55,546 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-02-17 18:25:55,546 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3961, PU_S_PID1BD7, DAMS_User, N/A, PU_S PID1BD7, TT/S45-22, Internal, Development, DTE, null, null, true, 02/17/2026, N/A, N/A, N/A, N/A]</u></i></b>
+2026-02-17 18:26:35,430 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-02-17 18:26:35,431 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3961, PU_S_PID1BD7, DAMS_User, N/A, PU_S PID1BD7, TT/S45-22, Internal, Development, DTE, null, null, true, 02/17/2026, N/A, N/A, N/A, N/A]</u></i></b>
+2026-02-17 18:26:35,431 - DAMS -INFO - User is able to raise the request for the functional role Development
+2026-02-17 18:27:07,224 - DAMS -INFO - 2
+2026-02-17 18:27:23,204 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/functional-role/gtc
+2026-02-17 18:27:23,220 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-17 18:27:29,754 - DAMS -INFO - Proceed Button Clicked
+2026-02-17 18:27:29,754 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-17 18:27:29,754 - DAMS -INFO - User validates the gtc page
+2026-02-17 18:27:34,758 - DAMS -INFO - About to zoom out
+2026-02-17 18:27:34,782 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-17 18:27:41,265 - DAMS -INFO - validates the functional role page
+2026-02-17 18:27:41,265 - DAMS -INFO - *************Internal
+2026-02-17 18:27:43,614 - DAMS -INFO - ***Functional role : Xentry Tool Development
+2026-02-17 18:27:43,614 - DAMS -INFO - User Type :Production
+2026-02-17 18:27:43,647 - DAMS -INFO - user type Bus Production Tool Development name Production
+2026-02-17 18:27:43,667 - DAMS -INFO - user type Development name Production
+2026-02-17 18:27:43,691 - DAMS -INFO - user type DiagnosticLink Tool Development name Production
+2026-02-17 18:27:43,714 - DAMS -INFO - user type Production name Production
+2026-02-17 18:27:44,772 - DAMS -INFO - Production
+2026-02-17 18:27:50,831 - DAMS -INFO - BU : DTE
+2026-02-17 18:27:50,863 - DAMS -INFO - user type BUS name DTE
+2026-02-17 18:27:50,893 - DAMS -INFO - user type DTE name DTE
+2026-02-17 18:27:54,139 - DAMS -INFO - Request created and in pending status Production
+2026-02-17 18:28:35,466 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-02-17 18:28:35,466 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3962, PU_S_PID1BD7, DAMS_User, N/A, PU_S PID1BD7, TT/S45-22, Internal, Production, DTE, null, null, true, 02/17/2026, N/A, N/A, N/A, N/A]</u></i></b>
+2026-02-17 18:29:15,253 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-02-17 18:29:15,253 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3962, PU_S_PID1BD7, DAMS_User, N/A, PU_S PID1BD7, TT/S45-22, Internal, Production, DTE, null, null, true, 02/17/2026, N/A, N/A, N/A, N/A]</u></i></b>
+2026-02-17 18:29:15,255 - DAMS -INFO - User is able to raise the request for the functional role Production
+2026-02-17 18:29:47,644 - DAMS -INFO - 2
+2026-02-17 18:30:03,645 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/functional-role/gtc
+2026-02-17 18:30:03,645 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-17 18:30:10,123 - DAMS -INFO - Proceed Button Clicked
+2026-02-17 18:30:10,123 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-17 18:30:10,123 - DAMS -INFO - User validates the gtc page
+2026-02-17 18:30:46,718 - DAMS -INFO - User is login to application
+2026-02-17 18:30:46,723 - DAMS -INFO - USER TYPE External
+2026-02-17 18:30:46,724 - DAMS -INFO - m6kxhsnb6hssxztq
+2026-02-17 18:30:48,249 - DAMS -INFO - User enters the verification code and click on verify button
+2026-02-17 18:31:01,950 - DAMS -INFO - 1
+2026-02-17 18:31:10,219 - DAMS -INFO - External
+2026-02-17 18:31:10,267 - DAMS -INFO - Supplier
+2026-02-17 18:31:10,267 - DAMS -INFO - User is able to view User_types in dropdown
+2026-02-17 18:31:13,567 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-02-17 18:31:17,577 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/functional-role/gtc
+2026-02-17 18:31:17,577 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-17 18:31:24,179 - DAMS -INFO - Proceed Button Clicked
+2026-02-17 18:31:24,179 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-17 18:31:24,179 - DAMS -INFO - User validates the gtc page
+2026-02-17 18:31:29,199 - DAMS -INFO - About to zoom out
+2026-02-17 18:31:29,229 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-17 18:31:35,731 - DAMS -INFO - validates the functional role page
+2026-02-17 18:31:35,731 - DAMS -INFO - *************External
+2026-02-17 18:31:38,129 - DAMS -INFO - functional Role : Development External Support
+2026-02-17 18:31:38,129 - DAMS -INFO - User Type :Development External Support
+2026-02-17 18:31:38,162 - DAMS -INFO - user type Bus Production Tool Development External name Development External Support
+2026-02-17 18:31:38,212 - DAMS -INFO - user type Development External Support name Development External Support
+2026-02-17 18:31:39,389 - DAMS -INFO - ****** Company Selection *********
+2026-02-17 18:31:43,622 - DAMS -INFO - user type A&D Technology name Robert Bosch
+2026-02-17 18:31:43,684 - DAMS -INFO - user type Actalent name Robert Bosch
+2026-02-17 18:31:43,716 - DAMS -INFO - user type ADC Automotive Distance name Robert Bosch
+2026-02-17 18:31:43,747 - DAMS -INFO - user type AKKODIS name Robert Bosch
+2026-02-17 18:31:43,794 - DAMS -INFO - user type Anstalt für Verbrennungskraftmaschinen List (AVL) name Robert Bosch
+2026-02-17 18:31:43,827 - DAMS -INFO - user type APTIV COMPONENTS INDIA PVT.LTD name Robert Bosch
+2026-02-17 18:31:43,865 - DAMS -INFO - user type ARTECH name Robert Bosch
+2026-02-17 18:31:43,901 - DAMS -INFO - user type ASK Industries S.p.A. name Robert Bosch
+2026-02-17 18:31:43,939 - DAMS -INFO - user type AUO Corporation name Robert Bosch
+2026-02-17 18:31:43,968 - DAMS -INFO - user type BCS Automotive Interface Solutions name Robert Bosch
+2026-02-17 18:31:44,006 - DAMS -INFO - user type Bendix name Robert Bosch
+2026-02-17 18:31:44,031 - DAMS -INFO - user type Calex name Robert Bosch
+2026-02-17 18:31:44,066 - DAMS -INFO - user type Calex-DCDC name Robert Bosch
+2026-02-17 18:31:44,080 - DAMS -INFO - user type CellCentric name Robert Bosch
+2026-02-17 18:31:44,113 - DAMS -INFO - user type Contemporary Amperex name Robert Bosch
+2026-02-17 18:31:44,159 - DAMS -INFO - user type Continental name Robert Bosch
+2026-02-17 18:31:44,175 - DAMS -INFO - user type DAIMIA name Robert Bosch
+2026-02-17 18:31:44,221 - DAMS -INFO - user type Danfoss name Robert Bosch
+2026-02-17 18:31:44,238 - DAMS -INFO - user type Engbras Software e Projetos name Robert Bosch
+2026-02-17 18:31:44,269 - DAMS -INFO - user type FEV GmBH name Robert Bosch
+2026-02-17 18:31:44,301 - DAMS -INFO - user type Knorr-Bremse Systeme für name Robert Bosch
+2026-02-17 18:31:44,316 - DAMS -INFO - user type Marquardt GmbH name Robert Bosch
+2026-02-17 18:31:44,347 - DAMS -INFO - user type Meta System S.p.A. name Robert Bosch
+2026-02-17 18:31:44,379 - DAMS -INFO - user type Munich Electrification name Robert Bosch
+2026-02-17 18:31:44,410 - DAMS -INFO - user type Murata name Robert Bosch
+2026-02-17 18:31:44,458 - DAMS -INFO - user type Optimabit name Robert Bosch
+2026-02-17 18:31:44,484 - DAMS -INFO - user type Robert Bosch name Robert Bosch
+2026-02-17 18:31:45,527 - DAMS -INFO - ******** Company Selected ***********Robert Bosch
+2026-02-17 18:31:51,514 - DAMS -INFO - BU : DTE
+2026-02-17 18:31:51,528 - DAMS -INFO - user type BUS name DTE
+2026-02-17 18:31:51,561 - DAMS -INFO - user type DTE name DTE
+2026-02-17 18:31:54,851 - DAMS -INFO - Request created and in pending status Development External Support
+2026-02-17 18:32:36,586 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-02-17 18:32:36,586 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3963, HARNAGA, DAMS_User, N/A, Hariharan Nagarajan, TT/IGX-24, External, Development External Support, DTE, Robert Bosch, null, true, 02/17/2026, N/A, N/A, Robert Bosch, N/A]</u></i></b>
+2026-02-17 18:33:16,592 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-02-17 18:33:16,592 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3963, HARNAGA, DAMS_User, N/A, Hariharan Nagarajan, TT/IGX-24, External, Development External Support, DTE, Robert Bosch, null, true, 02/17/2026, N/A, N/A, Robert Bosch, N/A]</u></i></b>
+2026-02-17 18:33:16,594 - DAMS -INFO - User is able to raise the request for the functional role null
+2026-02-17 18:33:50,558 - DAMS -INFO - 2
+2026-02-17 18:34:08,573 - DAMS -INFO - External
+2026-02-17 18:34:08,605 - DAMS -INFO - Supplier
+2026-02-17 18:34:08,605 - DAMS -INFO - User is able to view User_types in dropdown
+2026-02-17 18:34:11,834 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-02-18 16:09:05,477 - DAMS -INFO - User is login to application
+2026-02-18 16:09:05,507 - DAMS -INFO - USER TYPE Supplier
+2026-02-18 16:09:05,507 - DAMS -INFO - m6kxhsnb6hssxztq
+2026-02-18 16:09:06,653 - DAMS -INFO - User enters the verification code and click on verify button
+2026-02-18 16:09:23,135 - DAMS -INFO - 2
+2026-02-18 16:09:41,704 - DAMS -INFO - External
+2026-02-18 16:09:41,784 - DAMS -INFO - Supplier
+2026-02-18 16:09:41,800 - DAMS -INFO - User is able to view User_types in dropdown
+2026-02-18 16:09:45,350 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-02-18 16:09:49,380 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/functional-role/gtc
+2026-02-18 16:09:49,383 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-18 16:09:56,290 - DAMS -INFO - Proceed Button Clicked
+2026-02-18 16:09:56,290 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-18 16:09:56,290 - DAMS -INFO - User validates the gtc page
+2026-02-18 16:10:01,307 - DAMS -INFO - About to zoom out
+2026-02-18 16:10:01,359 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-18 16:10:08,066 - DAMS -INFO - validates the functional role page
+2026-02-18 16:10:08,066 - DAMS -INFO - *************External
+2026-02-18 16:10:12,726 - DAMS -INFO - 
+2026-02-18 16:10:12,733 - DAMS -INFO - User Type :null
+2026-02-18 16:10:45,173 - DAMS -INFO - 1
+2026-02-18 16:10:53,602 - DAMS -INFO - External
+2026-02-18 16:10:53,698 - DAMS -INFO - Supplier
+2026-02-18 16:10:53,729 - DAMS -INFO - User is able to view User_types in dropdown
+2026-02-18 16:10:57,267 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-02-18 16:11:01,299 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/
+2026-02-18 16:11:01,299 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-18 16:11:08,192 - DAMS -INFO - Proceed Button Clicked
+2026-02-18 16:11:08,192 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-18 16:11:08,193 - DAMS -INFO - User validates the gtc page
+2026-02-18 16:11:13,205 - DAMS -INFO - About to zoom out
+2026-02-18 16:11:13,253 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-18 16:11:19,869 - DAMS -INFO - validates the functional role page
+2026-02-18 16:11:19,869 - DAMS -INFO - *************External
+2026-02-18 16:11:24,611 - DAMS -INFO - 
+2026-02-18 16:11:24,611 - DAMS -INFO - User Type :null
+2026-02-18 16:11:59,277 - DAMS -INFO - 1
+2026-02-18 16:12:07,693 - DAMS -INFO - External
+2026-02-18 16:12:07,777 - DAMS -INFO - Supplier
+2026-02-18 16:12:07,793 - DAMS -INFO - User is able to view User_types in dropdown
+2026-02-18 16:12:11,199 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-02-18 16:12:15,247 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/
+2026-02-18 16:12:15,249 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-18 16:12:21,997 - DAMS -INFO - Proceed Button Clicked
+2026-02-18 16:12:21,998 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-18 16:12:22,000 - DAMS -INFO - User validates the gtc page
+2026-02-18 16:12:27,013 - DAMS -INFO - About to zoom out
+2026-02-18 16:12:27,046 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-18 16:12:33,791 - DAMS -INFO - validates the functional role page
+2026-02-18 16:12:33,792 - DAMS -INFO - *************External
+2026-02-18 16:12:38,297 - DAMS -INFO - 
+2026-02-18 16:12:38,297 - DAMS -INFO - User Type :null
+2026-02-18 16:13:08,022 - DAMS -INFO - 1
+2026-02-18 16:13:16,411 - DAMS -INFO - External
+2026-02-18 16:13:16,484 - DAMS -INFO - Supplier
+2026-02-18 16:13:16,496 - DAMS -INFO - User is able to view User_types in dropdown
+2026-02-18 16:13:19,878 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-02-18 16:13:23,912 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/functional-role/gtc
+2026-02-18 16:13:23,913 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-18 16:13:30,988 - DAMS -INFO - Proceed Button Clicked
+2026-02-18 16:13:30,989 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-18 16:13:30,989 - DAMS -INFO - User validates the gtc page
+2026-02-18 16:13:36,002 - DAMS -INFO - About to zoom out
+2026-02-18 16:13:36,048 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-18 16:13:42,725 - DAMS -INFO - validates the functional role page
+2026-02-18 16:13:42,725 - DAMS -INFO - *************External
+2026-02-18 16:13:47,363 - DAMS -INFO - 
+2026-02-18 16:13:47,363 - DAMS -INFO - User Type :null
+2026-02-18 16:14:16,433 - DAMS -INFO - 1
+2026-02-18 16:14:24,739 - DAMS -INFO - External
+2026-02-18 16:14:24,832 - DAMS -INFO - Supplier
+2026-02-18 16:14:24,853 - DAMS -INFO - User is able to view User_types in dropdown
+2026-02-18 16:14:28,298 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-02-18 16:14:32,318 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/functional-role/gtc
+2026-02-18 16:14:32,320 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-18 16:14:39,241 - DAMS -INFO - Proceed Button Clicked
+2026-02-18 16:14:39,242 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-18 16:14:39,242 - DAMS -INFO - User validates the gtc page
+2026-02-18 16:14:44,244 - DAMS -INFO - About to zoom out
+2026-02-18 16:14:44,288 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-18 16:14:50,865 - DAMS -INFO - validates the functional role page
+2026-02-18 16:14:50,865 - DAMS -INFO - *************External
+2026-02-18 16:14:55,436 - DAMS -INFO - 
+2026-02-18 16:14:55,436 - DAMS -INFO - User Type :null
+2026-02-18 16:15:22,604 - DAMS -INFO - 1
+2026-02-18 16:15:30,954 - DAMS -INFO - External
+2026-02-18 16:15:31,049 - DAMS -INFO - Supplier
+2026-02-18 16:15:31,068 - DAMS -INFO - User is able to view User_types in dropdown
+2026-02-18 16:15:34,525 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-02-18 16:15:38,546 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/functional-role/gtc
+2026-02-18 16:15:38,547 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-18 16:15:45,472 - DAMS -INFO - Proceed Button Clicked
+2026-02-18 16:15:45,472 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-18 16:15:45,474 - DAMS -INFO - User validates the gtc page
+2026-02-18 16:15:50,475 - DAMS -INFO - About to zoom out
+2026-02-18 16:15:50,526 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-18 16:15:57,243 - DAMS -INFO - validates the functional role page
+2026-02-18 16:15:57,244 - DAMS -INFO - *************External
+2026-02-18 16:16:01,815 - DAMS -INFO - 
+2026-02-18 16:16:01,815 - DAMS -INFO - User Type :null
+2026-02-18 16:16:36,298 - DAMS -INFO - 1
+2026-02-18 16:16:44,670 - DAMS -INFO - 
+2026-02-18 16:16:44,735 - DAMS -INFO - 
+2026-02-18 16:16:44,749 - DAMS -INFO - User is able to view User_types in dropdown
+2026-02-18 16:16:48,920 - DAMS -INFO - 1
+2026-02-18 16:16:53,947 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-02-18 16:16:57,972 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/
+2026-02-18 16:16:57,976 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-18 16:17:59,587 - DAMS -INFO - 1
+2026-02-18 16:18:05,636 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/
+2026-02-18 16:18:05,636 - DAMS -INFO - User is successfully redirected into GTC Page
