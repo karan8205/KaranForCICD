@@ -11,184 +11,156 @@
     <version>0.0.1-SNAPSHOT</version>
 
     <name>DAMS_UI-Application_Automation</name>
-    <!-- FIXME change it to the project's website -->
-    <url>http://www.example.com</url>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+        <maven.compiler.release>17</maven.compiler.release>
     </properties>
 
+    <!-- ================= DEPENDENCIES ================= -->
     <dependencies>
-        <dependency>
-            <groupId>org.jline</groupId>
-            <artifactId>jline</artifactId>
-            <version>3.23.0</version>
-        </dependency>
 
+        <!-- Selenium -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.3.0</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/dev.samstevens.totp/totp -->
-        <dependency>
-            <groupId>dev.samstevens.totp</groupId>
-            <artifactId>totp</artifactId>
-            <version>1.7.1</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.testng/testng -->
+
+        <!-- TestNG -->
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.1.0</version>
-        </dependency>
-        <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>7.5.0</version>
+            <version>7.10.2</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+        <!-- WebDriver Manager -->
         <dependency>
-            <groupId>io.cucumber</groupId>
-            <artifactId>cucumber-testng</artifactId>
-            <version>7.5.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
-        <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
-            <version>2.11.0</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.pdfbox/pdfbox -->
-        <dependency>
-            <groupId>org.apache.pdfbox</groupId>
-            <artifactId>pdfbox</artifactId>
-            <version>2.0.27</version>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.8.0</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/org.apache.pdfbox/fontbox -->
-        <dependency>
-            <groupId>org.apache.pdfbox</groupId>
-            <artifactId>fontbox</artifactId>
-            <version>2.0.24</version>
-        </dependency>
-        <!-- https://mvnrepository.com/artifact/com.github.stephenc.monte/monte-screen-recorder -->
-        <dependency>
-            <groupId>com.github.stephenc.monte</groupId>
-            <artifactId>monte-screen-recorder</artifactId>
-            <version>0.7.7.0</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/dev.samstevens.totp/totp -->
-        <dependency>
-            <groupId>dev.samstevens.totp</groupId>
-            <artifactId>totp</artifactId>
-            <version>1.7.1</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.jboss.aerogear</groupId>
-            <artifactId>aerogear-otp-java</artifactId>
-            <version>1.0.0</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.aventstack/extentreports -->
+        <!-- Extent Report -->
         <dependency>
             <groupId>com.aventstack</groupId>
             <artifactId>extentreports</artifactId>
             <version>5.1.2</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager -->
+        <!-- TOTP (only once) -->
         <dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>5.8.0</version>
+            <groupId>dev.samstevens.totp</groupId>
+            <artifactId>totp</artifactId>
+            <version>1.7.1</version>
         </dependency>
+
+        <!-- Jackson -->
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>2.13.3</version>
         </dependency>
 
-        <!--<dependency>
-            <groupId>io.github.bonigarcia</groupId>
-            <artifactId>webdrivermanager</artifactId>
-            <version>5.1.1</version>
-        </dependency> -->
-        <!-- https://mvnrepository.com/artifact/log4j/log4j -->
+        <!-- Commons IO -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.11.0</version>
+        </dependency>
+
+        <!-- PDF -->
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>2.0.27</version>
+        </dependency>
+
+        <!-- Screen Recorder -->
+        <dependency>
+            <groupId>com.github.stephenc.monte</groupId>
+            <artifactId>monte-screen-recorder</artifactId>
+            <version>0.7.7.0</version>
+        </dependency>
+
+        <!-- Logging -->
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.apache.pdfbox/fontbox -->
-        <dependency>
-            <groupId>dev.samstevens.totp</groupId>
-            <artifactId>totp</artifactId>
-            <version>1.7.1</version>
-        </dependency>
+
+        <!-- Lombok (only one version) -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.28</version>
+            <version>1.18.38</version>
             <scope>provided</scope>
         </dependency>
-        <dependency>
-   			 <groupId>org.projectlombok</groupId>
-    		<artifactId>lombok</artifactId>
-   			 <version>1.18.38</version>
-   			 <scope>provided</scope>
-		</dependency>
 
     </dependencies>
 
+
+    <!-- ================= BUILD ================= -->
     <build>
-       <plugins>
-         <!-- Maven Compiler Plugin -->
-    	<plugin>
-	        <groupId>org.apache.maven.plugins</groupId>
-	        <artifactId>maven-compiler-plugin</artifactId>
-	        <version>3.11.0</version>
-	        <configuration>
-            <source>24</source>
-            <target>24</target>
-            <release>17</release>
-            <annotationProcessorPaths>
-                <path>
-                    <groupId>org.projectlombok</groupId>
-                    <artifactId>lombok</artifactId>
-                    <version>1.18.38</version>
-                </path>
-            </annotationProcessorPaths>
-        </configuration>
-    </plugin>
+        <plugins>
 
-    <!-- Maven Surefire Plugin (TestNG) -->
-    <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.2.5</version>
-        <configuration>
-            <suiteXmlFiles>
-                <suiteXmlFile>testSuites/SmokeSuite_TestNG.xml</suiteXmlFile>
-            </suiteXmlFiles>
-            <properties>
-                <property>
-                    <name>listener</name>
-                    <value>DAMS.Resources.Listeners</value>
-                </property>
-            </properties>
-            <useSystemClassLoader>true</useSystemClassLoader>
-        <forkCount>1</forkCount>
-        <reuseForks>true</reuseForks>
-        </configuration>
-    </plugin>
+            <!-- Compiler -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <release>17</release>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>1.18.38</version>
+                        </path>
+                    </annotationProcessorPaths>
+                </configuration>
+            </plugin>
 
-</plugins>
+            <!-- ================= SUREFIRE (IMPORTANT) ================= -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
 
+                <configuration>
+
+                    <!-- DO NOT hardcode suite xml here -->
+                    <!-- Jenkins will decide what to run -->
+
+                    <testFailureIgnore>false</testFailureIgnore>
+
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>DAMS.Resources.Listeners</value>
+                        </property>
+                    </properties>
+
+                    <!-- Allow dynamic execution -->
+                    <includes>
+                        <include>**/*Test.java</include>
+                        <include>**/TC*.java</include>
+                    </includes>
+
+                    <!-- Pass env from Jenkins -->
+                    <systemPropertyVariables>
+                        <env>${env}</env>
+                    </systemPropertyVariables>
+
+                    <useSystemClassLoader>true</useSystemClassLoader>
+                    <forkCount>1</forkCount>
+                    <reuseForks>true</reuseForks>
+
+                </configuration>
+            </plugin>
+
+        </plugins>
     </build>
+
 </project>
