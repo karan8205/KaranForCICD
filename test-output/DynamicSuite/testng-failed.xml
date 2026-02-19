@@ -11,7 +11,7 @@
         <methods>
           <include name="login"/>
           <include name="configure"/>
-          <include name="Overall_Global_ATG_Regression_E2E_Internal" invocation-numbers="4 5 6 7 8 9 10"/>
+          <include name="Overall_Global_ATG_Regression_E2E_Internal" invocation-numbers="0 1 2 3 4 5 6 7 8 9 10"/>
         </methods>
       </class> <!-- DAMS.Testcases.Regression_Suite.Overall.TC014_Internal_OverAll_Run -->
     </classes>

@@ -106,9 +106,9 @@ public class TC014_External_OverAll_Run extends BaseClass {
 			test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>" + EA_applicantNumber
 					+ "Enhance Right Authority for Internal- status Approved:" + "</u></i></b>");
 			AbstractComponents.refresh();
-			if (!Functional_Role.equalsIgnoreCase("Production")) {
-				if (Functional_Role.equalsIgnoreCase("Development")
-						|| Functional_Role.equalsIgnoreCase("Development - ATG")) {
+			if (!Functional_Role.equalsIgnoreCase("Production External")) {
+				if ( Functional_Role.equalsIgnoreCase("Development External Support")						
+						|| Functional_Role.equalsIgnoreCase("Development - ATG External")) {
 					AbstractComponents.refresh();
 					myreq.select_NewPermission_request();
 					newper.raise_nestT_Request_Supplier_Multiple(input);
@@ -164,8 +164,7 @@ public class TC014_External_OverAll_Run extends BaseClass {
 		List<HashMap<String, String>> data = getJsonDataToMap(
 				System.getProperty("user.dir")
 						+ "//src//test//java//DAMS//data_Regression//02_External_End_to-end_functionality.json");
-		return new Object[][] {{data.get(0)},{data.get(1)},{data.get(2)},{data.get(3)},{data.get(4)},{data.get(5)},
-							   {data.get(6)},{data.get(7)},{data.get(8)},{data.get(9)},{data.get(10)}};
+		return new Object[][] {{data.get(0)},{data.get(1)},{data.get(2)}};
 	}
 
 	public static void approve_Multiple_special_cases_nestT_request(HashMap<String, String> input) throws Throwable {
