@@ -9,12 +9,8 @@ pipeline {
 
     parameters {
         choice(name: 'env', choices: ['STG', 'DEV', 'QA'], description: 'Select the Environment')
-
-        string(name: 'packageName', defaultValue: '', description: 'Optional: Run all tests in a package (e.g., DAMS.Supplier)')
-
-        string(name: 'className', defaultValue: '', description: 'Optional: Enter Test Class Name (e.g., TC014_Supplier_OverAll_Run)')
-
-        string(name: 'methodName', defaultValue: '', description: 'Optional: Enter Method Name (e.g., Overall_Global_ATG_Regression_E2E_Supplier)')
+        string(name: 'className', defaultValue: '', description: 'Enter Test Class Name (e.g., TC01_Login)')
+        string(name: 'methodName', defaultValue: '', description: 'Enter Method Name (Optional)')
     }
 
     environment {
@@ -27,17 +23,12 @@ pipeline {
 
         stage('Initialize') {
             steps {
-                bat 'echo ================================'
                 bat 'echo Project Name: %PROJECT_NAME%'
                 bat 'echo Project URL: %PROJECT_URL%'
                 bat 'java -version'
-
-                script {
-                    echo "Environment: ${params.env}"
-                    echo "Package Name: ${params.packageName}"
-                    echo "Class Name: ${params.className}"
-                    echo "Method Name: ${params.methodName}"
-                }
+                bat 'echo Environment: %env%'
+                bat 'echo Class Name: %className%'
+                bat 'echo Method Name: %methodName%'
             }
         }
 
@@ -52,50 +43,18 @@ pipeline {
             steps {
                 script {
 
-                    def baseCmd = "mvn test -Denv=${params.env}"
+                    def testCmd = "-Denv=${params.env}"
 
-                    // ===============================
-                    // 1️⃣ PACKAGE EXECUTION (Highest Priority)
-                    // ===============================
-                    if (params.packageName?.trim()) {
+                    if (params.className?.trim()) {
+                        if (params.methodName?.trim()) {
+                            testCmd = "${testCmd} -Dtest=${params.className}#${params.methodName}"
+                        } else {
+                            testCmd = "${testCmd} -Dtest=${params.className}"
+                        }
 
-                        echo "Running ALL tests inside package: ${params.packageName}"
+                        bat "mvn test ${testCmd}"
 
-                        def packagePath = params.packageName.replace('.', '/')
-
-                        bat """
-                        mvn test -Denv=${params.env} ^
-                        -Dsurefire.includes=**/${packagePath}/**/*.java
-                        """
-                    }
-
-                    // ===============================
-                    // 2️⃣ CLASS + METHOD EXECUTION
-                    // ===============================
-                    else if (params.className?.trim() && params.methodName?.trim()) {
-
-                        echo "Running specific method"
-
-                        bat "${baseCmd} -Dtest=${params.className}#${params.methodName}"
-                    }
-
-                    // ===============================
-                    // 3️⃣ CLASS ONLY
-                    // ===============================
-                    else if (params.className?.trim()) {
-
-                        echo "Running entire class"
-
-                        bat "${baseCmd} -Dtest=${params.className}"
-                    }
-
-                    // ===============================
-                    // 4️⃣ DEFAULT SUITE EXECUTION
-                    // ===============================
-                    else {
-
-                        echo "Running full regression suite"
-
+                    } else {
                         bat "mvn test -Dsurefire.suiteXmlFiles=testSuites/RegressionSuite_TestNG.xml -Denv=${params.env}"
                     }
                 }
@@ -113,14 +72,7 @@ pipeline {
         always {
             emailext(
                 subject: "${currentBuild.currentResult} - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: """
-                Job: ${env.JOB_NAME}
-                Build Number: ${env.BUILD_NUMBER}
-                Result: ${currentBuild.currentResult}
-
-                Build URL:
-                ${env.BUILD_URL}
-                """,
+                body: "Build URL: ${env.BUILD_URL}",
                 to: "${EMAIL_TO}"
             )
         }
