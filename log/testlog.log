@@ -12608,3 +12608,153 @@
 2026-02-18 16:17:59,587 - DAMS -INFO - 1
 2026-02-18 16:18:05,636 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/
 2026-02-18 16:18:05,636 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-19 20:20:14,975 - DAMS -INFO - User is login to application
+2026-02-19 20:20:14,984 - DAMS -INFO - USER TYPE Internal
+2026-02-19 20:20:14,985 - DAMS -INFO - b2q5zydq7yvjcdrf
+2026-02-19 20:20:15,910 - DAMS -INFO - User enters the verification code and click on verify button
+2026-02-19 20:20:38,039 - DAMS -INFO - 2
+2026-02-19 20:20:54,454 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/functional-role/gtc
+2026-02-19 20:20:54,455 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-19 20:21:01,496 - DAMS -INFO - Proceed Button Clicked
+2026-02-19 20:21:01,497 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-19 20:21:01,497 - DAMS -INFO - User validates the gtc page
+2026-02-19 20:21:06,503 - DAMS -INFO - About to zoom out
+2026-02-19 20:21:06,554 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-19 20:21:13,319 - DAMS -INFO - validates the functional role page
+2026-02-19 20:21:13,320 - DAMS -INFO - *************Internal
+2026-02-19 20:21:15,965 - DAMS -INFO - ***Functional role : Xentry Tool Development
+2026-02-19 20:21:15,966 - DAMS -INFO - User Type :Development
+2026-02-19 20:21:16,014 - DAMS -INFO - user type Bus Production Tool Development name Development
+2026-02-19 20:21:16,065 - DAMS -INFO - user type Development name Development
+2026-02-19 20:21:17,202 - DAMS -INFO - Development
+2026-02-19 20:21:23,522 - DAMS -INFO - BU : DTE
+2026-02-19 20:21:23,573 - DAMS -INFO - user type BUS name DTE
+2026-02-19 20:21:23,622 - DAMS -INFO - user type DTE name DTE
+2026-02-19 20:21:27,099 - DAMS -INFO - Request created and in pending status Development
+2026-02-19 20:22:11,017 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-02-19 20:22:11,018 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3985, PU_S_PID1BD7, DAMS_User, N/A, PU_S PID1BD7, TT/S45-22, Internal, Development, DTE, null, null, true, 02/19/2026, N/A, N/A, N/A, N/A]</u></i></b>
+2026-02-19 20:22:52,962 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-02-19 20:22:52,963 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3985, PU_S_PID1BD7, DAMS_User, N/A, PU_S PID1BD7, TT/S45-22, Internal, Development, DTE, null, null, true, 02/19/2026, N/A, N/A, N/A, N/A]</u></i></b>
+2026-02-19 20:22:52,963 - DAMS -INFO - User is able to raise the request for the functional role Development
+2026-02-19 20:22:54,298 - DAMS -INFO - Clicked
+2026-02-19 20:22:59,386 - DAMS -INFO - ***Authorization_List: Functional Role
+2026-02-19 20:22:59,554 - DAMS -INFO - Pending Permission Requests
+2026-02-19 20:22:59,554 - DAMS -INFO - Functional Role
+2026-02-19 20:22:59,627 - DAMS -INFO - Functional Role
+2026-02-19 20:22:59,627 - DAMS -INFO - Functional Role
+2026-02-19 20:23:58,649 - DAMS -INFO - 2
+2026-02-19 20:24:15,079 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/
+2026-02-19 20:24:15,080 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-19 20:24:21,992 - DAMS -INFO - Proceed Button Clicked
+2026-02-19 20:24:21,993 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-19 20:24:21,993 - DAMS -INFO - User validates the gtc page
+2026-02-19 20:24:27,001 - DAMS -INFO - About to zoom out
+2026-02-19 20:24:27,024 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-19 20:24:33,822 - DAMS -INFO - validates the functional role page
+2026-02-19 20:24:33,823 - DAMS -INFO - *************Internal
+2026-02-19 20:24:36,453 - DAMS -INFO - ***Functional role : Xentry Tool Development
+2026-02-19 20:24:36,453 - DAMS -INFO - User Type :Production
+2026-02-19 20:24:36,502 - DAMS -INFO - user type Bus Production Tool Development name Production
+2026-02-19 20:24:36,553 - DAMS -INFO - user type Development name Production
+2026-02-19 20:24:36,597 - DAMS -INFO - user type DiagnosticLink Tool Development name Production
+2026-02-19 20:24:36,641 - DAMS -INFO - user type Production name Production
+2026-02-19 20:24:37,713 - DAMS -INFO - Production
+2026-02-19 20:24:43,819 - DAMS -INFO - BU : DTE
+2026-02-19 20:24:43,843 - DAMS -INFO - user type BUS name DTE
+2026-02-19 20:24:43,892 - DAMS -INFO - user type DTE name DTE
+2026-02-19 20:24:47,303 - DAMS -INFO - Request created and in pending status Production
+2026-02-19 20:25:31,458 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-02-19 20:25:31,459 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3986, PU_S_PID1BD7, DAMS_User, N/A, PU_S PID1BD7, TT/S45-22, Internal, Production, DTE, null, null, true, 02/19/2026, N/A, N/A, N/A, N/A]</u></i></b>
+2026-02-19 20:26:13,186 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-02-19 20:26:13,188 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3986, PU_S_PID1BD7, DAMS_User, N/A, PU_S PID1BD7, TT/S45-22, Internal, Production, DTE, null, null, true, 02/19/2026, N/A, N/A, N/A, N/A]</u></i></b>
+2026-02-19 20:26:13,188 - DAMS -INFO - User is able to raise the request for the functional role Production
+2026-02-19 20:26:14,491 - DAMS -INFO - Clicked
+2026-02-19 20:26:19,566 - DAMS -INFO - ***Authorization_List: Functional Role
+2026-02-19 20:26:19,735 - DAMS -INFO - Pending Permission Requests
+2026-02-19 20:26:19,735 - DAMS -INFO - Functional Role
+2026-02-19 20:26:19,801 - DAMS -INFO - Functional Role
+2026-02-19 20:26:19,802 - DAMS -INFO - Functional Role
+2026-02-19 20:27:22,838 - DAMS -INFO - 2
+2026-02-19 20:27:39,225 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/functional-role/gtc
+2026-02-19 20:27:39,227 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-19 20:27:45,965 - DAMS -INFO - Proceed Button Clicked
+2026-02-19 20:27:45,966 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-19 20:27:45,966 - DAMS -INFO - User validates the gtc page
+2026-02-19 20:27:50,971 - DAMS -INFO - About to zoom out
+2026-02-19 20:27:51,014 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-19 20:27:57,782 - DAMS -INFO - validates the functional role page
+2026-02-19 20:27:57,783 - DAMS -INFO - *************Internal
+2026-02-19 20:28:00,399 - DAMS -INFO - ***Functional role : Xentry Tool Development
+2026-02-19 20:28:00,400 - DAMS -INFO - User Type :Vehicle Validation
+2026-02-19 20:28:00,445 - DAMS -INFO - user type Bus Production Tool Development name Vehicle Validation
+2026-02-19 20:28:00,491 - DAMS -INFO - user type Development name Vehicle Validation
+2026-02-19 20:28:00,537 - DAMS -INFO - user type DiagnosticLink Tool Development name Vehicle Validation
+2026-02-19 20:28:00,581 - DAMS -INFO - user type Production name Vehicle Validation
+2026-02-19 20:28:00,623 - DAMS -INFO - user type QM(Quality Management) name Vehicle Validation
+2026-02-19 20:28:00,657 - DAMS -INFO - user type Vehicle Validation name Vehicle Validation
+2026-02-19 20:28:01,750 - DAMS -INFO - Vehicle Validation
+2026-02-19 20:28:07,975 - DAMS -INFO - BU : DTE
+2026-02-19 20:28:08,020 - DAMS -INFO - user type BUS name DTE
+2026-02-19 20:28:08,066 - DAMS -INFO - user type DTE name DTE
+2026-02-19 20:28:11,488 - DAMS -INFO - Request created and in pending status Vehicle Validation
+2026-02-19 20:28:55,429 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-02-19 20:28:55,430 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3987, PU_S_PID1BD7, DAMS_User, N/A, PU_S PID1BD7, TT/S45-22, Internal, Vehicle Validation, DTE, null, null, true, 02/19/2026, N/A, N/A, N/A, N/A]</u></i></b>
+2026-02-19 20:29:37,017 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-02-19 20:29:37,018 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3987, PU_S_PID1BD7, DAMS_User, N/A, PU_S PID1BD7, TT/S45-22, Internal, Vehicle Validation, DTE, null, null, true, 02/19/2026, N/A, N/A, N/A, N/A]</u></i></b>
+2026-02-19 20:29:37,019 - DAMS -INFO - User is able to raise the request for the functional role Vehicle Validation
+2026-02-19 20:29:38,408 - DAMS -INFO - Clicked
+2026-02-19 20:29:43,482 - DAMS -INFO - ***Authorization_List: Functional Role
+2026-02-19 20:29:43,626 - DAMS -INFO - Pending Permission Requests
+2026-02-19 20:29:43,627 - DAMS -INFO - Functional Role
+2026-02-19 20:29:43,685 - DAMS -INFO - Functional Role
+2026-02-19 20:29:43,686 - DAMS -INFO - Functional Role
+2026-02-19 20:30:48,784 - DAMS -INFO - 2
+2026-02-19 20:31:05,059 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/
+2026-02-19 20:31:05,059 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-19 20:31:12,357 - DAMS -INFO - Proceed Button Clicked
+2026-02-19 20:31:12,358 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-19 20:31:12,359 - DAMS -INFO - User validates the gtc page
+2026-02-19 20:31:17,372 - DAMS -INFO - About to zoom out
+2026-02-19 20:31:17,418 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-19 20:31:24,015 - DAMS -INFO - validates the functional role page
+2026-02-19 20:31:24,015 - DAMS -INFO - *************Internal
+2026-02-19 20:31:26,665 - DAMS -INFO - ***Functional role : Xentry Tool Development
+2026-02-19 20:31:26,665 - DAMS -INFO - User Type :Bus Production Tool Development
+2026-02-19 20:31:26,710 - DAMS -INFO - user type Bus Production Tool Development name Bus Production Tool Development
+2026-02-19 20:31:27,858 - DAMS -INFO - Bus Production Tool Development
+2026-02-19 20:31:34,138 - DAMS -INFO - BU : BUS
+2026-02-19 20:31:34,183 - DAMS -INFO - user type BUS name BUS
+2026-02-19 20:31:37,656 - DAMS -INFO - Request created and in pending status Bus Production Tool Development
+2026-02-19 20:32:21,931 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-02-19 20:32:21,932 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3988, PU_S_PID1BD7, DAMS_User, N/A, PU_S PID1BD7, TT/S45-22, Internal, Bus Production Tool Development, BUS, null, null, true, 02/19/2026, N/A, N/A, N/A, N/A]</u></i></b>
+2026-02-19 20:33:03,982 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-02-19 20:33:03,982 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3988, PU_S_PID1BD7, DAMS_User, N/A, PU_S PID1BD7, TT/S45-22, Internal, Bus Production Tool Development, BUS, null, null, true, 02/19/2026, N/A, N/A, N/A, N/A]</u></i></b>
+2026-02-19 20:33:03,982 - DAMS -INFO - User is able to raise the request for the functional role Bus Production Tool Development
+2026-02-19 20:33:05,269 - DAMS -INFO - Clicked
+2026-02-19 20:33:10,337 - DAMS -INFO - ***Authorization_List: Functional Role
+2026-02-19 20:33:10,502 - DAMS -INFO - Pending Permission Requests
+2026-02-19 20:33:10,502 - DAMS -INFO - Functional Role
+2026-02-19 20:33:10,584 - DAMS -INFO - Functional Role
+2026-02-19 20:33:10,584 - DAMS -INFO - Functional Role
+2026-02-19 20:34:14,617 - DAMS -INFO - 2
+2026-02-19 20:34:31,031 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/
+2026-02-19 20:34:31,032 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-19 20:34:38,038 - DAMS -INFO - Proceed Button Clicked
+2026-02-19 20:34:38,039 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-19 20:34:38,039 - DAMS -INFO - User validates the gtc page
+2026-02-19 20:34:43,054 - DAMS -INFO - About to zoom out
+2026-02-19 20:34:43,104 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-19 20:34:49,830 - DAMS -INFO - validates the functional role page
+2026-02-19 20:34:49,830 - DAMS -INFO - *************Internal
+2026-02-19 20:34:52,404 - DAMS -INFO - ***Functional role : Xentry Tool Development
+2026-02-19 20:34:52,405 - DAMS -INFO - User Type :QM(Quality Management)
+2026-02-19 20:34:52,453 - DAMS -INFO - user type Bus Production Tool Development name QM(Quality Management)
+2026-02-19 20:34:52,499 - DAMS -INFO - user type Development name QM(Quality Management)
+2026-02-19 20:34:52,544 - DAMS -INFO - user type DiagnosticLink Tool Development name QM(Quality Management)
+2026-02-19 20:34:52,590 - DAMS -INFO - user type Production name QM(Quality Management)
+2026-02-19 20:34:52,636 - DAMS -INFO - user type QM(Quality Management) name QM(Quality Management)
+2026-02-19 20:34:53,766 - DAMS -INFO - QM(Quality Management)
+2026-02-19 20:35:00,011 - DAMS -INFO - BU : DTE
+2026-02-19 20:35:00,055 - DAMS -INFO - user type BUS name DTE
+2026-02-19 20:35:00,103 - DAMS -INFO - user type DTE name DTE
+2026-02-19 20:35:03,573 - DAMS -INFO - Request created and in pending status QM(Quality Management)
