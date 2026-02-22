@@ -134,7 +134,7 @@
 		"NO":"4",
 		"Mode": "ATG",
 		"User_Type": "Supplier",
-		"Functional_role_supplier": "ECU Supplier - Development - ATG",
+		"Functional_role_supplier": "Development - ATG",
 		"Role_Desc": "Person at the ECU supplier associated with ATG project who is working in the development team for the related ECU project. On applying for the functional role,the user should automatically receive Supplier,Development ENHANCED, Production, After-Sales ENHANCED for all the Own ECUs as Standard Permissions.",
 		"company_name": "Robert Bosch",
 		"Reason_for_supplier_FR": "Functional role request for ECU Supplier - Development",

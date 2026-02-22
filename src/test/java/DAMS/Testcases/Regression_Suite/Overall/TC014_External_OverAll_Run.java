@@ -52,7 +52,7 @@ public class TC014_External_OverAll_Run extends BaseClass {
 	@Test(dataProvider = "getData_External", priority = 0)
 	public static void Overall_Global_ATG_Regression_E2E_External(HashMap<String, String> input) throws Throwable {
 		try {
-			System.out.println("\n" + input + "\n");
+			System.out.println("\n\n" + input + "\n\n");
 			String Functional_Role = input.get("Functional_role_External");
 			String mode = input.get("Mode");
 			if (mode.equalsIgnoreCase("Global")) {

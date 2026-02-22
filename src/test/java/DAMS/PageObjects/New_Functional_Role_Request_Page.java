@@ -788,7 +788,7 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 	public String raise_Supplier_functional_role_request(String Supplier_key_management, String supplier_Development,
 			String supplier_warranty_return, String Functional_role_supplier, String Role_Desc, String company_name,
 			String Reason_for_supplier_FR, String ECU_Supplier) throws Throwable {
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		select_Functional_role();
 		String st = user_type();
 		System.out.println(Functional_role_supplier);

@@ -468,6 +468,9 @@ public class ApproverOverview_Page extends AbstractComponents {
 	@FindBy(xpath = "//b[text()='Request Date:']")
 	private WebElement Table_Inside_RequestType;
 	
+	@FindBy(xpath = "//span[text()=' Approve']")
+	private WebElement approveBtn;
+	
 
 	public String change_request_status() throws InterruptedException {
 		Thread.sleep(5000);
@@ -1052,16 +1055,17 @@ public class ApproverOverview_Page extends AbstractComponents {
 		}
 //		complete_btn();
 		search_here(functional_role_Overview_table_input.get(1).toString());
+		
 		//Hari Start new ApproverOverview EXPANDABLE
 		
-		Thread.sleep(2000);
-		clickJS(ApproverOverviewTable_Toggle);
-		Thread.sleep(3000);
-//		scrollDown(Table_Inside_RequestType);
-		Thread.sleep(2000);
-		scrollUp(Approver_Overview_Requester_id);
-		Thread.sleep(2000);
-		clickJS(ApproverOverviewTable_Toggle);
+//		Thread.sleep(2000);
+//		clickJS(ApproverOverviewTable_Toggle);
+//		Thread.sleep(3000);
+////		scrollDown(Table_Inside_RequestType);
+//		Thread.sleep(2000);
+//		scrollUp(Approver_Overview_Requester_id);
+//		Thread.sleep(2000);
+//		clickJS(ApproverOverviewTable_Toggle);
 		
 		//Hari End new ApproverOverview EXPANDABLE
 		Approver_Overview_Requester_ID_txt().equals(functional_role_Overview_table_input.get(2).toString());

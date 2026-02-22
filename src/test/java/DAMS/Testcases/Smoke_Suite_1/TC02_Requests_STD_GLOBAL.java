@@ -230,7 +230,7 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 		h.dropBtn();
 
 		String select_user_type = null;
-
+		logger.info("USER TYPE : "+ user_type);
 		if ("Internal".equalsIgnoreCase(user_type)) {
 			h.click_here_to_apply_for_functional_roles_click();
 			select_user_type = user_type;

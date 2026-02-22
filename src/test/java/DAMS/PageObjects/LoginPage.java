@@ -46,6 +46,7 @@ public class LoginPage extends AbstractComponents {
 //		enter_verification_code(generate_OTP_for_MFA);
 //	}
 	public void loginApplicationasRequester_MFA(String username, String password,String url) throws InterruptedException {
+		logger.info("URL : "+url);
 		goTo(url);
 //		test.pass("Navigate to URL"+ url);
 		Thread.sleep(3000);

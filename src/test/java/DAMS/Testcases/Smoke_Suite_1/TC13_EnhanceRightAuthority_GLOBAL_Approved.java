@@ -169,7 +169,7 @@ public class TC13_EnhanceRightAuthority_GLOBAL_Approved extends BaseClass {
 		for(int i=0;((i<user.length)&&(i<applicantNumber.size()));i++) {
 			String id = applicantNumber.get(i);
 			String u = user[i];
-		if(u.equalsIgnoreCase("Development ENHANCED")||u.equalsIgnoreCase("After-Sales ENHANCED")||u.equalsIgnoreCase("After-Sales STANDARD")) { //Development ENHANCED
+		if(u.equalsIgnoreCase("Development ENHANCED")||u.equalsIgnoreCase("After-Sales STANDARD")) { //Development ENHANCED
 		String enhance_right_approval_status_after_level1_approval = approver_overview
 				.approveEnhanceRight_authority_Request(input,id);
 		s.assertTrue(enhance_right_approval_status_after_level1_approval.equals(prop.getStatus_Approved()));

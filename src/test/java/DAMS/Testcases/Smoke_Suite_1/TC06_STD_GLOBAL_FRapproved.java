@@ -110,6 +110,17 @@ public class TC06_STD_GLOBAL_FRapproved extends BaseClass {
 				functional_role_selected);
 		return Arrays.asList(standard_cert, functional_role_selected, select_user_type);
 	}
+	
+	public static List<Object> approve_Supplier_FR_request(HashMap<String, String> input) throws Throwable {
+		
+		String select_user_type=input.get("User_Type");
+		String functional_role_selected =input.get("Functional_role_Supplier");
+		List<Object> funational_role_Overview_table_input = TC02_Requests_STD_GLOBAL
+				.functional_role_Overview_table_validation(select_user_type);
+		String[] standard_cert = functional_role(select_user_type, funational_role_Overview_table_input,
+				functional_role_selected);
+		return Arrays.asList(standard_cert, functional_role_selected, select_user_type);
+	}
 
 	public static List<Object> create_and_approve_Supplier_FR_request_for_more_than_one_ECU(
 			HashMap<String, String> input) throws Throwable {
