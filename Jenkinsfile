@@ -1,110 +1,104 @@
 pipeline {
 
-```
-agent { label 'DAMS' }
+    agent { label 'DAMS' }
 
-options {
-    buildDiscarder(logRotator(numToKeepStr: '10'))
-    timestamps()
-    timeout(time: 20, unit: 'HOURS')
-}
-
-parameters {
-    choice(name: 'env', choices: ['STG', 'DEV', 'QA'], description: 'Select the Environment')
-    string(name: 'className', defaultValue: '', description: 'Enter Test Class Name (e.g., TC01_Login)')
-    string(name: 'methodName', defaultValue: '', description: 'Enter Method Name (Optional)')
-}
-
-environment {
-    PROJECT_NAME = 'KaranForCICD'
-    PROJECT_URL = 'https://github.com/karan8205/KaranForCICD.git'
-    EMAIL_TO = 'karan.mkdm2002@gmail.com'
-}
-
-stages {
-
-    stage('Checkout') {
-        steps {
-            git url: "${PROJECT_URL}", branch: 'main'
-        }
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10'))
+        timestamps()
+        timeout(time: 20, unit: 'HOURS')
     }
 
-    stage('Initialize') {
-        steps {
-            bat 'echo Project Name: %PROJECT_NAME%'
-            bat 'echo Project URL: %PROJECT_URL%'
-            bat 'java -version'
-            bat 'echo Environment: %env%'
-            bat 'echo Class Name: %className%'
-            bat 'echo Method Name: %methodName%'
-        }
+    parameters {
+        choice(name: 'env', choices: ['STG', 'DEV', 'QA'], description: 'Select the Environment')
+        string(name: 'className', defaultValue: '', description: 'Enter Test Class Name (e.g., TC01_Login)')
+        string(name: 'methodName', defaultValue: '', description: 'Enter Method Name (Optional)')
     }
 
-    stage('Prepare Report Folder') {
-        steps {
-            // create reports folder if not exists
-            bat 'if not exist reports mkdir reports'
-        }
+    environment {
+        PROJECT_NAME = 'KaranForCICD'
+        PROJECT_URL = 'https://github.com/karan8205/KaranForCICD.git'
+        EMAIL_TO = 'karan.mkdm2002@gmail.com'
     }
 
-    stage('Build') {
-        steps {
-            bat 'mvn -version'
-            bat 'mvn clean install -DskipTests'
+    stages {
+
+        stage('Checkout') {
+            steps {
+                git url: "${PROJECT_URL}", branch: 'main'
+            }
         }
-    }
 
-    stage('Run Tests') {
-        steps {
-            script {
+        stage('Initialize') {
+            steps {
+                bat 'echo Project Name: %PROJECT_NAME%'
+                bat 'echo Project URL: %PROJECT_URL%'
+                bat 'java -version'
+                bat 'echo Environment: %env%'
+                bat 'echo Class Name: %className%'
+                bat 'echo Method Name: %methodName%'
+            }
+        }
 
-                def testCmd = "-Denv=${params.env}"
+        stage('Prepare Report Folder') {
+            steps {
+                bat 'if not exist reports mkdir reports'
+            }
+        }
 
-                if (params.className?.trim()) {
+        stage('Build') {
+            steps {
+                bat 'mvn -version'
+                bat 'mvn clean install -DskipTests'
+            }
+        }
 
-                    if (params.methodName?.trim()) {
-                        testCmd = "${testCmd} -Dtest=${params.className}#${params.methodName}"
+        stage('Run Tests') {
+            steps {
+                script {
+
+                    def testCmd = "-Denv=${params.env}"
+
+                    if (params.className?.trim()) {
+
+                        if (params.methodName?.trim()) {
+                            testCmd = "${testCmd} -Dtest=${params.className}#${params.methodName}"
+                        } else {
+                            testCmd = "${testCmd} -Dtest=${params.className}"
+                        }
+
+                        bat "mvn test ${testCmd}"
+
                     } else {
-                        testCmd = "${testCmd} -Dtest=${params.className}"
+                        bat "mvn test -Dsurefire.suiteXmlFiles=testSuites/RegressionSuite_TestNG.xml -Denv=${params.env}"
                     }
+                }
+            }
 
-                    bat "mvn test ${testCmd}"
-
-                } else {
-                    bat "mvn test -Dsurefire.suiteXmlFiles=testSuites/RegressionSuite_TestNG.xml -Denv=${params.env}"
+            post {
+                always {
+                    junit 'target/surefire-reports/*.xml'
                 }
             }
         }
+    }
 
-        post {
-            always {
-                // Publish TestNG XML results
-                junit 'target/surefire-reports/*.xml'
-            }
+    post {
+        always {
+
+            publishHTML([
+                allowMissing: false,
+                alwaysLinkToLastBuild: true,
+                keepAll: true,
+                reportDir: 'reports',
+                reportFiles: 'ExtentReport.html',
+                reportName: 'DAMS Automation Report'
+            ])
+
+            emailext(
+                subject: "${currentBuild.currentResult} - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+                body: "Build URL: ${env.BUILD_URL}",
+                to: "${EMAIL_TO}"
+            )
         }
     }
-}
-
-post {
-    always {
-
-        // ***** EXTENT REPORT PUBLISH *****
-        publishHTML([
-            allowMissing: false,
-            alwaysLinkToLastBuild: true,
-            keepAll: true,
-            reportDir: 'reports',
-            reportFiles: 'ExtentReport.html',
-            reportName: 'DAMS Automation Report'
-        ])
-
-        // ***** EMAIL *****
-        emailext(
-            subject: "${currentBuild.currentResult} - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-            body: "Build URL: ${env.BUILD_URL}",
-            to: "${EMAIL_TO}"
-        )
-    }
-}
-
 }
