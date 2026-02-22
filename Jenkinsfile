@@ -1,80 +1,110 @@
 pipeline {
-    agent { label 'DAMS' }
 
-    options {
-        buildDiscarder(logRotator(numToKeepStr: '10'))
-        timestamps()
-        timeout(time: 20, unit: 'HOURS')
-    }
+```
+agent { label 'DAMS' }
 
-    parameters {
-        choice(name: 'env', choices: ['STG', 'DEV', 'QA'], description: 'Select the Environment')
-        string(name: 'className', defaultValue: '', description: 'Enter Test Class Name (e.g., TC01_Login)')
-        string(name: 'methodName', defaultValue: '', description: 'Enter Method Name (Optional)')
-    }
+options {
+    buildDiscarder(logRotator(numToKeepStr: '10'))
+    timestamps()
+    timeout(time: 20, unit: 'HOURS')
+}
 
-    environment {
-        PROJECT_NAME = 'KaranForCICD'
-        PROJECT_URL = 'https://github.com/karan8205/KaranForCICD.git'
-        EMAIL_TO = 'karan.mkdm2002@gmail.com'
-    }
+parameters {
+    choice(name: 'env', choices: ['STG', 'DEV', 'QA'], description: 'Select the Environment')
+    string(name: 'className', defaultValue: '', description: 'Enter Test Class Name (e.g., TC01_Login)')
+    string(name: 'methodName', defaultValue: '', description: 'Enter Method Name (Optional)')
+}
 
-    stages {
+environment {
+    PROJECT_NAME = 'KaranForCICD'
+    PROJECT_URL = 'https://github.com/karan8205/KaranForCICD.git'
+    EMAIL_TO = 'karan.mkdm2002@gmail.com'
+}
 
-        stage('Initialize') {
-            steps {
-                bat 'echo Project Name: %PROJECT_NAME%'
-                bat 'echo Project URL: %PROJECT_URL%'
-                bat 'java -version'
-                bat 'echo Environment: %env%'
-                bat 'echo Class Name: %className%'
-                bat 'echo Method Name: %methodName%'
-            }
+stages {
+
+    stage('Checkout') {
+        steps {
+            git url: "${PROJECT_URL}", branch: 'main'
         }
+    }
 
-        stage('Build') {
-            steps {
-                bat 'mvn -version'
-                bat 'mvn clean install -DskipTests'
-            }
+    stage('Initialize') {
+        steps {
+            bat 'echo Project Name: %PROJECT_NAME%'
+            bat 'echo Project URL: %PROJECT_URL%'
+            bat 'java -version'
+            bat 'echo Environment: %env%'
+            bat 'echo Class Name: %className%'
+            bat 'echo Method Name: %methodName%'
         }
+    }
 
-        stage('Run Tests') {
-            steps {
-                script {
+    stage('Prepare Report Folder') {
+        steps {
+            // create reports folder if not exists
+            bat 'if not exist reports mkdir reports'
+        }
+    }
 
-                    def testCmd = "-Denv=${params.env}"
+    stage('Build') {
+        steps {
+            bat 'mvn -version'
+            bat 'mvn clean install -DskipTests'
+        }
+    }
 
-                    if (params.className?.trim()) {
-                        if (params.methodName?.trim()) {
-                            testCmd = "${testCmd} -Dtest=${params.className}#${params.methodName}"
-                        } else {
-                            testCmd = "${testCmd} -Dtest=${params.className}"
-                        }
+    stage('Run Tests') {
+        steps {
+            script {
 
-                        bat "mvn test ${testCmd}"
+                def testCmd = "-Denv=${params.env}"
 
+                if (params.className?.trim()) {
+
+                    if (params.methodName?.trim()) {
+                        testCmd = "${testCmd} -Dtest=${params.className}#${params.methodName}"
                     } else {
-                        bat "mvn test -Dsurefire.suiteXmlFiles=testSuites/RegressionSuite_TestNG.xml -Denv=${params.env}"
+                        testCmd = "${testCmd} -Dtest=${params.className}"
                     }
-                }
-            }
 
-            post {
-                always {
-                    junit 'target/surefire-reports/*.xml'
+                    bat "mvn test ${testCmd}"
+
+                } else {
+                    bat "mvn test -Dsurefire.suiteXmlFiles=testSuites/RegressionSuite_TestNG.xml -Denv=${params.env}"
                 }
             }
         }
-    }
 
-    post {
-        always {
-            emailext(
-                subject: "${currentBuild.currentResult} - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
-                body: "Build URL: ${env.BUILD_URL}",
-                to: "${EMAIL_TO}"
-            )
+        post {
+            always {
+                // Publish TestNG XML results
+                junit 'target/surefire-reports/*.xml'
+            }
         }
     }
+}
+
+post {
+    always {
+
+        // ***** EXTENT REPORT PUBLISH *****
+        publishHTML([
+            allowMissing: false,
+            alwaysLinkToLastBuild: true,
+            keepAll: true,
+            reportDir: 'reports',
+            reportFiles: 'ExtentReport.html',
+            reportName: 'DAMS Automation Report'
+        ])
+
+        // ***** EMAIL *****
+        emailext(
+            subject: "${currentBuild.currentResult} - ${env.JOB_NAME} #${env.BUILD_NUMBER}",
+            body: "Build URL: ${env.BUILD_URL}",
+            to: "${EMAIL_TO}"
+        )
+    }
+}
+
 }

@@ -49,7 +49,7 @@ public class TC014_Supplier_OverAll_Run extends BaseClass {
 		}
 	}
 
-	@Test(dataProvider = "getData_External", priority = 0)
+	@Test(dataProvider = "getData_Supplier", priority = 0)
 	public static void Overall_Global_ATG_Regression_E2E_Supplier(HashMap<String, String> input) throws Throwable {
 		try {
 			System.out.println("\n" + input + "\n");
@@ -60,14 +60,23 @@ public class TC014_Supplier_OverAll_Run extends BaseClass {
 				String functional_role_selected = TC02_Requests_STD_GLOBAL.raise_Supplier_functional_role(input);
 				test.pass("Request created and in pending status " + functional_role_selected);
 				logger.info("Request created and in pending status " + functional_role_selected);
-				TC02_Requests_STD_GLOBAL.functional_role_Overview_table_validation(select_user_type);
-				TC06_STD_GLOBAL_FRapproved.create_and_approve_Supplier_FR_request(input);
+//				TC02_Requests_STD_GLOBAL.functional_role_Overview_table_validation(select_user_type);
+				TC06_STD_GLOBAL_FRapproved.approve_Supplier_FR_request(input);
 			} else if (mode.equalsIgnoreCase("ATG")) {
-				String select_user_type = login_and_select_user_ATG(prop.get_user_type_Internal());
-				String functional_role_selected = TC03_Requests_STD_ATG_FR.raise_Supplier_functional_role(input);
-				test.pass("User is able to raise the request for the functional role " + functional_role_selected);
-				logger.info("User is able to raise the request for the functional role " + functional_role_selected);
-				TC07_STD_ATG_FRapproved.create_and_approve_Supplier_FR_request(input);
+//				select_user_type = TC02_Requests_STD_GLOBAL.select_user_Global(input.get("User_Type"));
+
+//				String select_user_type = login_and_select_user_ATG(prop.get_User_type_Supplier());
+//				String functional_role_selected = TC03_Requests_STD_ATG_FR.raise_Supplier_functional_role(input);
+//				test.pass("User is able to raise the request for the functional role " + functional_role_selected);
+//				logger.info("User is able to raise the request for the functional role " + functional_role_selected);
+//				TC07_STD_ATG_FRapproved.create_and_approve_Supplier_FR_request(input);
+				String functional_role_selected = TC02_Requests_STD_GLOBAL
+						.raise_Supplier_functional_role(input);
+				List<Object> funational_role_Overview_table_input = TC02_Requests_STD_GLOBAL
+						.functional_role_Overview_table_validation(select_user_type);
+				String[] standard_cert = functional_role(select_user_type, funational_role_Overview_table_input,
+						functional_role_selected);
+			
 			}
 			test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>" + "***************" + Functional_Role
 					+ " Functional Role Approved *************" + "</u></i></b>");
@@ -157,13 +166,12 @@ public class TC014_Supplier_OverAll_Run extends BaseClass {
 	//
 
 	@DataProvider
-	public Object[][] getData_External() throws IOException {
+	public Object[][] getData_Supplier() throws IOException {
 
 		List<HashMap<String, String>> data = getJsonDataToMap(
 				System.getProperty("user.dir")
-						+ "//src//test//java//DAMS//data_Regression//02_External_End_to-end_functionality.json");
-		return new Object[][] {{data.get(0)},{data.get(1)},{data.get(2)},{data.get(3)},{data.get(4)},{data.get(5)},
-							   {data.get(6)},{data.get(7)},{data.get(8)},{data.get(9)},{data.get(10)}};
+						+ "//src//test//java//DAMS//data_Regression//03_Supplier_End_to-end_functionality.json");
+		return new Object[][] {{data.get(5)}};
 	}
 
 	public static void approve_Multiple_special_cases_nestT_request(HashMap<String, String> input) throws Throwable {
@@ -311,5 +319,28 @@ public class TC014_Supplier_OverAll_Run extends BaseClass {
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");
 		return replacement_package_table_input;
 	}
-
+	public static String[] functional_role(String usertype, List<Object> funational_role_Overview_table_input,
+			String functional_role_selected) throws Throwable {
+		test.pass("Raise the request for the functional role " + functional_role_selected);
+		logger.info("Raise the request for the functional role " + functional_role_selected);
+		String approval_status_after_level1_approval = approver_overview.approvetheFR_Request("Functional Role",
+				funational_role_Overview_table_input, usertype, prop.getStatus_pending());
+		s.assertTrue(approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
+		test.pass("User is able to approve 1st level approval");
+		logger.info("User is able to approve 1st level approval");
+		f.navigate_to_functional_role_Overview_page_and_verify_approval_status(prop.getStatus_pending(), "N/A");
+		test.pass("Navigate to FR overview page and status is pending after 1st level approval");
+		logger.info("Navigate to FR overview page and status is pending after 1st level approval");
+		String approval_status_after_level2_approval = approver_overview.approvetheFR_Request("Functional Role",
+				funational_role_Overview_table_input, usertype, prop.getStatus_pending());
+		s.assertTrue(approval_status_after_level2_approval.equals(prop.getStatus_Approved()));
+		test.pass("User is able to approve 2nd level approval");
+		logger.info("User is able to approve 2nd level approval");
+		String cert = f
+				.ValidatetheStandardCertificateofthe_Functionalrole_after_2level_approval(prop.getStatus_Approved());
+		String[] standard_cert = cert.split(",");
+		test.pass("View the Standard Certificate for the raised functional role" + cert);
+		logger.info("View the Standard Certificate for the raised functional role" + cert);
+		return standard_cert;
+	}
 }

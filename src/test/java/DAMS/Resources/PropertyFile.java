@@ -14,7 +14,7 @@ import java.util.Properties;
 public class PropertyFile extends BaseClass {
 
     Properties pro;
-    private static String environment = "STG"; // Default environment
+    private static String environment = "QA"; // Default environment
 
     public static void setEnvironment(String env) {
         if (env != null && !env.isEmpty()) {
@@ -65,7 +65,9 @@ public class PropertyFile extends BaseClass {
     }
 
     public String getUrl() {
-        String url = pro.getProperty("URL_" + environment);
+    	
+    	logger.info("************* Env : "+environment);
+    	String url = pro.getProperty("URL_" + environment);
         if (url == null) {
             // Fallback or default
             url = pro.getProperty("URL_STG");

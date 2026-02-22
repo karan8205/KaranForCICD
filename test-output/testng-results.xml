@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2026-02-22T20:49:41 IST" name="DynamicSuite" finished-at="2026-02-22T20:50:23 IST" duration-ms="41535">
+    <groups>
+    </groups>
+    <test started-at="2026-02-22T20:49:41 IST" name="RunDynamicClass" finished-at="2026-02-22T20:50:23 IST" duration-ms="41535">
+      <class name="DAMS.Testcases.Regression_Suite.Overall.TC014_Supplier_OverAll_Run">
+        <test-method is-config="true" signature="login()[pri:0, instance:DAMS.Testcases.Regression_Suite.Overall.TC014_Supplier_OverAll_Run@ee86bcb]" started-at="2026-02-22T20:49:01 IST" name="login" finished-at="2026-02-22T20:49:41 IST" duration-ms="40515" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="configure(java.lang.String, java.lang.reflect.Method)[pri:0, instance:DAMS.Testcases.Regression_Suite.Overall.TC014_Supplier_OverAll_Run@ee86bcb]" started-at="2026-02-22T20:49:42 IST" name="configure" finished-at="2026-02-22T20:49:43 IST" duration-ms="1022" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[qa]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[public static void DAMS.Testcases.Regression_Suite.Overall.TC014_Supplier_OverAll_Run.Overall_Global_ATG_Regression_E2E_Supplier(java.util.HashMap) throws java.lang.Throwable]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- configure -->
+        <test-method signature="Overall_Global_ATG_Regression_E2E_Supplier(java.util.HashMap)[pri:0, instance:DAMS.Testcases.Regression_Suite.Overall.TC014_Supplier_OverAll_Run@ee86bcb]" started-at="2026-02-22T20:49:43 IST" name="Overall_Global_ATG_Regression_E2E_Supplier" data-provider="getData_Supplier" finished-at="2026-02-22T20:50:23 IST" duration-ms="39888" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[{NO=5, Service_ID=BF0123, SpecialCase=Replacement Package, Target_COT=Root E2, User_Type=Supplier, ECU_Restriction_DA=AAGW01T, ECU_Supplier=AAGW01T, ECU_Qualifier_for_RP=AAGW01T, ECU_Qualifier_for_Root_link=AAGW01T, Reason_for_supplier_FR=Functional role request for ECU Supplier - Development, Role_Desc=Person at the ECU supplier associated with ATG project who is working in the development team for the related ECU project. On applying for the functional role,the user should automatically receive Supplier,Development ENHANCED, Production, After-Sales ENHANCED for all the Own ECUs as Standard Permissions., User_role_DA=After-Sales BASIC, Reason_for_RP=Certificate Request for Replacement Package, Reason_for_DA=Certificate Request for Diagnostic Authority, BackendTarget_COT=Backend E2B, ECU_Restriction_EA=AAGW01T, BackendOrigin_COT=Backend E2A, Mode=ATG, ECU_Qualifier_for_Backend_link=ALT48V01T, BackendRoot_COT=Root E2, ECU_Supplier1=ACM311T, User_Example=Production,After-Sales BASIC,EPTI(Electronical Periodical Technical Inspection),TCU(Telemetics Control Unit),After-Sales ENHANCED,After-Sales STANDARD, Reason_for_ER=Certificate Request for EnhanceRightAuthority, Validity=10, Functional_role_Certificate=ECU Supplier - Warranty Return Analysis - ATG - AAGW01T, company_name=Robert Bosch, Functional_role_supplier=ECU Supplier - Warranty Return Analysis - ATG, User_role_EA=Development ENHANCED, Orgin_COT=Root E1}]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Overall_Global_ATG_Regression_E2E_Supplier -->
+      </class> <!-- DAMS.Testcases.Regression_Suite.Overall.TC014_Supplier_OverAll_Run -->
+    </test> <!-- RunDynamicClass -->
+  </suite> <!-- DynamicSuite -->
+</testng-results>

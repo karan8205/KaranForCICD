@@ -8,17 +8,32 @@ import java.util.Date;
 
 public class ExtentReporterNG {
 
-	public static ExtentReports getReportObject() {
-		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-		String path = System.getProperty("user.dir") + "//reports//" + timeStamp +"index.html";
-		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
-		reporter.config().setReportName("DAMS Smoke Automation Results");
-		reporter.config().setDocumentTitle("Test Results");
+    public static ExtentReports getReportObject() {
 
-		ExtentReports extent = new ExtentReports();
-		extent.attachReporter(reporter);
-		extent.setSystemInfo("Tester", "HARIHARAN");
-		return extent;
+        String reportPath;
 
-	}
+        // Detect Jenkins
+        String jenkinsWorkspace = System.getenv("WORKSPACE");
+
+        if (jenkinsWorkspace != null) {
+            // CI/CD run
+            reportPath = System.getProperty("user.dir") + "/reports/ExtentReport.html";
+            System.out.println("Running in Jenkins - Single Report");
+        } else {
+            // Local run
+            String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
+            reportPath = System.getProperty("user.dir") + "/reports/ExtentReport_" + timeStamp + ".html";
+            System.out.println("Running Locally - Separate Report");
+        }
+
+        ExtentSparkReporter reporter = new ExtentSparkReporter(reportPath);
+        reporter.config().setReportName("DAMS Automation Results");
+        reporter.config().setDocumentTitle("Test Results");
+
+        ExtentReports extent = new ExtentReports();
+        extent.attachReporter(reporter);
+        extent.setSystemInfo("Tester", "HARIHARAN");
+
+        return extent;
+    }
 }
