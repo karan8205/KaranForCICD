@@ -204,7 +204,7 @@ public class TC03_Requests_STD_ATG_FR extends BaseClass {
 					+ select_user_type + "</u></i></b>");
 		}
 
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		gtc.gtc_page_validation();
 		test.info("User validates the gtc page");
 		logger.info("User validates the gtc page");
