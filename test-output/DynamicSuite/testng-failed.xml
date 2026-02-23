@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [DynamicSuite]" guice-stage="DEVELOPMENT">
-  <parameter name="env" value="qa"/>
+  <parameter name="env" value="stg"/>
   <listeners>
     <listener class-name="DAMS.Resources.Listeners"/>
   </listeners>
   <test thread-count="5" name="RunDynamicClass(failed)">
     <classes>
-      <class name="DAMS.Testcases.Regression_Suite.Overall.TC014_Supplier_OverAll_Run">
+      <class name="DAMS.Testcases.Smoke_Suite_1.TC07_STD_ATG_FRapproved">
         <methods>
-          <include name="login"/>
-          <include name="Overall_Global_ATG_Regression_E2E_Supplier" invocation-numbers="0"/>
+          <include name="Funtional_role_request_approved_Supplier" invocation-numbers="0"/>
           <include name="configure"/>
         </methods>
-      </class> <!-- DAMS.Testcases.Regression_Suite.Overall.TC014_Supplier_OverAll_Run -->
+      </class> <!-- DAMS.Testcases.Smoke_Suite_1.TC07_STD_ATG_FRapproved -->
     </classes>
   </test> <!-- RunDynamicClass(failed) -->
 </suite> <!-- Failed suite [DynamicSuite] -->

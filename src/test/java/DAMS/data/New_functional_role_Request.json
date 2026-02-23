@@ -205,5 +205,14 @@
 		"company_name": "Robert Bosch",
 		"Reason_for_supplier_FR": "Functional role request for ECU Supplier - Key Management",
 		"ECU_Supplier": "AAGW01T"
+	},
+	{
+		"NO":"22",
+		"Functional_role_supplier": "ECU Supplier - Development - ATG",
+		"Role_Desc": "Person/Pool-ID at the ECU supplier who is working in the development team for the related ECU project. On applying for the functional role, the user should automatically receive Supplier, Development ENHANCED, Production, After-Sales ENHANCED for all the Own ECU's, After-Sales STANDARD Certificates as Standard Permissions.",
+		"company_name": "Robert Bosch",
+		"Reason_for_supplier_FR": "Functional role request for ECU Supplier - Development",
+		"ECU_Supplier": "AAGW01T",
+		"ECU_Supplier1": "ACM311T"
 	}
 ]

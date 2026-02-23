@@ -15852,3 +15852,127 @@
 2026-02-22 20:49:21,262 - DAMS -INFO - USER TYPE Supplier
 2026-02-22 20:49:21,263 - DAMS -INFO - m6kxhsnb6hssxztq
 2026-02-22 20:49:23,042 - DAMS -INFO - User enters the verification code and click on verify button
+2026-02-23 10:04:05,208 - DAMS -INFO - ************* Env : STG
+2026-02-23 10:04:05,405 - DAMS -INFO - URL : https://dams-stg.azurewebsites.net/dams/
+2026-02-23 10:04:22,011 - DAMS -INFO - User is login to application
+2026-02-23 10:04:22,015 - DAMS -INFO - USER TYPE Supplier
+2026-02-23 10:04:22,017 - DAMS -INFO - m6kxhsnb6hssxztq
+2026-02-23 10:04:23,493 - DAMS -INFO - User enters the verification code and click on verify button
+2026-02-23 10:04:42,611 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-02-23 10:04:46,648 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/
+2026-02-23 10:04:46,654 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-23 10:04:53,631 - DAMS -INFO - Proceed Button Clicked
+2026-02-23 10:04:53,631 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-23 10:04:53,631 - DAMS -INFO - User validates the gtc page
+2026-02-23 10:04:58,636 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-23 10:05:05,324 - DAMS -INFO - validates the functional role page
+2026-02-23 10:05:05,324 - DAMS -INFO - *************Supplier
+2026-02-23 10:05:12,812 - DAMS -INFO - 
+2026-02-23 10:05:12,812 - DAMS -INFO - User Type :null
+2026-02-23 10:09:22,293 - DAMS -INFO - ************* Env : STG
+2026-02-23 10:09:22,541 - DAMS -INFO - URL : https://dams-stg.azurewebsites.net/dams/
+2026-02-23 10:09:37,761 - DAMS -INFO - User is login to application
+2026-02-23 10:09:37,764 - DAMS -INFO - USER TYPE Supplier
+2026-02-23 10:09:37,764 - DAMS -INFO - m6kxhsnb6hssxztq
+2026-02-23 10:09:39,143 - DAMS -INFO - User enters the verification code and click on verify button
+2026-02-23 10:10:02,111 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-02-23 10:10:06,161 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/
+2026-02-23 10:10:06,161 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-23 10:10:13,125 - DAMS -INFO - Proceed Button Clicked
+2026-02-23 10:10:13,125 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-23 10:10:13,135 - DAMS -INFO - User validates the gtc page
+2026-02-23 10:10:18,141 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-23 10:10:24,872 - DAMS -INFO - validates the functional role page
+2026-02-23 10:10:24,872 - DAMS -INFO - *************Supplier
+2026-02-23 10:10:32,347 - DAMS -INFO - 
+2026-02-23 10:10:32,350 - DAMS -INFO - User Type :null
+2026-02-23 10:11:50,863 - DAMS -INFO - ************* Env : STG
+2026-02-23 10:11:51,095 - DAMS -INFO - URL : https://dams-stg.azurewebsites.net/dams/
+2026-02-23 10:12:07,786 - DAMS -INFO - User is login to application
+2026-02-23 10:12:07,787 - DAMS -INFO - USER TYPE Supplier
+2026-02-23 10:12:07,787 - DAMS -INFO - m6kxhsnb6hssxztq
+2026-02-23 10:12:08,442 - DAMS -INFO - User enters the verification code and click on verify button
+2026-02-23 10:12:32,007 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-02-23 10:12:36,045 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/
+2026-02-23 10:12:36,054 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-23 10:12:43,161 - DAMS -INFO - Proceed Button Clicked
+2026-02-23 10:12:43,161 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-23 10:12:43,161 - DAMS -INFO - User validates the gtc page
+2026-02-23 10:12:48,177 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-23 10:12:54,902 - DAMS -INFO - validates the functional role page
+2026-02-23 10:12:54,902 - DAMS -INFO - *************Supplier
+2026-02-23 10:13:02,345 - DAMS -INFO - ECU Supplier – Development
+2026-02-23 10:13:02,348 - DAMS -INFO - User Type :ECU Supplier – Development
+2026-02-23 10:13:02,381 - DAMS -INFO - user type ECU Supplier - Development - ATG name ECU Supplier – Development
+2026-02-23 10:13:02,422 - DAMS -INFO - user type ECU Supplier - Warranty Return Analysis - ATG name ECU Supplier – Development
+2026-02-23 10:13:02,470 - DAMS -INFO - user type ECU-Supplier - Key Management - ATG name ECU Supplier – Development
+2026-02-23 10:15:51,511 - DAMS -INFO - ************* Env : STG
+2026-02-23 10:15:51,727 - DAMS -INFO - URL : https://dams-stg.azurewebsites.net/dams/
+2026-02-23 10:16:05,989 - DAMS -INFO - User is login to application
+2026-02-23 10:16:05,990 - DAMS -INFO - USER TYPE Supplier
+2026-02-23 10:16:05,991 - DAMS -INFO - m6kxhsnb6hssxztq
+2026-02-23 10:16:07,251 - DAMS -INFO - User enters the verification code and click on verify button
+2026-02-23 10:16:28,170 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-02-23 10:16:32,212 - DAMS -INFO - https://dams-stg.azurewebsites.net/dams/#/
+2026-02-23 10:16:32,212 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-02-23 10:16:39,325 - DAMS -INFO - Proceed Button Clicked
+2026-02-23 10:16:39,325 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-02-23 10:16:39,325 - DAMS -INFO - User validates the gtc page
+2026-02-23 10:16:44,335 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-02-23 10:16:51,061 - DAMS -INFO - validates the functional role page
+2026-02-23 10:16:51,061 - DAMS -INFO - *************Supplier
+2026-02-23 10:16:58,534 - DAMS -INFO - ECU Supplier - Development - ATG
+2026-02-23 10:16:58,534 - DAMS -INFO - User Type :ECU Supplier - Development - ATG
+2026-02-23 10:16:58,564 - DAMS -INFO - user type ECU Supplier - Development - ATG name ECU Supplier - Development - ATG
+2026-02-23 10:17:00,481 - DAMS -INFO - BU : Robert Bosch
+2026-02-23 10:17:00,543 - DAMS -INFO - user type A&D Technology name Robert Bosch
+2026-02-23 10:17:00,595 - DAMS -INFO - user type Actalent name Robert Bosch
+2026-02-23 10:17:00,645 - DAMS -INFO - user type ADC Automotive Distance name Robert Bosch
+2026-02-23 10:17:00,704 - DAMS -INFO - user type AKKODIS name Robert Bosch
+2026-02-23 10:17:00,756 - DAMS -INFO - user type Anstalt für Verbrennungskraftmaschinen List (AVL) name Robert Bosch
+2026-02-23 10:17:00,819 - DAMS -INFO - user type APTIV COMPONENTS INDIA PVT.LTD name Robert Bosch
+2026-02-23 10:17:00,875 - DAMS -INFO - user type ARTECH name Robert Bosch
+2026-02-23 10:17:00,944 - DAMS -INFO - user type ASK Industries S.p.A. name Robert Bosch
+2026-02-23 10:17:01,001 - DAMS -INFO - user type AUO Corporation name Robert Bosch
+2026-02-23 10:17:01,064 - DAMS -INFO - user type BCS Automotive Interface Solutions name Robert Bosch
+2026-02-23 10:17:01,128 - DAMS -INFO - user type Bendix name Robert Bosch
+2026-02-23 10:17:01,184 - DAMS -INFO - user type Calex name Robert Bosch
+2026-02-23 10:17:01,245 - DAMS -INFO - user type Calex-DCDC name Robert Bosch
+2026-02-23 10:17:01,297 - DAMS -INFO - user type CellCentric name Robert Bosch
+2026-02-23 10:17:01,361 - DAMS -INFO - user type Contemporary Amperex name Robert Bosch
+2026-02-23 10:17:01,414 - DAMS -INFO - user type Continental name Robert Bosch
+2026-02-23 10:17:01,473 - DAMS -INFO - user type DAIMIA name Robert Bosch
+2026-02-23 10:17:01,519 - DAMS -INFO - user type Danfoss name Robert Bosch
+2026-02-23 10:17:01,578 - DAMS -INFO - user type Engbras Software e Projetos name Robert Bosch
+2026-02-23 10:17:01,630 - DAMS -INFO - user type FEV GmBH name Robert Bosch
+2026-02-23 10:17:01,688 - DAMS -INFO - user type Knorr-Bremse Systeme für name Robert Bosch
+2026-02-23 10:17:01,747 - DAMS -INFO - user type Marquardt GmbH name Robert Bosch
+2026-02-23 10:17:01,804 - DAMS -INFO - user type Meta System S.p.A. name Robert Bosch
+2026-02-23 10:17:01,867 - DAMS -INFO - user type Munich Electrification name Robert Bosch
+2026-02-23 10:17:01,917 - DAMS -INFO - user type Murata name Robert Bosch
+2026-02-23 10:17:01,980 - DAMS -INFO - user type Optimabit name Robert Bosch
+2026-02-23 10:17:02,037 - DAMS -INFO - user type Robert Bosch name Robert Bosch
+2026-02-23 10:17:06,923 - DAMS -INFO - BU : AAGW01T
+2026-02-23 10:17:06,971 - DAMS -INFO - user type AAGW01T name AAGW01T
+2026-02-23 10:17:55,501 - DAMS -INFO - View the approval status as pending once the request created
+2026-02-23 10:17:55,501 - DAMS -INFO - Requester details : <span style="color: blue;"><b><i><u>[PENDING, 4049, HARNAGA, Technical_User_Owner, N/A, Hariharan Nagarajan, TT/IGX-24, Supplier, ECU Supplier - Development - ATG, null, Robert Bosch, AAGW01T, true, 02/23/2026, N/A, N/A, Robert Bosch, N/A]</u></i></b>
+2026-02-23 10:17:55,501 - DAMS -INFO - Raise the request for the functional role ECU Supplier - Development - ATG - AAGW01T 
+2026-02-23 10:17:56,800 - DAMS -INFO - Clicked
+2026-02-23 10:18:01,880 - DAMS -INFO - ***Authorization_List: Functional Role
+2026-02-23 10:18:02,043 - DAMS -INFO - Pending Permission Requests
+2026-02-23 10:18:02,043 - DAMS -INFO - Functional Role
+2026-02-23 10:18:02,128 - DAMS -INFO - Functional Role
+2026-02-23 10:18:02,128 - DAMS -INFO - Functional Role
+2026-02-23 10:18:21,082 - DAMS -INFO - User is able to approve 1st level approval
+2026-02-23 10:18:50,296 - DAMS -INFO - Navigate to FR overview page and status is pending after 1st level approval
+2026-02-23 10:18:51,633 - DAMS -INFO - Clicked
+2026-02-23 10:18:56,674 - DAMS -INFO - ***Authorization_List: Functional Role
+2026-02-23 10:18:56,815 - DAMS -INFO - Pending Permission Requests
+2026-02-23 10:18:56,815 - DAMS -INFO - Functional Role
+2026-02-23 10:18:56,891 - DAMS -INFO - Functional Role
+2026-02-23 10:18:56,897 - DAMS -INFO - Functional Role
+2026-02-23 10:19:15,820 - DAMS -INFO - User is able to approve 2nd level approval
+2026-02-23 10:19:34,482 - DAMS -INFO - Requestor details : []
+2026-02-23 10:19:34,482 - DAMS -INFO - Verified the Certificate of the Functional role
+2026-02-23 10:19:45,403 - DAMS -INFO - View the Standard Certificate for the raised functional roleDevelopment ENHANCED,Production,After-Sales ENHANCED,Supplier,After-Sales STANDARD
+2026-02-23 10:19:45,403 - DAMS -INFO - User is able to verify click here to apply for functional role disbled for approved request
