@@ -164,7 +164,7 @@ try {
 	}
 	
 	public void gtc_page_validation() throws InterruptedException, AWTException {
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		logger.info(getGTCUrl());
 //		if (getGTCUrl().contains("gtc")) {
 			test.pass("User is successfully redirected into GTC Page");
