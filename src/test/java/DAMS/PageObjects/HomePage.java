@@ -205,7 +205,11 @@ public class HomePage extends AbstractComponents {
 	if(res) {
 		Thread.sleep(1000);
 		WebElement element = apply_for_Functional_roles.get(size-1);
+		try {
 		element.click();
+		}catch(Exception e) {
+			clickJS(element);
+		}
 		Thread.sleep(1000);
 		dropconfirmBox.click();
 		Thread.sleep(500);

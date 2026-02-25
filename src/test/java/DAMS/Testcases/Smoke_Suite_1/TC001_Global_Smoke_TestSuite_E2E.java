@@ -44,7 +44,7 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Creation of Enhance Right Authority - Internal" + "</u></i></b>");
 		AbstractComponents.refresh();
-		TC11_EnhanceRightAuthority_GLOBAL.create_Enhance_Right_Authority_request(input);
+		TC11_EnhanceRightAuthority_GLOBAL.create_Enhance_Right_Authority_request_Internal(input);
 		req.request_Overview();
 		req.select_request_type("Enhance Right");
 		req.select_Applicant_type("Myself");

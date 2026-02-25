@@ -23,7 +23,7 @@ public class TC11_EnhanceRightAuthority_GLOBAL extends BaseClass {
 		TC06_STD_GLOBAL_FRapproved.Functional_role_request_approved_Internal(input);
 		Thread.sleep(3000);
 //		myreq.select_NewPermission_request(); 
-		create_Enhance_Right_Authority_request(input);
+		create_Enhance_Right_Authority_request_Internal(input);
 		test.pass("Create Enhance right request when the status is pending");
 		logger.info("Create Enhance right request when the status is pending");
 		req.request_Overview();
@@ -80,6 +80,19 @@ public class TC11_EnhanceRightAuthority_GLOBAL extends BaseClass {
 		test.pass("View the approval status as pending once the DA request created");
 		logger.info("View the approval status as pending once the DA request created");
 		return request_Overview_table_validation;
+
+	}
+	public static List<Object> create_Enhance_Right_Authority_request_Internal(HashMap<String, String> input)
+			throws Throwable {
+		test.info("Enhance_Right_Authority_request");
+		logger.info("Enhance_Right_Authority_request");
+		myreq.select_NewPermission_request();	
+		List<Object> request_Overview_enabled = newper.raise_Enhance_Right_Request(input);
+		request_Overview_enabled.get(0);
+		SoftAssertUtil.assertTrue((boolean) request_Overview_enabled.get(0));
+		test.pass("View the approval status as pending once the DA request created");
+		logger.info("View the approval status as pending once the DA request created");
+		return request_Overview_enabled;
 
 	}
 	

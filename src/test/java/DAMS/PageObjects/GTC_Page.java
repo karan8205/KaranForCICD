@@ -1,16 +1,6 @@
 package DAMS.PageObjects;
 
-import static DAMS.Resources.Listeners.test;
-
-import java.awt.AWTException;
-import java.io.File;
-import java.io.IOException;
-import java.security.KeyManagementException;
-import java.security.KeyStoreException;
-import java.security.NoSuchAlgorithmException;
-import java.time.Duration;
-import java.util.List;
-
+import DAMS.Resources.AbstractComponents;
 import org.apache.hc.core5.http.ParseException;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -22,7 +12,16 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-import DAMS.Resources.AbstractComponents;
+import static DAMS.Resources.Listeners.test;
+
+import java.awt.AWTException;
+import java.io.File;
+import java.io.IOException;
+import java.security.KeyManagementException;
+import java.security.KeyStoreException;
+import java.security.NoSuchAlgorithmException;
+import java.time.Duration;
+import java.util.List;
 
 public class GTC_Page extends AbstractComponents {
 
@@ -168,11 +167,10 @@ try {
 	}
 	
 	public void gtc_page_validation() throws InterruptedException, AWTException {
-		Thread.sleep(2000);
+		Thread.sleep(1000);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 
-		    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
-		    wait.until(ExpectedConditions.urlContains("gtc"));
-
+		wait.until(ExpectedConditions.urlContains("gtc"));
 		logger.info(getGTCUrl());
 //		if (getGTCUrl().contains("gtc")) {
 			test.pass("User is successfully redirected into GTC Page");

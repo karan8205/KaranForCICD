@@ -374,8 +374,9 @@ public class NewPermission_Request_Page extends AbstractComponents {
 
 	public boolean Request_Overview_enabled() throws InterruptedException {
 		waitForPageLoad(driver);
-		waitForWebElementToAppear(Request_Overview);
 		Thread.sleep(2000);
+		waitForPageLoad(driver);
+		waitForWebElementToAppear(Request_Overview);
 		return Request_Overview.isEnabled();
 
 	}

@@ -27,7 +27,7 @@ public class TC07_STD_ATG_FRapproved extends BaseClass {
 		create_and_approve_Internal_FR_request(input);
 	}
 
-	@Test(dataProvider = "getData_External", priority = 1,enabled=false)
+	@Test(dataProvider = "getData_External", priority = 1)
 	public static void Funtional_role_request_approved_External(HashMap<String, String> input) throws Throwable {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "External Functional role request - status approved:" + "</u></i></b>");
@@ -37,7 +37,7 @@ public class TC07_STD_ATG_FRapproved extends BaseClass {
 		softAssertionALL();
 	}
 
-	@Test(dataProvider = "getData_Supplier", priority = 2)
+	@Test(dataProvider = "getData_Supplier", priority = 2,enabled=false)
 	public static void Funtional_role_request_approved_Supplier(HashMap<String, String> input) throws Throwable {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Supplier Functional role request - status approved:" + "</u></i></b>");
@@ -70,7 +70,7 @@ public class TC07_STD_ATG_FRapproved extends BaseClass {
 
 		List<HashMap<String, String>> data = getJsonDataToMap(
 				System.getProperty("user.dir") + "//src//test//java//DAMS//data//New_functional_role_Request.json");
-		return new Object[][] { { data.get(22) } };
+		return new Object[][] { { data.get(12) } };
 
 	}
 
