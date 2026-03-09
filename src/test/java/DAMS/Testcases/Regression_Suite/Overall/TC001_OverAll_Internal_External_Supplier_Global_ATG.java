@@ -2,17 +2,13 @@ package DAMS.Testcases.Regression_Suite.Overall;
 
 import static DAMS.Resources.Listeners.test;
 
-
-
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.testng.Assert;
-import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
+import org.testng.ITestResult;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -20,8 +16,7 @@ import com.aventstack.extentreports.Status;
 
 import DAMS.Resources.AbstractComponents;
 import DAMS.Resources.BaseClass;
-import DAMS.Resources.Listeners;
-import DAMS.Resources.PropertyFile;
+import DAMS.Resources.ExtentReporterNG;
 import DAMS.Testcases.Smoke_Suite_1.TC01_Login_MFA;
 import DAMS.Testcases.Smoke_Suite_1.TC02_Requests_STD_GLOBAL;
 import DAMS.Testcases.Smoke_Suite_1.TC03_Requests_STD_ATG_FR;
@@ -38,11 +33,16 @@ public class TC001_OverAll_Internal_External_Supplier_Global_ATG extends BaseCla
 
 	@Test(dataProvider = "getData_Internal", priority = 0)
 	public static void Overall_Global_ATG_Regression_E2E_Internal(HashMap<String, String> input) throws Throwable {
+
+		
+		
+		ExtentReporterNG.GenarateExcelReport(input,"TC001_OverAll_Internal_External_Supplier_Global_ATG","Overall_Global_ATG_Regression_E2E_Internal");
 		try {
            select_user_type = String.valueOf(input.get("User_Type")).trim().toLowerCase();
            if (select_user_type.equals("internal")) {
-
+        	   	if(input.get("NO").equals("0")){
                TC01_Login_MFA.login_with_addressing_MFA_Internal();
+        	   	}
 
            }
            else {
@@ -152,13 +152,16 @@ public class TC001_OverAll_Internal_External_Supplier_Global_ATG extends BaseCla
 	
 	@Test(dataProvider = "getData_External", priority = 1)
 	public static void Overall_Global_ATG_Regression_E2E_External(HashMap<String, String> input) throws Throwable {
-		try {
+		ExtentReporterNG.GenarateExcelReport(input,"TC001_OverAll_Internal_External_Supplier_Global_ATG","Overall_Global_ATG_Regression_E2E_External");
+
+		
+				try {
 			
 			select_user_type = String.valueOf(input.get("User_Type")).trim().toLowerCase();
 	           if (select_user_type.equals("external")) {
-
+	        	  	if(input.get("NO").equals("0")){
 	               TC01_Login_MFA.login_with_addressing_MFA_External();
-
+	        	  	}
 	           }
 	           else {
 	        	   System.out.println("Wrong User Type : "+select_user_type);
@@ -273,7 +276,9 @@ public class TC001_OverAll_Internal_External_Supplier_Global_ATG extends BaseCla
 			
 			select_user_type = String.valueOf(input.get("User_Type")).trim().toLowerCase();
 	           if (select_user_type.equals("supplier")) {
+	        	  	if(input.get("NO").equals("0")){
 	               TC01_Login_MFA.login_with_addressing_MFA_Supplier();
+	        	  	}
 	           }
 	           else {
 	        	   System.out.println("Wrong User Type : "+select_user_type);
@@ -389,9 +394,9 @@ public class TC001_OverAll_Internal_External_Supplier_Global_ATG extends BaseCla
 
 		List<HashMap<String, String>> data = getJsonDataToMap(
 				System.getProperty("user.dir") + "//src//test//java//DAMS//data_Regression//01_Internal_End_to-end_functionality.json");
-//		return new Object[][] {{data.get(0)},{data.get(1)},{data.get(2)},{data.get(3)},{data.get(4)},{data.get(5)},
-//			   {data.get(6)},{data.get(7)},{data.get(8)},{data.get(9)},{data.get(10)}};
-		return new Object[][] {{data.get(0)}};
+		return new Object[][] {{data.get(0)},{data.get(1)},{data.get(2)},{data.get(3)},{data.get(4)},{data.get(5)},
+			   {data.get(6)},{data.get(7)},{data.get(8)},{data.get(9)},{data.get(10)}};
+//		return new Object[][] {{data.get(0)}};
 	}
 	
 	@DataProvider

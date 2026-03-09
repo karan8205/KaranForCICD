@@ -36,7 +36,7 @@ public class TC002_Internal_OverAll_Global_ATG extends BaseClass {
 	
 	public static String select_user_type ="";
 	
-	@BeforeClass
+	@BeforeMethod
 	public void login() throws Throwable {
 		try {
 			 prop = new PropertyFile();

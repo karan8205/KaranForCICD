@@ -5,7 +5,7 @@
         <listener class-name="DAMS.Resources.Listeners"/>
         <!--<listener class-name="DAMS.Resources.FailedAll" />-->
     </listeners>
-    <parameter name="env" value="qa"/>
+    <parameter name="env" value="DEV"/>
     <test name="RunDynamicClass">
         <classes>  
          <!--<class name="DAMS.Testcases.Regression_Suite.Supplier.TC002_Supplier_Development_FR_Global"></class> -->

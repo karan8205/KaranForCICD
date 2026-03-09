@@ -15,6 +15,7 @@ import com.aventstack.extentreports.Status;
 
 import DAMS.Resources.AbstractComponents;
 import DAMS.Resources.BaseClass;
+import DAMS.Resources.ExtentReporterNG;
 import DAMS.Testcases.Smoke_Suite_1.TC01_Login_MFA;
 import DAMS.Testcases.Smoke_Suite_1.TC06_STD_GLOBAL_FRapproved;
 import DAMS.Testcases.Smoke_Suite_1.TC11_EnhanceRightAuthority_GLOBAL;
@@ -33,6 +34,7 @@ public class TC001_Internal_Development_FR_Global extends BaseClass {
 				+ "Creation of Internal Standard Functional Request:" + "</u></i></b>");
 //		TC01_Login_MFA.login_with_addressing_MFA();
 //		Thread.sleep(5000);
+//		ExtentReporterNG.createExcel(input);
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Creation of Internal Standard Functional Request:" + "</u></i></b>");
 		TC06_STD_GLOBAL_FRapproved.Functional_role_request_approved_Internal(input);

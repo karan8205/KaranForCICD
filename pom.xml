@@ -1,182 +1,171 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
+         https://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-  <modelVersion>4.0.0</modelVersion>
+    <modelVersion>4.0.0</modelVersion>
 
-  <groupId>DAMS</groupId>
-  <artifactId>DAMS_UI-Application_Automation</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+    <groupId>DAMS</groupId>
+    <artifactId>DAMS_UI-Application_Automation</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
 
-  <name>DAMS_UI-Application_Automation</name>
-  <url>http://www.example.com</url>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <testng.suite>testSuites/SmokeSuite_TestNG.xml</testng.suite>
+    </properties>
 
-  <!-- ===== Project-wide Properties ===== -->
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-    <!-- Use Java 17 consistently -->
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-
-    <!-- Default TestNG suite (can be overridden at runtime) -->
-    <testng.suite>testSuites/SmokeSuite_TestNG.xml</testng.suite>
-  </properties>
-
-  <!-- ===== Dependencies ===== -->
+    <!-- ================= DEPENDENCIES ================= -->
   <dependencies>
-    <dependency>
-      <groupId>org.jline</groupId>
-      <artifactId>jline</artifactId>
-      <version>3.23.0</version>
-    </dependency>
 
+    <!-- Selenium -->
     <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-java</artifactId>
-      <version>4.3.0</version>
-    </dependency>
-
-    <!-- TOTP (keep one copy) -->
-    <dependency>
-      <groupId>dev.samstevens.totp</groupId>
-      <artifactId>totp</artifactId>
-      <version>1.7.1</version>
+        <groupId>org.seleniumhq.selenium</groupId>
+        <artifactId>selenium-java</artifactId>
+        <version>4.3.0</version>
     </dependency>
 
     <!-- TestNG -->
     <dependency>
-      <groupId>org.testng</groupId>
-      <artifactId>testng</artifactId>
-      <version>7.1.0</version>
-      <scope>test</scope>
+        <groupId>org.testng</groupId>
+        <artifactId>testng</artifactId>
+        <version>7.9.0</version>
+        <scope>test</scope>
     </dependency>
 
-    <!-- Cucumber + TestNG -->
+    <!-- Cucumber -->
     <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-java</artifactId>
-      <version>7.5.0</version>
-    </dependency>
-    <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-testng</artifactId>
-      <version>7.5.0</version>
-      <scope>test</scope>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-java</artifactId>
+        <version>7.15.0</version>
     </dependency>
 
     <dependency>
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-      <version>2.11.0</version>
+        <groupId>io.cucumber</groupId>
+        <artifactId>cucumber-testng</artifactId>
+        <version>7.15.0</version>
+        <scope>test</scope>
     </dependency>
 
+    <!-- Apache POI -->
     <dependency>
-      <groupId>org.apache.pdfbox</groupId>
-      <artifactId>pdfbox</artifactId>
-      <version>2.0.27</version>
+        <groupId>org.apache.poi</groupId>
+        <artifactId>poi-ooxml</artifactId>
+        <version>5.2.5</version>
+        <exclusions>
+            <exclusion>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+            </exclusion>
+        </exclusions>
     </dependency>
+
+    <!-- FIX FOR POI -->
     <dependency>
-      <groupId>org.apache.pdfbox</groupId>
-      <artifactId>fontbox</artifactId>
-      <version>2.0.24</version>
+        <groupId>commons-io</groupId>
+        <artifactId>commons-io</artifactId>
+        <version>2.15.1</version>
     </dependency>
 
+    <!-- PDF BOX -->
     <dependency>
-      <groupId>com.github.stephenc.monte</groupId>
-      <artifactId>monte-screen-recorder</artifactId>
-      <version>0.7.7.0</version>
+        <groupId>org.apache.pdfbox</groupId>
+        <artifactId>pdfbox</artifactId>
+        <version>2.0.30</version>
     </dependency>
 
+    <!-- Monte Screen Recorder -->
     <dependency>
-      <groupId>org.jboss.aerogear</groupId>
-      <artifactId>aerogear-otp-java</artifactId>
-      <version>1.0.0</version>
+        <groupId>com.github.stephenc.monte</groupId>
+        <artifactId>monte-screen-recorder</artifactId>
+        <version>0.7.7.0</version>
     </dependency>
 
+    <!-- TOTP -->
     <dependency>
-      <groupId>com.aventstack</groupId>
-      <artifactId>extentreports</artifactId>
-      <version>5.1.2</version>
+        <groupId>org.jboss.aerogear</groupId>
+        <artifactId>aerogear-otp-java</artifactId>
+        <version>1.0.0</version>
     </dependency>
 
+    <!-- Extent Report -->
     <dependency>
-      <groupId>io.github.bonigarcia</groupId>
-      <artifactId>webdrivermanager</artifactId>
-      <version>5.8.0</version>
+        <groupId>com.aventstack</groupId>
+        <artifactId>extentreports</artifactId>
+        <version>5.1.2</version>
     </dependency>
 
+    <!-- WebDriverManager -->
     <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>2.13.3</version>
+        <groupId>io.github.bonigarcia</groupId>
+        <artifactId>webdrivermanager</artifactId>
+        <version>5.8.0</version>
     </dependency>
 
-    <!-- NOTE: log4j-1.x is EOL/vulnerable; consider updating to log4j2 or slf4j+logback -->
+    <!-- Jackson -->
     <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>1.2.17</version>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>2.15.3</version>
     </dependency>
 
-    <!-- Lombok (single, provided) -->
+    <!-- Keep your Logger -->
     <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.38</version>
-      <scope>provided</scope>
+        <groupId>log4j</groupId>
+        <artifactId>log4j</artifactId>
+        <version>1.2.17</version>
     </dependency>
-  </dependencies>
 
-  <!-- ===== Build Plugins ===== -->
-  <build>
-    <plugins>
+    <!-- Lombok -->
+    <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.18.38</version>
+        <scope>provided</scope>
+    </dependency>
 
-      <!-- Maven Compiler Plugin -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.11.0</version>
-        <configuration>
-          <source>${maven.compiler.source}</source>
-          <target>${maven.compiler.target}</target>
-          <!-- For Lombok annotation processing -->
-          <annotationProcessorPaths>
-            <path>
-              <groupId>org.projectlombok</groupId>
-              <artifactId>lombok</artifactId>
-              <version>1.18.38</version>
-            </path>
-          </annotationProcessorPaths>
-        </configuration>
-      </plugin>
+</dependencies>
 
-      <!-- Maven Surefire Plugin (TestNG) -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.2.5</version>
-        <configuration>
-          <!-- Use a property so you can choose any suite at runtime -->
-          <suiteXmlFiles>
-            <suiteXmlFile>${testng.suite}</suiteXmlFile>
-          </suiteXmlFiles>
+   
 
-          <!-- Retain your TestNG listener -->
-          <properties>
-            <property>
-              <name>listener</name>
-              <value>DAMS.Resources.Listeners</value>
-            </property>
-          </properties>
+    <!-- ================= BUILD ================= -->
+    <build>
+        <plugins>
 
-          <useSystemClassLoader>true</useSystemClassLoader>
-          <forkCount>1</forkCount>
-          <reuseForks>true</reuseForks>
-        </configuration>
-      </plugin>
+            <!-- Compiler -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.11.0</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
 
-    </plugins>
-  </build>
+            <!-- Surefire -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.2.5</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>${testng.suite}</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <properties>
+                        <property>
+                            <name>listener</name>
+                            <value>DAMS.Resources.Listeners</value>
+                        </property>
+                    </properties>
+                    <forkCount>1</forkCount>
+                    <reuseForks>true</reuseForks>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
 </project>
