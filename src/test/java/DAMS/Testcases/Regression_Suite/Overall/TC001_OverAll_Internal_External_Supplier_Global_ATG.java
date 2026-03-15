@@ -33,8 +33,6 @@ public class TC001_OverAll_Internal_External_Supplier_Global_ATG extends BaseCla
 
 	@Test(dataProvider = "getData_Internal", priority = 0)
 	public static void Overall_Global_ATG_Regression_E2E_Internal(HashMap<String, String> input) throws Throwable {
-
-		
 		
 		ExtentReporterNG.GenarateExcelReport(input,"TC001_OverAll_Internal_External_Supplier_Global_ATG","Overall_Global_ATG_Regression_E2E_Internal");
 		try {

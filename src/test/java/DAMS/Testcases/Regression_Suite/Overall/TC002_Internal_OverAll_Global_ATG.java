@@ -19,6 +19,7 @@ import com.aventstack.extentreports.Status;
 
 import DAMS.Resources.AbstractComponents;
 import DAMS.Resources.BaseClass;
+import DAMS.Resources.ExtentReporterNG;
 import DAMS.Resources.Listeners;
 import DAMS.Resources.PropertyFile;
 import DAMS.Testcases.Smoke_Suite_1.TC01_Login_MFA;
@@ -55,6 +56,7 @@ public class TC002_Internal_OverAll_Global_ATG extends BaseClass {
 	
 	@Test(dataProvider = "getData_Internal", priority = 0)
 	public static void Overall_Global_ATG_Regression_E2E_Internal(HashMap<String, String> input) throws Throwable {
+		ExtentReporterNG.GenarateExcelReport(input,"TC002_Internal_OverAll_Global_ATG","Overall_Global_ATG_Regression_E2E_Internal");
 		try {
 		System.out.println("\n"+input+"\n");
 		String Functional_Role = input.get("Functional_role_internal");

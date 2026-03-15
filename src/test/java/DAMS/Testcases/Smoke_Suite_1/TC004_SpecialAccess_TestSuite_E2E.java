@@ -11,6 +11,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 
 import DAMS.Resources.BaseClass;
+import DAMS.Resources.ExtentReporterNG;
 
 
 public class TC004_SpecialAccess_TestSuite_E2E extends BaseClass {
@@ -21,6 +22,7 @@ public class TC004_SpecialAccess_TestSuite_E2E extends BaseClass {
 			HashMap<String, String> input) throws Throwable {
 //		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"+ "SpecialAccess request Creation - status pending:" + "</u></i></b>");
 //		TC01_Login_MFA.login_with_addressing_MFA();
+		ExtentReporterNG.GenarateExcelReport(input,"","");
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Raise and View Third Party request"
 				+ "</u></i></b>");

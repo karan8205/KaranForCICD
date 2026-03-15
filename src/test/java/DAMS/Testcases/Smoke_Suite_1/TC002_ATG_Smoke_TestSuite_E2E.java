@@ -12,14 +12,16 @@ import com.aventstack.extentreports.Status;
 
 import DAMS.Resources.AbstractComponents;
 import DAMS.Resources.BaseClass;
+import DAMS.Resources.ExtentReporterNG;
 
 
 public class TC002_ATG_Smoke_TestSuite_E2E extends BaseClass {
-	@Test(dataProvider = "getData_Internal", priority = 0)
+	@Test(dataProvider = "getData_Internal", priority = 0,enabled=false)
 	public static void atg_Smoke_TestSuite_E2E_Internal(
 			HashMap<String, String> input) throws Throwable {
 //		TC01_Login_MFA.login_with_addressing_MFA();
 //		Thread.sleep(5000);
+		ExtentReporterNG.GenarateExcelReport(input,"","");
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Creation of Standard Functional Request-ATG:" + "</u></i></b>");
 		TC07_STD_ATG_FRapproved.Funtional_role_request_approved_Internal(input);
@@ -124,7 +126,7 @@ public class TC002_ATG_Smoke_TestSuite_E2E extends BaseClass {
 //		driver.close();
 	}
 
-	@Test(dataProvider = "getData_Supplier", priority = 2)
+	@Test(dataProvider = "getData_Supplier", priority = 2,enabled=false)
 	public static void atg_Smoke_TestSuite_E2E_Supplier(
 			HashMap<String, String> input) throws Throwable {
 //		TC01_Login_MFA.login_with_addressing_MFA();

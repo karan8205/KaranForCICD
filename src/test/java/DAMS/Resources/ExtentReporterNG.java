@@ -9,10 +9,7 @@ import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 
-import org.apache.poi.ss.usermodel.Cell;
-import org.apache.poi.ss.usermodel.Row;
-import org.apache.poi.ss.usermodel.Sheet;
-import org.apache.poi.ss.usermodel.Workbook;
+import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import com.aventstack.extentreports.ExtentReports;
@@ -20,111 +17,129 @@ import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 
 public class ExtentReporterNG {
 
-	public static ExtentReports getReportObject() {
-		String timeStamp = new SimpleDateFormat("yyyy.MM.dd.HH.mm.ss").format(new Date());
-		String path = System.getProperty("user.dir") + "//reports//" + timeStamp +"index.html";
-		ExtentSparkReporter reporter = new ExtentSparkReporter(path);
-		reporter.config().setReportName("DAMS Smoke Automation Results");
-		reporter.config().setDocumentTitle("Test Results");
+    public static ExtentReports getReportObject() {
+        String timeStamp = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss").format(new Date());
+        String path = System.getProperty("user.dir") + "//reports//" + timeStamp + "index.html";
+        ExtentSparkReporter reporter = new ExtentSparkReporter(path);
+        reporter.config().setReportName("DAMS Smoke Automation Results");
+        reporter.config().setDocumentTitle("Test Results");
 
-		ExtentReports extent = new ExtentReports();
-		extent.attachReporter(reporter);
-		extent.setSystemInfo("Tester", "HARIHARAN");
-		return extent;
+        ExtentReports extent = new ExtentReports();
+        extent.attachReporter(reporter);
+        extent.setSystemInfo("Tester", "HARIHARAN");
 
-	}
-	static String timeStamp=null;
-	public static String GenarateExcelReport(HashMap<String, String> data,
-            String className,
-            String methodName) throws IOException {
-		
-		if(timeStamp==null) {
-		timeStamp  = new SimpleDateFormat("yyyy-MM-dd_HH-mm-ss").format(new Date());
-		}
-		// ===== 1. Fixed File Name (Suite Level) =====
-		String folderPath = System.getProperty("user.dir") + "/reports/excelReport";
+        return extent;
+    }
 
-		File folder = new File(folderPath);
-		if (!folder.exists()) {
-			folder.mkdirs();
-		}
+    static String timeStamp = null;
 
-String filePath = folderPath + "/ExecutionReport"+timeStamp+".xlsx";
-File file = new File(filePath);
+    public static String GenarateExcelReport(HashMap<String, String> data,
+                                             String className,
+                                             String methodName) throws IOException {
 
-Workbook workbook;
-Sheet sheet;
+        // Safe + clean format for filenames
+        if (timeStamp == null) {
+            timeStamp = new SimpleDateFormat("dd-MM-yyyy_HH-mm-ss").format(new Date());
+        }
 
-// ===== 2. Check File Exists =====
-if (file.exists()) {
-FileInputStream fis = new FileInputStream(file);
-workbook = new XSSFWorkbook(fis);
-sheet = workbook.getSheet("TestDataReport");
-fis.close();
-} else {
-workbook = new XSSFWorkbook();
-sheet = workbook.createSheet("TestDataReport");
-}
+        String folderPath = System.getProperty("user.dir") + "/reports/excelReport";
 
-// ===== 3. Header Row Handling =====
-Row headerRow = sheet.getRow(0);
-if (headerRow == null) {
-headerRow = sheet.createRow(0);
-headerRow.createCell(0).setCellValue("Class Name");
-headerRow.createCell(1).setCellValue("Method Name");
-}
+        File folder = new File(folderPath);
+        if (!folder.exists()) {
+            folder.mkdirs();
+        }
 
-int lastColumn = headerRow.getLastCellNum();
-if (lastColumn < 0) lastColumn = 2;
+        String filePath = folderPath + "/ExecutionReport_" + timeStamp + ".xlsx";
+        File file = new File(filePath);
 
-// ===== 4. Map Existing Headers =====
-Map<String, Integer> headerMap = new HashMap<>();
+        Workbook workbook;
+        Sheet sheet;
 
-for (int i = 0; i < headerRow.getLastCellNum(); i++) {
-Cell cell = headerRow.getCell(i);
-if (cell != null) {
-headerMap.put(cell.getStringCellValue(), i);
-}
-}
+        // Load existing Excel or create new one
+        if (file.exists()) {
+            FileInputStream fis = new FileInputStream(file);
+            workbook = new XSSFWorkbook(fis);
+            sheet = workbook.getSheet("TestDataReport");
+            fis.close();
+        } else {
+            workbook = new XSSFWorkbook();
+            sheet = workbook.createSheet("TestDataReport");
+        }
 
-// ===== 5. Add New Keys As Columns =====
-for (String key : data.keySet()) {
-if (!headerMap.containsKey(key)) {
-int newColIndex = headerRow.getLastCellNum();
-headerRow.createCell(newColIndex).setCellValue(key);
-headerMap.put(key, newColIndex);
-}
-}
+        // Create header row if not exists
+        Row headerRow = sheet.getRow(0);
+        if (headerRow == null) {
+            headerRow = sheet.createRow(0);
+            headerRow.createCell(0).setCellValue("Class Name");
+            headerRow.createCell(1).setCellValue("Method Name");
+        }
 
-// ===== 6. Create New Row (Append) =====
-int lastRowNum = sheet.getLastRowNum();
-int newRowNum = (sheet.getPhysicalNumberOfRows() == 0) ? 1 : lastRowNum + 1;
+        // ===== HEADER STYLE =====
+        CellStyle headerStyle = workbook.createCellStyle();
+        headerStyle.setFillForegroundColor(IndexedColors.YELLOW.getIndex());
+        headerStyle.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 
-Row newRow = sheet.createRow(newRowNum);
+        Font headerFont = workbook.createFont();
+        headerFont.setBold(true);
+        headerFont.setFontHeightInPoints((short) 11);
+        headerStyle.setFont(headerFont);
 
-// ===== 7. Mandatory Columns =====
-newRow.createCell(0).setCellValue(className);
-newRow.createCell(1).setCellValue(methodName);
+        headerStyle.setAlignment(HorizontalAlignment.CENTER);
 
-// ===== 8. Write Data Values =====
-for (Map.Entry<String, String> entry : data.entrySet()) {
-int colIndex = headerMap.get(entry.getKey());
-newRow.createCell(colIndex).setCellValue(entry.getValue());
-}
+        headerStyle.setBorderTop(BorderStyle.THIN);
+        headerStyle.setBorderBottom(BorderStyle.THIN);
+        headerStyle.setBorderLeft(BorderStyle.THIN);
+        headerStyle.setBorderRight(BorderStyle.THIN);
 
-// ===== 9. Auto-size All Columns =====
-for (int i = 0; i < headerRow.getLastCellNum(); i++) {
-sheet.autoSizeColumn(i);
-}
+        // Build header map
+        Map<String, Integer> headerMap = new HashMap<>();
+        for (int i = 0; i < headerRow.getLastCellNum(); i++) {
+            Cell cell = headerRow.getCell(i);
+            if (cell != null) {
+                headerMap.put(cell.getStringCellValue(), i);
+                cell.setCellStyle(headerStyle); // apply highlight
+            }
+        }
 
-// ===== 10. Write Back To File =====
-FileOutputStream fos = new FileOutputStream(filePath);
-workbook.write(fos);
-fos.close();
-workbook.close();
+        // Add new keys as headers if required
+        for (String key : data.keySet()) {
+            if (!headerMap.containsKey(key)) {
+                int newColIndex = headerRow.getLastCellNum();
+                Cell newHeaderCell = headerRow.createCell(newColIndex);
+                newHeaderCell.setCellValue(key);
+                newHeaderCell.setCellStyle(headerStyle); // highlight new header
+                headerMap.put(key, newColIndex);
+            }
+        }
 
-System.out.println("Excel Updated Successfully: " + filePath);
+        // Create new row
+        int lastRowNum = sheet.getLastRowNum();
+        int newRowNum = (sheet.getPhysicalNumberOfRows() == 0) ? 1 : lastRowNum + 1;
 
-return filePath;
-}
+        Row newRow = sheet.createRow(newRowNum);
+
+        // Mandatory fields
+        newRow.createCell(0).setCellValue(className);
+        newRow.createCell(1).setCellValue(methodName);
+
+        // Fill dynamic data
+        for (Map.Entry<String, String> entry : data.entrySet()) {
+            int colIndex = headerMap.get(entry.getKey());
+            newRow.createCell(colIndex).setCellValue(entry.getValue());
+        }
+
+        // Auto size all columns
+        for (int i = 0; i < headerRow.getLastCellNum(); i++) {
+            sheet.autoSizeColumn(i);
+        }
+
+        // Save Excel
+        FileOutputStream fos = new FileOutputStream(filePath);
+        workbook.write(fos);
+        fos.close();
+        workbook.close();
+
+        System.out.println("Excel Updated Successfully: " + filePath);
+        return filePath;
+    }
 }

@@ -17,6 +17,7 @@ import org.testng.annotations.Test;
 import com.aventstack.extentreports.Status;
 
 import DAMS.Resources.BaseClass;
+import DAMS.Resources.ExtentReporterNG;
 
 public class TC02_Requests_STD_GLOBAL extends BaseClass {
 
@@ -24,6 +25,7 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 	public static void apply_internal_functional_role_create_test_case(HashMap<String, String> input) throws Throwable {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Internal Functional role request - status pending:" + "</u></i></b>");
+		ExtentReporterNG.GenarateExcelReport(input,"TC02_Requests_STD_GLOBAL","apply_internal_functional_role_create_test_case");
 		String select_user_type = login_and_select_user_Global(prop.get_user_type_Internal());
 		String functional_role_selected = raise_Internal_functional_role(input);
 		test.pass("Request created and in pending status " + functional_role_selected);
@@ -37,6 +39,7 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 	public static void apply_External_functional_role_create_test_case(HashMap<String, String> input) throws Throwable {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "External Functional role request - status pending:" + "</u></i></b>");
+		ExtentReporterNG.GenarateExcelReport(input,"TC02_Requests_STD_GLOBAL","apply_External_functional_role_create_test_case");
 		String select_user_type = login_and_select_user_Global(prop.get_user_type_external());
 		String functional_role_selected = raise_External_functional_role(input);
 		test.pass("Request standard External functional role for GLOBAL" + functional_role_selected);
@@ -49,7 +52,7 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 	public static void apply_supplier_functional_role_create_test_case(HashMap<String, String> input) throws Throwable {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Supplier Functional role request - status pending:" + "</u></i></b>");
-
+		ExtentReporterNG.GenarateExcelReport(input,"TC02_Requests_STD_GLOBAL","apply_supplier_functional_role_create_test_case");
 		String select_user_type = login_and_select_user_Global(prop.get_User_type_Supplier());
 		String functional_role_selected = raise_Supplier_functional_role(input);
 		test.pass("Raised request for the functional role " + functional_role_selected);
