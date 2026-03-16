@@ -74,7 +74,7 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 				+ "Replacement Package for Internal- status Approved:" + "</u></i></b>");
 		logger.info("************************************ Global End to End Completed *************************");
 		softAssertionALL();
-		// driver.quit();
+		// BaseClass.getDriver().quit();
 	}
 
 	@Test(dataProvider = "getData_External", priority = 1)
@@ -132,7 +132,7 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 				+ "Replacement Package for External- status Approved:" + "</u></i></b>");
 		logger.info("************************************ Global End to End Completed *************************");
 		softAssertionALL();
-		// driver.quit();
+		// BaseClass.getDriver().quit();
 	}
 
 	@Test(dataProvider = "getData_Supplier", priority = 2)
@@ -191,7 +191,7 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 				+ "Replacement Package for Supplier- status Approved:" + "</u></i></b>");
 		logger.info("************************************ Global End to End Completed *************************");
 		softAssertionALL();
-		// driver.quit();
+		// BaseClass.getDriver().quit();
 	}
 
 	@DataProvider

@@ -67,7 +67,7 @@ public class TC002_ATG_Smoke_TestSuite_E2E extends BaseClass {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Replacement Package for Internal- status Approved-ATG:" + "</u></i></b>");
 		softAssertionALL();
-//		driver.close();
+//		BaseClass.getDriver().close();
 	}
 
 	@Test(dataProvider = "getData_External", priority = 1)
@@ -121,7 +121,7 @@ public class TC002_ATG_Smoke_TestSuite_E2E extends BaseClass {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Replacement Package for External- status Approved-ATG:" + "</u></i></b>");
 		softAssertionALL();
-//		driver.close();
+//		BaseClass.getDriver().close();
 	}
 
 	@Test(dataProvider = "getData_Supplier", priority = 2)
@@ -174,7 +174,7 @@ public class TC002_ATG_Smoke_TestSuite_E2E extends BaseClass {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Replacement Package for Supplier- status Approved-ATG:" + "</u></i></b>");
 		softAssertionALL();
-//		driver.close();
+//		BaseClass.getDriver().close();
 	}
 
 	@DataProvider

@@ -68,7 +68,7 @@ public class TC009_External_Production_FR_ATG extends BaseClass {
 				+ "Replacement Package for External- status Approved:" + "</u></i></b>");
 		logger.info("************************************ Global End to End Completed *************************");
 		softAssertionALL();
-//		driver.quit();
+//		BaseClass.getDriver().quit();
 	}
 
 	@DataProvider

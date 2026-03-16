@@ -113,7 +113,7 @@ public class TC012_Reject_Approve_External_Global extends BaseClass {
 			test.info("************************************ Global End to End Completed *************************");
 			logger.info("************************************ Global End to End Completed *************************");
 			softAssertionALL();
-//			driver.quit();
+//			BaseClass.getDriver().quit();
 		}
 
 		@DataProvider
@@ -294,7 +294,7 @@ public class TC012_Reject_Approve_External_Global extends BaseClass {
 			}
 			logger.info("******************* All DA Rejected ****************");
 			AbstractComponents.refresh();
-			waitForPageLoad(driver);
+			waitForPageLoad(BaseClass.getDriver());
 			Thread.sleep(3000);
 			myreq.select_NewPermission_request();
 			newper.Diagnostic_Authority_External_Created(input);

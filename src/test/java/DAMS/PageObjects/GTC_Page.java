@@ -1,6 +1,8 @@
 package DAMS.PageObjects;
 
 import DAMS.Resources.AbstractComponents;
+import DAMS.Resources.BaseClass;
+
 import org.apache.hc.core5.http.ParseException;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -24,14 +26,10 @@ import java.time.Duration;
 import java.util.List;
 
 public class GTC_Page extends AbstractComponents {
-
-	WebDriver driver;
 	public static Logger logger = Logger.getLogger("DAMS");
 
 	public GTC_Page(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(BaseClass.getDriver());
 	}
 
 	@FindBy(xpath = "//div/mat-grid-tile-header[text()=\" General Terms and Conditions\"]")
@@ -168,7 +166,7 @@ try {
 	
 	public void gtc_page_validation() throws InterruptedException, AWTException {
 		Thread.sleep(1000);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
+		WebDriverWait wait = new WebDriverWait(BaseClass.getDriver(), Duration.ofSeconds(40));
 
 		wait.until(ExpectedConditions.urlContains("gtc"));
 		logger.info(getGTCUrl());

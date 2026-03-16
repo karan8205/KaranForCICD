@@ -44,14 +44,10 @@ public class Functional_role_page extends AbstractComponents {
 	String user_type;
 	String requester_Id;
 
-	WebDriver driver;
-
 	public static Logger logger = Logger.getLogger("DAMS");
 
 	public Functional_role_page(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(BaseClass.getDriver());
 	}
 
 	@FindBy(xpath = "//div[@class=\"approver-name\"]/label[text()=\"Status\"]")
@@ -328,11 +324,11 @@ public class Functional_role_page extends AbstractComponents {
 	}
 	
 	public void Functionalrole_Table_ListofColumn() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		List<WebElement> columns = driver.findElements(By.xpath(
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		List<WebElement> columns = BaseClass.getDriver().findElements(By.xpath(
 				"//table[@class='mat-table cdk-table mat-sort mat-elevation-z8' and @role='table']/thead/tr/th"));
 		ArrayList<String> arrayList = new ArrayList<>();
 		for (int j = 1; j <= columns.size(); j++) {
-			String cellValue = driver.findElement(By.xpath(
+			String cellValue = BaseClass.getDriver().findElement(By.xpath(
 					"//table[@class='mat-table cdk-table mat-sort mat-elevation-z8' and @role='table']/thead/tr/th[" + j
 							+ "]"))
 					.getText();
@@ -342,25 +338,25 @@ public class Functional_role_page extends AbstractComponents {
 	}
 
 	public ArrayList<String> Functional_role_requester_info_detail() throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		Thread.sleep(2000);
-		List<WebElement> columns = driver.findElements(By.xpath("//table[@class='mat-table cdk-table mat-sort mat-elevation-z8' and @role='table']/tbody/tr[1]/td"));
+		List<WebElement> columns = BaseClass.getDriver().findElements(By.xpath("//table[@class='mat-table cdk-table mat-sort mat-elevation-z8' and @role='table']/tbody/tr[1]/td"));
 		ArrayList<String> arrayList = new ArrayList<>();
 		Thread.sleep(2000);
 		for (int j = 1; j <= columns.size(); j++) {
-			String cellValue = driver.findElement(By.xpath("//table[@class='mat-table cdk-table mat-sort mat-elevation-z8' and @role='table']/tbody/tr[1]/td["+ j + "]")).getText();
+			String cellValue = BaseClass.getDriver().findElement(By.xpath("//table[@class='mat-table cdk-table mat-sort mat-elevation-z8' and @role='table']/tbody/tr[1]/td["+ j + "]")).getText();
 			arrayList.add(cellValue);
 		}
 		return arrayList;
 	}
 
 	public ArrayList<String> FunctionalroleRequestor_RejectionStatus() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		
-		List<WebElement> columns = driver.findElements(By.xpath(
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		
+		List<WebElement> columns = BaseClass.getDriver().findElements(By.xpath(
 				"//table[@class='mat-table cdk-table mat-sort mat-elevation-z8' and @role='table']/tbody/tr[1]/td"));
 		ArrayList<String> arrayList = new ArrayList<>();
 		for (int j = 1; j <= columns.size(); j++) {
-			String cellValue = driver.findElement(By.xpath(
+			String cellValue = BaseClass.getDriver().findElement(By.xpath(
 					"//table[@class='mat-table cdk-table mat-sort mat-elevation-z8' and @role='table']/tbody/tr[1]/td["
 							+ j + "]"))
 					.getText();
@@ -393,11 +389,11 @@ public class Functional_role_page extends AbstractComponents {
 	}
 
 	public ArrayList<String> Validate_Certificates() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		List<WebElement> columns = driver.findElements(By.xpath(
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		List<WebElement> columns = BaseClass.getDriver().findElements(By.xpath(
 				"//table[@class='mat-table cdk-table mat-sort mat-elevation-z8' and @role='table']/tbody/tr[1]/td"));
 		ArrayList<String> arrayList = new ArrayList<>();
 		for (int j = 1; j <= columns.size(); j++) {
-			String cellValue = driver.findElement(By.xpath(
+			String cellValue = BaseClass.getDriver().findElement(By.xpath(
 					"//table[@class='mat-table cdk-table mat-sort mat-elevation-z8' and @role='table']/tbody/tr[1]/td["
 							+ j + "]"))
 					.getText();
@@ -408,12 +404,12 @@ public class Functional_role_page extends AbstractComponents {
 	}
 
 	public ArrayList<String> Validate_Certificates_for_Technical_user() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		List<WebElement> columns = driver.findElements(By.xpath(
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		List<WebElement> columns = BaseClass.getDriver().findElements(By.xpath(
 				"//table[@class='mat-table cdk-table mat-sort mat-elevation-z8' and @role='table']/tbody/tr[1]/td"));
 		ArrayList<String> arrayList = new ArrayList<>();
 		for (int j = 1; j <= columns.size(); j++) {
-			String cellValue = driver.findElement(By.xpath(
+			String cellValue = BaseClass.getDriver().findElement(By.xpath(
 					"//table[@class='mat-table cdk-table mat-sort mat-elevation-z8' and @role='table']/tbody/tr[1]/td["
 							+ j + "]"))
 					.getText();
@@ -573,7 +569,7 @@ public class Functional_role_page extends AbstractComponents {
 	}
 
 	public boolean Functional_role_status() {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		waitForWebElementToAppear(FR_Overview_status_all);
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		waitForWebElementToAppear(FR_Overview_status_all);
 		waitForWebElementToAppear(FR_Overview_status_Pending);
 //		waitForWebElementToAppear(FR_Overview_status_Approved);
 //		waitForWebElementToAppear(FR_Overview_status_rejected);
@@ -862,9 +858,9 @@ public class Functional_role_page extends AbstractComponents {
 			Functional_role_Overview_list_of_column_Technical_user();
 		}
 
-		List<List<String>> firstTableValues = BaseClass.getTableValues(driver, By.xpath("//table/tbody"));
+		List<List<String>> firstTableValues = BaseClass.getTableValues(BaseClass.getDriver(), By.xpath("//table/tbody"));
 		List<String> ECU_column_values = new ArrayList<>();
-		List<WebElement> tableRows = driver.findElements(By.xpath("//table/tbody/tr"));
+		List<WebElement> tableRows = BaseClass.getDriver().findElements(By.xpath("//table/tbody/tr"));
 		for (WebElement row : tableRows) {
 			String columnValue = row.findElement(By.cssSelector("td[class*=\"ECU-Qualifier \"]")).getText();
 			ECU_column_values.add(columnValue);
@@ -1010,7 +1006,7 @@ public class Functional_role_page extends AbstractComponents {
 	}
 
 	public void search_here(String object) throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		waitForWebElementToAppear(refresh_button);
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		waitForWebElementToAppear(refresh_button);
 		clickJS(refresh_button);
 		search_item.clear();
 		search_item.sendKeys(object);

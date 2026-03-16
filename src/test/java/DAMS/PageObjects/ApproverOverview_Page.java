@@ -22,15 +22,12 @@ import java.util.List;
 import static DAMS.Resources.Listeners.test;
 
 public class ApproverOverview_Page extends AbstractComponents {
-	WebDriver driver;
 	public static Logger logger = Logger.getLogger("DAMS");
 	String approval_date_txt;
 	String approval_status;
 
 	public ApproverOverview_Page(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(BaseClass.getDriver());
 	}
 
 	
@@ -583,7 +580,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 
 	public void User_type(String type) {
 		String user_type = String.format("//span[contains(text(),'%s')]", type);
-		clickJS(driver.findElement(By.xpath(user_type)));
+		clickJS(BaseClass.getDriver().findElement(By.xpath(user_type)));
 
 	}
 
@@ -628,7 +625,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 
 		try {
 			Thread.sleep(5000);
-			waitForPageLoad(driver);
+			waitForPageLoad(BaseClass.getDriver());
 			AbstractComponents.waitForWebElementToAppear(Approver_Overview_approve_request);
 			AbstractComponents.waitForelementToBeClickable(Approver_Overview_approve_request);
 			clickJS(Approver_Overview_approve_request);
@@ -679,7 +676,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 	public void TwoLevelApprovel_Service(String applicationNumber) throws Throwable {
 		ArrayList<String> al = new ArrayList<>();
 		Thread.sleep(3000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		waitForWebElementToAppear(Approver_Overview_approve_request);
 		AbstractComponents.waitForelementToBeClickable(Approver_Overview_approve_request);
 		click(Approver_Overview_approve_request);
@@ -1093,7 +1090,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 		Authorization_roledropdown(authorization_value);
 //		complete_btn();
 		search_here(funational_role_Overview_table_input.get(1).toString());
-		List<List<String>> secondTableValues = BaseClass.getTableValuesExcludingLastColumn(driver,
+		List<List<String>> secondTableValues = BaseClass.getTableValuesExcludingLastColumn(BaseClass.getDriver(),
 				By.xpath("//table/tbody"));
 		boolean allFirstTableValuesPresentInSecondTable = BaseClass.checkFirstTableValuesPresenceSkippingCertainColumns(
 				(List<List<String>>) funational_role_Overview_table_input.get(4), secondTableValues);
@@ -1986,7 +1983,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 		search_here(ecu);
 		// Approver_overview_list_of_columns(authorization_value,
 		// create_ECU_Cert_request.get(4));
-		List<List<String>> secondTableValues = BaseClass.getTableValuesExcludingLastColumn(driver,
+		List<List<String>> secondTableValues = BaseClass.getTableValuesExcludingLastColumn(BaseClass.getDriver(),
 				By.xpath("//table/tbody"));
 		boolean allFirstTableValuesPresentInSecondTable = BaseClass.checkFirstTableValuesPresenceSkippingCertainColumns(
 				 request_Overview_table_values_ECU_certificate_request_for_more_than_one, secondTableValues);
@@ -2006,7 +2003,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 		search_here(object2.toString());
 		// Approver_overview_list_of_columns(authorization_value,
 		// create_ECU_Cert_request.get(4));
-		List<List<String>> secondTableValues = BaseClass.getTableValuesExcludingLastColumn(driver,
+		List<List<String>> secondTableValues = BaseClass.getTableValuesExcludingLastColumn(BaseClass.getDriver(),
 				By.xpath("//table/tbody"));
 		boolean allFirstTableValuesPresentInSecondTable = BaseClass.checkFirstTableValuesPresenceSkippingCertainColumns(
 				 request_Overview_table_values_ECU_certificate_request_for_more_than_one, secondTableValues);

@@ -77,7 +77,7 @@ public class TC002_Internal_OverAll_Global_ATG extends BaseClass {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"+ "***************"+Functional_Role+" Functional Role Approved *************" + "</u></i></b>");
 	// --------------------------------------------
 		AbstractComponents.refresh();
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		myreq.select_NewPermission_request();
 		 if(!Functional_Role.equalsIgnoreCase("Production - ATG")) {
 		newper.Diagnostic_Authority_ECU_Visible_or_not_for_pending_Approved(input);
@@ -121,17 +121,17 @@ public class TC002_Internal_OverAll_Global_ATG extends BaseClass {
 		  }
 		  if(!Functional_Role.equalsIgnoreCase("Production")) {
 				List<String >create_replacement_package_request_id_front = create_replacement_package_request_root(input);
-				waitForPageLoad(driver);
+				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
 				approve_special_cases_Replacement_request(input,create_replacement_package_request_id_front);
-				waitForPageLoad(driver);
+				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
 				List<String >create_replacement_package_request_id_back = create_replacement_package_request_backend(input);
 				approve_special_cases_Replacement_request(input,create_replacement_package_request_id_back);
-				waitForPageLoad(driver);
+				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
 				List<String >create_replacement_package_request_ids = create_replacement_package_request_rootbackend(input);
-				waitForPageLoad(driver);
+				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
 				approve_special_cases_Replacement_request(input,create_replacement_package_request_ids);	
 				test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"+ "Replacement Package for Internal- status Approved:" + "</u></i></b>");
@@ -139,16 +139,16 @@ public class TC002_Internal_OverAll_Global_ATG extends BaseClass {
 			}
 			
 	  AbstractComponents.refresh();
-	  waitForPageLoad(driver);
+	  waitForPageLoad(BaseClass.getDriver());
 	  Thread.sleep(5000);
 	  approver_overview. approver_Overview_enabled1();
 	  approver_overview.search_here(prop.getUser_name());
-	  getScreenshot(input.get("Mode")+"_"+input.get("User_Type")+"_ All Request", driver);
+	  getScreenshot(input.get("Mode")+"_"+input.get("User_Type")+"_ All Request", BaseClass.getDriver());
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 			String filePath = null;
-			filePath = getScreenshot(input.get("Functional_role_internal")+ "error page", driver);
+			filePath = getScreenshot(input.get("Functional_role_internal")+ "error page", BaseClass.getDriver());
 		}
 	// after 1 data run
 		AbstractComponents.refresh();
@@ -283,7 +283,7 @@ public class TC002_Internal_OverAll_Global_ATG extends BaseClass {
 	    Thread.sleep(5000);
 
 	    logger.info("About to zoom out");
-	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
 	    js.executeScript("document.body.style.zoom='80%'"); 	    
 	    newrequest.select_vehicle_program_ATG(user_type);      
 	    newrequest.functional_role_page_validation(prop.get_for_whom_txt(), prop.get_myself_txt(),

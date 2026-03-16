@@ -7,17 +7,14 @@ import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
 import DAMS.Resources.AbstractComponents;
+import DAMS.Resources.BaseClass;
 
 public class MyRequest_Page extends AbstractComponents {
-	WebDriver driver;
 
 	public MyRequest_Page(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(BaseClass.getDriver());
 	}
 
 	@FindBy(xpath = "//span[text()='My Requests']")
@@ -35,17 +32,17 @@ public class MyRequest_Page extends AbstractComponents {
 	
 	public void clickHomeButton() throws InterruptedException {
 		try {
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		waitForWebElementToAppear(homeBtn);
 		refresh();
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		Thread.sleep(2000);
 		homeBtn.click();
 		Thread.sleep(2000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		}catch(Exception e) {
 			Thread.sleep(2000);
-			waitForPageLoad(driver);
+			waitForPageLoad(BaseClass.getDriver());
 			waitForWebElementToAppear(homeBtn);	
 			clickJS(homeBtn);
 		}
@@ -59,7 +56,7 @@ public class MyRequest_Page extends AbstractComponents {
 //		//
 		//refresh();
 		//Thread.sleep(4000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		waitForWebElementToAppear(My_Request);
 		
 //		if(My_Request.isEnabled()) {
@@ -88,7 +85,7 @@ public class MyRequest_Page extends AbstractComponents {
 
 	public void My_Request_enabled_onboardECU() throws InterruptedException {
 		refresh();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		clickJS(My_Request);
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		clickJS(My_Request);
 		AbstractComponents.waitForelementToBeClickable(My_Request);
 		clickJS(OnboardECU_request);
 		AbstractComponents.waitForelementToBeClickable(OnboardECU_request);

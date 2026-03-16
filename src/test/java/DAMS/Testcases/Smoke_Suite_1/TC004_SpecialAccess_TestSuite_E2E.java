@@ -26,7 +26,7 @@ public class TC004_SpecialAccess_TestSuite_E2E extends BaseClass {
 				+ "</u></i></b>");
 		TC01_Login_MFA.login_with_addressing_MFA_External();
 		Thread.sleep(3000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		Thread.sleep(10000);	
 		special.clickSpecialAccess();
 		windowZoomOut();

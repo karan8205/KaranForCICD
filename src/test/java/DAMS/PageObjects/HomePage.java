@@ -1,27 +1,23 @@
 package DAMS.PageObjects;
 
-import DAMS.ObjectManager.PageObjectManager;
-import DAMS.Resources.AbstractComponents;
+import static DAMS.Resources.Listeners.test;
+
+import java.util.List;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-import static DAMS.Resources.Listeners.test;
-
-import java.util.List;
+import DAMS.Resources.AbstractComponents;
+import DAMS.Resources.BaseClass;
 
 public class HomePage extends AbstractComponents {
-	WebDriver driver;
 	public static Logger logger = Logger.getLogger("DAMS");
 
 	public HomePage(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(BaseClass.getDriver());
 	}
 
 	By productsBy = By.xpath("//div[@class=\"docs-navbar-header\"]");

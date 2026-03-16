@@ -24,7 +24,7 @@ public class TC75_ThirdParty_Publisher extends BaseClass {
 				+ "</u></i></b>");
 		TC01_Login_MFA.login_with_addressing_MFA();
 		Thread.sleep(8000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		special.clickSpecialAccess();
 		special.Third_Party_Publisher();
 		String [] optionsToSelect = input.get("new_Permission").split("/");

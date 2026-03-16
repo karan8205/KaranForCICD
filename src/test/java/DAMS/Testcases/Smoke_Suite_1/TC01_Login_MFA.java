@@ -20,40 +20,40 @@ public class TC01_Login_MFA extends BaseClass {
     // login_with_addressing_MFA_External();
     // login_with_addressing_MFA_Supplier();
     // }
-    // BaseClass.getScreenshot("login", driver);
+    // BaseClass.getScreenshot("login", BaseClass.getDriver());
     // }
 
     @Test
     public static void login_with_addressing_MFA() throws Throwable {
         BaseClass.login_MFA_Incognito(prop.getUsername_MFA(), prop.getPassword_MFA(), prop.getUrl());
         login_with_mfa("External");
-        BaseClass.getScreenshot("login", driver);
+        BaseClass.getScreenshot("login", BaseClass.getDriver());
     }
 
     @Test
     public static void login_with_addressing_MFA_Internal() throws Throwable {
         BaseClass.login_MFA_Incognito_Internal();
         login_with_mfa("Internal");
-        BaseClass.getScreenshot("login", driver);
+        BaseClass.getScreenshot("login", BaseClass.getDriver());
     }
 
     @Test()
     public static void login_with_addressing_MFA_External() throws Throwable {
         BaseClass.login_MFA_Incognito_External();
         login_with_mfa("External");
-        BaseClass.getScreenshot("login", driver);
+        BaseClass.getScreenshot("login", BaseClass.getDriver());
     }
 
     @Test
     public static void login_with_addressing_MFA_Supplier() throws Throwable {
         BaseClass.login_MFA_Incognito_Supplier();
         login_with_mfa("Supplier");
-        BaseClass.getScreenshot("login", driver);
+        BaseClass.getScreenshot("login", BaseClass.getDriver());
     }
 
     @Test
     public static void login_with_addressing_MFA_normal() throws Exception {
-        // driver = getDriver();
+        // BaseClass.getDriver() = getDriver();
         test.log(Status.INFO,
                 "<span style=\"color: blue;\"><b><i><u>" + "Login with valid credentials:" + "</u></i></b>");
         BaseClass.login_MFA_Normal(prop.getUsername_MFA(), prop.getPassword_MFA(), prop.getUrl());
@@ -63,7 +63,7 @@ public class TC01_Login_MFA extends BaseClass {
     public static void login_with_addressing_MFA_External_SP() throws Throwable {
         BaseClass.login_MFA_Incognito_External();
         login_with_mfa("External");
-        BaseClass.getScreenshot("login", driver);
+        BaseClass.getScreenshot("login", BaseClass.getDriver());
     }
 
     public static void login_with_mfa(String userType) throws Throwable {
@@ -72,10 +72,11 @@ public class TC01_Login_MFA extends BaseClass {
 
         String generate_OTP_for_MFA = BaseClass.generate_OTP_for_MFA(userType);
         // logger.info(generate_OTP_for_MFA);
-        l.enter_verification_code(generate_OTP_for_MFA);
+        ctx().l.enter_verification_code(generate_OTP_for_MFA);
         // test.pass("User enters the verification code and click on verify button");
         logger.info("User enters the verification code and click on verify button");
-        h = pageObjectManager.getHomePage();
+        ctx().h = ctx().pageObjectManager.getHomePage();
+        h = ctx().h;
         softAssertionALL();
     }
 }

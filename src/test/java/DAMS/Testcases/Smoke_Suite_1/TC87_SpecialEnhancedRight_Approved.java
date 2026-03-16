@@ -25,7 +25,7 @@ public class TC87_SpecialEnhancedRight_Approved extends BaseClass {
 				+ "</u></i></b>");
 		TC01_Login_MFA.login_with_addressing_MFA_External();
 		Thread.sleep(8000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		special.clickSpecialAccess();
 		windowZoomOut(); 
 		SpecialEnhanceRight_Approve(input);

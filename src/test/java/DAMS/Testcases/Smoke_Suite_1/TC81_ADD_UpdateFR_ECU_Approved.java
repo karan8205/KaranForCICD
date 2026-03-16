@@ -22,7 +22,7 @@ public class TC81_ADD_UpdateFR_ECU_Approved extends BaseClass {
 				+ "</u></i></b>");
 		TC01_Login_MFA.login_with_addressing_MFA();
 		Thread.sleep(8000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		special.clickSpecialAccess();
 		windowZoomOut(); 
 		AddFunctionalRole_Approve(input,Functional);

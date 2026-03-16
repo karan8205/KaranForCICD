@@ -95,7 +95,7 @@ public class TC013_Reject_Approve_External_ATG extends BaseClass {
 				+ "Replacement Package for External- status Approved:" + "</u></i></b>");
 		logger.info("************************************ Global End to End Completed *************************");
 		softAssertionALL();
-//		driver.quit();
+//		BaseClass.getDriver().quit();
 	}
 
 	@DataProvider

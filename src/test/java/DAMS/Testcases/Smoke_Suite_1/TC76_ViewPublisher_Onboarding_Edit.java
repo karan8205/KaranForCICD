@@ -49,7 +49,7 @@ public class TC76_ViewPublisher_Onboarding_Edit extends BaseClass {
 		test.pass("Verified the role description in Functional Overview page");
 		logger.info("Verified the role description in Functional Overview page");
 		special.publisher_Onboarding_business_unit(input.get("Business_unit"));
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		Random rand = new Random();
 		int randomNum = 1000 + rand.nextInt(9000);
 		String Publisher;
@@ -65,12 +65,12 @@ public class TC76_ViewPublisher_Onboarding_Edit extends BaseClass {
 		List<String> publisher_Onboarding_new_permission2 = special
 				.publisher_Onboarding_new_permission(optionsToSelect);
 		ClickTab();
-		 getScreenshot("third-partyPublisher ", driver);
+		 getScreenshot("third-partyPublisher ", BaseClass.getDriver());
 
 		special.submit();
 //		String reason_txt = special.provide_reason_and_submit(input.get("Reason_for_ThirdParty"));
 		Thread.sleep(5000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		special.selectECU_Chain_ViewPublisher(input.get("ECU_Mode"));
 		Thread.sleep(2000);
 		special.view_publisher_Onboarding_business_unit(input.get("Business_unit"));

@@ -18,12 +18,9 @@ import DAMS.Resources.AbstractComponents;
 import DAMS.Resources.BaseClass;
 
 public class Onboard_new_ECU_page extends AbstractComponents {
-	WebDriver driver;
 
 	public Onboard_new_ECU_page(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(BaseClass.getDriver());
 	}
 
 	@FindBy(xpath = "//*[text()=\"Onboard New ECU\"]")

@@ -211,7 +211,7 @@ public class TC03_Requests_STD_ATG_FR extends BaseClass {
 		Thread.sleep(5000);
 
 		// logger.info("About to zoom out");
-		// JavascriptExecutor js = (JavascriptExecutor) driver;
+		// JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
 		// js.executeScript("document.body.style.zoom='80%'");
 		newrequest.select_vehicle_program_ATG(user_type);
 		newrequest.functional_role_page_validation(prop.get_for_whom_txt(), prop.get_myself_txt(),

@@ -22,7 +22,7 @@ public class TC88_ADD_UpdateGlobalEnhance_Pending extends BaseClass {
 				+ "</u></i></b>");
 		TC01_Login_MFA.login_with_addressing_MFA();
 		Thread.sleep(5000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		BaseClass.minimize_window();
 		special.clickSpecialAccess(); 
 		Thread.sleep(2000);

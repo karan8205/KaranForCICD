@@ -36,7 +36,7 @@ public class TC06_STD_GLOBAL_FRapproved extends BaseClass {
 		create_and_approve_External_FR_request(input);
 		test.pass("User is able to verify click here to apply for functional role disbled for approved request");
 		logger.info("User is able to verify click here to apply for functional role disbled for approved request");
-//		driver.close();
+//		BaseClass.getDriver().close();
 		softAssertionALL();
 
 	}

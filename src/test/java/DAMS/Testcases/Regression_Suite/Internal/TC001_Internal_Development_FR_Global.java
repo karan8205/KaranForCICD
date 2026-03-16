@@ -79,14 +79,14 @@ public class TC001_Internal_Development_FR_Global extends BaseClass {
 				+ "Creation of Replacement Package - Internal" + "</u></i></b>");
 		AbstractComponents.refresh();
 		List<String >create_replacement_package_request_id_front = create_replacement_package_request_root(input);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		Thread.sleep(3000);
 		approve_special_cases_Replacement_request(input,create_replacement_package_request_id_front);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		Thread.sleep(3000);
 		
 		List<String >create_replacement_package_request_id_back = create_replacement_package_request_backend(input);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		Thread.sleep(3000);
 		approve_special_cases_Replacement_request(input,create_replacement_package_request_id_back);
 		List<String >create_replacement_package_request_ids = create_replacement_package_request_rootbackend(input);

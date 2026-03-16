@@ -75,7 +75,7 @@ public class TC003_External_VehicleValidation_FR_Global extends BaseClass {
 				+ "Replacement Package for External- status Approved:" + "</u></i></b>");
 		logger.info("************************************ Global End to End Completed *************************");
 		softAssertionALL();
-//		driver.quit();
+//		BaseClass.getDriver().quit();
 	}
 
 	@DataProvider

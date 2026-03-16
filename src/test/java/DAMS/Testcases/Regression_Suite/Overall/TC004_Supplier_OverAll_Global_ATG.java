@@ -82,7 +82,7 @@ public class TC004_Supplier_OverAll_Global_ATG extends BaseClass {
 					+ " Functional Role Approved *************" + "</u></i></b>");
 			// --------------------------------------------
 			AbstractComponents.refresh();
-			waitForPageLoad(driver);
+			waitForPageLoad(BaseClass.getDriver());
 			myreq.select_NewPermission_request();
 			newper.Diagnostic_Authority_Supplier_Created(input);
 			req.request_Overview();
@@ -128,19 +128,19 @@ public class TC004_Supplier_OverAll_Global_ATG extends BaseClass {
 				}
 				List<String> create_replacement_package_request_id_front = create_replacement_package_request_root_Supplier(
 						input);
-				waitForPageLoad(driver);
+				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
 				approve_special_cases_Replacement_request(input, create_replacement_package_request_id_front);
-				waitForPageLoad(driver);
+				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
 				List<String> create_replacement_package_request_id_back = create_replacement_package_request_backend_Supplier(
 						input);
 				approve_special_cases_Replacement_request(input, create_replacement_package_request_id_back);
-				waitForPageLoad(driver);
+				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
 				List<String> create_replacement_package_request_ids = create_replacement_package_request_rootbackend(
 						input);
-				waitForPageLoad(driver);
+				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
 				approve_special_cases_Replacement_request(input, create_replacement_package_request_ids);
 				test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
@@ -148,15 +148,15 @@ public class TC004_Supplier_OverAll_Global_ATG extends BaseClass {
 			}
 
 			AbstractComponents.refresh();
-			waitForPageLoad(driver);
+			waitForPageLoad(BaseClass.getDriver());
 			Thread.sleep(5000);
 			approver_overview.approver_Overview_enabled1();
 			approver_overview.search_here(prop.getUser_name());
-			getScreenshot(input.get("Mode") + "_" + input.get("User_Type") + "_ All Request", driver);
+			getScreenshot(input.get("Mode") + "_" + input.get("User_Type") + "_ All Request", BaseClass.getDriver());
 		} catch (Exception e) {
 			e.printStackTrace();
 			String filePath = null;
-			filePath = getScreenshot(input.get("Functional_role_External") + "error page", driver);
+			filePath = getScreenshot(input.get("Functional_role_External") + "error page", BaseClass.getDriver());
 		}
 		// after 1 data run
 		AbstractComponents.refresh();
@@ -269,7 +269,7 @@ public class TC004_Supplier_OverAll_Global_ATG extends BaseClass {
 		Thread.sleep(5000);
 
 		logger.info("About to zoom out");
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
 		js.executeScript("document.body.style.zoom='80%'");
 		newrequest.select_vehicle_program_ATG(user_type);
 		newrequest.functional_role_page_validation(prop.get_for_whom_txt(), prop.get_myself_txt(),

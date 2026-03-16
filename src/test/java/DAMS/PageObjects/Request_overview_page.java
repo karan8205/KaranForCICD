@@ -21,7 +21,6 @@ import DAMS.Resources.AbstractComponents;
 import DAMS.Resources.BaseClass;
 
 public class Request_overview_page extends AbstractComponents {
-	WebDriver driver;
 	public static Logger logger = Logger.getLogger("DAMS");
 
 	String user_ID;
@@ -66,9 +65,7 @@ public class Request_overview_page extends AbstractComponents {
 	String ECU_Certificate_Request;
 
 	public Request_overview_page(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(BaseClass.getDriver());
 	}
 
 	@FindBy(xpath = "//span[text()='Request Overview']")
@@ -458,7 +455,7 @@ public class Request_overview_page extends AbstractComponents {
 	}
 	
 	public void search_here(String object) {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		search_here.clear();
 		search_here.sendKeys(object);
 		type(search_here, Keys.ENTER);
@@ -476,7 +473,7 @@ public class Request_overview_page extends AbstractComponents {
 	}
 	public void select_Enhance_Right() {
 		
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		waitForWebElementToAppear(requesttypedrpdwn);
 		clickJS(requesttypedrpdwn);
 		waitForWebElementToAppear(enhance_Right);
@@ -932,7 +929,7 @@ public class Request_overview_page extends AbstractComponents {
 	
 	
 	public void select_request_type(String request_type) throws InterruptedException, AWTException {
-//		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
+//		BaseClass.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 //		waitForWebElementToAppear(request_type_drpdwn);
 //		clickJS(request_type_drpdwn);
 //		Thread.sleep(1000);
@@ -942,7 +939,7 @@ public class Request_overview_page extends AbstractComponents {
 //		Thread.sleep(3000);
 //		Thread.sleep(1000);
 //		hari
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		waitForWebElementToAppear(requesttypedrpdwn);
 		Thread.sleep(3000);
 		click(requesttypedrpdwn);
@@ -952,7 +949,7 @@ public class Request_overview_page extends AbstractComponents {
 	}
 	public void select_Applicant_type(String applicant_type) throws InterruptedException, AWTException {
 //		hari
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		waitForWebElementToAppear(RequestOvewview_ApplicantType);
 		clickJS(RequestOvewview_ApplicantType);	
 		Thread.sleep(1000);
@@ -1267,7 +1264,7 @@ public class Request_overview_page extends AbstractComponents {
 		refresh();
 		Thread.sleep(1000);
 		select_request_type(request_type);
-		String servicePrincipalID = driver.findElement(By.xpath("//table//tr[1]/td[5]")).getText();
+		String servicePrincipalID = BaseClass.getDriver().findElement(By.xpath("//table//tr[1]/td[5]")).getText();
 		req.search_here(servicePrincipalID);
 		approver_overview.filter_search(prop.getStatus_pending());
 		req.scrollForReason();
@@ -1406,9 +1403,9 @@ public class Request_overview_page extends AbstractComponents {
 		select_applicant_type(applicant_type);
 		select_request_type(request_type);
 		search_here_UserID(userID);
-		List<List<String>> firstTableValues = BaseClass.getTableValues(driver, By.xpath("//table/tbody"));
+		List<List<String>> firstTableValues = BaseClass.getTableValues(BaseClass.getDriver(), By.xpath("//table/tbody"));
 		List<String> ECU_column_values = new ArrayList<>();
-		List<WebElement> tableRows = driver.findElements(By.xpath("//table/tbody/tr"));
+		List<WebElement> tableRows = BaseClass.getDriver().findElements(By.xpath("//table/tbody/tr"));
 		for (WebElement row : tableRows) {
 			String columnValue = row.findElement(By.cssSelector("td[class*=\"ECU-Qualifier \"]")).getText();
 			ECU_column_values.add(columnValue);
@@ -1439,7 +1436,7 @@ public class Request_overview_page extends AbstractComponents {
 		select_applicant_type(applicant_type);
 		select_request_type(request_type);
 		List<String> ECU_column_values = new ArrayList<>();
-		List<WebElement> tableRows = driver.findElements(By.xpath("//table/tbody/tr"));
+		List<WebElement> tableRows = BaseClass.getDriver().findElements(By.xpath("//table/tbody/tr"));
 		for (WebElement row : tableRows) {
 			String columnValue = row.findElement(By.cssSelector("td[class*=\"ECU-Qualifier \"]")).getText();
 			ECU_column_values.add(columnValue);
@@ -1464,9 +1461,9 @@ public class Request_overview_page extends AbstractComponents {
 	}
 	
 	public List<List<String>> request_Overview_table_values_ECU_certificate_request_for_more_than_one() throws Throwable {
-		List<List<String>> firstTableValues = BaseClass.getTableValues(driver, By.xpath("//table/tbody"));
+		List<List<String>> firstTableValues = BaseClass.getTableValues(BaseClass.getDriver(), By.xpath("//table/tbody"));
 		List<String> ECU_column_values = new ArrayList<>();
-		List<WebElement> tableRows = driver.findElements(By.xpath("//table/tbody/tr"));
+		List<WebElement> tableRows = BaseClass.getDriver().findElements(By.xpath("//table/tbody/tr"));
 		for (WebElement row : tableRows) {
 			String columnValue = row.findElement(By.cssSelector("td[class*=\"ECU-Qualifier \"]")).getText();
 			ECU_column_values.add(columnValue);
@@ -1534,8 +1531,6 @@ public class Request_overview_page extends AbstractComponents {
 	                applicantNumber.add(txt);
 	            }
 	        } catch (StaleElementReferenceException e) {
-	           
-	            PageFactory.initElements(driver, this);
 
 	            String txt = Request_Overview_applicant_numbers_txt.get(i).getText();
 	            if (!txt.isEmpty()) {

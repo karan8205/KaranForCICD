@@ -188,7 +188,7 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 			throw new RuntimeException("Invalid user_type passed: " + user_type);
 		}
 		Thread.sleep(3000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		// hari
 		// h.dropBtn();
 
@@ -210,7 +210,7 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 		logger.info("User validates the gtc page");
 		Thread.sleep(5000);
 
-		// JavascriptExecutor js = (JavascriptExecutor) driver;
+		// JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
 		// js.executeScript("document.body.style.zoom='80%'");
 
 		newrequest.select_vehicle_program_global(user_type);
@@ -247,7 +247,7 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 		Thread.sleep(5000);
 
 		logger.info("About to zoom out");
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
 		js.executeScript("document.body.style.zoom='80%'");
 
 		newrequest.select_vehicle_program_global(user_type);

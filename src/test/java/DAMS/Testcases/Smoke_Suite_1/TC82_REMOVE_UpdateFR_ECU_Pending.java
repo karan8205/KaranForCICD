@@ -22,7 +22,7 @@ public class TC82_REMOVE_UpdateFR_ECU_Pending extends BaseClass {
 				+ "</u></i></b>");
 		TC01_Login_MFA.login_with_addressing_MFA();
 		Thread.sleep(8000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		special.clickSpecialAccess();
 		windowZoomOut(); 
 		special.update_functional_role();
