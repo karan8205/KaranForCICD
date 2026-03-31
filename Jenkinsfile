@@ -78,7 +78,7 @@ pipeline {
                         // ✅ Default execution
                         bat """
                         mvn test ^
-                        -Dsurefire.suiteXmlFiles=testSuites/RegressionSuite_TestNG.xml ^
+                        -Dsurefire.suiteXmlFiles=testSuites/CICD.xml ^
                         -Denv=${params.env}
                         """
                     }
