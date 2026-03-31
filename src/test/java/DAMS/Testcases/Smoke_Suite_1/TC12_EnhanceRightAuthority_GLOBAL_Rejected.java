@@ -23,7 +23,7 @@ public class TC12_EnhanceRightAuthority_GLOBAL_Rejected extends BaseClass {
 		
 		TC11_EnhanceRightAuthority_GLOBAL.create_Enhance_right_Authority_Request_Internal_test_case	(input);
 		req.search_here(prop.getUser_name());		
-		reject_Enhance_Right_Authority_request(input);
+		reject_Enhance_Right_Authority_request(input,ctx().prop.getInternalName());
 		test.pass("Create Enhance right request when the status is rejected");
 		logger.info("Create Enhance right request when the status is rejected");
 		softAssertionALL();
@@ -42,7 +42,7 @@ public class TC12_EnhanceRightAuthority_GLOBAL_Rejected extends BaseClass {
 		req.search_here(prop.getUser_name());
 		approver_overview.filter_search(prop.getStatus_pending());
 
-		reject_Enhance_Right_Authority_request(input);
+		reject_Enhance_Right_Authority_request(input,ctx().prop.getExternalName());
 		test.pass("Create Enhance right request when the status is rejected");
 		logger.info("Create Enhance right request when the status is rejected");
 		softAssertionALL();
@@ -57,7 +57,7 @@ public class TC12_EnhanceRightAuthority_GLOBAL_Rejected extends BaseClass {
 		TC11_EnhanceRightAuthority_GLOBAL.create_Enhance_right_Authority_Request_Supplier_test_case(input);
 		req.search_here(prop.getUser_name());	
 		approver_overview.filter_search(prop.getStatus_pending());
-		reject_Enhance_Right_Authority_request(input);
+		reject_Enhance_Right_Authority_request(input,ctx().prop.getSupplierName());
 		test.pass("Create Enhance right request when the status is rejected");
 		logger.info("Create Enhance right request when the status is rejected");
 		softAssertionALL();
@@ -91,7 +91,7 @@ public class TC12_EnhanceRightAuthority_GLOBAL_Rejected extends BaseClass {
 	}
 
 	public static void reject_Enhance_Right_Authority_request(HashMap<String, String> input,
-			List<Object> create_Enhance_Right_Authority_request) throws Throwable {
+			List<Object> create_Enhance_Right_Authority_request,String username) throws Throwable {
 		String approval_status_after_level1_rejection = approver_overview.reject_Enhance_right_Request(
 				create_Enhance_Right_Authority_request.get(7), "Enhance Right", reason_for_rejection,
 				create_Enhance_Right_Authority_request);
@@ -99,12 +99,12 @@ public class TC12_EnhanceRightAuthority_GLOBAL_Rejected extends BaseClass {
 		test.pass("View the approval status as rejected in approver page");
 		logger.info("View the approval status as rejected in approver page");
 		req.navigate_to_request_Overview_page_and_verify_approval_status_ER(prop.getStatus_rejected(), "N/A",
-				reason_for_rejection, "Enhance Right", prop.getUser_name());
+				reason_for_rejection, "Enhance Right", username);
 		test.pass("View the approval status as rejected in request overview page");
 		logger.info("View the approval status as rejected in request overview page");
 
 	}
-	public static void reject_Enhance_Right_Authority_request(HashMap<String, String> input) throws Throwable {
+	public static void reject_Enhance_Right_Authority_request(HashMap<String, String> input,String username) throws Throwable {
 		List<String> applicantNumber=req.getMultipleApplicantNumber();
 		for(String search : applicantNumber) {
 		approver_overview.approver_Overview_enabled1();
@@ -119,7 +119,7 @@ public class TC12_EnhanceRightAuthority_GLOBAL_Rejected extends BaseClass {
 		logger.info("View the approval status as rejected in approver page");
 		for(String searchId:applicantNumber) {
 			req.navigate_to_request_Overview_page_and_verify_approval_status_ER(prop.getStatus_rejected(), "N/A",
-					reason_for_rejection, "Enhance Right", prop.getUser_name(),input.get("User_Role"));
+					reason_for_rejection, "Enhance Right", username,input.get("User_Role"));
 		test.pass("View the approval status as rejected in request overview page");
 		logger.info("View the approval status as rejected in request overview page");
 
@@ -168,14 +168,14 @@ public class TC12_EnhanceRightAuthority_GLOBAL_Rejected extends BaseClass {
 		}
 
 	}
-	public static void reject_ER_request(HashMap<String, String> input, String create_DA_request)
+	public static void reject_ER_request(HashMap<String, String> input, String create_DA_request,String username)
 			throws Throwable {
 		String DA_approval_status_after_level1_approval = approver_overview.rejecttheDA_Request("Enhance Right",reason_for_rejection,create_DA_request);
 		s.assertTrue(DA_approval_status_after_level1_approval.equals(prop.getStatus_rejected()));
 		test.pass("View the approval status as rejected in approver page");
 		logger.info("View the approval status as rejected in approver page");
 		req.navigate_to_request_Overview_page_and_verify_approval_status_DA(prop.getStatus_rejected(), "N/A",
-				reason_for_rejection, "Enhance Right", prop.getUser_name());
+				reason_for_rejection, "Enhance Right", username);
 		test.pass("View the approval status as rejected in FR overview page");
 		logger.info("View the approval status as rejected in FR overview page");
 	}

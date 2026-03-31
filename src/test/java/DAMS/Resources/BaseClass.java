@@ -82,8 +82,7 @@ public class BaseClass {
     }
 
     /** One TestContext per thread — never null after ctx() is called. */
-    private static final ThreadLocal<TestContext> threadContext =
-            ThreadLocal.withInitial(TestContext::new);
+    private static final ThreadLocal<TestContext> threadContext = ThreadLocal.withInitial(TestContext::new);
 
     /** Returns the calling thread's own TestContext. */
     public static TestContext ctx() {
@@ -99,7 +98,7 @@ public class BaseClass {
 
     // ─────────────────────────────────────────────────────────────────────────
     // Legacy static aliases — kept so the 94+ non-parallel TC files compile
-    // without any changes.  For parallel-safe code use ctx().xxx instead.
+    // without any changes. For parallel-safe code use ctx().xxx instead.
     // ─────────────────────────────────────────────────────────────────────────
     public static TC02_Requests_STD_GLOBAL fr;
     public static PropertyFile prop;
@@ -273,17 +272,17 @@ public class BaseClass {
             PropertyFile.setEnvironment(env);
         }
 
-        String methodName = method.getName().toLowerCase();
-
-        if (methodName.contains("internal")) {
-            PropertyFile.writeProperty("User_name", "PU_S_PID1BD7");
-        }
-        if (methodName.contains("external")) {
-            PropertyFile.writeProperty("User_name", "HARNAGA");
-        }
-        if (methodName.contains("supplier")) {
-            PropertyFile.writeProperty("User_name", "HARNAGA");
-        }
+        // String methodName = method.getName().toLowerCase();
+        //
+        // if (methodName.contains("internal")) {
+        // PropertyFile.writeProperty("User_name", "PU_S_PID1BD7");
+        // }
+        // if (methodName.contains("external")) {
+        // PropertyFile.writeProperty("User_name", "HARNAGA");
+        // }
+        // if (methodName.contains("supplier")) {
+        // PropertyFile.writeProperty("User_name", "HARNAGA");
+        // }
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
@@ -334,7 +333,7 @@ public class BaseClass {
         String username = new String(decodedBytes);
         byte[] passwordEncode = Base64.getDecoder().decode(ctx().prop.getPassword_MFA());
         String password = new String(passwordEncode);
-        initializeDriver("incognito");  // sets ctx().driver
+        initializeDriver("incognito"); // sets ctx().driver
         login(username, password, url);
     }
 
@@ -344,7 +343,7 @@ public class BaseClass {
         String username = new String(decodedBytes);
         byte[] passwordEncode = Base64.getDecoder().decode(ctx().prop.getPassword_MFA_Internal());
         String password = new String(passwordEncode);
-        initializeDriver("incognito");  // sets ctx().driver
+        initializeDriver("incognito"); // sets ctx().driver
         login(username, password, ctx().prop.getUrl());
     }
 
@@ -354,7 +353,7 @@ public class BaseClass {
         String username = new String(decodedBytes);
         byte[] passwordEncode = Base64.getDecoder().decode(ctx().prop.getPassword_MFA_External());
         String password = new String(passwordEncode);
-        initializeDriver("incognito");  // sets ctx().driver
+        initializeDriver("incognito"); // sets ctx().driver
         login(username, password, ctx().prop.getUrl());
     }
 
@@ -364,7 +363,7 @@ public class BaseClass {
         String username = new String(decodedBytes);
         byte[] passwordEncode = Base64.getDecoder().decode(ctx().prop.getPassword_MFA_Supplier());
         String password = new String(passwordEncode);
-        initializeDriver("incognito");  // sets ctx().driver
+        initializeDriver("incognito"); // sets ctx().driver
         login(username, password, ctx().prop.getUrl());
     }
 
@@ -374,7 +373,7 @@ public class BaseClass {
         String encodedPassword = Base64.getEncoder().encodeToString(password_MFA.getBytes());
         String username = new String(Base64.getDecoder().decode(encodedUsername));
         String password = new String(Base64.getDecoder().decode(encodedPassword));
-        initializeDriver("Normal");     // sets ctx().driver
+        initializeDriver("Normal"); // sets ctx().driver
         login(username_MFA, password_MFA, url);
     }
 
@@ -384,37 +383,37 @@ public class BaseClass {
     // ─────────────────────────────────────────────────────────────────────────
     public static void login(String username_MFA, String password_MFA, String url) throws InterruptedException {
         ctx().pageObjectManager = new PageObjectManager(getDriver());
-        ctx().l              = ctx().pageObjectManager.getLoginPage();
-        ctx().h              = ctx().pageObjectManager.getHomePage();
-        ctx().gtc            = ctx().pageObjectManager.getGtcPage();
-        ctx().f              = ctx().pageObjectManager.getfunctional_role_page();
-        ctx().newrequest     = ctx().pageObjectManager.getNewFunctionalRoleRequestPage();
+        ctx().l = ctx().pageObjectManager.getLoginPage();
+        ctx().h = ctx().pageObjectManager.getHomePage();
+        ctx().gtc = ctx().pageObjectManager.getGtcPage();
+        ctx().f = ctx().pageObjectManager.getfunctional_role_page();
+        ctx().newrequest = ctx().pageObjectManager.getNewFunctionalRoleRequestPage();
         ctx().approver_overview = ctx().pageObjectManager.getapproverOverview_page();
-        ctx().newper         = ctx().pageObjectManager.getNewPermission_Request_Page();
-        ctx().req            = ctx().pageObjectManager.getRequest_overview_page();
-        ctx().myreq          = ctx().pageObjectManager.getmyRequest_Page();
+        ctx().newper = ctx().pageObjectManager.getNewPermission_Request_Page();
+        ctx().req = ctx().pageObjectManager.getRequest_overview_page();
+        ctx().myreq = ctx().pageObjectManager.getmyRequest_Page();
         ctx().onboard_new_ECU = ctx().pageObjectManager.getonboard_new_ECU_page();
-        ctx().deputy         = ctx().pageObjectManager.getMyDeputy_page();
-        ctx().special        = ctx().pageObjectManager.getSpecial_access_page();
-        ctx().read           = ctx().pageObjectManager.getReadView_Permission_Page();
-        ctx().s              = creatsoftAssert();
+        ctx().deputy = ctx().pageObjectManager.getMyDeputy_page();
+        ctx().special = ctx().pageObjectManager.getSpecial_access_page();
+        ctx().read = ctx().pageObjectManager.getReadView_Permission_Page();
+        ctx().s = creatsoftAssert();
 
         // Also update legacy static aliases so non-parallel TCs keep working
-        pageObjectManager    = ctx().pageObjectManager;
-        l                    = ctx().l;
-        h                    = ctx().h;
-        gtc                  = ctx().gtc;
-        f                    = ctx().f;
-        newrequest           = ctx().newrequest;
-        approver_overview    = ctx().approver_overview;
-        newper               = ctx().newper;
-        req                  = ctx().req;
-        myreq                = ctx().myreq;
-        onboard_new_ECU      = ctx().onboard_new_ECU;
-        deputy               = ctx().deputy;
-        special              = ctx().special;
-        read                 = ctx().read;
-        s                    = ctx().s;
+        pageObjectManager = ctx().pageObjectManager;
+        l = ctx().l;
+        h = ctx().h;
+        gtc = ctx().gtc;
+        f = ctx().f;
+        newrequest = ctx().newrequest;
+        approver_overview = ctx().approver_overview;
+        newper = ctx().newper;
+        req = ctx().req;
+        myreq = ctx().myreq;
+        onboard_new_ECU = ctx().onboard_new_ECU;
+        deputy = ctx().deputy;
+        special = ctx().special;
+        read = ctx().read;
+        s = ctx().s;
 
         ctx().l.loginApplicationasRequester_MFA(username_MFA, password_MFA, url);
     }
@@ -518,8 +517,7 @@ public class BaseClass {
 
     public static void ClickTab() throws Throwable {
         Thread.sleep(2000);
-        org.openqa.selenium.interactions.Actions actions =
-                new org.openqa.selenium.interactions.Actions(getDriver());
+        org.openqa.selenium.interactions.Actions actions = new org.openqa.selenium.interactions.Actions(getDriver());
         actions.sendKeys(org.openqa.selenium.Keys.TAB).build().perform();
     }
 

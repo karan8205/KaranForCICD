@@ -98,7 +98,7 @@ public class TC007_Reject_Approve_Supplier_Global extends BaseClass {
 				TC29_ReplacementPackage_RootBackend_Swap_GLOBAL.create_replacement_package_request(input.get("Functional_role_supplier"),input.get("SpecialCase"),
 						input.get("Orgin_COT"), input.get("Reason_for_supplier_FR"), input.get("Target_COT"),
 						input.get("ECU_Supplier"),input.get("BackendRoot_COT"),input.get("BackendOrigin_COT"),input.get("BackendTarget_COT"));
-		TC30_ReplacementPackage_RootBackend_Swap_Swap_GLOBAL_Rejected.reject_special_cases_Replacement_request(input,create_replacement_package_request);		
+		TC30_ReplacementPackage_RootBackend_Swap_Swap_GLOBAL_Rejected.reject_special_cases_Replacement_request(input,create_replacement_package_request,ctx().prop.getSupplierName());
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Replacement Package for Internal- status Rejected:" + "</u></i></b>");
 		AbstractComponents.refresh();
@@ -185,7 +185,7 @@ public class TC007_Reject_Approve_Supplier_Global extends BaseClass {
 	}	
 	public static void approve_Multiple_special_cases_nestT_request(HashMap<String, String> input) throws Throwable {
 		req.request_Overview();	
-		String NestT_approval_status_after_level1_approval = approver_overview.approve_Multiple_nestT_Request("Nest T Testing","Nest-T Testing",prop.getStatus_pending());
+		String NestT_approval_status_after_level1_approval = approver_overview.approve_Multiple_nestT_Request("Nest T Testing","Nest-T Testing",prop.getStatus_pending(),ctx().prop.getSupplierName());
 //		s.assertTrue(NestT_approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
 		test.pass("User is able to view the approval status as Approved after 1st level approval");
 		logger.info("User is able to view the approval status as Approved after 1st level approval");
@@ -195,7 +195,7 @@ public class TC007_Reject_Approve_Supplier_Global extends BaseClass {
 				"User is able to view navigate to request role overview page and check if the status is pending after 1st level approval");
 		logger.info(
 				"User is able to view navigate to request role overview page and check if the status is pending after 1st level approval");
-		String NestT_approval_status_after_level2_approval = approver_overview.approve_Multiple_nestT_Request("Nest T Testing","Nest-T Testing",prop.getStatus_pending());
+		String NestT_approval_status_after_level2_approval = approver_overview.approve_Multiple_nestT_Request("Nest T Testing","Nest-T Testing",prop.getStatus_pending(),ctx().prop.getSupplierName());
 		s.assertTrue(NestT_approval_status_after_level2_approval.equals(prop.getStatus_Approved()));
 		test.pass("User is able to view the approval status as Approved after 2nd level approval");
 		logger.info("User is able to view the approval status as Approved after 2nd level approval");
@@ -217,7 +217,7 @@ public class TC007_Reject_Approve_Supplier_Global extends BaseClass {
 		test.info("Request overview tab enabled");
 		logger.info("Request overview tab enabled"); 
 		List<String> replacement_package_table_input = req
-				.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name());
+				.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name(),ctx().prop.getSupplierName());
 //		Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the Replacement package request created");
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");
@@ -235,7 +235,7 @@ public class TC007_Reject_Approve_Supplier_Global extends BaseClass {
 		test.info("Request overview tab enabled");
 		logger.info("Request overview tab enabled"); 
 		List<String> replacement_package_table_input = req
-				.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name());
+				.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name(),ctx().prop.getSupplierName());
 //		Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the Replacement package request created");
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");
@@ -252,7 +252,7 @@ public class TC007_Reject_Approve_Supplier_Global extends BaseClass {
 		test.info("Request overview tab enabled");
 		logger.info("Request overview tab enabled"); 
 		List<String> replacement_package_table_input = req
-				.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name());
+				.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name(),ctx().prop.getSupplierName());
 //		Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the Replacement package request created");
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");
@@ -305,7 +305,7 @@ public class TC007_Reject_Approve_Supplier_Global extends BaseClass {
 	public static void reject_approve_Request_EA(HashMap<String, String> input,List<String>applicantNumber) throws Throwable {
 		for(int i=0;i<applicantNumber.size();i++) {
 			if(!applicantNumber.get(i).isEmpty()) {
-		TC12_EnhanceRightAuthority_GLOBAL_Rejected.reject_ER_request(input,applicantNumber.get(i));
+		TC12_EnhanceRightAuthority_GLOBAL_Rejected.reject_ER_request(input,applicantNumber.get(i),ctx().prop.getSupplierName());
 			}
 		}
 		TC11_EnhanceRightAuthority_GLOBAL.create_Enhance_Right_Authority_request_Supplier(input);

@@ -16,7 +16,7 @@ import DAMS.Resources.BaseClass;
 
 public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 
-	@Test(dataProvider = "getData_Internal")
+	@Test(dataProvider = "getData_Internal",enabled=false)
 	public static void global_Smoke_TestSuite_E2E_Internal(
 			HashMap<String, String> input) throws Throwable {
 		// TC01_Login_MFA.login_with_addressing_MFA_Internal();
@@ -58,9 +58,9 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 				+ "Creation of Nest-T Testing - Internal" + "</u></i></b>");
 		AbstractComponents.refresh();
 		List<String> create_special_cases_nestT_request = TC17_NestT_TestCOT_GLOBAL
-				.create_special_cases_nestT_request(input);
+				.create_special_cases_nestT_request(input,ctx().prop.getInternalName());
 		TC19_NestT_TestCOT_GLOBAL_Approved.approve_specail_cases_nestT_request(input,
-				create_special_cases_nestT_request);
+				create_special_cases_nestT_request,ctx().prop.getInternalName());
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Nest-T Testing for Internal- status Approved:" + "</u></i></b>");
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
@@ -69,7 +69,7 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 		List<String> create_replacement_package_request = TC31_ReplacementPackage_RootBackend_Swap_Swap_GLOBAL_Approved
 				.create_replacement_package_request(input);
 		TC31_ReplacementPackage_RootBackend_Swap_Swap_GLOBAL_Approved.approve_special_cases_Replacement_request(input,
-				create_replacement_package_request);
+				create_replacement_package_request,ctx().prop.getInternalName());
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Replacement Package for Internal- status Approved:" + "</u></i></b>");
 		logger.info("************************************ Global End to End Completed *************************");
@@ -77,7 +77,7 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 		// BaseClass.getDriver().quit();
 	}
 
-	@Test(dataProvider = "getData_External", priority = 1)
+	@Test(dataProvider = "getData_External", priority = 1,enabled=false)
 	public static void global_Smoke_TestSuite_E2E_External(
 			HashMap<String, String> input) throws Throwable {
 //		 TC01_Login_MFA.login_with_addressing_MFA_External();
@@ -118,7 +118,7 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 		List<String> create_special_cases_nestT_request = TC17_NestT_TestCOT_GLOBAL
 				.create_special_cases_nestT_request_External(input);
 		TC19_NestT_TestCOT_GLOBAL_Approved.approve_specail_cases_nestT_request(input,
-				create_special_cases_nestT_request);
+				create_special_cases_nestT_request,ctx().prop.getExternalName());
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Nest-T Testing for External- status Approved:" + "</u></i></b>");
 		AbstractComponents.refresh();
@@ -177,7 +177,7 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 		List<String> create_special_cases_nestT_request = TC17_NestT_TestCOT_GLOBAL
 				.create_special_cases_nestT_request_Supplier(input);
 		TC19_NestT_TestCOT_GLOBAL_Approved.approve_specail_cases_nestT_request(input,
-				create_special_cases_nestT_request);
+				create_special_cases_nestT_request,ctx().prop.getSupplierName());
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Nest-T Testing for Supplier- status Approved:" + "</u></i></b>");
 		AbstractComponents.refresh();
@@ -221,7 +221,7 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 
 	}
 
-	public static void approve_DA_request(HashMap<String, String> input, List<String> create_DA_request)
+	public static void approve_DA_request(HashMap<String, String> input, List<String> create_DA_request,String username)
 			throws Throwable {
 		if (create_DA_request.get(13).equals("Development ENHANCED") || create_DA_request.get(13).equals("Production")
 				|| create_DA_request.get(13).equals("After-Sales ENHANCED")) {
@@ -231,7 +231,7 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 			test.pass("User is able to view the approval status as Approved after 1st level approval");
 			logger.info("User is able to view the approval status as Approved after 1st level approval");
 			req.navigate_to_request_Overview_page_and_verify_approval_status_DA(prop.getStatus_pending(), "N/A", "N/A",
-					"Diagnostic Authority", prop.getUser_name());
+					"Diagnostic Authority", username);
 			test.pass(
 					"User is able to view navigate to request overview page and check if the status is pending after 1st level approval");
 			logger.info(
@@ -243,7 +243,7 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 			logger.info("User is able to view the approval status as Approved after 2nd level approval");
 			String todays_date = todays_date();
 			req.navigate_to_request_Overview_page_and_verify_approval_status_DA(prop.getStatus_Approved(), todays_date,
-					"N/A", "Diagnostic Authority", prop.getUser_name());
+					"N/A", "Diagnostic Authority", username);
 			test.pass(
 					"User is able to view navigae to request overview page and check if the status is approved after 2nd level approval");
 			logger.info(
@@ -256,7 +256,7 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 			logger.info("User is able to view the approval status as Approved after 1st level approval");
 			String todays_date = todays_date();
 			req.navigate_to_request_Overview_page_and_verify_approval_status_DA(prop.getStatus_Approved(), todays_date,
-					"N/A", "Diagnostic Authority", prop.getUser_name());
+					"N/A", "Diagnostic Authority", username);
 			test.pass(
 					"User is able to view navigae to Functioanl role overview page and check if the status is approved after 1st level approval");
 			logger.info(

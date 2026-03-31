@@ -65,9 +65,14 @@ public class MyRequest_Page extends AbstractComponents {
 			Thread.sleep(2000);
 			clickElement(My_Request);
 			Thread.sleep(1000);
+			try {
 			AbstractComponents.waitForelementToBeClickable(NewPermission_request);
 			clickElement(NewPermission_request);
-			
+			}catch(Exception e) {
+				clickJS(My_Request);
+				AbstractComponents.waitForelementToBeClickable(NewPermission_request);
+				clickElement(NewPermission_request);
+			}
 			Thread.sleep(1000);
 			test.pass("User is able to select New permission request");
 			logger.info("User is able to select New permission request");

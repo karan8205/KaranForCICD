@@ -415,7 +415,7 @@
 		"NO":"14",
 		"User_Type":"Technical_User",
 		"Functional_role": "Production",
-		"BU": "FUSO",
+		"BU": "DTE",
 		"Chain_Trust":"GLOBAL",
 		"Role_Desc": "Select the 'Global' option if the ECU in the vehicle project contains T1 and T2 as test and S1 as the series chain of trust",
 		"Reason": "Service Principal Request Production",

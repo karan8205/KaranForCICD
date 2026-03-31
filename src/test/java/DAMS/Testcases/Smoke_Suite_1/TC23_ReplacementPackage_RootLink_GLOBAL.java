@@ -98,7 +98,7 @@ public class TC23_ReplacementPackage_RootLink_GLOBAL extends BaseClass {
 		test.info("Request overview tab enabled");
 		logger.info("Request overview tab enabled");
 		List<String> replacement_package_table_input = req
-				.request_Overview_table_validation_for_replacement_package("Replacement Package", "HARNAGA");
+				.request_Overview_table_validation_for_replacement_package("Replacement Package", "HARNAGA",ctx().prop.getExternalName());
 		Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the Replacement package request created");
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");

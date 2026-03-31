@@ -25,7 +25,7 @@ public class TC53_ReplacementPackage_RootBackend_Swap_ATG extends BaseClass {
 		TC07_STD_ATG_FRapproved.Funtional_role_request_approved_Internal(input);
 		create_replacement_package_request(input.get("Functional_role_internal"),input.get("SpecialCase"),
 				input.get("Orgin_COT"), input.get("Reason_for_RP"), input.get("Target_COT"),
-				input.get("ECU_Qualifier_for_RP"),input.get("BackendRoot_COT"),input.get("BackendOrigin_COT"),input.get("BackendTarget_COT"));
+				input.get("ECU_Qualifier_for_RP"),input.get("BackendRoot_COT"),input.get("BackendOrigin_COT"),input.get("BackendTarget_COT"),ctx().prop.getInternalName());
 		test.pass("User is able to create Replacement package request when the status is pending");
 		logger.info("User is able to create Replacement package request when the status is pending");
 		softAssertionALL();
@@ -36,7 +36,7 @@ public class TC53_ReplacementPackage_RootBackend_Swap_ATG extends BaseClass {
 		TC07_STD_ATG_FRapproved.create_and_approve_External_FR_request(input);
 		create_replacement_package_request(input.get("Functional_role_External"),input.get("SpecialCase"),
 				input.get("Orgin_COT"), input.get("Reason_for_RP"), input.get("Target_COT"),
-				input.get("ECU_Qualifier_for_RP"),input.get("BackendRoot_COT"),input.get("BackendOrigin_COT"),input.get("BackendTarget_COT"));
+				input.get("ECU_Qualifier_for_RP"),input.get("BackendRoot_COT"),input.get("BackendOrigin_COT"),input.get("BackendTarget_COT"),ctx().prop.getInternalName());
 		test.pass("User is able to create Replacement package request when the status is pending");
 		logger.info("User is able to create Replacement package request when the status is pending");
 		softAssertionALL();
@@ -82,7 +82,7 @@ public class TC53_ReplacementPackage_RootBackend_Swap_ATG extends BaseClass {
 		return new Object[][] { { data.get(6) } };
 	}
 
-	public static List<String> create_replacement_package_request(String functionalrole,String SpecialCase, String Orgin_COT, String Reason_for_RP, String Target_COT, String ECU_Qualifier_for_RP,String BackendRoot_COT,String BackendOrigin_COT,String BackendTarget_COT) throws Throwable {
+	public static List<String> create_replacement_package_request(String functionalrole,String SpecialCase, String Orgin_COT, String Reason_for_RP, String Target_COT, String ECU_Qualifier_for_RP,String BackendRoot_COT,String BackendOrigin_COT,String BackendTarget_COT,String username) throws Throwable {
 		test.info("Replacement package request");
 		logger.info("Replacement package request");
 		myreq.select_NewPermission_request();
@@ -92,7 +92,7 @@ public class TC53_ReplacementPackage_RootBackend_Swap_ATG extends BaseClass {
 		test.info("Request overview tab enabled");
 		logger.info("Request overview tab enabled");
 		List<String> replacement_package_table_input = req
-				.request_Overview_table_validation_for_replacement_package("Replacement Package", prop.getUser_name());
+				.request_Overview_table_validation_for_replacement_package("Replacement Package", prop.getUser_name(),username);
 		Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the Replacement package request created");
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");
@@ -109,7 +109,7 @@ public class TC53_ReplacementPackage_RootBackend_Swap_ATG extends BaseClass {
 		test.info("Request overview tab enabled");
 		logger.info("Request overview tab enabled");
 		List<String> replacement_package_table_input = req
-				.request_Overview_table_validation_for_replacement_package("Replacement Package", prop.getUser_name());
+				.request_Overview_table_validation_for_replacement_package("Replacement Package", prop.getUser_name(),ctx().prop.getSupplierName());
 		Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the Replacement package request created");
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");

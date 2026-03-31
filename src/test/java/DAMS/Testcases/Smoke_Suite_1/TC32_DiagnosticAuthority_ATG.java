@@ -40,7 +40,7 @@ public class TC32_DiagnosticAuthority_ATG extends BaseClass {
 		String select_user_type = TC03_Requests_STD_ATG_FR.login_and_select_user_ATG(prop.get_user_type_external());
 		String functional_role_selected =TC03_Requests_STD_ATG_FR. raise_External_functional_role(input);
 		List<Object> functional_role= create_and_approve_External_FR_request(input);
-		create_DA_request(input, functional_role);
+		create_DA_request(input, functional_role,ctx().prop.getExternalName());
 		test.pass("User is able to verify selected ecu is not visible when the sttaus is in pending");
 		logger.info("User is able to verify selected ecu is not visible when the sttaus is in pending");
 		softAssertionALL();
@@ -94,7 +94,7 @@ public class TC32_DiagnosticAuthority_ATG extends BaseClass {
 
 	}
 	public static List<Object> create_and_approve_External_FR_request(HashMap<String, String> input) throws Throwable {
-		List<Object> funational_role_Overview_table_input = TC02_Requests_STD_GLOBAL.functional_role_Overview_table_validation(input.get("User_Type"));
+		List<Object> funational_role_Overview_table_input = TC02_Requests_STD_GLOBAL.functional_role_Overview_table_validation(input.get("User_Type"),ctx().prop.getExternalName());
 		String select_user_type=input.get("User_Type");
 		String functional_role_selected =input.get("Functional_role_External");
 		String[] standard_cert = functional_role(select_user_type, funational_role_Overview_table_input,
@@ -102,7 +102,7 @@ public class TC32_DiagnosticAuthority_ATG extends BaseClass {
 		return Arrays.asList(standard_cert, functional_role_selected, select_user_type);
 	}
 
-	public static List<String> create_DA_request(HashMap<String, String> input, List<Object> functional_role)
+	public static List<String> create_DA_request(HashMap<String, String> input, List<Object> functional_role,String userName)
 			throws Throwable {
 		test.info("Diagnostic AUthority request");
 		logger.info("Diagnostic AUthority request");
@@ -111,7 +111,7 @@ public class TC32_DiagnosticAuthority_ATG extends BaseClass {
 				(String) functional_role.get(1), input.get("User_role"), input.get("ECU_Restriction"),
 				input.get("Reason_for_DA"));
 		s.assertTrue(request_Overview_enabled);
-		List<String> request_Overview_input = req.request_Overview_table_validation(prop.getUser_name(), "ALL");
+		List<String> request_Overview_input = req.request_Overview_table_validation(userName, "ALL");
 		s.assertTrue(request_Overview_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the DA request created");
 		logger.info("User is able to view the approval status as pending once the DA request created");

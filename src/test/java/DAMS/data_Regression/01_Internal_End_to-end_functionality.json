@@ -233,7 +233,7 @@
 		"BackendRoot_COT": "Root E2",
 		"SpecialCase_nestT": "Nest-T Testing",
 		"NestT_TestingCase": "Nest-T Test COT/Nest-T Test COT/Nest-T Central Authentication",
-		"ECU_Qualifier_nestT": "ADST01T/APS501T/CGWA01T",
+		"ECU_Qualifier_nestT": "AAGW01T/ALT48V01T/CGWA01T",
 		"Reason_for_nestT": "Certificate Request for NEST-T"
 	},
 	{

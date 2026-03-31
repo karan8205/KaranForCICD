@@ -71,7 +71,7 @@ public class TC35_EnhanceRightAuthority_ATG extends BaseClass {
 		request_Overview_enabled.get(0);
 		SoftAssertUtil.assertTrue((boolean) request_Overview_enabled.get(0));
 		List<Object> request_Overview_table_validation = req
-				.request_Overview_table_validation_for_Enhanced_right("Enhance Right", prop.getUser_name(), "ALL",request_Overview_enabled);
+				.request_Overview_table_validation_for_Enhanced_right("Enhance Right", ctx().prop.getInternalName(), "ALL",request_Overview_enabled);
 		SoftAssertUtil.assertTrue(request_Overview_table_validation.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the DA request created");
 		logger.info("User is able to view the approval status as pending once the DA request created");

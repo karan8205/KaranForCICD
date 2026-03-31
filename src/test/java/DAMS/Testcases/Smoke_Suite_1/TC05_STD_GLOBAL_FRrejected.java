@@ -21,7 +21,7 @@ public class TC05_STD_GLOBAL_FRrejected extends BaseClass {
 		String select_user_type = TC02_Requests_STD_GLOBAL.login_and_select_user_Global(prop.get_user_type_Internal());
 		String functional_role_selected =TC02_Requests_STD_GLOBAL. raise_Internal_functional_role(input);
 		
-		FR_reject(select_user_type,functional_role_selected);
+		FR_reject(select_user_type,functional_role_selected,ctx().prop.getInternalName());
 	}
 
 	@Test(dataProvider = "getData_External", priority = 1,enabled=false)
@@ -32,7 +32,7 @@ public class TC05_STD_GLOBAL_FRrejected extends BaseClass {
 				.login_and_select_user_Global(prop.get_user_type_external());
 		String functional_role_selected = TC02_Requests_STD_GLOBAL
 				.raise_External_functional_role(input);
-		FR_reject(functional_role_selected, select_user_type);
+		FR_reject(functional_role_selected, select_user_type,ctx().prop.getExternalName());
 	}
 
 	@Test(dataProvider = "getData_Supplier", priority = 2,enabled=false)
@@ -43,7 +43,7 @@ public class TC05_STD_GLOBAL_FRrejected extends BaseClass {
 				.login_and_select_user_Global(prop.get_User_type_Supplier());
 		String functional_role_selected = TC02_Requests_STD_GLOBAL
 				.raise_Supplier_functional_role(input);
-		FR_reject(functional_role_selected, select_user_type);
+		FR_reject(functional_role_selected, select_user_type,ctx().prop.getSupplierName());
 	}
 
 	@DataProvider
@@ -86,10 +86,10 @@ public class TC05_STD_GLOBAL_FRrejected extends BaseClass {
 		softAssertionALL();
 	}
 
-	public static void FR_reject(String functional_role_selected, String select_user_type) throws Throwable {
+	public static void FR_reject(String functional_role_selected, String select_user_type,String searchTxt) throws Throwable {
 		test.pass("User is able to raise the request for the functional role " + functional_role_selected);
 		List<Object> funational_role_Overview_table_input = TC02_Requests_STD_GLOBAL
-				.functional_role_Overview_table_validation(select_user_type);
+				.functional_role_Overview_table_validation(select_user_type,searchTxt);
 		s.assertTrue((boolean) funational_role_Overview_table_input.get(0).equals(prop.getStatus_pending()));
 		functional_role_reject(select_user_type, funational_role_Overview_table_input);
 		softAssertionALL();

@@ -22,7 +22,7 @@ public class TC11_EnhanceRightAuthority_GLOBAL extends BaseClass {
 				+ "Enhance Right Authority Internal -status pending" + "</u></i></b>");
 		TC06_STD_GLOBAL_FRapproved.Functional_role_request_approved_Internal(input);
 		Thread.sleep(3000);
-//		myreq.select_NewPermission_request(); 
+//		ctx().myreq.select_NewPermission_request(); 
 		create_Enhance_Right_Authority_request_Internal(input);
 		test.pass("Create Enhance right request when the status is pending");
 		logger.info("Create Enhance right request when the status is pending");
@@ -55,7 +55,7 @@ public class TC11_EnhanceRightAuthority_GLOBAL extends BaseClass {
 
 		TC06_STD_GLOBAL_FRapproved.Functional_role_request_approved_Supplier(input);
 		create_Enhance_Right_Authority_request_Supplier(input);
-//		myreq.select_NewPermission_request();
+//		ctx().myreq.select_NewPermission_request();
 		test.pass("Create Enhance right request when the status is pending");
 		logger.info("Create Enhance right request when the status is pending");
 		req.request_Overview();
@@ -68,15 +68,15 @@ public class TC11_EnhanceRightAuthority_GLOBAL extends BaseClass {
 			throws Throwable {
 		test.info("Enhance_Right_Authority_request");
 		logger.info("Enhance_Right_Authority_request");
-		myreq.select_NewPermission_request();
-		List<Object> request_Overview_enabled = newper.raise_Enhance_Right_Request(input, (String[]) cert.get(0),
+		ctx().myreq.select_NewPermission_request();
+		List<Object> request_Overview_enabled = ctx().newper.raise_Enhance_Right_Request(input, (String[]) cert.get(0),
 				cert.get(1), input.get("Target_ECU"), input.get("Service_ID"), input.get("Validity"),
 				input.get("Reason_for_ER"));
 		request_Overview_enabled.get(0);
 		SoftAssertUtil.assertTrue((boolean) request_Overview_enabled.get(0));
 		List<Object> request_Overview_table_validation = req
-				.request_Overview_table_validation_for_Enhanced_right("Enhance Right", prop.getUser_name(), "ALL",request_Overview_enabled);
-		SoftAssertUtil.assertTrue(request_Overview_table_validation.get(0).equals(prop.getStatus_pending()));
+				.request_Overview_table_validation_for_Enhanced_right("Enhance Right", ctx().prop.getUser_name(), "ALL",request_Overview_enabled);
+		SoftAssertUtil.assertTrue(request_Overview_table_validation.get(0).equals(ctx().prop.getStatus_pending()));
 		test.pass("View the approval status as pending once the DA request created");
 		logger.info("View the approval status as pending once the DA request created");
 		return request_Overview_table_validation;
@@ -86,8 +86,8 @@ public class TC11_EnhanceRightAuthority_GLOBAL extends BaseClass {
 			throws Throwable {
 		test.info("Enhance_Right_Authority_request");
 		logger.info("Enhance_Right_Authority_request");
-		myreq.select_NewPermission_request();	
-		List<Object> request_Overview_enabled = newper.raise_Enhance_Right_Request(input);
+		ctx().myreq.select_NewPermission_request();	
+		List<Object> request_Overview_enabled = ctx().newper.raise_Enhance_Right_Request(input);
 		request_Overview_enabled.get(0);
 		SoftAssertUtil.assertTrue((boolean) request_Overview_enabled.get(0));
 		test.pass("View the approval status as pending once the DA request created");
@@ -100,8 +100,8 @@ public class TC11_EnhanceRightAuthority_GLOBAL extends BaseClass {
 			throws Throwable {
 		test.info("Enhance_Right_Authority_request");
 		logger.info("Enhance_Right_Authority_request");
-		myreq.select_NewPermission_request();	
-		List<Object> request_Overview_enabled = newper.raise_Enhance_Right_Request_External(input);
+		ctx().myreq.select_NewPermission_request();	
+		List<Object> request_Overview_enabled = ctx().newper.raise_Enhance_Right_Request_External(input);
 		request_Overview_enabled.get(0);
 		SoftAssertUtil.assertTrue((boolean) request_Overview_enabled.get(0));
 		test.pass("View the approval status as pending once the DA request created");
@@ -140,8 +140,8 @@ public class TC11_EnhanceRightAuthority_GLOBAL extends BaseClass {
 			throws Throwable {
 		test.info("Enhance_Right_Authority_request");
 		logger.info("Enhance_Right_Authority_request");
-		myreq.select_NewPermission_request();
-		List<Object> request_Overview_enabled = newper.raise_Enhance_Right_Request_External(input);
+		ctx().myreq.select_NewPermission_request();
+		List<Object> request_Overview_enabled = ctx().newper.raise_Enhance_Right_Request_External(input);
 		request_Overview_enabled.get(0);
 		SoftAssertUtil.assertTrue((boolean) request_Overview_enabled.get(0));
 		test.pass("View the approval status as pending once the DA request created");
@@ -152,8 +152,8 @@ public class TC11_EnhanceRightAuthority_GLOBAL extends BaseClass {
 			throws Throwable {
 		test.info("Enhance_Right_Authority_request");
 		logger.info("Enhance_Right_Authority_request");
-		myreq.select_NewPermission_request();
-		List<Object> request_Overview_enabled = newper.raise_Enhance_Right_Request_Supplier(input);
+		ctx().myreq.select_NewPermission_request();
+		List<Object> request_Overview_enabled = ctx().newper.raise_Enhance_Right_Request_Supplier(input);
 		request_Overview_enabled.get(0);
 		SoftAssertUtil.assertTrue((boolean) request_Overview_enabled.get(0));
 		test.pass("View the approval status as pending once the DA request created");

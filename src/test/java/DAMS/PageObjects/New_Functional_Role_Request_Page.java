@@ -970,6 +970,11 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 			select_Company.isEnabled();
 			waitForWebElementToAppear(select_Company);
 			click(select_Company);
+		}catch(Exception e) {
+			waitForWebElementToAppear(select_Company);
+			clickJS(select_Company);	
+		}
+		try {
 			Thread.sleep(2000);
 			clickelementmatchingtext(BU_Option, name);
 		} catch (Exception ex) {

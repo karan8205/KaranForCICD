@@ -105,7 +105,7 @@ public class TC37_EnhanceRightAuthority_ATG_Approved extends BaseClass {
 				test.pass("User is able to view the approval status as Approved after 1st level approval");
 				logger.info("User is able to view the approval status as Approved after 1st level approval");
 				req.navigate_to_request_Overview_page_and_verify_approval_status_ER(prop.getStatus_Approved(), "N/A",
-						"N/A", "Enhance Right", prop.getUser_name());
+						"N/A", "Enhance Right", ctx().prop.getSupplierName());
 				test.pass(
 						"User is able to view navigate to request overview page and check if the status is approved after 1st level approval");
 				logger.info(
@@ -124,7 +124,7 @@ public class TC37_EnhanceRightAuthority_ATG_Approved extends BaseClass {
 		test.pass("User is able to view the approval status as Approved after 1st level approval");
 		logger.info("User is able to view the approval status as Approved after 1st level approval");
 		req.navigate_to_request_Overview_page_and_verify_approval_status_ER(prop.getStatus_pending(), "N/A",
-				"N/A", "Enhance Right", prop.getUser_name());
+				"N/A", "Enhance Right",prop.getUser_name());
 		test.pass(
 				"User is able to view navigate to request overview page and check if the status is pending after 1st level approval");
 		logger.info(
@@ -137,7 +137,7 @@ public class TC37_EnhanceRightAuthority_ATG_Approved extends BaseClass {
 		logger.info("User is able to view the approval status as Approved after 2nd level approval");
 		String todays_date = todays_date();
 		req.navigate_to_request_Overview_page_and_verify_approval_status_ER(prop.getStatus_Approved(),
-				todays_date, "N/A", "Enhance Right", prop.getUser_name());
+				todays_date, "N/A", "Enhance Right",prop.getUser_name());
 		test.pass(
 				"User is able to view navigate to request overview page and check if the status is approved after 2nd level approval");
 		logger.info(

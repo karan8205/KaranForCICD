@@ -19,7 +19,7 @@ public class TC69_xOTA_FOTA_Rejected extends BaseClass {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>" + "xOTA for FOTA request - status pending:"
 				+ "</u></i></b>");
 		TC61_ServicePrincipal_xOTA_Approved.servicePrincipal_STD_XOTA_Approved(input);
-		List<String> request_overview_table =createFOTA_Request(input);
+		List<String> request_overview_table =createFOTA_Request(input,ctx().prop.getExternalName());
 		approver_overview.Reject_Request_Approval("FOTA", request_overview_table.get(5));
 		req.validate_Request_Overview_page("FOTA",request_overview_table.get(5));
 		softAssertionALL();
@@ -35,13 +35,13 @@ public class TC69_xOTA_FOTA_Rejected extends BaseClass {
 	}
 
 
-	public static List<String> createFOTA_Request(HashMap<String, String> input) throws Throwable {
+	public static List<String> createFOTA_Request(HashMap<String, String> input,String username) throws Throwable {
 		myreq.select_NewPermission_request();
 		boolean request_Overview_enabled = newper.raise_FOTA_Request_xOTA(input.get("Special_Case"),
 				input.get("Diagnostic_Permission"), input.get("ECU_Restriction"), input.get("Reason_for_FOTA"),input.get("Functional_role"),
 				input.get("Service_ID"),input.get("Validity"),input.get("Enhance_Validity"));
 		s.assertTrue(request_Overview_enabled);
-		List<String> request_Overview_table_input = req.request_Overview_table_validation_for_FOTA("FOTA",prop.getUser_name());
+		List<String> request_Overview_table_input = req.request_Overview_table_validation_for_FOTA("FOTA",username);
 		test.pass("User is able to view the approval status as pending once the FOTA request created");
 		logger.info("User is able to view the approval status as pending once the FOTA request created");
 		return request_Overview_table_input;

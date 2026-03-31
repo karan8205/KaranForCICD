@@ -15,6 +15,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
 import DAMS.Resources.AbstractComponents;
@@ -76,7 +79,7 @@ public class Request_overview_page extends AbstractComponents {
 
 	@FindBy(xpath = "//label[text()=\"Applicant\"]")
 	private WebElement request_Overview_applicant;
-	
+
 	@FindBy(xpath = "//span[text()='Refresh']")
 	private WebElement refresh_button;
 
@@ -91,7 +94,7 @@ public class Request_overview_page extends AbstractComponents {
 
 	@FindBy(xpath = "//mat-select[@role=\"combobox\"]")
 	private WebElement request_type_drpdwn;
-	//mat-select[@role=\"combobox\"]
+	// mat-select[@role=\"combobox\"]
 	@FindBy(xpath = "(//mat-select[@role=\"combobox\"])[2]")
 	private WebElement requesttypedrpdwn;
 
@@ -175,7 +178,7 @@ public class Request_overview_page extends AbstractComponents {
 
 	@FindBy(xpath = "//div[text()=\"Diagnostic Authority\"]")
 	private WebElement Request_Overview_Diagnostic_Permission;
-	
+
 	@FindBy(xpath = "//div[text()=\"Diagnostic Permission\"]")
 	private WebElement Request_Overview_Diagnostic_Permission_FOTA;
 
@@ -193,7 +196,7 @@ public class Request_overview_page extends AbstractComponents {
 
 	@FindBy(xpath = "//div[text()=\"Reason for FOTA Request\"]")
 	private WebElement Request_Overview_Reason_for_FOTA_Request;
-	
+
 	@FindBy(xpath = "//*[text()='ECU Certificate Request']")
 	private WebElement ECU_Certificate_Request_btn;
 
@@ -295,7 +298,7 @@ public class Request_overview_page extends AbstractComponents {
 
 	@FindBy(xpath = "//table/tbody/tr/td[contains(@class,\"ECU-Qualifier\")]")
 	private WebElement Request_Overview_ECU_Qualifier_for_nestT_txt;
-	
+
 	@FindBy(xpath = "//table/tbody/tr/td[contains(@class,\"Target-ECU-ID \")]")
 	private WebElement Request_Overview_ECU_Qualifier_for_ER_txt;
 
@@ -322,7 +325,7 @@ public class Request_overview_page extends AbstractComponents {
 
 	@FindBy(xpath = "//table/tbody/tr/td[contains(@class,\"Application-Number \")]")
 	private WebElement Request_Overview_applicant_number_txt;
-	
+
 	@FindBy(xpath = "//table/tbody/tr/td[contains(@class,\"Application-Number \")]")
 	private List<WebElement> Request_Overview_applicant_numbers_txt;
 
@@ -408,32 +411,30 @@ public class Request_overview_page extends AbstractComponents {
 
 	@FindBy(xpath = "//span[text()=\" Reviewed\"]")
 	private WebElement Request_Overview_reviewed_txt;
-	
+
 	@FindBy(xpath = "//*[contains(text(),'Approval Level 2')]")
 	private WebElement ApprovalLevel2;
-	
+
 	@FindBy(xpath = "//span[text()='Close']")
 	private WebElement CloseHyperlink;
-	
+
 	@FindBy(xpath = "//table/tbody/tr/td[contains(@class,\"Approval-Status\")]//button")
 	private static WebElement Request_Overview_approval_status_txt_link;
-	
+
 	@FindBy(xpath = "(//mat-select[@role=\"combobox\"])[1]")
 	private static WebElement RequestOvewview_ApplicantType;
-	
-	
 
 	public void request_Overview() throws InterruptedException {
 		try {
-		Thread.sleep(5000);
-		waitForelementToBeClickable(request_Overview);
-		Thread.sleep(4000);
-		click(request_Overview);
-		Thread.sleep(2000);
-		}catch(Exception ex) {
+			Thread.sleep(5000);
 			waitForelementToBeClickable(request_Overview);
 			Thread.sleep(4000);
-			clickJS(request_Overview);	
+			click(request_Overview);
+			Thread.sleep(2000);
+		} catch (Exception ex) {
+			waitForelementToBeClickable(request_Overview);
+			Thread.sleep(4000);
+			clickJS(request_Overview);
 		}
 	}
 
@@ -450,19 +451,19 @@ public class Request_overview_page extends AbstractComponents {
 	}
 
 	public void request_overview_pending() {
-//		clickJS(request_overview_pending);
+		// clickJS(request_overview_pending);
 		request_overview_pending.click();
 	}
-	
+
 	public void search_here(String object) {
 		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		search_here.clear();
 		search_here.sendKeys(object);
 		type(search_here, Keys.ENTER);
 	}
-	
+
 	public void scrollForReason() throws InterruptedException {
-		if(Request_Overview_Reason_for_Diag_Auth_Request.isEnabled()) {
+		if (Request_Overview_Reason_for_Diag_Auth_Request.isEnabled()) {
 			Scrollright_waitForWebElementToAppear(Request_Overview_Reason_for_Diag_Auth_Request);
 			Thread.sleep(2000);
 		}
@@ -471,31 +472,31 @@ public class Request_overview_page extends AbstractComponents {
 	public void search_here_UserID(Object values) {
 		type(search_here, values);
 	}
+
 	public void select_Enhance_Right() {
-		
+
 		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		waitForWebElementToAppear(requesttypedrpdwn);
 		clickJS(requesttypedrpdwn);
 		waitForWebElementToAppear(enhance_Right);
 		click(enhance_Right);
 
-		
 	}
-	
+
 	public String onBoard_Request_Validation(String request_Type) throws InterruptedException, AWTException {
-		
+
 		request_Overview();
 		select_request_type(request_Type);
-        String	applicant_number=Request_Overview_applicant_number_txt();
+		String applicant_number = Request_Overview_applicant_number_txt();
 		search_here(applicant_number);
-		Thread.sleep(1000);	
+		Thread.sleep(1000);
 		refresh_button.click();
 		Thread.sleep(3000);
 		waitForWebElementToAppear(Request_Overview_approval_status_txt);
 		click(Request_Overview_approval_status_txt);
 		Thread.sleep(3000);
 		click(CloseHyperlink);
-	    return applicant_number;
+		return applicant_number;
 	}
 
 	public void Certificate_Overview() {
@@ -560,12 +561,12 @@ public class Request_overview_page extends AbstractComponents {
 	}
 
 	public void Certificate_Overview__list_of_Column_Enhanced_Right() {
-		//hari
-////		requesttypedrpdwn.click();
-//		clickJS(requesttypedrpdwn);
-////		enhance_Right.click();
-//		clickJS(enhance_Right);
-//		//
+		// hari
+		//// requesttypedrpdwn.click();
+		// clickJS(requesttypedrpdwn);
+		//// enhance_Right.click();
+		// clickJS(enhance_Right);
+		// //
 		waitForWebElementToAppear(Request_Overview_Requester_id);
 		waitForWebElementToAppear(Request_Overview_username);
 		waitForWebElementToAppear(Request_Overview_user_type);
@@ -598,7 +599,7 @@ public class Request_overview_page extends AbstractComponents {
 		waitForWebElementToAppear(Request_Overview_ECU_Qualifier_nestT);
 		waitForWebElementToAppear(Request_Overview_Additional_ServiceIDs);
 		waitForWebElementToAppear(Request_Overview_Permission_Validity);
-	//	waitForWebElementToAppear(Request_Overview_Permission_Validity_Status);
+		// waitForWebElementToAppear(Request_Overview_Permission_Validity_Status);
 		waitForWebElementToAppear(Request_Overview_Enhance_Cert_validity);
 		waitForWebElementToAppear(Request_Overview_Reason_for_FOTA_Request);
 		waitForWebElementToAppear(Request_Overview_Reason_for_Rejection);
@@ -763,7 +764,7 @@ public class Request_overview_page extends AbstractComponents {
 		return Request_Overview_ECU_Qualifier_txt.getText().trim();
 
 	}
-	
+
 	public String Request_Overview_ECU_Qualifier_for_ER_txt() {
 		waitForWebElementToAppear(Request_Overview_ECU_Qualifier_for_ER_txt);
 		return Request_Overview_ECU_Qualifier_for_ER_txt.getText().trim();
@@ -924,37 +925,64 @@ public class Request_overview_page extends AbstractComponents {
 
 	}
 
-
-	
-	
-	
 	public void select_request_type(String request_type) throws InterruptedException, AWTException {
-//		BaseClass.getDriver().manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-//		waitForWebElementToAppear(request_type_drpdwn);
-//		clickJS(request_type_drpdwn);
-//		Thread.sleep(1000);
-//		Thread.sleep(3000);
-//		logger.info(request_type);
-//		clickelementmatchingtext(request_drpdwn_option, request_type);
-//		Thread.sleep(3000);
-//		Thread.sleep(1000);
-//		hari
+		// BaseClass.getDriver().manage().timeouts().implicitlyWait(5,
+		// TimeUnit.SECONDS);
+		// waitForWebElementToAppear(request_type_drpdwn);
+		// clickJS(request_type_drpdwn);
+		// Thread.sleep(1000);
+		// Thread.sleep(3000);
+		// logger.info(request_type);
+		// clickelementmatchingtext(request_drpdwn_option, request_type);
+		// Thread.sleep(3000);
+		// Thread.sleep(1000);
+		// hari
 		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		waitForWebElementToAppear(requesttypedrpdwn);
 		Thread.sleep(3000);
-		click(requesttypedrpdwn);
+		clickElement(requesttypedrpdwn);
 		Thread.sleep(2000);
 		logger.info(request_type);
 		clickelementmatchingtext(request_drpdwn_option, request_type);
 	}
-	public void select_Applicant_type(String applicant_type) throws InterruptedException, AWTException {
-//		hari
-		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		waitForWebElementToAppear(RequestOvewview_ApplicantType);
-		clickJS(RequestOvewview_ApplicantType);	
-		Thread.sleep(1000);
-		logger.info(applicant_type);
-		clickelementmatchingtext(request_drpdwn_option, applicant_type);
+
+//	public void select_Applicant_type(String applicant_type) throws InterruptedException, AWTException {
+//		// hari
+//		waitForWebElementToAppear(RequestOvewview_ApplicantType);
+//		clickJS(RequestOvewview_ApplicantType);
+//		Thread.sleep(1000);
+//		logger.info(applicant_type);
+//		clickelementmatchingtext(request_drpdwn_option, applicant_type);
+//	}
+	public void select_Applicant_type(String applicant_type) throws InterruptedException {
+
+	    WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(30));
+	    int attempts = 0;
+
+	    while (attempts < 3) {
+	        try {
+	            wait.until(ExpectedConditions.refreshed(
+	                    ExpectedConditions.visibilityOf(RequestOvewview_ApplicantType)
+	            ));
+
+	            clickJS(RequestOvewview_ApplicantType);
+
+	            // wait for dropdown options to reload
+	            wait.until(ExpectedConditions.refreshed(
+	                    ExpectedConditions.visibilityOfAllElements(request_drpdwn_option)
+	            ));
+
+	            logger.info(applicant_type);
+
+	            clickelementmatchingtext(request_drpdwn_option, applicant_type);
+
+	            break; // success
+
+	        } catch (StaleElementReferenceException e) {
+	            attempts++;
+	            PageFactory.initElements(new AjaxElementLocatorFactory(getDriver(), 10), this);
+	        }
+	    }
 	}
 
 	public String clickelementmatchingtext(List<WebElement> elements, String request_type) throws InterruptedException {
@@ -964,13 +992,13 @@ public class Request_overview_page extends AbstractComponents {
 			String usertype = txt.getText();
 			if (usertype.equals(request_type)) {
 				usertype1 = usertype;
-				clickJS(txt);
+				clickElement(txt);
 				Thread.sleep(1000);
 			}
 		}
 		return usertype1;
 	}
-	
+
 	public void select_applicant_type(String applicant_type) {
 		if (applicant_type.equals("Technical User")) {
 			clickJS(Request_Overview_Technical_User);
@@ -982,26 +1010,33 @@ public class Request_overview_page extends AbstractComponents {
 		waitForWebElementToAppear(Request_Overview_reviewed_txt);
 	}
 
-	public List<String> request_Overview_table_validation(Object values, String applicant_type) throws InterruptedException {
+	public List<String> request_Overview_table_validation(Object values, String applicant_type)
+			throws InterruptedException {
 		request_Overview();
 		Certificate_Overview();
 		select_applicant_type(applicant_type);
 		search_here_UserID(values);
 		Certificate_Overview__list_of_Column_Diag_Auth();
-//		Assert.assertNotEquals(Request_Overview_requester_Id_txt(), "N/A", "Requester_Id");
-//		Assert.assertNotEquals(Request_Overview_usertype_txt(), "N/A", "user_type");
-//		Assert.assertNotEquals(Request_Overview_username_txt(), "N/A", "username");
-//		Assert.assertNotEquals(Request_Overview_user_Id_txt(), "N/A", "User Id");
-//		Assert.assertNotEquals(Request_Overview_applicant_type_txt(), "N/A", "applicant_type");
-//		Assert.assertNotEquals(Request_Overview_applicant_number_txt(), "N/A", "applicant_number");
-//		Assert.assertNotEquals(Request_Overview_Functional_role_txt(), "N/A", "Functional_role");
-//		Assert.assertEquals(Request_Overview_Approval_status_txt(), "PENDING", "approval_status");
+		// Assert.assertNotEquals(Request_Overview_requester_Id_txt(), "N/A",
+		// "Requester_Id");
+		// Assert.assertNotEquals(Request_Overview_usertype_txt(), "N/A", "user_type");
+		// Assert.assertNotEquals(Request_Overview_username_txt(), "N/A", "username");
+		// Assert.assertNotEquals(Request_Overview_user_Id_txt(), "N/A", "User Id");
+		// Assert.assertNotEquals(Request_Overview_applicant_type_txt(), "N/A",
+		// "applicant_type");
+		// Assert.assertNotEquals(Request_Overview_applicant_number_txt(), "N/A",
+		// "applicant_number");
+		// Assert.assertNotEquals(Request_Overview_Functional_role_txt(), "N/A",
+		// "Functional_role");
+		// Assert.assertEquals(Request_Overview_Approval_status_txt(), "PENDING",
+		// "approval_status");
 		if (Request_Overview_Functional_role_txt().equals("Development ENHANCED")
 				|| Request_Overview_Functional_role_txt().equals("Production")) {
 			Assert.assertNotEquals(Request_Overview_ECU_Qualifier_txt(), "N/A", "ECu Qualifier");
 		}
 		Assert.assertEquals(Request_Overview_Reason_for_Rejection_txt(), "N/A", "Reason for rejection");
-		//Assert.assertEquals(Request_Overview_Request_date_txt(), BaseClass.todays_date(), "request_date");
+		// Assert.assertEquals(Request_Overview_Request_date_txt(),
+		// BaseClass.todays_date(), "request_date");
 		Assert.assertNotEquals(Request_Overview_Reason_for_Diagnostic_Authority_Request_txt(), "N/A",
 				"reason_for_request");
 		requester_ID = Request_Overview_requester_Id_txt();
@@ -1044,17 +1079,19 @@ public class Request_overview_page extends AbstractComponents {
 		Service_ID_txt = Request_Overview_Service_ID_txt();
 		DiagAuth_Cert_txt = Request_Overview_DiagAuth_Cert_txt();
 		Validity_txt = Request_Overview_Validity_txt();
-		
+
 		Reason_for_Enhance_Right_Request_txt = Request_Overview_Reason_for_Enhance_Right_Request_txt();
 		Reason_for_Rejection = Request_Overview_Reason_for_Rejection_txt();
 		Request_date = Request_Overview_Request_date_txt();
 		Approval_date = Request_Overview_Approval_date_txt();
 		return Arrays.asList(Approval_status, requester_ID, username, usertype, user_ID, department, applicant_type_txt,
 				applicant_number, Target_ECU_ID, Service_ID_txt, DiagAuth_Cert_txt, Validity_txt,
-				Reason_for_Enhance_Right_Request_txt, Reason_for_Rejection, Request_date, Approval_date,request_Overview_enabled.get(1),request_Overview_enabled.get(2));
+				Reason_for_Enhance_Right_Request_txt, Reason_for_Rejection, Request_date, Approval_date,
+				request_Overview_enabled.get(1), request_Overview_enabled.get(2));
 	}
 
-	public List<Object> request_Overview_table_validation_for_Enhanced_right_for_TU(String request_type, String userID,String applicant_type) throws Throwable {
+	public List<Object> request_Overview_table_validation_for_Enhanced_right_for_TU(String request_type, String userID,
+			String applicant_type) throws Throwable {
 		request_Overview();
 		Certificate_Overview();
 		select_applicant_type(applicant_type);
@@ -1082,15 +1119,15 @@ public class Request_overview_page extends AbstractComponents {
 				Reason_for_Enhance_Right_Request_txt, Reason_for_Rejection, Request_date, Approval_date);
 	}
 
-	public List<String> request_Overview_table_validation_for_replacement_package(String request_type, String user_ID)
+	public List<String> request_Overview_table_validation_for_replacement_package(String request_type, String user_ID,
+			String userName)
 			throws Throwable {
 		request_Overview();
 		Certificate_Overview();
 		select_request_type(request_type);
-		req.search_here(prop.getUser_name());
+		req.search_here(userName);
 		approver_overview.filter_search(prop.getStatus_pending());
 		req.scrollForReason();
-//		search_here_UserID(prop.getUser_name());
 		Certificate_Overview__list_of_Column_replacement_package();
 		requester_ID = Request_Overview_requester_Id_txt();
 		username = Request_Overview_username_txt();
@@ -1105,73 +1142,80 @@ public class Request_overview_page extends AbstractComponents {
 		Reason_for_Rejection = Request_Overview_Reason_for_Rejection_txt();
 		Request_date = Request_Overview_Request_date_txt();
 		Approval_date = Request_Overview_Approval_date_txt();
-		
+
 		return Arrays.asList(Approval_status, requester_ID, username, department, applicant_type_txt, applicant_number,
 				Origin_COT_txt, Target_COT_txt, ECU_Qualifier_for_nestT_txt, Replacement_Package_Request_txt,
 				Reason_for_Rejection, Request_date, Approval_date);
 	}
-	
-	public List<String> multiple_Request_Table_Validation_for_replacement_package(String request_type, String user_ID) throws Throwable {
+
+	public List<String> multiple_Request_Table_Validation_for_replacement_package(String request_type, String user_ID,
+			String userName) throws Throwable {
 		request_Overview();
 		Certificate_Overview();
 		select_request_type(request_type);
-		req.search_here(prop.getUser_name());
+		req.search_here(userName);
 		approver_overview.filter_search(prop.getStatus_pending());
 		req.scrollForReason();
-//		search_here_UserID(prop.getUser_name());
-//		Certificate_Overview__list_of_Column_replacement_package();
+		// Certificate_Overview__list_of_Column_replacement_package();
 		List<String> applicantNumber = getMultipleApplicantNumber();
-		
+
 		return applicantNumber;
 	}
 
 	public String navigate_to_request_Overview_page_and_verify_approval_status(String approval_status,
 			String approval_date, String rejection_txt, String request_type, String user_ID) throws Throwable {
-		request_Overview_page(request_type,user_ID,approval_status,approval_date,rejection_txt);
+		request_Overview_page(request_type, user_ID, approval_status, approval_date, rejection_txt);
 		return Request_Overview_ECU_Qualifier_for_nestT_txt();
 	}
-	
+
 	public String navigate_to_request_Overview_page_and_verify_approval_status_DA(String approval_status,
 			String approval_date, String rejection_txt, String request_type, String user_ID) throws Throwable {
-		request_Overview_page(request_type,user_ID,approval_status,approval_date,rejection_txt);
+		request_Overview_page(request_type, user_ID, approval_status, approval_date, rejection_txt);
 		return Request_Overview_ECU_Qualifier_txt();
 	}
+
 	public String navigate_to_request_Overview_page_and_verify_approval_status_DA(String approval_status,
-			String approval_date, String rejection_txt, String request_type, String user_ID, String userrole) throws Throwable {
-		request_Overview_page(request_type,user_ID,approval_status,approval_date,rejection_txt,userrole);
-		return Request_Overview_ECU_Qualifier_txt(); 
-	}
-	public String navigate_to_request_Overview_page_and_verify_approval_status_Service(String approval_status,
-			String approval_date, String rejection_txt, String request_type, String user_ID, String userrole) throws Throwable {
-		request_Overview_page_ServicePrincipal(request_type,user_ID,approval_status,approval_date,userrole);
+			String approval_date, String rejection_txt, String request_type, String user_ID, String userrole)
+			throws Throwable {
+		request_Overview_page(request_type, user_ID, approval_status, approval_date, rejection_txt, userrole);
 		return Request_Overview_ECU_Qualifier_txt();
 	}
-	
+
+	public String navigate_to_request_Overview_page_and_verify_approval_status_Service(String approval_status,
+			String approval_date, String rejection_txt, String request_type, String user_ID, String userrole)
+			throws Throwable {
+		request_Overview_page_ServicePrincipal(request_type, user_ID, approval_status, approval_date, userrole);
+		return Request_Overview_ECU_Qualifier_txt();
+	}
+
 	public String navigate_to_request_Overview_page_and_verify_approval_status_ER(String approval_status,
 			String approval_date, String rejection_txt, String request_type, String id) throws Throwable {
-		request_Overview_page(request_type,id,approval_status,approval_date,rejection_txt,"");
+		request_Overview_page(request_type, id, approval_status, approval_date, rejection_txt, "");
 		return Request_Overview_ECU_Qualifier_for_ER_txt();
 	}
+
 	public String navigate_to_request_Overview_page_and_verify_approval_status_ER(String approval_status,
-			String approval_date, String rejection_txt, String request_type, String id,String userRole) throws Throwable {
-		request_Overview_page(request_type,id,approval_status,approval_date,rejection_txt,userRole);
+			String approval_date, String rejection_txt, String request_type, String id, String userRole)
+			throws Throwable {
+		request_Overview_page(request_type, id, approval_status, approval_date, rejection_txt, userRole);
 		return Request_Overview_ECU_Qualifier_for_ER_txt();
 	}
 
 	public String navigate_to_request_Overview_page_and_verify_approval_status_RP_NestT(String approval_status,
 			String approval_date, String rejection_txt, String request_type, String user_ID) throws Throwable {
-		request_Overview_page(request_type,user_ID,approval_status,approval_date,rejection_txt);
+		request_Overview_page(request_type, user_ID, approval_status, approval_date, rejection_txt);
 		return Request_Overview_ECU_Qualifier_for_nestT_txt();
 	}
 
-	public void request_Overview_page(String request_type, String id, String approval_status,String approval_date, String rejection_txt) throws InterruptedException, Exception {
+	public void request_Overview_page(String request_type, String id, String approval_status, String approval_date,
+			String rejection_txt) throws InterruptedException, Exception {
 		request_Overview();
 		Thread.sleep(2000);
 		select_request_type(request_type);
 		search_here(id);
-		Thread.sleep(2000);	
+		Thread.sleep(2000);
 		req.scrollForReason();
-		Thread.sleep(1000);	
+		Thread.sleep(1000);
 		refresh_button.click();
 		Thread.sleep(3000);
 		waitForWebElementToAppear(Request_Overview_approval_status_txt);
@@ -1180,12 +1224,12 @@ public class Request_overview_page extends AbstractComponents {
 		click(ApprovalLevel2);
 		Thread.sleep(3000);
 		click(CloseHyperlink);
-		
-		}
-	
+
+	}
+
 	public void clickHyperLink() throws Throwable {
 		req.scrollForReason();
-		Thread.sleep(1000);	
+		Thread.sleep(1000);
 		refresh_button.click();
 		Thread.sleep(3000);
 		waitForWebElementToAppear(Request_Overview_approval_status_txt);
@@ -1195,15 +1239,17 @@ public class Request_overview_page extends AbstractComponents {
 		Thread.sleep(3000);
 		click(CloseHyperlink);
 	}
-	public void request_Overview_page(String request_type, String id, String approval_status,String approval_date, String rejection_txt, String userrole) throws InterruptedException, Exception {
+
+	public void request_Overview_page(String request_type, String id, String approval_status, String approval_date,
+			String rejection_txt, String userrole) throws InterruptedException, Exception {
 		request_Overview();
 		logger.info(request_type);
 		Thread.sleep(1000);
 		select_request_type(request_type);
 		select_Applicant_type("Myself");
 		search_here(id);
-		Thread.sleep(2000);	
-		Scrollright_waitForWebElementToAppear(Request_Overview_approval_status_txt);	
+		Thread.sleep(2000);
+		Scrollright_waitForWebElementToAppear(Request_Overview_approval_status_txt);
 		refresh_button.click();
 		Thread.sleep(2000);
 		click(Request_Overview_approval_status_txt);
@@ -1212,17 +1258,19 @@ public class Request_overview_page extends AbstractComponents {
 		search_here(id);
 
 	}
-	public void request_Overview_page_ServicePrincipal(String request_type, String id, String approval_status,String approval_date, String userrole) throws InterruptedException, Exception {
+
+	public void request_Overview_page_ServicePrincipal(String request_type, String id, String approval_status,
+			String approval_date, String userrole) throws InterruptedException, Exception {
 		request_Overview();
 		logger.info(request_type);
 		Thread.sleep(1000);
 		select_request_type(request_type);
-	    if (!"FOTA".equals(request_type)) {
-	        select_Applicant_type("Service Principal");
-	    }
+		if (!"FOTA".equals(request_type)) {
+			select_Applicant_type("Service Principal");
+		}
 		search_here(id);
-		Thread.sleep(2000);	
-		Scrollright_waitForWebElementToAppear(Request_Overview_approval_status_txt);	
+		Thread.sleep(2000);
+		Scrollright_waitForWebElementToAppear(Request_Overview_approval_status_txt);
 		refresh_button.click();
 		Thread.sleep(2000);
 		click(Request_Overview_approval_status_txt);
@@ -1232,16 +1280,16 @@ public class Request_overview_page extends AbstractComponents {
 
 	}
 
-
-	public List<String> request_Overview_table_validation_for_nestT(String request_type, String user_ID)
+	public List<String> request_Overview_table_validation_for_nestT(String request_type, String user_ID,
+			String userName)
 			throws Throwable {
 		request_Overview();
 		select_request_type(request_type);
-		req.search_here(prop.getUser_name());
+		req.search_here(userName);
 		approver_overview.filter_search(prop.getStatus_pending());
 		req.scrollForReason();
 		Certificate_Overview();
-//		search_here_UserID(user_ID);
+		// search_here_UserID(user_ID);
 		Certificate_Overview__list_of_Column_NestT();
 		requester_ID = Request_Overview_requester_Id_txt();
 		username = Request_Overview_username_txt();
@@ -1258,6 +1306,7 @@ public class Request_overview_page extends AbstractComponents {
 				Reason_for_nestT_testing_case_txt, ECU_Qualifier_for_nestT_txt, Reason_for_Rejection, Request_date,
 				Approval_date);
 	}
+
 	public List<String> request_Overview_table_validation_for_FOTA(String request_type, String user_ID)
 			throws Throwable {
 		request_Overview();
@@ -1283,23 +1332,25 @@ public class Request_overview_page extends AbstractComponents {
 		department = Request_Overview_department_txt();
 		applicant_type_txt = Request_Overview_applicant_type_txt();
 		applicant_number = Request_Overview_applicant_number_txt();
-//		Reason_for_nestT_testing_case_txt = Request_Overview_Reason_for_nestT_testing_case_txt();
+		// Reason_for_nestT_testing_case_txt =
+		// Request_Overview_Reason_for_nestT_testing_case_txt();
 		Approval_status = Request_Overview_Approval_status_txt();
-//		ECU_Qualifier_for_nestT_txt = Request_Overview_ECU_Qualifier_for_nestT_txt();
+		// ECU_Qualifier_for_nestT_txt = Request_Overview_ECU_Qualifier_for_nestT_txt();
 		Reason_for_Rejection = Request_Overview_Reason_for_Rejection_txt();
 		Request_date = Request_Overview_Request_date_txt();
 		Approval_date = Request_Overview_Approval_date_txt();
 		return Arrays.asList(Approval_status, requester_ID, username, department, applicant_type_txt, applicant_number,
-				  Reason_for_Rejection, Request_date,
+				Reason_for_Rejection, Request_date,
 				Approval_date);
 	}
 
 	public void navigate_to_request_Overview_page_and_verify_approval_status_FOR_tECHNICAL_USER(String approval_status,
-			String rejection_txt, String request_type, String user_ID, String applicant_type) throws Throwable {
+			String rejection_txt, String request_type, String user_ID, String applicant_type, String userName)
+			throws Throwable {
 		request_Overview();
 		select_applicant_type(applicant_type);
 		select_request_type(request_type);
-		search_here_UserID(prop.getUser_name());
+		search_here_UserID(userName);
 		Assert.assertEquals(Request_Overview_Approval_status_txt(), approval_status);
 		Assert.assertEquals(Request_Overview_Reason_for_Rejection_txt(), rejection_txt);
 	}
@@ -1403,14 +1454,15 @@ public class Request_overview_page extends AbstractComponents {
 		select_applicant_type(applicant_type);
 		select_request_type(request_type);
 		search_here_UserID(userID);
-		List<List<String>> firstTableValues = BaseClass.getTableValues(BaseClass.getDriver(), By.xpath("//table/tbody"));
+		List<List<String>> firstTableValues = BaseClass.getTableValues(BaseClass.getDriver(),
+				By.xpath("//table/tbody"));
 		List<String> ECU_column_values = new ArrayList<>();
 		List<WebElement> tableRows = BaseClass.getDriver().findElements(By.xpath("//table/tbody/tr"));
 		for (WebElement row : tableRows) {
 			String columnValue = row.findElement(By.cssSelector("td[class*=\"ECU-Qualifier \"]")).getText();
 			ECU_column_values.add(columnValue);
 		}
-		
+
 		requester_ID = Request_Overview_requester_Id_txt();
 		username = Request_Overview_username_txt();
 		department = Request_Overview_department_txt();
@@ -1428,8 +1480,9 @@ public class Request_overview_page extends AbstractComponents {
 				COT, ECU_Qualifier_for_nestT_txt, ECU_Qualifier_Group, KMS_System_IP_Address, ECU_Certificate_Request,
 				Reason_for_Rejection, Request_date, Approval_date);
 	}
-	
-	public List<Object> request_Overview_table_ECU_certificate_request_for_more_than_one(String request_type, String userID,
+
+	public List<Object> request_Overview_table_ECU_certificate_request_for_more_than_one(String request_type,
+			String userID,
 			String applicant_type) throws Throwable {
 		request_Overview();
 		Certificate_Overview();
@@ -1441,7 +1494,7 @@ public class Request_overview_page extends AbstractComponents {
 			String columnValue = row.findElement(By.cssSelector("td[class*=\"ECU-Qualifier \"]")).getText();
 			ECU_column_values.add(columnValue);
 		}
-		
+
 		requester_ID = Request_Overview_requester_Id_txt();
 		username = Request_Overview_username_txt();
 		department = Request_Overview_department_txt();
@@ -1459,9 +1512,11 @@ public class Request_overview_page extends AbstractComponents {
 				COT, ECU_Qualifier_for_nestT_txt, ECU_Qualifier_Group, KMS_System_IP_Address, ECU_Certificate_Request,
 				Reason_for_Rejection, Request_date, Approval_date, ECU_column_values);
 	}
-	
-	public List<List<String>> request_Overview_table_values_ECU_certificate_request_for_more_than_one() throws Throwable {
-		List<List<String>> firstTableValues = BaseClass.getTableValues(BaseClass.getDriver(), By.xpath("//table/tbody"));
+
+	public List<List<String>> request_Overview_table_values_ECU_certificate_request_for_more_than_one()
+			throws Throwable {
+		List<List<String>> firstTableValues = BaseClass.getTableValues(BaseClass.getDriver(),
+				By.xpath("//table/tbody"));
 		List<String> ECU_column_values = new ArrayList<>();
 		List<WebElement> tableRows = BaseClass.getDriver().findElements(By.xpath("//table/tbody/tr"));
 		for (WebElement row : tableRows) {
@@ -1471,23 +1526,23 @@ public class Request_overview_page extends AbstractComponents {
 		return firstTableValues;
 	}
 
-	public String ECU_Request_Overview_table_validation( String request_type) throws Throwable {
+	public String ECU_Request_Overview_table_validation(String request_type) throws Throwable {
 		request_Overview();
 		select_request_type(request_type);
-		approver_overview.filter_search(prop.getStatus_pending());	
-		String	ecu=Request_Overview_ECU_Qualifier_for_nestT_txt();
-		search_here(ecu);	
-		Thread.sleep(1000);	
+		approver_overview.filter_search(prop.getStatus_pending());
+		String ecu = Request_Overview_ECU_Qualifier_for_nestT_txt();
+		search_here(ecu);
+		Thread.sleep(1000);
 		refresh_button.click();
 		Thread.sleep(3000);
 		waitForWebElementToAppear(Request_Overview_approval_status_txt);
 		click(Request_Overview_approval_status_txt);
-//		click(ApprovalLevel2);
+		// click(ApprovalLevel2);
 		Thread.sleep(3000);
 		click(CloseHyperlink);
 		return ecu;
 	}
-	
+
 	public void Certificate_Overview__list_of_Column_ECU_certificate_request() {
 		waitForWebElementToAppear(Request_Overview_Requester_id);
 		waitForWebElementToAppear(Request_Overview_username);
@@ -1505,56 +1560,57 @@ public class Request_overview_page extends AbstractComponents {
 		waitForWebElementToAppear(Request_Overview_Approval_Date);
 
 	}
-	
-//	public List<String> getMultipleApplicantNumber() throws InterruptedException {
-//		List<String> applicantNumber = new ArrayList<>();
-//
-//		for(WebElement element:Request_Overview_applicant_numbers_txt) {
-//			
-//			String txt=element.getText();
-//			if(!txt.isEmpty()) {
-//			applicantNumber.add(txt);
-//			Thread.sleep(1000);
-//			}
-//		}
-//		
-//		return applicantNumber;	
-//	}
-	
+
+	// public List<String> getMultipleApplicantNumber() throws InterruptedException
+	// {
+	// List<String> applicantNumber = new ArrayList<>();
+	//
+	// for(WebElement element:Request_Overview_applicant_numbers_txt) {
+	//
+	// String txt=element.getText();
+	// if(!txt.isEmpty()) {
+	// applicantNumber.add(txt);
+	// Thread.sleep(1000);
+	// }
+	// }
+	//
+	// return applicantNumber;
+	// }
+
 	public List<String> getMultipleApplicantNumber() {
-	    List<String> applicantNumber = new ArrayList<>();
+		List<String> applicantNumber = new ArrayList<>();
 
-	    for (int i = 0; i < Request_Overview_applicant_numbers_txt.size(); i++) {
-	        try {
-	            String txt = Request_Overview_applicant_numbers_txt.get(i).getText();
-	            if (!txt.isEmpty()) {
-	                applicantNumber.add(txt);
-	            }
-	        } catch (StaleElementReferenceException e) {
+		for (int i = 0; i < Request_Overview_applicant_numbers_txt.size(); i++) {
+			try {
+				String txt = Request_Overview_applicant_numbers_txt.get(i).getText();
+				if (!txt.isEmpty()) {
+					applicantNumber.add(txt);
+				}
+			} catch (StaleElementReferenceException e) {
 
-	            String txt = Request_Overview_applicant_numbers_txt.get(i).getText();
-	            if (!txt.isEmpty()) {
-	                applicantNumber.add(txt);
-	            }
-	        }
-	    }
-	    return applicantNumber;
+				String txt = Request_Overview_applicant_numbers_txt.get(i).getText();
+				if (!txt.isEmpty()) {
+					applicantNumber.add(txt);
+				}
+			}
+		}
+		return applicantNumber;
 	}
 
-	
 	public List<String> getUserRole() throws InterruptedException {
 		List<String> applicantNumber = new ArrayList<>();
 
-		for(WebElement element:Request_Overview_userRole_txts) {
+		for (WebElement element : Request_Overview_userRole_txts) {
 			Thread.sleep(1000);
-			String txt=element.getText();
+			String txt = element.getText();
 			applicantNumber.add(txt);
 		}
-		
-		return applicantNumber;	
+
+		return applicantNumber;
 	}
-	
-	public List<String> request_Overview_table_validationForServicePrincipal( HashMap<String,String>input ,String applicant_type) throws InterruptedException {
+
+	public List<String> request_Overview_table_validationForServicePrincipal(HashMap<String, String> input,
+			String applicant_type) throws InterruptedException {
 		request_Overview();
 		Certificate_Overview();
 		select_applicant_type(applicant_type);
@@ -1573,7 +1629,8 @@ public class Request_overview_page extends AbstractComponents {
 			Assert.assertNotEquals(Request_Overview_ECU_Qualifier_txt(), "N/A", "ECu Qualifier");
 		}
 		Assert.assertEquals(Request_Overview_Reason_for_Rejection_txt(), "N/A", "Reason for rejection");
-		//Assert.assertEquals(Request_Overview_Request_date_txt(), BaseClass.todays_date(), "request_date");
+		// Assert.assertEquals(Request_Overview_Request_date_txt(),
+		// BaseClass.todays_date(), "request_date");
 		Assert.assertNotEquals(Request_Overview_Reason_for_Diagnostic_Authority_Request_txt(), "N/A",
 				"reason_for_request");
 		requester_ID = Request_Overview_requester_Id_txt();
@@ -1595,14 +1652,16 @@ public class Request_overview_page extends AbstractComponents {
 				Reason_for_Rejection, Request_date, Approval_date, usertype, user_ID, Functional_role_txt,
 				ECU_Qualifier_txt, User_role_txt, Reason_for_Diagnostic_Authority_Request_txt);
 	}
-	public String validate_Request_Overview_page(String request_type, String id) throws InterruptedException, Exception {
+
+	public String validate_Request_Overview_page(String request_type, String id)
+			throws InterruptedException, Exception {
 		request_Overview();
 		Thread.sleep(2000);
 		select_request_type(request_type);
 		search_here(id);
-		Thread.sleep(2000);	
+		Thread.sleep(2000);
 		req.scrollForReason();
-		Thread.sleep(1000);	
+		Thread.sleep(1000);
 		refresh_button.click();
 		Thread.sleep(3000);
 		waitForWebElementToAppear(Request_Overview_approval_status_txt);
@@ -1610,9 +1669,9 @@ public class Request_overview_page extends AbstractComponents {
 		Thread.sleep(3000);
 		click(ApprovalLevel2);
 		Thread.sleep(3000);
-		click(CloseHyperlink);	
+		click(CloseHyperlink);
 		return id;
-		
-		}
+
+	}
 
 }

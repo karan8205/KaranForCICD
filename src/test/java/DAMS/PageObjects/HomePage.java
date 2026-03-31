@@ -46,8 +46,15 @@ public class HomePage extends AbstractComponents {
 	@FindBy(xpath = "//p[contains(text(),\" Register in DAM with new Functional Roles\")]")
 	private WebElement register_in_DAMS_text;
 
-	@FindBy(xpath = "(//span[text()='Please select your user type'])[1]")
+//	@FindBy(xpath = "(//span[text()='Please select your user type'])[1]")
+//	private WebElement please_select_your_user_type;
+	
+//	 usertype working both stg and dev
+	@FindBy(xpath = "//div[@class='mat-mdc-text-field-wrapper mdc-text-field mdc-text-field--outlined']")
 	private WebElement please_select_your_user_type;
+	
+//	@FindBy(xpath = "//mat-form-field[.='User Type ']")
+//	private WebElement please_select_your_user_type;
 
 	@FindBy(xpath = "//div[@role='listbox']/mat-option/span")
 	private List<WebElement> user_type_list;
@@ -117,8 +124,12 @@ public class HomePage extends AbstractComponents {
 	}
 
 	public void select_home_tab() {
-		menu_Id_Home.click();
+		try {
 		AbstractComponents.waitForelementToBeClickable(menu_Id_Home);
+		menu_Id_Home.click();
+		}catch(Exception e) {
+			clickJS(menu_Id_Home);
+		}
 
 	}
 
@@ -187,8 +198,9 @@ public class HomePage extends AbstractComponents {
 	}
 
 	public  void dropBtn() throws InterruptedException {  //span[@class='button-text']
-	Thread.sleep(4000);
-	int size=	apply_for_Functional_roles.size();
+	Thread.sleep(3000);
+	waitForWebElementToAppear(apply_for_Functional_roles.get(0));
+	int size=apply_for_Functional_roles.size();
 	logger.info(size);
 	Thread.sleep(2000);
 	boolean res=false;

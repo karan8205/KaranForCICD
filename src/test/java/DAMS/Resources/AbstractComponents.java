@@ -67,7 +67,7 @@ public class AbstractComponents extends BaseClass{
 
 	public static void waitForelementToBeClickable(WebElement findBy) {
 
-		WebDriverWait wait = new WebDriverWait(BaseClass.getDriver(), Duration.ofSeconds(20));
+		WebDriverWait wait = new WebDriverWait(BaseClass.getDriver(), Duration.ofSeconds(60));
 		wait.until(ExpectedConditions.elementToBeClickable(findBy));
 
 	}

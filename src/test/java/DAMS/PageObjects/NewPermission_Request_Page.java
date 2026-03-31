@@ -412,7 +412,11 @@ public class NewPermission_Request_Page extends AbstractComponents {
 	public String select_SpecialCase(String name) throws InterruptedException {
 		waitForWebElementToAppear(SpecialCase_dropdown);
 		Thread.sleep(2000);
+		try {
+		click(SpecialCase_dropdown);}
+		catch(Exception e) {
 		clickJS(SpecialCase_dropdown);
+		}
 		// SpecialCase_dropdown.click();
 		String str = clickelementmatchingtext(ECU_dropdown_option, name);
 		return str;

@@ -394,6 +394,19 @@ public class PropertyFile extends BaseClass {
         String key = pro.getProperty("security_key_MFA_Supplier");
         return key;
     }
+    
+    public String getInternalName() {
+        String key = pro.getProperty("internal_UserName");
+        return key;
+    }
+    public String getExternalName() {
+        String key = pro.getProperty("external_UserName");
+        return key;
+    }
+    public String getSupplierName() {
+        String key = pro.getProperty("supplier_UserName");
+        return key;
+    }
 
     public static void writeProperty(String key, String value) throws IOException {
 

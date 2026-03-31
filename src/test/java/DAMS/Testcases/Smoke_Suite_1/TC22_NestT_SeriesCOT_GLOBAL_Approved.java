@@ -23,7 +23,7 @@ public class TC22_NestT_SeriesCOT_GLOBAL_Approved extends BaseClass {
 				+ "Nest_T Request for Internal- status approved:" + "</u></i></b>");
 		TC06_STD_GLOBAL_FRapproved.Functional_role_request_approved_Internal(input);
  		List<String >create_special_cases_nestT_request=TC20_NestT_SeriesCOT_GLOBAL. create_special_cases_nestT_request(input);
-		approve_special_cases_nestT_request(input, create_special_cases_nestT_request);
+		approve_special_cases_nestT_request(input, create_special_cases_nestT_request,ctx().prop.getInternalName());
 		test.pass("User is able to create Nest-T request when the status is approved");
 		logger.info("User is able to create Nest-T request when the status is approved");
 		softAssertionALL();
@@ -35,7 +35,7 @@ public class TC22_NestT_SeriesCOT_GLOBAL_Approved extends BaseClass {
 				+ "Nest_T Request for Internal- status rejected:" + "</u></i></b>");
 		TC06_STD_GLOBAL_FRapproved.Functional_role_request_approved_External(input);
  		List<String >create_special_cases_nestT_request=TC20_NestT_SeriesCOT_GLOBAL. create_special_cases_nestT_request_External(input);		
-		approve_special_cases_nestT_request(input, create_special_cases_nestT_request);		
+		approve_special_cases_nestT_request(input, create_special_cases_nestT_request,ctx().prop.getExternalName());
 		test.pass("User is able to verify Nest-T request creation when the status is rejected");
 		logger.info("User is able to verify Nest-T request creation when the status is rejected");
 		softAssertionALL();
@@ -48,8 +48,8 @@ public class TC22_NestT_SeriesCOT_GLOBAL_Approved extends BaseClass {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Nest_T Request for Supplier- status approved:" + "</u></i></b>");
             List<Object> create_and_approve_Internal_FR_request = TC06_STD_GLOBAL_FRapproved.create_and_approve_Supplier_FR_request(input);	
-		List<String >create_special_cases_nestT_request=TC20_NestT_SeriesCOT_GLOBAL.create_special_cases_nestT_request_Suplier(input);
-		approve_special_cases_nestT_request(input, create_special_cases_nestT_request);
+		List<String >create_special_cases_nestT_request=TC20_NestT_SeriesCOT_GLOBAL.create_special_cases_nestT_request_Supplier(input);
+		approve_special_cases_nestT_request(input, create_special_cases_nestT_request,ctx().prop.getSupplierName());
 		test.pass("User is able to verify Nest-T request creation when the status is approved");
 		logger.info("User is able to verify Nest-T request creation when the status is approved");
 		softAssertionALL();
@@ -83,26 +83,26 @@ public class TC22_NestT_SeriesCOT_GLOBAL_Approved extends BaseClass {
 	}
 
 	public static void approve_special_cases_nestT_request(HashMap<String, String> input,
-			List<String> create_special_cases_nestT_request) throws Throwable {
+			List<String> create_special_cases_nestT_request,String username) throws Throwable {
 		String NestT_approval_status_after_level1_approval = approver_overview.approvethenestT_Request("Nest T Testing",
-				prop.getStatus_pending(), create_special_cases_nestT_request);
+				prop.getStatus_pending(), create_special_cases_nestT_request,username);
 		s.assertTrue(NestT_approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
 		test.pass("User is able to view the approval status as Approved after 1st level approval");
 		logger.info("User is able to view the approval status as Approved after 1st level approval");
 		req.navigate_to_request_Overview_page_and_verify_approval_status_RP_NestT(prop.getStatus_pending(), "N/A", "N/A",
-				"Nest-T Testing", prop.getUser_name());
+				"Nest-T Testing", username);
 		test.pass(
 				"User is able to view navigate to request role overview page and check if the status is pending after 1st level approval");
 		logger.info(
 				"User is able to view navigate to request role overview page and check if the status is pending after 1st level approval");
 		String NestT_approval_status_after_level2_approval = approver_overview.approvethenestT_Request("Nest T Testing",
-				prop.getStatus_pending(), create_special_cases_nestT_request);
+				prop.getStatus_pending(), create_special_cases_nestT_request,username);
 		s.assertTrue(NestT_approval_status_after_level2_approval.equals(prop.getStatus_Approved()));
 		test.pass("User is able to view the approval status as Approved after 2nd level approval");
 		logger.info("User is able to view the approval status as Approved after 2nd level approval");
 		String todays_date = todays_date();
 		req.navigate_to_request_Overview_page_and_verify_approval_status_RP_NestT(prop.getStatus_Approved(), todays_date, "N/A",
-				"Nest-T Testing", prop.getUser_name());
+				"Nest-T Testing", username);
 		test.pass(
 				"User is able to view navigate to request role overview page and check if the status is approved after 2nd level approval");
 		logger.info(

@@ -163,7 +163,7 @@ public class TC002_Supplier_Development_FR_Global extends BaseClass {
 	}	
 	public static void approve_Multiple_special_cases_nestT_request(HashMap<String, String> input) throws Throwable {
 		req.request_Overview();	
-		String NestT_approval_status_after_level1_approval = approver_overview.approve_Multiple_nestT_Request("Nest T Testing","Nest-T Testing",prop.getStatus_pending());
+		String NestT_approval_status_after_level1_approval = approver_overview.approve_Multiple_nestT_Request("Nest T Testing","Nest-T Testing",prop.getStatus_pending(),ctx().prop.getSupplierName());
 //		s.assertTrue(NestT_approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
 		test.pass("User is able to view the approval status as Approved after 1st level approval");
 		logger.info("User is able to view the approval status as Approved after 1st level approval");
@@ -173,7 +173,7 @@ public class TC002_Supplier_Development_FR_Global extends BaseClass {
 				"User is able to view navigate to request role overview page and check if the status is pending after 1st level approval");
 		logger.info(
 				"User is able to view navigate to request role overview page and check if the status is pending after 1st level approval");
-		String NestT_approval_status_after_level2_approval = approver_overview.approve_Multiple_nestT_Request("Nest T Testing","Nest-T Testing",prop.getStatus_pending());
+		String NestT_approval_status_after_level2_approval = approver_overview.approve_Multiple_nestT_Request("Nest T Testing","Nest-T Testing",prop.getStatus_pending(),ctx().prop.getSupplierName());
 		s.assertTrue(NestT_approval_status_after_level2_approval.equals(prop.getStatus_Approved()));
 		test.pass("User is able to view the approval status as Approved after 2nd level approval");
 		logger.info("User is able to view the approval status as Approved after 2nd level approval");
@@ -195,7 +195,7 @@ public class TC002_Supplier_Development_FR_Global extends BaseClass {
 		test.info("Request overview tab enabled");
 		logger.info("Request overview tab enabled"); 
 		List<String> replacement_package_table_input = req
-				.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name());
+				.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name(),ctx().prop.getSupplierName());
 //		Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the Replacement package request created");
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");
@@ -213,7 +213,7 @@ public class TC002_Supplier_Development_FR_Global extends BaseClass {
 		test.info("Request overview tab enabled");
 		logger.info("Request overview tab enabled"); 
 		List<String> replacement_package_table_input = req
-				.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name());
+				.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name(),ctx().prop.getSupplierName());
 //		Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the Replacement package request created");
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");
@@ -230,7 +230,7 @@ public class TC002_Supplier_Development_FR_Global extends BaseClass {
 		test.info("Request overview tab enabled");
 		logger.info("Request overview tab enabled"); 
 		List<String> replacement_package_table_input = req
-				.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name());
+				.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name(),ctx().prop.getSupplierName());
 //		Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the Replacement package request created");
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");

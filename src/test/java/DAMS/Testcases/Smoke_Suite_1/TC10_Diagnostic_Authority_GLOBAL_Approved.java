@@ -22,7 +22,7 @@ public class TC10_Diagnostic_Authority_GLOBAL_Approved extends BaseClass {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Diagnostic Authority Request for Internal- status approved:" + "</u></i></b>");
         TC08_Diagnostic_Authority_GLOBAL.create_Diagnostic_Authority__Request_Internal_test_case(input);
-		req.search_here(prop.getUser_name());		
+		ctx().req.search_here(ctx().prop.getUser_name());		
 		approve_DA_request(input);
 		test.pass("Verify selected ecu is not visible when the status is in approved");
 		logger.info("Verify selected ecu is not visible when the status is in approved");
@@ -35,7 +35,7 @@ public class TC10_Diagnostic_Authority_GLOBAL_Approved extends BaseClass {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Diagnostic Authority Request for External- status approved:" + "</u></i></b>");
 		TC08_Diagnostic_Authority_GLOBAL.create_Diagnostic_Authority__Request_External_test_case(input);
-		req.search_here(prop.getUser_name());
+		ctx().req.search_here(ctx().prop.getUser_name());
 	    logger.info("Approver Process");
 	    approve_DA_request(input);
 		test.pass("Verify selected ecu is not visible when the status is in approved");
@@ -49,7 +49,7 @@ public class TC10_Diagnostic_Authority_GLOBAL_Approved extends BaseClass {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Diagnostic Authority Request for Supplier- status approved:" + "</u></i></b>");		
 		TC08_Diagnostic_Authority_GLOBAL.create_Diagnostic_Authority__Request_Supplier_test_case(input);
-		req.search_here(prop.getUser_name());
+		ctx().req.search_here(ctx().prop.getUser_name());
 		logger.info("Approver Process");
 		approve_DA_request(input);
 		myreq.select_NewPermission_request();
@@ -90,37 +90,37 @@ public class TC10_Diagnostic_Authority_GLOBAL_Approved extends BaseClass {
 		if (create_DA_request.get(13).equals("Development ENHANCED") || create_DA_request.get(13).equals("Production")
 				|| create_DA_request.get(13).equals("After-Sales ENHANCED")) {
 			String DA_approval_status_after_level1_approval = approver_overview
-					.approvetheDA_Request("Diagnostic Authority", prop.getStatus_pending(), create_DA_request);
-			s.assertTrue(DA_approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
+					.approvetheDA_Request("Diagnostic Authority", ctx().prop.getStatus_pending(), create_DA_request);
+			ctx().s.assertTrue(DA_approval_status_after_level1_approval.equals(ctx().prop.getStatus_Approved()));
 			test.pass("User is able to view the approval status as Approved after 1st level approval");
 			logger.info("User is able to view the approval status as Approved after 1st level approval");
-			req.navigate_to_request_Overview_page_and_verify_approval_status_DA(prop.getStatus_pending(), "N/A", "N/A",
-					"Diagnostic Authority", prop.getUser_name());
+			ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_DA(ctx().prop.getStatus_pending(), "N/A", "N/A",
+					"Diagnostic Authority", ctx().prop.getUser_name());
 			test.pass(
 					"View navigate to request overview page and the status is pending after 1st level approval");
 			logger.info(
 					"View navigate to request overview page and the status is pending after 1st level approval");
 			String DA_approval_status_after_level2_approval = approver_overview
-					.approvetheDA_Request("Diagnostic Authority", prop.getStatus_pending(), create_DA_request);
-			s.assertTrue(DA_approval_status_after_level2_approval.equals(prop.getStatus_Approved()));
+					.approvetheDA_Request("Diagnostic Authority", ctx().prop.getStatus_pending(), create_DA_request);
+			ctx().s.assertTrue(DA_approval_status_after_level2_approval.equals(ctx().prop.getStatus_Approved()));
 			test.pass("View the approval status as Approved after 2nd level approval");
 			logger.info("View the approval status as Approved after 2nd level approval");
 			String todays_date = todays_date();
-			req.navigate_to_request_Overview_page_and_verify_approval_status_DA(prop.getStatus_Approved(), todays_date,
-					"N/A", "Diagnostic Authority", prop.getUser_name());
+			ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_DA(ctx().prop.getStatus_Approved(), todays_date,
+					"N/A", "Diagnostic Authority", ctx().prop.getUser_name());
 			test.pass(
 					"View navigate to request overview page and the status is approved after 2nd level approval");
 			logger.info(
 					"View navigate to request overview page and the status is approved after 2nd level approval");
 		} else {
 			String DA_approval_status_after_level2_approval = approver_overview
-					.approvetheDA_Request("Diagnostic Authority", prop.getStatus_pending(), create_DA_request);
-			s.assertTrue(DA_approval_status_after_level2_approval.equals(prop.getStatus_Approved()));
+					.approvetheDA_Request("Diagnostic Authority", ctx().prop.getStatus_pending(), create_DA_request);
+			ctx().s.assertTrue(DA_approval_status_after_level2_approval.equals(ctx().prop.getStatus_Approved()));
 			test.pass("View the approval status as Approved after 1st level approval");
 			logger.info("View the approval status as Approved after 1st level approval");
 			String todays_date = todays_date();
-			req.navigate_to_request_Overview_page_and_verify_approval_status_DA(prop.getStatus_Approved(), todays_date,
-					"N/A", "Diagnostic Authority", prop.getUser_name());
+			ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_DA(ctx().prop.getStatus_Approved(), todays_date,
+					"N/A", "Diagnostic Authority", ctx().prop.getUser_name());
 			test.pass(
 					"View navigate to FR overview page and status is approved after 1st level approval");
 			logger.info(
@@ -131,7 +131,7 @@ public class TC10_Diagnostic_Authority_GLOBAL_Approved extends BaseClass {
 	public static void approve_DA_request(HashMap<String, String> input)
 			throws Throwable {
 		String create_DA_requests=input.get("User_role_DA");
-		List<String> applicantNumber=req.getMultipleApplicantNumber();
+		List<String> applicantNumber=ctx().req.getMultipleApplicantNumber();
 		
 		String[] DA_requests=create_DA_requests.split("/");
 		
@@ -150,12 +150,12 @@ public class TC10_Diagnostic_Authority_GLOBAL_Approved extends BaseClass {
 		if (create_DA_request.equals("Development ENHANCED") || create_DA_request.equals("Production")
 				|| create_DA_request.equals("After-Sales ENHANCED")) {
 			String DA_approval_status_after_level1_approval = approver_overview
-					.approvetheDA_Request("Diagnostic Authority", prop.getStatus_pending(), id);
-			s.assertTrue(DA_approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
+					.approvetheDA_Request("Diagnostic Authority", ctx().prop.getStatus_pending(), id);
+			ctx().s.assertTrue(DA_approval_status_after_level1_approval.equals(ctx().prop.getStatus_Approved()));
 		
 			test.pass("View the approval status as Approved after 1st level approval");
 			logger.info("View the approval status as Approved after 1st level approval");
-			req.navigate_to_request_Overview_page_and_verify_approval_status_DA(prop.getStatus_pending(), "N/A", "N/A",
+			ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_DA(ctx().prop.getStatus_pending(), "N/A", "N/A",
 					"Diagnostic Authority", id);
 		
 			test.pass(
@@ -163,12 +163,12 @@ public class TC10_Diagnostic_Authority_GLOBAL_Approved extends BaseClass {
 			logger.info(
 					"View navigate to request overview page and status is pending after 1st level approval");
 			String DA_approval_status_after_level2_approval = approver_overview
-					.approvetheDA_Request("Diagnostic Authority", prop.getStatus_pending(), id);
-			s.assertTrue(DA_approval_status_after_level2_approval.equals(prop.getStatus_Approved()));
+					.approvetheDA_Request("Diagnostic Authority", ctx().prop.getStatus_pending(), id);
+			ctx().s.assertTrue(DA_approval_status_after_level2_approval.equals(ctx().prop.getStatus_Approved()));
 			test.pass("View the approval status as Approved after 2nd level approval");
 			logger.info("View the approval status as Approved after 2nd level approval");
 			String todays_date = todays_date();
-			req.navigate_to_request_Overview_page_and_verify_approval_status_DA(prop.getStatus_Approved(), todays_date,
+			ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_DA(ctx().prop.getStatus_Approved(), todays_date,
 					"N/A", "Diagnostic Authority", id);
 			test.pass(
 					"View navigae to request overview page and status is approved after 2nd level approval");
@@ -176,12 +176,12 @@ public class TC10_Diagnostic_Authority_GLOBAL_Approved extends BaseClass {
 					"View navigae to request overview page and status is approved after 2nd level approval");
 		} else {
 			String DA_approval_status_after_level2_approval = approver_overview
-					.approvetheDA_Request("Diagnostic Authority", prop.getStatus_pending(), create_DA_request);
-			s.assertTrue(DA_approval_status_after_level2_approval.equals(prop.getStatus_Approved()));
+					.approvetheDA_Request("Diagnostic Authority", ctx().prop.getStatus_pending(), create_DA_request);
+			ctx().s.assertTrue(DA_approval_status_after_level2_approval.equals(ctx().prop.getStatus_Approved()));
 			test.pass("View the approval status as Approved after 1st level approval");
 			logger.info("View the approval status as Approved after 1st level approval");
 			String todays_date = todays_date();
-			req.navigate_to_request_Overview_page_and_verify_approval_status_DA(prop.getStatus_Approved(), todays_date,
+			ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_DA(ctx().prop.getStatus_Approved(), todays_date,
 					"N/A", "Diagnostic Authority", id,input.get("User_role"));
 			test.pass(
 					"View navigate to FR overview page and check if the status is approved after 1st level approval");
@@ -197,37 +197,37 @@ public class TC10_Diagnostic_Authority_GLOBAL_Approved extends BaseClass {
 		if (userRole.equals("Development ENHANCED") || userRole.equals("Production")
 				||userRole.equals("After-Sales ENHANCED")) {
 			String DA_approval_status_after_level1_approval = approver_overview
-					.approvetheDA_Request("Diagnostic Authority", prop.getStatus_pending(), id);
-			s.assertTrue(DA_approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
+					.approvetheDA_Request("Diagnostic Authority", ctx().prop.getStatus_pending(), id);
+			ctx().s.assertTrue(DA_approval_status_after_level1_approval.equals(ctx().prop.getStatus_Approved()));
 			test.pass("User is able to view the approval status as Approved after 1st level approval");
 			logger.info("User is able to view the approval status as Approved after 1st level approval");
-			req.navigate_to_request_Overview_page_and_verify_approval_status_DA(prop.getStatus_pending(), "N/A", "N/A",
+			ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_DA(ctx().prop.getStatus_pending(), "N/A", "N/A",
 					"Diagnostic Authority", id);
 			test.pass(
 					"View navigate to request overview page and the status is pending after 1st level approval");
 			logger.info(
 					"View navigate to request overview page and the status is pending after 1st level approval");
 			String DA_approval_status_after_level2_approval = approver_overview
-					.approvetheDA_Request("Diagnostic Authority", prop.getStatus_pending(), id);
-			s.assertTrue(DA_approval_status_after_level2_approval.equals(prop.getStatus_Approved()));
+					.approvetheDA_Request("Diagnostic Authority", ctx().prop.getStatus_pending(), id);
+			ctx().s.assertTrue(DA_approval_status_after_level2_approval.equals(ctx().prop.getStatus_Approved()));
 			test.pass("View the approval status as Approved after 2nd level approval");
 			logger.info("View the approval status as Approved after 2nd level approval");
 			String todays_date = todays_date();
-			req.navigate_to_request_Overview_page_and_verify_approval_status_DA(prop.getStatus_Approved(), todays_date,
-					"N/A", "Diagnostic Authority", prop.getUser_name());
+			ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_DA(ctx().prop.getStatus_Approved(), todays_date,
+					"N/A", "Diagnostic Authority", ctx().prop.getUser_name());
 			test.pass(
 					"View navigate to request overview page and the status is approved after 2nd level approval");
 			logger.info(
 					"View navigate to request overview page and the status is approved after 2nd level approval");
 		} else {
 			String DA_approval_status_after_level2_approval = approver_overview
-					.approvetheDA_Request("Diagnostic Authority", prop.getStatus_pending(), id);
-			s.assertTrue(DA_approval_status_after_level2_approval.equals(prop.getStatus_Approved()));
+					.approvetheDA_Request("Diagnostic Authority", ctx().prop.getStatus_pending(), id);
+			ctx().s.assertTrue(DA_approval_status_after_level2_approval.equals(ctx().prop.getStatus_Approved()));
 			test.pass("View the approval status as Approved after 1st level approval");
 			logger.info("View the approval status as Approved after 1st level approval");
 			String todays_date = todays_date();
-			req.navigate_to_request_Overview_page_and_verify_approval_status_DA(prop.getStatus_Approved(), todays_date,
-					"N/A", "Diagnostic Authority", prop.getUser_name());
+			ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_DA(ctx().prop.getStatus_Approved(), todays_date,
+					"N/A", "Diagnostic Authority", ctx().prop.getUser_name());
 			test.pass(
 					"View navigate to FR overview page and status is approved after 1st level approval");
 			logger.info(
