@@ -28902,3 +28902,15 @@
 2026-03-31 13:06:40,938 - DAMS -INFO - ************* Env : DEV
 2026-03-31 13:06:41,186 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
 2026-03-31 13:06:41,186 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
+2026-03-31 19:30:35,782 - DAMS -INFO - ************* Env : DEV
+2026-03-31 19:30:35,787 - DAMS -INFO - ************* Env : DEV
+2026-03-31 19:30:35,987 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
+2026-03-31 19:30:35,987 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
+2026-03-31 19:30:52,446 - DAMS -INFO - User is login to application
+2026-03-31 19:30:52,447 - DAMS -INFO - USER TYPE Internal
+2026-03-31 19:30:52,449 - DAMS -INFO - b2q5zydq7yvjcdrf
+2026-03-31 19:30:53,548 - DAMS -INFO - User is login to application
+2026-03-31 19:30:53,549 - DAMS -INFO - USER TYPE External
+2026-03-31 19:30:53,551 - DAMS -INFO - m6kxhsnb6hssxztq
+2026-03-31 19:30:54,051 - DAMS -INFO - User enters the verification code and click on verify button
+2026-03-31 19:30:54,500 - DAMS -INFO - User enters the verification code and click on verify button

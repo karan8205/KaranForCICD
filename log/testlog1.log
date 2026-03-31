@@ -35535,3 +35535,15 @@
 2026-03-31 13:06:40,938 [TestNG-test=RunDynamicClass-1] INFO DAMS - ************* Env : DEV
 2026-03-31 13:06:41,186 [TestNG-test=RunDynamicClass-1] INFO DAMS - URL : https://dams-dev.azurewebsites.net/dams/
 2026-03-31 13:06:41,186 [TestNG-test=RunDynamicClass-2] INFO DAMS - URL : https://dams-dev.azurewebsites.net/dams/
+2026-03-31 19:30:35,782 [TestNG-test=RunDynamicClass-1] INFO DAMS - ************* Env : DEV
+2026-03-31 19:30:35,787 [TestNG-test=RunDynamicClass-2] INFO DAMS - ************* Env : DEV
+2026-03-31 19:30:35,987 [TestNG-test=RunDynamicClass-2] INFO DAMS - URL : https://dams-dev.azurewebsites.net/dams/
+2026-03-31 19:30:35,987 [TestNG-test=RunDynamicClass-1] INFO DAMS - URL : https://dams-dev.azurewebsites.net/dams/
+2026-03-31 19:30:52,446 [TestNG-test=RunDynamicClass-1] INFO DAMS - User is login to application
+2026-03-31 19:30:52,447 [TestNG-test=RunDynamicClass-1] INFO DAMS - USER TYPE Internal
+2026-03-31 19:30:52,449 [TestNG-test=RunDynamicClass-1] INFO DAMS - b2q5zydq7yvjcdrf
+2026-03-31 19:30:53,548 [TestNG-test=RunDynamicClass-2] INFO DAMS - User is login to application
+2026-03-31 19:30:53,549 [TestNG-test=RunDynamicClass-2] INFO DAMS - USER TYPE External
+2026-03-31 19:30:53,551 [TestNG-test=RunDynamicClass-2] INFO DAMS - m6kxhsnb6hssxztq
+2026-03-31 19:30:54,051 [TestNG-test=RunDynamicClass-1] INFO DAMS - User enters the verification code and click on verify button
+2026-03-31 19:30:54,500 [TestNG-test=RunDynamicClass-2] INFO DAMS - User enters the verification code and click on verify button
