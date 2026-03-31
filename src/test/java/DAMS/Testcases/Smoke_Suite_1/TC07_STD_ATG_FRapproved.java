@@ -20,7 +20,7 @@ public class TC07_STD_ATG_FRapproved extends BaseClass {
 	public static void Funtional_role_request_approved_Internal(HashMap<String, String> input) throws Throwable {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Internal Functional role request - status approved:" + "</u></i></b>");
-		String select_user_type =TC03_Requests_STD_ATG_FR. login_and_select_user_ATG(prop.get_user_type_Internal());
+		String select_user_type =TC03_Requests_STD_ATG_FR. login_and_select_user_ATG(ctx().prop.get_user_type_Internal());
 		String functional_role_selected = TC03_Requests_STD_ATG_FR.raise_Internal_functional_role(input);
 		test.pass("User is able to raise the request for the functional role " + functional_role_selected);
 		logger.info("User is able to raise the request for the functional role " + functional_role_selected);
@@ -75,7 +75,7 @@ public class TC07_STD_ATG_FRapproved extends BaseClass {
 	}
 
 	public static List<Object> create_and_approve_Internal_FR_request(HashMap<String, String> input) throws Throwable {
-		List<Object> funational_role_Overview_table_input = TC03_Requests_STD_ATG_FR.functional_role_Overview_table_validation(prop.get_user_type_Internal());
+		List<Object> funational_role_Overview_table_input = TC03_Requests_STD_ATG_FR.functional_role_Overview_table_validation(ctx().prop.get_user_type_Internal());
 		String select_user_type=input.get("User_Type");
 		String functional_role_selected =input.get("Functional_role_internal");
 		String[] standard_cert = functional_role(select_user_type, funational_role_Overview_table_input,
@@ -97,7 +97,7 @@ public class TC07_STD_ATG_FRapproved extends BaseClass {
 
 	public static List<Object> create_and_approve_Supplier_FR_request(HashMap<String, String> input) throws Throwable {
 		String select_user_type = TC03_Requests_STD_ATG_FR
-				.login_and_select_user_ATG(prop.get_User_type_Supplier());
+				.login_and_select_user_ATG(ctx().prop.get_User_type_Supplier());
 		String functional_role_selected = TC03_Requests_STD_ATG_FR
 				.raise_Supplier_functional_role(input);
 		List<Object> funational_role_Overview_table_input = TC03_Requests_STD_ATG_FR
@@ -110,11 +110,11 @@ public class TC07_STD_ATG_FRapproved extends BaseClass {
 	public static List<Object> create_and_approve_Supplier_FR_request_for_more_than_one_ECU(
 			HashMap<String, String> input) throws Throwable {
 		String select_user_type = TC03_Requests_STD_ATG_FR
-				.login_and_select_user_ATG(prop.get_User_type_Supplier());
+				.login_and_select_user_ATG(ctx().prop.get_User_type_Supplier());
 		String functional_role_selected = TC02_Requests_STD_GLOBAL
 				.raise_Supplier_functional_role(input);
 		List<Object> funational_role_Overview_table_input = TC02_Requests_STD_GLOBAL
-				.functional_role_Overview_table_validation(select_user_type);
+				.functional_role_Overview_table_validation(select_user_type,ctx().prop.getSupplierName());
 		String[] standard_cert = functional_role(select_user_type, funational_role_Overview_table_input,
 				functional_role_selected);
 		return Arrays.asList(standard_cert, functional_role_selected, select_user_type);
@@ -123,11 +123,11 @@ public class TC07_STD_ATG_FRapproved extends BaseClass {
 	public static List<Object> create_and_approve_Supplier_FR_request_for_ECU_Cert(HashMap<String, String> input,
 			String fileContent) throws Throwable {
 		String select_user_type = TC03_Requests_STD_ATG_FR
-				.login_and_select_user_ATG(prop.get_User_type_Supplier());
+				.login_and_select_user_ATG(ctx().prop.get_User_type_Supplier());
 		String functional_role_selected = TC02_Requests_STD_GLOBAL
 				.raise_Supplier_functional_role_ECU_cert(input, fileContent);
 		List<Object> funational_role_Overview_table_input = TC02_Requests_STD_GLOBAL
-				.functional_role_Overview_table_validation(select_user_type);
+				.functional_role_Overview_table_validation(select_user_type,ctx().prop.getSupplierName());
 		String[] standard_cert = functional_role_for_ECU_cert(select_user_type, funational_role_Overview_table_input,
 				functional_role_selected);
 		return Arrays.asList(standard_cert, functional_role_selected, select_user_type);
@@ -137,21 +137,21 @@ public class TC07_STD_ATG_FRapproved extends BaseClass {
 			String functional_role_selected) throws Throwable {
 		test.pass("Raise the request for the functional role " + functional_role_selected);
 		logger.info("Raise the request for the functional role " + functional_role_selected);
-		String approval_status_after_level1_approval = approver_overview.approvetheFR_Request("Functional Role",
-				funational_role_Overview_table_input, usertype, prop.getStatus_pending());
-		s.assertTrue(approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
+		String approval_status_after_level1_approval = ctx().approver_overview.approvetheFR_Request("Functional Role",
+				funational_role_Overview_table_input, usertype, ctx().prop.getStatus_pending());
+		ctx().s.assertTrue(approval_status_after_level1_approval.equals(ctx().prop.getStatus_Approved()));
 		test.pass("User is able to approve 1st level approval");
 		logger.info("User is able to approve 1st level approval");
-		f.navigate_to_functional_role_Overview_page_and_verify_approval_status(prop.getStatus_pending(), "N/A");
+		ctx().f.navigate_to_functional_role_Overview_page_and_verify_approval_status(ctx().prop.getStatus_pending(), "N/A");
 		test.pass("Navigate to FR overview page and status is pending after 1st level approval");
 		logger.info("Navigate to FR overview page and status is pending after 1st level approval");
-		String approval_status_after_level2_approval = approver_overview.approvetheFR_Request("Functional Role",
-				funational_role_Overview_table_input, usertype, prop.getStatus_pending());
-		s.assertTrue(approval_status_after_level2_approval.equals(prop.getStatus_Approved()));
+		String approval_status_after_level2_approval = ctx().approver_overview.approvetheFR_Request("Functional Role",
+				funational_role_Overview_table_input, usertype, ctx().prop.getStatus_pending());
+		ctx().s.assertTrue(approval_status_after_level2_approval.equals(ctx().prop.getStatus_Approved()));
 		test.pass("User is able to approve 2nd level approval");
 		logger.info("User is able to approve 2nd level approval");
 		String cert = f
-				.ValidatetheStandardCertificateofthe_Functionalrole_after_2level_approval(prop.getStatus_Approved());
+				.ValidatetheStandardCertificateofthe_Functionalrole_after_2level_approval(ctx().prop.getStatus_Approved());
 		String[] standard_cert = cert.split(",");
 		test.pass("View the Standard Certificate for the raised functional role" + cert);
 		logger.info("View the Standard Certificate for the raised functional role" + cert);
@@ -162,23 +162,23 @@ public class TC07_STD_ATG_FRapproved extends BaseClass {
 			String functional_role_selected) throws Throwable {
 		test.pass("Raise the request for the functional role " + functional_role_selected);
 		logger.info("Raise the request for the functional role " + functional_role_selected);
-		String approval_status_after_level1_approval = approver_overview.approvetheFR_Request("Functional Role",
-				funational_role_Overview_table_input, usertype, prop.getStatus_pending());
-		s.assertTrue(approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
+		String approval_status_after_level1_approval = ctx().approver_overview.approvetheFR_Request("Functional Role",
+				funational_role_Overview_table_input, usertype, ctx().prop.getStatus_pending());
+		ctx().s.assertTrue(approval_status_after_level1_approval.equals(ctx().prop.getStatus_Approved()));
 		test.pass("View the approval status as Approved after 1st level approval");
 		logger.info("View the approval status as Approved after 1st level approval");
-		f.navigate_to_functional_role_Overview_page_and_verify_approval_status(prop.getStatus_pending(), "N/A");
+		ctx().f.navigate_to_functional_role_Overview_page_and_verify_approval_status(ctx().prop.getStatus_pending(), "N/A");
 		test.pass(
 				"View navigate to FR overview page and status is pending after 1st level approval");
 		logger.info(
 				"View navigate to FR overview page and status is pending after 1st level approval");
-		String approval_status_after_level2_approval = approver_overview.approvetheFR_Request("Functional Role",
-				funational_role_Overview_table_input, usertype, prop.getStatus_pending());
-		s.assertTrue(approval_status_after_level2_approval.equals(prop.getStatus_Approved()));
+		String approval_status_after_level2_approval = ctx().approver_overview.approvetheFR_Request("Functional Role",
+				funational_role_Overview_table_input, usertype, ctx().prop.getStatus_pending());
+		ctx().s.assertTrue(approval_status_after_level2_approval.equals(ctx().prop.getStatus_Approved()));
 		test.pass("View the approval status as Approved after 2nd level approval");
 		logger.info("View the approval status as Approved after 2nd level approval");
 		String cert = f
-				.ValidatetheStandardCertificateofthe_Functionalrole_after_2level_approval_for_ECu_cert(prop.getStatus_Approved());
+				.ValidatetheStandardCertificateofthe_Functionalrole_after_2level_approval_for_ECu_cert(ctx().prop.getStatus_Approved());
 		String[] standard_cert = cert.split(",");
 		test.pass("View the Standard Certificate for the raised functional role" + cert);
 		logger.info("View the Standard Certificate for the raised functional role" + cert);
@@ -192,26 +192,26 @@ public class TC07_STD_ATG_FRapproved extends BaseClass {
 		logger.info("Raise the request for the functional role " + functional_role_selected);
 		String[] standard_cert = null;
 		for (int i = 0; i < eCU_Qualifiers.length; i++) {
-			String approval_status_after_level1_approval = approver_overview.approvetheFR_Request_for_more_than_one_ECU(
-					"Functional Role", funational_role_Overview_table_input, usertype, prop.getStatus_pending(),
+			String approval_status_after_level1_approval = ctx().approver_overview.approvetheFR_Request_for_more_than_one_ECU(
+					"Functional Role", funational_role_Overview_table_input, usertype, ctx().prop.getStatus_pending(),
 					eCU_Qualifiers[i]);
-			s.assertTrue(approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
+			ctx().s.assertTrue(approval_status_after_level1_approval.equals(ctx().prop.getStatus_Approved()));
 			test.pass("View the approval status as Approved after 1st level approval");
 			logger.info("View the approval status as Approved after 1st level approval");
-			f.navigate_to_functional_role_Overview_page_and_verify_approval_status_for_more_than_one_ECU(
-					prop.getStatus_pending(), "N/A", eCU_Qualifiers[i]);
+			ctx().f.navigate_to_functional_role_Overview_page_and_verify_approval_status_for_more_than_one_ECU(
+					ctx().prop.getStatus_pending(), "N/A", eCU_Qualifiers[i]);
 			test.pass(
 					"View navigate to Functional role overview page and status is pending after 1st level approval");
 			logger.info(
 					"View navigate to Functional role overview page and status is pending after 1st level approval");
-			String approval_status_after_level2_approval = approver_overview.approvetheFR_Request_for_more_than_one_ECU(
-					"Functional Role", funational_role_Overview_table_input, usertype, prop.getStatus_pending(),
+			String approval_status_after_level2_approval = ctx().approver_overview.approvetheFR_Request_for_more_than_one_ECU(
+					"Functional Role", funational_role_Overview_table_input, usertype, ctx().prop.getStatus_pending(),
 					eCU_Qualifiers[i]);
-			s.assertTrue(approval_status_after_level2_approval.equals(prop.getStatus_Approved()));
+			ctx().s.assertTrue(approval_status_after_level2_approval.equals(ctx().prop.getStatus_Approved()));
 			test.pass("View the approval status as Approved after 2nd level approval");
 			logger.info("View the approval status as Approved after 2nd level approval");
-			String cert = f.ValidatetheStandardCertificateofthe_Functionalrole_for_more_than_one_ECU(
-					prop.getStatus_Approved(), eCU_Qualifiers[i]);
+			String cert = ctx().f.ValidatetheStandardCertificateofthe_Functionalrole_for_more_than_one_ECU(
+					ctx().prop.getStatus_Approved(), eCU_Qualifiers[i]);
 			standard_cert = cert.split(",");
 			test.pass("View the Standard Certificate for raised functional role" + cert);
 			logger.info("View the Standard Certificate for raised functional role" + cert);

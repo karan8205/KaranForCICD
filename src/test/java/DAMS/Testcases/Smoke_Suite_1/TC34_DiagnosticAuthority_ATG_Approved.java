@@ -78,7 +78,7 @@ public class TC34_DiagnosticAuthority_ATG_Approved extends BaseClass {
 		return new Object[][] { { data.get(11) } };
 	}
 
-	public static void approve_DA_request(HashMap<String, String> input, List<String> create_DA_request)
+	public static void approve_DA_request(HashMap<String, String> input, List<String> create_DA_request,String username)
 			throws Throwable {
 		if (create_DA_request.get(13).equals("Development ENHANCED") || create_DA_request.get(13).equals("Production")
 				|| create_DA_request.get(13).equals("After-Sales ENHANCED")) {
@@ -88,7 +88,7 @@ public class TC34_DiagnosticAuthority_ATG_Approved extends BaseClass {
 			test.pass("User is able to view the approval status as Approved after 1st level approval");
 			logger.info("User is able to view the approval status as Approved after 1st level approval");
 			req.navigate_to_request_Overview_page_and_verify_approval_status_DA(prop.getStatus_pending(), "N/A", "N/A",
-					"Diagnostic Authority", prop.getUser_name());
+					"Diagnostic Authority", username);
 			test.pass(
 					"User is able to view navigate to request overview page and check if the status is pending after 1st level approval");
 			logger.info(
@@ -100,7 +100,7 @@ public class TC34_DiagnosticAuthority_ATG_Approved extends BaseClass {
 			logger.info("User is able to view the approval status as Approved after 2nd level approval");
 			String todays_date = todays_date();
 			req.navigate_to_request_Overview_page_and_verify_approval_status_DA(prop.getStatus_Approved(), todays_date,
-					"N/A", "Diagnostic Authority", prop.getUser_name());
+					"N/A", "Diagnostic Authority", username);
 			test.pass(
 					"User is able to view navigae to request overview page and check if the status is approved after 2nd level approval");
 			logger.info(
@@ -113,7 +113,7 @@ public class TC34_DiagnosticAuthority_ATG_Approved extends BaseClass {
 			logger.info("User is able to view the approval status as Approved after 1st level approval");
 			String todays_date = todays_date();
 			req.navigate_to_request_Overview_page_and_verify_approval_status_DA(prop.getStatus_Approved(), todays_date,
-					"N/A", "Diagnostic Authority", prop.getUser_name());
+					"N/A", "Diagnostic Authority", username);
 			test.pass(
 					"User is able to view navigae to Functioanl role overview page and check if the status is approved after 1st level approval");
 			logger.info(

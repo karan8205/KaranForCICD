@@ -1,10 +1,6 @@
 package DAMS.Resources;
 
-// import java.awt.AWTException;
-// import java.awt.Robot;
-// import java.awt.event.KeyEvent;
 import java.io.File;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.lang.reflect.Method;
@@ -60,10 +56,50 @@ import DAMS.Testcases.Smoke_Suite_1.TC02_Requests_STD_GLOBAL;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
-    public static WebDriver driver;
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // TestContext: all thread-sensitive state lives here — one copy per thread
+    // ─────────────────────────────────────────────────────────────────────────
+    public static class TestContext {
+        public WebDriver driver;
+        public PropertyFile prop;
+        public PageObjectManager pageObjectManager;
+        public ApproverOverview_Page approver_overview;
+        public New_Functional_Role_Request_Page newrequest;
+        public SoftAssert s;
+        public Functional_role_page f;
+        public LoginPage l;
+        public HomePage h;
+        public GTC_Page gtc;
+        public Request_overview_page req;
+        public MyRequest_Page myreq;
+        public NewPermission_Request_Page newper;
+        public Onboard_new_ECU_page onboard_new_ECU;
+        public MyDeputy_Page deputy;
+        public Special_access_page special;
+        public ReadView_Permission read;
+        public TC02_Requests_STD_GLOBAL fr;
+    }
+
+    /** One TestContext per thread — never null after ctx() is called. */
+    private static final ThreadLocal<TestContext> threadContext = ThreadLocal.withInitial(TestContext::new);
+
+    /** Returns the calling thread's own TestContext. */
+    public static TestContext ctx() {
+        return threadContext.get();
+    }
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Shared / non-thread-sensitive fields (safe to keep static)
+    // ─────────────────────────────────────────────────────────────────────────
     public static Logger logger;
     public static String downloadPath;
     public static String reason_for_rejection = "Rejected for DA request!";
+
+    // ─────────────────────────────────────────────────────────────────────────
+    // Legacy static aliases — kept so the 94+ non-parallel TC files compile
+    // without any changes. For parallel-safe code use ctx().xxx instead.
+    // ─────────────────────────────────────────────────────────────────────────
     public static TC02_Requests_STD_GLOBAL fr;
     public static PropertyFile prop;
     public static PageObjectManager pageObjectManager;
@@ -81,60 +117,17 @@ public class BaseClass {
     public static MyDeputy_Page deputy;
     public static Special_access_page special;
     public static ReadView_Permission read;
+
+    /** ThreadLocal for WebDriver — now backed by TestContext.driver. */
     public static ThreadLocal<WebDriver> threadLocalDriver = new ThreadLocal<>();
 
-    // public static WebDriver initializeDriver(String mode) throws IOException {
-    // logger = Logger.getLogger("DAMS");
-    // PropertyConfigurator.configure("log4j.properties");
-    // Properties prop = new Properties();
-    // FileInputStream fis = new
-    // FileInputStream("./Configuration/config.properties");
-    // prop.load(fis);
-    // // String browserName = System.getProperty("browser")!=null ?
-    // // System.getProperty("browser") :prop.getProperty("browser");
-    // String browserName = prop.getProperty("browser");
-    // if (browserName.equals("chrome")) {
-    // downloadPath = System.getProperty("user.dir");
-    // System.setProperty("webdriver.chrome.driver", "./Drivers/chromedriver.exe");
-    // Map<String, Object> chromePrefs = new HashMap<String, Object>();
-    // chromePrefs.put("profile.default_content_settings.popups", 0);
-    // chromePrefs.put("download.default_directory", downloadPath);
-    // chromePrefs.put("download.prompt_for_download", false);
-    // chromePrefs.put("download.directory_upgarde", true);
-    // chromePrefs.put("safebrowsing.enabled", true);
-    //
-    // ChromeOptions options = new ChromeOptions();
-    // options.addArguments("--remote-allow-origins=*");
-    // options.setAcceptInsecureCerts(true);
-    // options.setExperimentalOption("prefs", chromePrefs);
-    //// options.addArguments("--force-device-scale-factor=1.2");
-    // options.addArguments("--headless");
-    // // *** IMPORTANT FOR JENKINS ***
-    //// options.addArguments("--headless=new"); // Headless mode
-    // options.addArguments("--window-size=1920,1080");
-    // options.addArguments("--no-sandbox");
-    // options.addArguments("--disable-dev-shm-usage");
-    // options.addArguments("--disable-gpu");
-    // if (mode.equals("incognito")) { //incognito
-    // options.addArguments("--incognito", "--disable-popup-blocking");
-    // }
-    // WebDriverManager.chromedriver().setup();
-    // WebDriverManager.chromedriver().clearResolutionCache();
-    //
-    // driver = new ChromeDriver(options);
-    // threadLocalDriver.set(driver);
-    // } else if (browserName.equals("edge")) {
-    // System.setProperty("webdriver.edge.driver", "./Drivers/msedgedriver.exe");
-    // driver = new EdgeDriver();
-    //
-    // }
-    //// driver.manage().window().maximize();
-    // driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-    // driver.manage().deleteAllCookies();
-    // return driver;
-    // }
+    // ─────────────────────────────────────────────────────────────────────────
+    // Driver initialisation
+    // Stores the new WebDriver ONLY in ctx().driver + threadLocalDriver.
+    // Does NOT touch the legacy static `driver` field so parallel threads
+    // never overwrite each other's browser reference.
+    // ─────────────────────────────────────────────────────────────────────────
     public static WebDriver initializeDriver(String mode) throws IOException {
-
         logger = Logger.getLogger("DAMS");
         PropertyConfigurator.configure("log4j.properties");
 
@@ -145,7 +138,6 @@ public class BaseClass {
         String browserName = prop.getProperty("browser");
 
         if (browserName.equalsIgnoreCase("chrome")) {
-
             downloadPath = System.getProperty("user.dir");
 
             Map<String, Object> chromePrefs = new HashMap<>();
@@ -159,10 +151,9 @@ public class BaseClass {
             options.setExperimentalOption("prefs", chromePrefs);
             options.addArguments("--remote-allow-origins=*");
 
-            // ✅ HEADLESS FIX FOR CHROME 143
             if ("true".equalsIgnoreCase(prop.getProperty("headless"))) {
-                options.addArguments("--headless=new"); // ✅ MUST
-                options.addArguments("--window-size=1920,1080"); // force desktop
+                options.addArguments("--headless=new");
+                options.addArguments("--window-size=1920,1080");
                 options.addArguments("--no-sandbox");
                 options.addArguments("--disable-dev-shm-usage");
                 options.addArguments("--disable-gpu");
@@ -173,40 +164,56 @@ public class BaseClass {
             }
 
             WebDriverManager.chromedriver().setup();
-            driver = new ChromeDriver(options);
-            threadLocalDriver.set(driver);
+            WebDriver drv = new ChromeDriver(options);
 
-            // ❌ DO NOT maximize in headless
+            // Store per-thread ONLY — never write the shared static `driver`
+            ctx().driver = drv;
+            threadLocalDriver.set(drv);
+
             if ("false".equalsIgnoreCase(prop.getProperty("headless"))) {
-                driver.manage().window().maximize();
+                drv.manage().window().maximize();
             }
         }
 
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().deleteAllCookies();
-        return driver;
+        getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+        getDriver().manage().deleteAllCookies();
+        return getDriver();
     }
 
+    /**
+     * Always use this to get the current thread's WebDriver.
+     * Prefers ctx().driver (parallel-safe); falls back to threadLocalDriver.
+     */
     public static WebDriver getDriver() {
-        return threadLocalDriver.get(); // Retrieve WebDriver instance specific to the current thread
+        WebDriver drv = ctx().driver;
+        if (drv == null) {
+            drv = threadLocalDriver.get();
+        }
+        return drv;
     }
 
+    // ─────────────────────────────────────────────────────────────────────────
+    // OTP / MFA
+    // ─────────────────────────────────────────────────────────────────────────
     public static String generate_OTP_for_MFA(String type) {
         Totp totp;
         logger.info("USER TYPE " + type);
         if ("Internal".equals(type)) {
-            logger.info(prop.getsecurity_key_MFA_Internal());
-            totp = new Totp(prop.getsecurity_key_MFA_Internal());
+            logger.info(ctx().prop.getsecurity_key_MFA_Internal());
+            totp = new Totp(ctx().prop.getsecurity_key_MFA_Internal());
         } else if ("External".equals(type)) {
-            logger.info(prop.getsecurity_key_MFA_External());
-            totp = new Totp(prop.getsecurity_key_MFA_External());
+            logger.info(ctx().prop.getsecurity_key_MFA_External());
+            totp = new Totp(ctx().prop.getsecurity_key_MFA_External());
         } else {
-            logger.info(prop.getsecurity_key_MFA_Supplier());
-            totp = new Totp(prop.getsecurity_key_MFA_Supplier());
+            logger.info(ctx().prop.getsecurity_key_MFA_Supplier());
+            totp = new Totp(ctx().prop.getsecurity_key_MFA_Supplier());
         }
         return totp.now();
     }
 
+    // ─────────────────────────────────────────────────────────────────────────
+    // Screenshot
+    // ─────────────────────────────────────────────────────────────────────────
     public static String getScreenshot(String testCaseName, WebDriver driver) throws IOException {
         TakesScreenshot ts = (TakesScreenshot) driver;
         File source = ts.getScreenshotAs(OutputType.FILE);
@@ -216,20 +223,12 @@ public class BaseClass {
         return path;
     }
 
-    // public static String getScreenshot(String FileName) throws IOException {
-    // TakesScreenshot ts = (TakesScreenshot) driver;
-    // File source = ts.getScreenshotAs(OutputType.FILE);
-    // String path = System.getProperty("user.dir") + "\\reports\\" + FileName +
-    // ".png";
-    // File file = new File(path);
-    // FileUtils.copyFile(source, file);
-    // return path;
-    //
-    // }
-
-    public static void windowZoomOut() throws  InterruptedException {
+    // ─────────────────────────────────────────────────────────────────────────
+    // Utility methods — all use getDriver() for thread safety
+    // ─────────────────────────────────────────────────────────────────────────
+    public static void windowZoomOut() throws InterruptedException {
         Thread.sleep(2000);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("document.body.style.zoom='70%'");
     }
 
@@ -238,23 +237,19 @@ public class BaseClass {
     }
 
     public static void softassertAll(SoftAssert s) {
-
         s.assertAll();
     }
 
     public static void softassertTrue(SoftAssert s, boolean condition) {
-
         s.assertTrue(condition);
     }
 
     public static void softassertFalse(SoftAssert s, boolean condition) {
-
         s.assertFalse(condition);
     }
 
     public static void assertEquals(SoftAssert s, Object actual, Object expected) {
         s.assertEquals(actual, expected);
-
     }
 
     public static String generateRandomString(int length, String text) {
@@ -263,23 +258,13 @@ public class BaseClass {
         StringBuilder sb = new StringBuilder(length);
         for (int i = 0; i < length; i++) {
             sb.append(characters.charAt(random.nextInt(characters.length())));
-
         }
         return text.concat(sb.toString());
-
     }
 
-    // @AfterMethod(alwaysRun = true)
-    // public void tearDown() {
-    // driver = threadLocalDriver.get();
-    // driver.quit();
-    // threadLocalDriver.remove();
-    // }
     @BeforeMethod(alwaysRun = true)
     @Parameters({ "env" })
     public void configure(@Optional("stg") String env, Method method) throws IOException {
-
-        // logic for env
         String sysEnv = System.getProperty("env");
         if (sysEnv != null && !sysEnv.isEmpty()) {
             PropertyFile.setEnvironment(sysEnv);
@@ -287,23 +272,25 @@ public class BaseClass {
             PropertyFile.setEnvironment(env);
         }
 
-        String methodName = method.getName().toLowerCase();
-
-        if (methodName.contains("internal")) {
-            PropertyFile.writeProperty("User_name", "PU_S_PID1BD7");
-        }
-        if (methodName.contains("external")) {
-            PropertyFile.writeProperty("User_name", "HARNAGA");
-        }
-        if (methodName.contains("supplier")) {
-            PropertyFile.writeProperty("User_name", "HARNAGA");
-        }
+        // String methodName = method.getName().toLowerCase();
+        //
+        // if (methodName.contains("internal")) {
+        // PropertyFile.writeProperty("User_name", "PU_S_PID1BD7");
+        // }
+        // if (methodName.contains("external")) {
+        // PropertyFile.writeProperty("User_name", "HARNAGA");
+        // }
+        // if (methodName.contains("supplier")) {
+        // PropertyFile.writeProperty("User_name", "HARNAGA");
+        // }
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        prop = new PropertyFile();
+        // Store prop in both ctx() and the legacy static field
+        ctx().prop = new PropertyFile();
+        prop = ctx().prop;
     }
 
     public static String generateRandomString_with_specialchar(int length) {
@@ -312,10 +299,8 @@ public class BaseClass {
         StringBuilder sb = new StringBuilder(length);
         for (int i = 0; i < length; i++) {
             sb.append(characters.charAt(random.nextInt(characters.length())));
-
         }
         return sb.toString();
-
     }
 
     public static String generateRandomString_OnBoardECU_Grouping(int length, String start, String end) {
@@ -324,18 +309,14 @@ public class BaseClass {
         StringBuilder sb = new StringBuilder(length);
         for (int i = 0; i < length; i++) {
             sb.append(characters.charAt(random.nextInt(characters.length())));
-
         }
-
         return start.concat(sb.toString()).concat(end);
-
     }
 
     public static String todays_date() {
         LocalDate today = LocalDate.now();
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MM/dd/yyyy");
-        String formattedDate = today.format(formatter);
-        return formattedDate;
+        return today.format(formatter);
     }
 
     public static void softAssertionALL() throws Throwable {
@@ -343,141 +324,109 @@ public class BaseClass {
         s.assertAll();
     }
 
-    // public static void cleanup_before(String username, String password, String
-    // url) throws Throwable {
-    // s = new SoftAssert();
-    // driver = initializeDriver("openBrowser");
-    // pageObjectManager = new PageObjectManager(driver);
-    // l = pageObjectManager.getLoginPage();
-    // l.cleanup(username, password, url);
-    // AbstractComponents.waitForurltext("clean-up");
-    // s.assertTrue(l.getUrl().contains("clean-up"));
-    // driver.close();
-    // }
-
+    // ─────────────────────────────────────────────────────────────────────────
+    // Login helpers — use initializeDriver() which stores into ctx().driver
+    // ─────────────────────────────────────────────────────────────────────────
     public static void login_MFA_Incognito(String username_MFA, String password_MFA, String url)
             throws IOException, InterruptedException {
-        // Encode username, password
-        // String encodedUsername =
-        // Base64.getEncoder().encodeToString(username_MFA.getBytes());
-        // String encodedPassword =
-        // Base64.getEncoder().encodeToString(password_MFA.getBytes());
-
-        // Decode username, password
-        // String username = new
-        // String(Base64.getDecoder().decode(prop.getUsername_MFA()));
-        // String password = new
-        // String(Base64.getDecoder().decode(prop.getPassword_MFA()));
-
-        // Hari
-        byte[] decodedBytes = Base64.getDecoder().decode(prop.getUsername_MFA());
+        byte[] decodedBytes = Base64.getDecoder().decode(ctx().prop.getUsername_MFA());
         String username = new String(decodedBytes);
-        byte[] passwordEncode = Base64.getDecoder().decode(prop.getPassword_MFA());
+        byte[] passwordEncode = Base64.getDecoder().decode(ctx().prop.getPassword_MFA());
         String password = new String(passwordEncode);
-        driver = initializeDriver("incognito");
+        initializeDriver("incognito"); // sets ctx().driver
         login(username, password, url);
     }
 
     public static void login_MFA_Incognito_Internal()
             throws IOException, InterruptedException {
-        // Hari
-        byte[] decodedBytes = Base64.getDecoder().decode(prop.getUsername_MFA_Internal());
+        byte[] decodedBytes = Base64.getDecoder().decode(ctx().prop.getUsername_MFA_Internal());
         String username = new String(decodedBytes);
-        byte[] passwordEncode = Base64.getDecoder().decode(prop.getPassword_MFA_Internal());
+        byte[] passwordEncode = Base64.getDecoder().decode(ctx().prop.getPassword_MFA_Internal());
         String password = new String(passwordEncode);
-        driver = initializeDriver("incognito");
-        login(username, password, prop.getUrl());
+        initializeDriver("incognito"); // sets ctx().driver
+        login(username, password, ctx().prop.getUrl());
     }
 
     public static void login_MFA_Incognito_External()
             throws IOException, InterruptedException {
-        // Hari
-        byte[] decodedBytes = Base64.getDecoder().decode(prop.getUsername_MFA_External());
+        byte[] decodedBytes = Base64.getDecoder().decode(ctx().prop.getUsername_MFA_External());
         String username = new String(decodedBytes);
-        byte[] passwordEncode = Base64.getDecoder().decode(prop.getPassword_MFA_External());
+        byte[] passwordEncode = Base64.getDecoder().decode(ctx().prop.getPassword_MFA_External());
         String password = new String(passwordEncode);
-        driver = initializeDriver("incognito");
-        login(username, password, prop.getUrl());
+        initializeDriver("incognito"); // sets ctx().driver
+        login(username, password, ctx().prop.getUrl());
     }
 
     public static void login_MFA_Incognito_Supplier()
             throws IOException, InterruptedException {
-        // Hari
-        byte[] decodedBytes = Base64.getDecoder().decode(prop.getUsername_MFA_Supplier());
+        byte[] decodedBytes = Base64.getDecoder().decode(ctx().prop.getUsername_MFA_Supplier());
         String username = new String(decodedBytes);
-        byte[] passwordEncode = Base64.getDecoder().decode(prop.getPassword_MFA_Supplier());
+        byte[] passwordEncode = Base64.getDecoder().decode(ctx().prop.getPassword_MFA_Supplier());
         String password = new String(passwordEncode);
-        driver = initializeDriver("incognito");
-        login(username, password, prop.getUrl());
+        initializeDriver("incognito"); // sets ctx().driver
+        login(username, password, ctx().prop.getUrl());
     }
 
     public static void login_MFA_Normal(String username_MFA, String password_MFA, String url)
             throws IOException, InterruptedException {
-        // Encode username, password
         String encodedUsername = Base64.getEncoder().encodeToString(username_MFA.getBytes());
         String encodedPassword = Base64.getEncoder().encodeToString(password_MFA.getBytes());
-
-        // Decode username, password
         String username = new String(Base64.getDecoder().decode(encodedUsername));
         String password = new String(Base64.getDecoder().decode(encodedPassword));
-
-        driver = initializeDriver("Normal");
+        initializeDriver("Normal"); // sets ctx().driver
         login(username_MFA, password_MFA, url);
-
     }
 
+    // ─────────────────────────────────────────────────────────────────────────
+    // Core login — page objects stored BOTH in ctx() (parallel-safe)
+    // AND in legacy static fields (backward compat for non-parallel TCs)
+    // ─────────────────────────────────────────────────────────────────────────
     public static void login(String username_MFA, String password_MFA, String url) throws InterruptedException {
-        pageObjectManager = new PageObjectManager(driver);
-        l = pageObjectManager.getLoginPage();
-        h = pageObjectManager.getHomePage();
-        gtc = pageObjectManager.getGtcPage();
-        f = pageObjectManager.getfunctional_role_page();
-        newrequest = pageObjectManager.getNewFunctionalRoleRequestPage();
-        approver_overview = pageObjectManager.getapproverOverview_page();
-        newper = pageObjectManager.getNewPermission_Request_Page();
-        req = pageObjectManager.getRequest_overview_page();
-        myreq = pageObjectManager.getmyRequest_Page();
-        onboard_new_ECU = pageObjectManager.getonboard_new_ECU_page();
-        deputy = pageObjectManager.getMyDeputy_page();
-        special = pageObjectManager.getSpecial_access_page();
-        read = pageObjectManager.getReadView_Permission_Page();
-        s = creatsoftAssert();
-        l.loginApplicationasRequester_MFA(username_MFA, password_MFA, url);
-        // test.pass("User is able to successfully login to application");
+        ctx().pageObjectManager = new PageObjectManager(getDriver());
+        ctx().l = ctx().pageObjectManager.getLoginPage();
+        ctx().h = ctx().pageObjectManager.getHomePage();
+        ctx().gtc = ctx().pageObjectManager.getGtcPage();
+        ctx().f = ctx().pageObjectManager.getfunctional_role_page();
+        ctx().newrequest = ctx().pageObjectManager.getNewFunctionalRoleRequestPage();
+        ctx().approver_overview = ctx().pageObjectManager.getapproverOverview_page();
+        ctx().newper = ctx().pageObjectManager.getNewPermission_Request_Page();
+        ctx().req = ctx().pageObjectManager.getRequest_overview_page();
+        ctx().myreq = ctx().pageObjectManager.getmyRequest_Page();
+        ctx().onboard_new_ECU = ctx().pageObjectManager.getonboard_new_ECU_page();
+        ctx().deputy = ctx().pageObjectManager.getMyDeputy_page();
+        ctx().special = ctx().pageObjectManager.getSpecial_access_page();
+        ctx().read = ctx().pageObjectManager.getReadView_Permission_Page();
+        ctx().s = creatsoftAssert();
 
+        // Also update legacy static aliases so non-parallel TCs keep working
+        pageObjectManager = ctx().pageObjectManager;
+        l = ctx().l;
+        h = ctx().h;
+        gtc = ctx().gtc;
+        f = ctx().f;
+        newrequest = ctx().newrequest;
+        approver_overview = ctx().approver_overview;
+        newper = ctx().newper;
+        req = ctx().req;
+        myreq = ctx().myreq;
+        onboard_new_ECU = ctx().onboard_new_ECU;
+        deputy = ctx().deputy;
+        special = ctx().special;
+        read = ctx().read;
+        s = ctx().s;
+
+        ctx().l.loginApplicationasRequester_MFA(username_MFA, password_MFA, url);
     }
 
-    // public static String generate_OTP_for_MFA()
-    // throws InterruptedException, TimeProviderException, CodeGenerationException {
-    // // Encode and decode SecretKey
-    // // This key should match the key used by your app
-    // String encodedSecretKey =
-    // Base64.getEncoder().encodeToString(prop.getsecurityKEY_MFA().getBytes());
-    // String secretKey = new String(Base64.getDecoder().decode(encodedSecretKey));
-    // // Generate TOTP
-    // TimeProvider timeProvider = new SystemTimeProvider();
-    // CodeGenerator codeGenerator = new
-    // DefaultCodeGenerator(HashingAlgorithm.SHA1);
-    // int timeStep = 30; // Time step in seconds, usually 30
-    // String otp = codeGenerator.generate(secretKey, timeProvider.getTime() /
-    // timeStep);
-    // Thread.sleep(3000);
-    // return otp;
-    // }
-
+    // ─────────────────────────────────────────────────────────────────────────
+    // Table utilities
+    // ─────────────────────────────────────────────────────────────────────────
     public static List<List<String>> getTableValues(WebDriver driver, By tableLocator) {
-        // Locate the table
         WebElement table = driver.findElement(tableLocator);
-
-        // Get all rows from the table body
         List<WebElement> rows = table.findElements(By.tagName("tr"));
-
-        // List to store all table values
         List<List<String>> tableValues = new ArrayList<>();
-
-        // Extract values from each cell in each row, excluding the header row
         for (WebElement row : rows) {
-            if (row.findElements(By.tagName("th")).isEmpty()) { // Skip header row
+            if (row.findElements(By.tagName("th")).isEmpty()) {
                 List<WebElement> cells = row.findElements(By.tagName("td"));
                 List<String> rowValues = new ArrayList<>();
                 for (WebElement cell : cells) {
@@ -486,30 +435,23 @@ public class BaseClass {
                 tableValues.add(rowValues);
             }
         }
-
         return tableValues;
     }
 
     public static List<List<String>> getTableValuesExcludingLastColumn(WebDriver driver, By tableLocator) {
-        // Locate the table
         WebElement table = driver.findElement(tableLocator);
-        // Get all rows from the table body
         List<WebElement> rows = table.findElements(By.tagName("tr"));
-        // List to store all table values excluding last column
         List<List<String>> tableValues = new ArrayList<>();
-        // Extract values from each cell in each row, excluding the header row and the
-        // last column
         for (WebElement row : rows) {
-            if (row.findElements(By.tagName("th")).isEmpty()) { // Skip header row
+            if (row.findElements(By.tagName("th")).isEmpty()) {
                 List<WebElement> cells = row.findElements(By.tagName("td"));
                 List<String> rowValues = new ArrayList<>();
-                for (int i = 0; i < cells.size() - 1; i++) { // Exclude the last column
+                for (int i = 0; i < cells.size() - 1; i++) {
                     rowValues.add(cells.get(i).getText());
                 }
                 tableValues.add(rowValues);
             }
         }
-
         return tableValues;
     }
 
@@ -520,7 +462,6 @@ public class BaseClass {
         for (int i = 0; i < firstTable.size(); i++) {
             List<String> firstRow = firstTable.get(i);
             List<String> secondRow = secondTable.get(i);
-
             if (firstRow.size() != secondRow.size()) {
                 return false;
             }
@@ -530,7 +471,6 @@ public class BaseClass {
                 }
             }
         }
-
         return true;
     }
 
@@ -538,15 +478,12 @@ public class BaseClass {
             List<List<String>> secondTable) {
         for (List<String> firstRow : firstTable) {
             boolean found = false;
-            // Check if any column in the first row is present in any row of the second
-            // table
             for (List<String> secondRow : secondTable) {
                 if (containsAnyColumnValue(firstRow, secondRow)) {
                     found = true;
                     break;
                 }
             }
-
             if (!found) {
                 return false;
             }
@@ -554,8 +491,6 @@ public class BaseClass {
         return true;
     }
 
-    // Helper method to check if any column value from firstRow is present in
-    // secondRow
     private static boolean containsAnyColumnValue(List<String> firstRow, List<String> secondRow) {
         for (String value : firstRow) {
             if (secondRow.contains(value)) {
@@ -571,26 +506,24 @@ public class BaseClass {
         int year = Integer.valueOf(validity_year);
         int month = Integer.valueOf(validity_month);
         int days = Integer.valueOf(validity_days);
-        int totalDays = (year * DAYS_IN_YEAR) + (month * DAYS_IN_month) + days;
-        return totalDays;
-
+        return (year * DAYS_IN_YEAR) + (month * DAYS_IN_month) + days;
     }
 
     public static void minimize_window() throws InterruptedException {
         Thread.sleep(2000);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("document.body.style.zoom='80%'");
     }
 
     public static void ClickTab() throws Throwable {
         Thread.sleep(2000);
-        org.openqa.selenium.interactions.Actions actions = new org.openqa.selenium.interactions.Actions(driver);
+        org.openqa.selenium.interactions.Actions actions = new org.openqa.selenium.interactions.Actions(getDriver());
         actions.sendKeys(org.openqa.selenium.Keys.TAB).build().perform();
     }
 
     public static void maximize_window() throws InterruptedException {
         Thread.sleep(2000);
-        JavascriptExecutor js = (JavascriptExecutor) driver;
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("document.body.style.zoom='100%'");
     }
 
@@ -612,7 +545,6 @@ public class BaseClass {
                 new TypeReference<List<HashMap<String, String>>>() {
                 });
         return data;
-
     }
 
     public static void waitForPageLoad(WebDriver driver) {

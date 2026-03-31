@@ -23,13 +23,10 @@ import DAMS.Resources.AbstractComponents;
 import DAMS.Resources.BaseClass;
 
 public class NewPermission_Request_Page extends AbstractComponents {
-	WebDriver driver;
 	public static Logger logger = Logger.getLogger("DAMS");
 
 	public NewPermission_Request_Page(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(BaseClass.getDriver());
 	}
 
 	@FindBy(xpath = "//div[text()='Diagnostic Authority']")
@@ -205,7 +202,7 @@ public class NewPermission_Request_Page extends AbstractComponents {
 	}
 
 	public String select_user_role(String name) throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		waitForWebElementToAppear(Userrole_dropdown);
 		Userrole_dropdown.isDisplayed();
 		click(Userrole_dropdown);
@@ -216,7 +213,7 @@ public class NewPermission_Request_Page extends AbstractComponents {
 	}
 
 	public String select_functional_role(String name) throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		Thread.sleep(2000);
 		logger.info("**** functional role value :" + name);
 		waitForWebElementToAppear(functional_role_dropdown);
@@ -230,12 +227,12 @@ public class NewPermission_Request_Page extends AbstractComponents {
 		Thread.sleep(1000);
 		String xpathExpression = String.format("//span[text()=' %s ']", name);
 		try {
-			click(driver.findElement(By.xpath(xpathExpression)));
+			click(BaseClass.getDriver().findElement(By.xpath(xpathExpression)));
 		} catch (Exception e) {
-			clickJS(driver.findElement(By.xpath(xpathExpression)));
+			clickJS(BaseClass.getDriver().findElement(By.xpath(xpathExpression)));
 		}
 		// return
-		// driver.findElement(By.xpath("//div[contains(@class,\"mat-select-value\")]")).getText();
+		// BaseClass.getDriver().findElement(By.xpath("//div[contains(@class,\"mat-select-value\")]")).getText();
 		return name;
 	}
 
@@ -287,7 +284,7 @@ public class NewPermission_Request_Page extends AbstractComponents {
 	}
 
 	public String user_role_visible_or_not(String name) throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		waitForWebElementToAppear(Userrole_dropdown);
 		Userrole_dropdown.isDisplayed();
 		clickJS(Userrole_dropdown);
@@ -373,23 +370,23 @@ public class NewPermission_Request_Page extends AbstractComponents {
 	}
 
 	public boolean Request_Overview_enabled() throws InterruptedException {
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		Thread.sleep(2000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		waitForWebElementToAppear(Request_Overview);
 		return Request_Overview.isEnabled();
 
 	}
 
 	public void Authorization_roledropdown(String name) {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		waitForWebElementToAppear(Authorization_dropdown);
 		clickJS(Authorization_dropdown);
 		clickelementmatchingtext_value(Authorization_List, name);
 	}
 
 	public void clickelementmatchingtext_value(List<WebElement> elements, String User_type) {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		for (int i = 0; i < elements.size(); i++) {
 			logger.info(elements.get(i).getText());
 			if (elements.get(i).getText().equalsIgnoreCase(User_type)) {
@@ -415,7 +412,11 @@ public class NewPermission_Request_Page extends AbstractComponents {
 	public String select_SpecialCase(String name) throws InterruptedException {
 		waitForWebElementToAppear(SpecialCase_dropdown);
 		Thread.sleep(2000);
+		try {
+		click(SpecialCase_dropdown);}
+		catch(Exception e) {
 		clickJS(SpecialCase_dropdown);
+		}
 		// SpecialCase_dropdown.click();
 		String str = clickelementmatchingtext(ECU_dropdown_option, name);
 		return str;
@@ -424,7 +425,7 @@ public class NewPermission_Request_Page extends AbstractComponents {
 	public String select_NestT_Testingcase(String name) throws InterruptedException {
 		Thread.sleep(3000);
 		// scrollDown(SpecialCase_NestT_dropdown);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		waitForWebElementToAppear(SpecialCase_NestT_dropdown);
 		waitForelementToBeClickable(SpecialCase_NestT_dropdown);
 		Thread.sleep(4000);
@@ -501,9 +502,9 @@ public class NewPermission_Request_Page extends AbstractComponents {
 
 	public String select_ECUQualifier_NestT(String name) throws InterruptedException {
 		Thread.sleep(3000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		waitForWebElementToAppear(NestT_ECUQualifier);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		waitForWebElementToAppear(NestT_ECUQualifier);
 		// waitForelementToBeClickable(NestT_ECUQualifier);
 		click(NestT_ECUQualifier);
@@ -600,7 +601,7 @@ public class NewPermission_Request_Page extends AbstractComponents {
 
 	public void select_BackEndCOTSelection(String root, String origin, String target) throws InterruptedException {
 		// Log.info(root+"\t"+origin+"\t"+target);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		Thread.sleep(3000);
 		waitForWebElementToAppear(BackendPleaseSelectTheRootCOT);
 		click(BackendPleaseSelectTheRootCOT);
@@ -635,7 +636,7 @@ public class NewPermission_Request_Page extends AbstractComponents {
 
 	public void select_target_COT_type(String name) throws InterruptedException {
 		String xpathExpression = String.format("//span[contains(text(),'%s')]", name);
-		clickJS(driver.findElement(By.xpath(xpathExpression)));
+		clickJS(BaseClass.getDriver().findElement(By.xpath(xpathExpression)));
 
 	}
 
@@ -659,11 +660,11 @@ public class NewPermission_Request_Page extends AbstractComponents {
 	}
 
 	public String DiagAuth_Certificate(String cert) throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		waitForWebElementToAppear(ERA_DA_dropdown);
 		ERA_DA_dropdown.isDisplayed();
 		clickJS(ERA_DA_dropdown);
-		driver.findElement(By.xpath("//div[@role='listbox']//span[text()=' " + cert + " ']")).click();
+		BaseClass.getDriver().findElement(By.xpath("//div[@role='listbox']//span[text()=' " + cert + " ']")).click();
 		return cert;
 	}
 
@@ -750,7 +751,7 @@ public class NewPermission_Request_Page extends AbstractComponents {
 
 	public String grouping_ecu() {
 
-		return getText(driver.findElement(By.xpath("//span[@class=\"span2 ng-star-inserted\"]")));
+		return getText(BaseClass.getDriver().findElement(By.xpath("//span[@class=\"span2 ng-star-inserted\"]")));
 	}
 
 	public void SpecialCase_FOTA(String Special_Case, String Diag_permission, String ECU_Qualifier,
@@ -760,7 +761,7 @@ public class NewPermission_Request_Page extends AbstractComponents {
 		String space = " ";
 		String Diag_perm = space.concat(Diag_permission).concat(space);
 		String xpathExpression = String.format("//span[contains(text(),'%s')]", Diag_perm);
-		clickJS(driver.findElement(By.xpath(xpathExpression)));
+		clickJS(BaseClass.getDriver().findElement(By.xpath(xpathExpression)));
 		waitForWebElementToAppear(Fota_ECU_Qualifier);
 		Fota_ECU_Qualifier.isDisplayed();
 		clickJS(Fota_ECU_Qualifier);
@@ -969,7 +970,7 @@ public class NewPermission_Request_Page extends AbstractComponents {
 			logger.info("User is able to enter serviceID,validity and reason");
 			submit_button();
 
-			waitForPageLoad(driver);
+			waitForPageLoad(BaseClass.getDriver());
 			Thread.sleep(3000);
 		}
 		test.pass("EnhancedRightAuthority Request is Created");
@@ -1171,9 +1172,9 @@ public class NewPermission_Request_Page extends AbstractComponents {
 			String ECU_Qualifier_Replacement = ECU[i];
 			scrollDown(RootLinkChkbox);
 			Thread.sleep(5000);
-			waitForPageLoad(driver);
+			waitForPageLoad(BaseClass.getDriver());
 			waitForWebElementToAppear(RootLinkChkbox);
-			waitForPageLoad(driver);
+			waitForPageLoad(BaseClass.getDriver());
 			waitForWebElementToAppear(RootLinkChkbox);
 			Thread.sleep(3000);
 			RootLinkChkbox.click();
@@ -1254,7 +1255,7 @@ public class NewPermission_Request_Page extends AbstractComponents {
 	public boolean raise_replacement_package_Request(String functionalRole, String Special_Case, String Reason_for_RP,
 			String ECU_Qualifier_for_RP, String BackendRoot_COT, String BackendOrigin_COT, String BackendTarget_COT)
 			throws InterruptedException, Throwable {
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		SpecialCase_display();
 		select_functional_role(functionalRole);
 		String SpecialCase = select_SpecialCase(Special_Case);
@@ -1264,9 +1265,9 @@ public class NewPermission_Request_Page extends AbstractComponents {
 		for (int i = 0; i < ECU.length; i++) {
 			String ECU_Qualifier_Replacement = ECU[i];
 			Thread.sleep(5000);
-			waitForPageLoad(driver);
+			waitForPageLoad(BaseClass.getDriver());
 			waitForWebElementToAppear(BackendChkbox);
-			waitForPageLoad(driver);
+			waitForPageLoad(BaseClass.getDriver());
 			waitForWebElementToAppear(BackendChkbox);
 			BackendChkbox.click();
 			Thread.sleep(3000);
@@ -1296,9 +1297,9 @@ public class NewPermission_Request_Page extends AbstractComponents {
 		for (int i = 0; i < ECU.length; i++) {
 			String ECU_Qualifier_Replacement = ECU[i];
 			Thread.sleep(5000);
-			waitForPageLoad(driver);
+			waitForPageLoad(BaseClass.getDriver());
 			waitForWebElementToAppear(RootLinkChkbox);
-			waitForPageLoad(driver);
+			waitForPageLoad(BaseClass.getDriver());
 			waitForelementToBeClickable(RootLinkChkbox);
 			Thread.sleep(3000);
 			RootLinkChkbox.click();
@@ -1609,7 +1610,7 @@ public class NewPermission_Request_Page extends AbstractComponents {
 		Thread.sleep(500);
 		String ECU_Qualifier = select_ECUQualifier_more_than_one(values);
 		test.info("Selected newly Onboarded ECU" + ECU_Qualifier);
-		clickJS(driver.findElement(By.xpath("//span[@class=\"mat-checkbox-inner-container\"]")));
+		clickJS(BaseClass.getDriver().findElement(By.xpath("//span[@class=\"mat-checkbox-inner-container\"]")));
 		String grouping_ecu = grouping_ecu();
 		KMS_System_IP_Address(input.get("kpm"));
 		ERA_reason_field(input.get("Reason2"));
@@ -1829,7 +1830,7 @@ public class NewPermission_Request_Page extends AbstractComponents {
 			String user_role = ur[i];
 			String ECU_Restriction = ECU[i];
 			Thread.sleep(3000);
-			waitForPageLoad(driver);
+			waitForPageLoad(BaseClass.getDriver());
 
 			select_functional_role(value_selected);
 			logger.info(user_role);

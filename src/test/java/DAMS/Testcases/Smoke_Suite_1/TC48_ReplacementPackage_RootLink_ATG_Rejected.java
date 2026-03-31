@@ -23,7 +23,7 @@ public class TC48_ReplacementPackage_RootLink_ATG_Rejected extends BaseClass {
 				+ "Replacment package request Internal- status pending" + "</u></i></b>");
 		TC07_STD_ATG_FRapproved.Funtional_role_request_approved_Internal(input);
 		List<String >create_replacement_package_request = create_replacement_package_request(input);
-		reject_special_cases_Replacement_request(input,create_replacement_package_request);
+		reject_special_cases_Replacement_request(input,create_replacement_package_request,ctx().prop.getInternalName());
 		
 		test.pass("User is able to create Replacement package request when the status is pending");
 		logger.info("User is able to create Replacement package request when the status is pending");
@@ -35,7 +35,7 @@ public class TC48_ReplacementPackage_RootLink_ATG_Rejected extends BaseClass {
 			+ "Replacment package request External- status pending" + "</u></i></b>");
 	TC07_STD_ATG_FRapproved.Funtional_role_request_approved_External(input);
 	List<String >create_replacement_package_request = create_replacement_package_request_External(input);
-	reject_special_cases_Replacement_request(input,create_replacement_package_request);		
+	reject_special_cases_Replacement_request(input,create_replacement_package_request,ctx().prop.getExternalName());
 	test.pass("User is able to create Replacement package request when the status is pending");
 	logger.info("User is able to create Replacement package request when the status is pending");
 	softAssertionALL();
@@ -49,7 +49,7 @@ public class TC48_ReplacementPackage_RootLink_ATG_Rejected extends BaseClass {
 				input.get("Functional_role_internal"),input.get("SpecialCase"),
 				input.get("Orgin_COT"), input.get("Reason_for_RP"), input.get("Target_COT"),
 				input.get("ECU_Qualifier_for_RP"));
-		reject_special_cases_Replacement_request(input,create_replacement_package_request);
+		reject_special_cases_Replacement_request(input,create_replacement_package_request,ctx().prop.getSupplierName());
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Replacement Package for Supplier- status Approved-ATG:" + "</u></i></b>");
 		logger.info("User is able to create Replacement package request when the status is Approved");
@@ -94,7 +94,7 @@ public class TC48_ReplacementPackage_RootLink_ATG_Rejected extends BaseClass {
 		test.info("Request overview tab enabled");
 		logger.info("Request overview tab enabled");
 		List<String> replacement_package_table_input = req
-				.request_Overview_table_validation_for_replacement_package("Replacement Package", "HARNAGA");
+				.request_Overview_table_validation_for_replacement_package("Replacement Package", "HARNAGA",ctx().prop.getExternalName());
 		Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the Replacement package request created");
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");
@@ -102,14 +102,14 @@ public class TC48_ReplacementPackage_RootLink_ATG_Rejected extends BaseClass {
 	}
 	
 	public static void reject_special_cases_Replacement_request(HashMap<String, String> input,
-			List<String> create_replacement_package_request) throws Throwable {
+			List<String> create_replacement_package_request,String username) throws Throwable {
 		String Replacement_approval_status_after_level1_approval = approver_overview
 				.reject_replacement_package_Request(input.get("Reason_for_RP"), input.get("SpecialCase"),prop.get_user_type_Internal(), create_replacement_package_request);
 		s.assertTrue(Replacement_approval_status_after_level1_approval.equals(prop.getStatus_rejected()));
 		test.pass("User is able to view the approval status as rejected in approver page");
 		logger.info("User is able to view the approval status as rejected in approver page");
 		req.navigate_to_request_Overview_page_and_verify_approval_status(prop.getStatus_rejected(), "N/A",
-				reason_for_rejection, input.get("SpecialCase"), prop.getUser_name());
+				reason_for_rejection, input.get("SpecialCase"), username);
 		test.pass("User is able to view the approval status as rejected in request overview page");
 		logger.info("User is able to view the approval status as rejected in request overview page");
 	}
@@ -124,7 +124,7 @@ public class TC48_ReplacementPackage_RootLink_ATG_Rejected extends BaseClass {
 		test.info("Request overview tab enabled");
 		logger.info("Request overview tab enabled");
 		List<String> replacement_package_table_input = req
-				.request_Overview_table_validation_for_replacement_package("Replacement Package", "HARNAGA");
+				.request_Overview_table_validation_for_replacement_package("Replacement Package", "HARNAGA",ctx().prop.getExternalName());
 		Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the Replacement package request created");
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");

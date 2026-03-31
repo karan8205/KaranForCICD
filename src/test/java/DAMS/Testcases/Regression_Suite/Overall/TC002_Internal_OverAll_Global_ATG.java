@@ -64,7 +64,7 @@ public class TC002_Internal_OverAll_Global_ATG extends BaseClass {
 		String functional_role_selected =TC02_Requests_STD_GLOBAL. raise_Internal_functional_role(input);
 		test.pass("Request created and in pending status " + functional_role_selected);
 		logger.info("Request created and in pending status " + functional_role_selected);
-		TC02_Requests_STD_GLOBAL.functional_role_Overview_table_validation(select_user_type);
+		TC02_Requests_STD_GLOBAL.functional_role_Overview_table_validation(select_user_type,ctx().prop.getInternalName());
 		TC06_STD_GLOBAL_FRapproved.create_and_approve_Internal_FR_request(input);
 		}
 		else if(mode.equalsIgnoreCase("ATG")) {
@@ -77,7 +77,7 @@ public class TC002_Internal_OverAll_Global_ATG extends BaseClass {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"+ "***************"+Functional_Role+" Functional Role Approved *************" + "</u></i></b>");
 	// --------------------------------------------
 		AbstractComponents.refresh();
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		myreq.select_NewPermission_request();
 		 if(!Functional_Role.equalsIgnoreCase("Production - ATG")) {
 		newper.Diagnostic_Authority_ECU_Visible_or_not_for_pending_Approved(input);
@@ -114,41 +114,41 @@ public class TC002_Internal_OverAll_Global_ATG extends BaseClass {
 				AbstractComponents.refresh();
 				myreq.select_NewPermission_request();
 				newper.raise_nestT_Request_Multiple(input);
-				approve_Multiple_special_cases_nestT_request(input);	
+				approve_Multiple_special_cases_nestT_request(input,ctx().prop.getInternalName());
 				test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"+ "Nest-T Testing for Internal- status Approved:" + "</u></i></b>");
 				test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"+ "Creation of Replacement Package - Internal" + "</u></i></b>");
 				AbstractComponents.refresh();
 		  }
 		  if(!Functional_Role.equalsIgnoreCase("Production")) {
 				List<String >create_replacement_package_request_id_front = create_replacement_package_request_root(input);
-				waitForPageLoad(driver);
+				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
-				approve_special_cases_Replacement_request(input,create_replacement_package_request_id_front);
-				waitForPageLoad(driver);
+				approve_special_cases_Replacement_request(input,create_replacement_package_request_id_front,ctx().prop.getInternalName());
+				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
 				List<String >create_replacement_package_request_id_back = create_replacement_package_request_backend(input);
-				approve_special_cases_Replacement_request(input,create_replacement_package_request_id_back);
-				waitForPageLoad(driver);
+				approve_special_cases_Replacement_request(input,create_replacement_package_request_id_back,ctx().prop.getInternalName());
+				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
 				List<String >create_replacement_package_request_ids = create_replacement_package_request_rootbackend(input);
-				waitForPageLoad(driver);
+				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
-				approve_special_cases_Replacement_request(input,create_replacement_package_request_ids);	
+				approve_special_cases_Replacement_request(input,create_replacement_package_request_ids,ctx().prop.getInternalName());
 				test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"+ "Replacement Package for Internal- status Approved:" + "</u></i></b>");
 		    }
 			}
 			
 	  AbstractComponents.refresh();
-	  waitForPageLoad(driver);
+	  waitForPageLoad(BaseClass.getDriver());
 	  Thread.sleep(5000);
 	  approver_overview. approver_Overview_enabled1();
 	  approver_overview.search_here(prop.getUser_name());
-	  getScreenshot(input.get("Mode")+"_"+input.get("User_Type")+"_ All Request", driver);
+	  getScreenshot(input.get("Mode")+"_"+input.get("User_Type")+"_ All Request", BaseClass.getDriver());
 		}
 		catch(Exception e) {
 			e.printStackTrace();
 			String filePath = null;
-			filePath = getScreenshot(input.get("Functional_role_internal")+ "error page", driver);
+			filePath = getScreenshot(input.get("Functional_role_internal")+ "error page", BaseClass.getDriver());
 		}
 	// after 1 data run
 		AbstractComponents.refresh();
@@ -167,21 +167,21 @@ public class TC002_Internal_OverAll_Global_ATG extends BaseClass {
 			   {data.get(6)},{data.get(7)},{data.get(8)},{data.get(9)},{data.get(10)}};
 	}
 	
-	public static void approve_Multiple_special_cases_nestT_request(HashMap<String, String> input) throws Throwable {
+	public static void approve_Multiple_special_cases_nestT_request(HashMap<String, String> input,String username) throws Throwable {
 		req.request_Overview();	
-		String NestT_approval_status_after_level1_approval = approver_overview.approve_Multiple_nestT_Request("Nest T Testing","Nest-T Testing",prop.getStatus_pending());
+		String NestT_approval_status_after_level1_approval = approver_overview.approve_Multiple_nestT_Request("Nest T Testing","Nest-T Testing",prop.getStatus_pending(),username);
 //		s.assertTrue(NestT_approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
 		test.pass("User is able to view the approval status as Approved after 1st level approval");
 		logger.info("User is able to view the approval status as Approved after 1st level approval");
-		req.navigate_to_request_Overview_page_and_verify_approval_status_RP_NestT(prop.getStatus_pending(), "N/A", "N/A","Nest-T Testing", prop.getUser_name()); 
+		req.navigate_to_request_Overview_page_and_verify_approval_status_RP_NestT(prop.getStatus_pending(), "N/A", "N/A","Nest-T Testing", username);
 		test.pass("User is able to view navigate to request role overview page and check if the status is pending after 1st level approval");
 		logger.info("User is able to view navigate to request role overview page and check if the status is pending after 1st level approval");
-		String NestT_approval_status_after_level2_approval = approver_overview.approve_Multiple_nestT_Request("Nest T Testing","Nest-T Testing",prop.getStatus_pending());
+		String NestT_approval_status_after_level2_approval = approver_overview.approve_Multiple_nestT_Request("Nest T Testing","Nest-T Testing",prop.getStatus_pending(),username);
 		s.assertTrue(NestT_approval_status_after_level2_approval.equals(prop.getStatus_Approved()));
 		test.pass("User is able to view the approval status as Approved after 2nd level approval");
 		logger.info("User is able to view the approval status as Approved after 2nd level approval");
 		String todays_date = todays_date();
-		req.navigate_to_request_Overview_page_and_verify_approval_status_RP_NestT(prop.getStatus_Approved(), todays_date, "N/A","Nest-T Testing", prop.getUser_name());
+		req.navigate_to_request_Overview_page_and_verify_approval_status_RP_NestT(prop.getStatus_Approved(), todays_date, "N/A","Nest-T Testing", username);
 		test.pass("User is able to view navigate to request role overview page and check if the status is approved after 2nd level approval");
 		logger.info("User is able to view navigate to request role overview page and check if the status is appproved after 2nd level approval");
 	}
@@ -194,7 +194,7 @@ public class TC002_Internal_OverAll_Global_ATG extends BaseClass {
 		Assert.assertTrue(request_Overview_enabled);
 		test.info("Request overview tab enabled");
 		logger.info("Request overview tab enabled"); 
-		List<String> replacement_package_table_input = req.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name());
+		List<String> replacement_package_table_input = req.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name(),ctx().prop.getInternalName());
 //		Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the Replacement package request created");
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");
@@ -212,7 +212,7 @@ public class TC002_Internal_OverAll_Global_ATG extends BaseClass {
 		test.info("Request overview tab enabled");
 		logger.info("Request overview tab enabled"); 
 		List<String> replacement_package_table_input = req
-				.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name());
+				.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name(),ctx().prop.getInternalName());
 //		Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the Replacement package request created");
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");
@@ -229,7 +229,7 @@ public class TC002_Internal_OverAll_Global_ATG extends BaseClass {
 		test.info("Request overview tab enabled");
 		logger.info("Request overview tab enabled"); 
 		List<String> replacement_package_table_input = req
-				.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name());
+				.multiple_Request_Table_Validation_for_replacement_package("Replacement Package", prop.getUser_name(),ctx().prop.getInternalName());
 //		Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the Replacement package request created");
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");
@@ -238,13 +238,13 @@ public class TC002_Internal_OverAll_Global_ATG extends BaseClass {
 	
 	
 	public static void approve_special_cases_Replacement_request(HashMap<String, String> input,
-			List<String> create_special_cases_Replacement_request) throws Throwable {
+			List<String> create_special_cases_Replacement_request,String username) throws Throwable {
 		String Replacement_approval_status_after_level1_approval = approver_overview.multiple_Approve_Request("Replacement Package", prop.getStatus_pending(),create_special_cases_Replacement_request);
 		s.assertTrue(Replacement_approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
 		test.pass("User is able to view the approval status as Approved after 1st level approval");
 		logger.info("User is able to view the approval status as Approved after 1st level approval");
 		req.navigate_to_request_Overview_page_and_verify_approval_status_RP_NestT(prop.getStatus_pending(), "N/A", "N/A",
-				input.get("SpecialCase"), prop.getUser_name());
+				input.get("SpecialCase"), username);
 		test.pass(
 				"User is able to view navigate to request role overview page and check if the status is pending after 1st level approval");
 		logger.info(
@@ -255,7 +255,7 @@ public class TC002_Internal_OverAll_Global_ATG extends BaseClass {
 		logger.info("User is able to view the approval status as Approved after 2nd level approval");
 		String todays_date = todays_date();
 		req.navigate_to_request_Overview_page_and_verify_approval_status_RP_NestT(prop.getStatus_Approved(), todays_date, "N/A",
-				input.get("SpecialCase"), prop.getUser_name());
+				input.get("SpecialCase"), username);
 		test.pass(
 				"User is able to view navigate to request role overview page and check if the status is approved after 2nd level approval");
 		logger.info(
@@ -283,7 +283,7 @@ public class TC002_Internal_OverAll_Global_ATG extends BaseClass {
 	    Thread.sleep(5000);
 
 	    logger.info("About to zoom out");
-	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
 	    js.executeScript("document.body.style.zoom='80%'"); 	    
 	    newrequest.select_vehicle_program_ATG(user_type);      
 	    newrequest.functional_role_page_validation(prop.get_for_whom_txt(), prop.get_myself_txt(),

@@ -25,10 +25,10 @@ public class TC87_SpecialEnhancedRight_Approved extends BaseClass {
 				+ "</u></i></b>");
 		TC01_Login_MFA.login_with_addressing_MFA_External();
 		Thread.sleep(8000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		special.clickSpecialAccess();
 		windowZoomOut(); 
-		SpecialEnhanceRight_Approve(input);
+		SpecialEnhanceRight_Approve(input,ctx().prop.getExternalName());
 		softAssertionALL();
 	}
 
@@ -40,7 +40,7 @@ public class TC87_SpecialEnhancedRight_Approved extends BaseClass {
 		return new Object[][] { { data.get(4) } };
 	}
 	
-	public static void SpecialEnhanceRight_Approve(HashMap<String, String> input) throws Throwable {
+	public static void SpecialEnhanceRight_Approve(HashMap<String, String> input,String username) throws Throwable {
 		special.Special_Enhanced_right();
 		test.pass("User is able to select special access and Special Enhanced right");
 		logger.info("User is able to select special access and Special Enhanced right");
@@ -50,7 +50,7 @@ public class TC87_SpecialEnhancedRight_Approved extends BaseClass {
 		softassertTrue(s, (boolean) request_Overview_table_validation.get(0).equals("PENDING"));
 		test.pass("User is able to view the sttaus as pending once the request created");
 		logger.info("User is able to view the sttaus as pending once the request created");
-		approver_overview.search_here(prop.getUser_name());
+		approver_overview.search_here(username);
 		Thread.sleep(2000);
 		approver_overview.filter_search(prop.getStatus_pending());
 		Thread.sleep(1000);

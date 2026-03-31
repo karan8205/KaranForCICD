@@ -20,7 +20,7 @@ public class TC14_NestT_CentralAuth_GLOBAL extends BaseClass {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>" + "Nest_T Request for Internal- status pending:"
 				+ "</u></i></b>");
 		TC06_STD_GLOBAL_FRapproved.Functional_role_request_approved_Internal(input);
- 		create_special_cases_nestT_request(input);
+ 		create_special_cases_nestT_request(input,ctx().prop.getInternalName());
 		test.pass("User is able to verify Nest-T request creation when the status is in pending");
 		logger.info("User is able to verify Nest-T request creation when the status is in pending");
 		softAssertionALL();
@@ -32,7 +32,7 @@ public class TC14_NestT_CentralAuth_GLOBAL extends BaseClass {
 				+ "Nest_T Request for Supplier- status approved:" + "</u></i></b>");
 		List<Object> create_and_approve_Internal_FR_request = TC06_STD_GLOBAL_FRapproved.create_and_approve_Supplier_FR_request(input);
 		List<String> create_special_cases_nestT_request = TC14_NestT_CentralAuth_GLOBAL
-				.create_special_cases_nestT_request(input);
+				.create_special_cases_nestT_request(input,ctx().prop.getSupplierName());
 		test.pass("User is able to verify Nest-T request creation when the status is in pending");
 		logger.info("User is able to verify Nest-T request creation when the status is in pending");
 		softAssertionALL();
@@ -57,12 +57,12 @@ public class TC14_NestT_CentralAuth_GLOBAL extends BaseClass {
 
 	}
 
-	public static List<String> create_special_cases_nestT_request(HashMap<String, String> input) throws Throwable {
+	public static List<String> create_special_cases_nestT_request(HashMap<String, String> input,String username) throws Throwable {
 		myreq.select_NewPermission_request();
 		boolean request_Overview_enabled = newper.raise_nestT_Request_Central(input.get("SpecialCase_nestT"),
 				input.get("NestT_TestingCase"), input.get("ECU_Qualifier_nestT"), input.get("Reason_for_nestT"),input.get("Functional_role_internal"));
 		s.assertTrue(request_Overview_enabled);
-		List<String> request_Overview_table_input = req.request_Overview_table_validation_for_nestT("Nest-T Testing",prop.getUser_name());
+		List<String> request_Overview_table_input = req.request_Overview_table_validation_for_nestT("Nest-T Testing",prop.getUser_name(),username);
 		s.assertTrue(request_Overview_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the nestT request created");
 		logger.info("User is able to view the approval status as pending once the nestT request created");
@@ -73,7 +73,7 @@ public class TC14_NestT_CentralAuth_GLOBAL extends BaseClass {
 		boolean request_Overview_enabled = newper.raise_nestT_Request_Central(input.get("SpecialCase_nestT"),
 				input.get("NestT_TestingCase"), input.get("ECU_Qualifier_nestT"), input.get("Reason_for_nestT"),input.get("Functional_role_Certificate"));
 		s.assertTrue(request_Overview_enabled);
-		List<String> request_Overview_table_input = req.request_Overview_table_validation_for_nestT("Nest-T Testing",prop.getUser_name());
+		List<String> request_Overview_table_input = req.request_Overview_table_validation_for_nestT("Nest-T Testing",prop.getUser_name(),ctx().prop.getSupplierName());
 		s.assertTrue(request_Overview_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the nestT request created");
 		logger.info("User is able to view the approval status as pending once the nestT request created");

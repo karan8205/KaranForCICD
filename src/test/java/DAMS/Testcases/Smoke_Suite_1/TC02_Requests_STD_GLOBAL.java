@@ -24,11 +24,11 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 	public static void apply_internal_functional_role_create_test_case(HashMap<String, String> input) throws Throwable {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Internal Functional role request - status pending:" + "</u></i></b>");
-		String select_user_type = login_and_select_user_Global(prop.get_user_type_Internal());
+		String select_user_type = login_and_select_user_Global(ctx().prop.get_user_type_Internal());
 		String functional_role_selected = raise_Internal_functional_role(input);
 		test.pass("Request created and in pending status " + functional_role_selected);
 		logger.info("Request created and in pending status " + functional_role_selected);
-		functional_role_Overview_table_validation(select_user_type);
+		functional_role_Overview_table_validation(select_user_type,ctx().prop.getInternalName());
 		softAssertionALL();
 
 	}
@@ -37,11 +37,11 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 	public static void apply_External_functional_role_create_test_case(HashMap<String, String> input) throws Throwable {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "External Functional role request - status pending:" + "</u></i></b>");
-		String select_user_type = login_and_select_user_Global(prop.get_user_type_external());
+		String select_user_type = login_and_select_user_Global(ctx().prop.get_user_type_external());
 		String functional_role_selected = raise_External_functional_role(input);
 		test.pass("Request standard External functional role for GLOBAL" + functional_role_selected);
 		logger.info("Request standard External functional role for GLOBAL" + functional_role_selected);
-		functional_role_Overview_table_validation(select_user_type);
+		functional_role_Overview_table_validation(select_user_type,ctx().prop.getExternalName());
 		softAssertionALL();
 	}
 
@@ -50,11 +50,11 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Supplier Functional role request - status pending:" + "</u></i></b>");
 
-		String select_user_type = login_and_select_user_Global(prop.get_User_type_Supplier());
+		String select_user_type = login_and_select_user_Global(ctx().prop.get_User_type_Supplier());
 		String functional_role_selected = raise_Supplier_functional_role(input);
 		test.pass("Raised request for the functional role " + functional_role_selected);
 		logger.info("Raised request for the functional role " + functional_role_selected);
-		functional_role_Overview_table_validation(select_user_type);
+		functional_role_Overview_table_validation(select_user_type,ctx().prop.getSupplierName());
 		softAssertionALL();
 	}
 
@@ -62,23 +62,23 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 	public static List<Object> apply_supplier_functional_role_create_test_case_myDeputy(HashMap<String, String> input)
 			throws Throwable {
 		TC01_Login_MFA.login_with_addressing_MFA_Supplier();
-		String select_user_type = h.select_user_type("Supplier");
+		String select_user_type = ctx().h.select_user_type("Supplier");
 		test.pass("User is able to select the type " + select_user_type);
 		logger.info("User is able to select the type " + select_user_type);
-		gtc.gtc_page_validation();
+		ctx().gtc.gtc_page_validation();
 		test.pass("User is able to validate the gtc page");
 		logger.info("User is able to validate the gtc page");
 
-		newrequest.functional_role_page_validation(prop.get_for_whom_txt(), prop.get_myself_txt(),
-				prop.get_Functional_role_txt());
+		ctx().newrequest.functional_role_page_validation(ctx().prop.get_for_whom_txt(), ctx().prop.get_myself_txt(),
+				ctx().prop.get_Functional_role_txt());
 		test.pass("User is able to validate the functional role page");
 		logger.info("User is able to validate the functional role page");
 		String functional_role_selected = raise_Supplier_functional_role(input);
 		test.pass("Raised request for the functional role " + functional_role_selected);
 		logger.info("Raised request for the functional role " + functional_role_selected);
 		List<Object> functional_role_Overview_table_validation = functional_role_Overview_table_validation(
-				select_user_type);
-		s.assertAll();
+				select_user_type,ctx().prop.getSupplierName());
+		ctx().s.assertAll();
 		return Arrays.asList(functional_role_Overview_table_validation.get(1), select_user_type);
 	}
 
@@ -109,12 +109,12 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 
 	}
 
-	public static List<Object> functional_role_Overview_table_validation(String select_user_type) throws Throwable {
-		f.functional_role_overview_enabled_validation();
+	public static List<Object> functional_role_Overview_table_validation(String select_user_type,String searchTxt) throws Throwable {
+		ctx().f.functional_role_overview_enabled_validation();
 
-		List<Object> functional_role_Overview_table_validation = f.functional_role_Overview_table_validation("Myself",
-				prop.getUser_name(), select_user_type);
-		softassertTrue(s, (boolean) functional_role_Overview_table_validation.get(0).equals(prop.getStatus_pending()));
+		List<Object> functional_role_Overview_table_validation = ctx().f.functional_role_Overview_table_validation("Myself",
+				searchTxt, select_user_type);
+		softassertTrue(s, (boolean) functional_role_Overview_table_validation.get(0).equals(ctx().prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the request created");
 		logger.info("User is able to view the approval status as pending once the request created");
 		test.log(Status.INFO, "Requester details : " + "<span style=\"color: blue;\"><b><i><u>"
@@ -126,47 +126,47 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 	}
 
 	public static String raise_Internal_functional_role(HashMap<String, String> input) throws Throwable {
-		String functional_role_selected = newrequest.raise_Internal_functional_role_request(
-				prop.get_vehicle_validation(), prop.get_Production(), prop.get_Xentry(), prop.get_QM(),
-				prop.get_Development(), prop.get_DiagnosticLink(), input.get("Functional_role_internal"),
-				input.get("Reason_for_internal_FR"), input.get("Role_Desc"), prop.get_DTE(), prop.get_dtna(),
-				prop.get_fuso(), prop.get_bus(), input.get("BU"));
+		String functional_role_selected = ctx().newrequest.raise_Internal_functional_role_request(
+				ctx().prop.get_vehicle_validation(), ctx().prop.get_Production(), ctx().prop.get_Xentry(), ctx().prop.get_QM(),
+				ctx().prop.get_Development(), ctx().prop.get_DiagnosticLink(), input.get("Functional_role_internal"),
+				input.get("Reason_for_internal_FR"), input.get("Role_Desc"), ctx().prop.get_DTE(), ctx().prop.get_dtna(),
+				ctx().prop.get_fuso(), ctx().prop.get_bus(), input.get("BU"));
 		return functional_role_selected;
 
 	}
 
 	public static String raise_External_functional_role(HashMap<String, String> input) throws Throwable {
-		String functional_role_selected = newrequest.raise_External_functional_role_request(
+		String functional_role_selected = ctx().newrequest.raise_External_functional_role_request(
 				input.get("Functional_role_External"), input.get("Reason_for_External_FR"), input.get("Role_Desc"),
-				input.get("company_name"), input.get("Daimler_name"), input.get("Daimler_email"), prop.get_DTE(),
-				prop.get_dtna(), prop.get_fuso(), prop.get_bus(), input.get("BU"));
+				input.get("company_name"), input.get("Daimler_name"), input.get("Daimler_email"), ctx().prop.get_DTE(),
+				ctx().prop.get_dtna(), ctx().prop.get_fuso(), ctx().prop.get_bus(), input.get("BU"));
 		return functional_role_selected;
 	}
 
 	public static String raise_Supplier_functional_role(HashMap<String, String> input) throws Throwable {
-		String functional_role_selected = newrequest.raise_Supplier_functional_role_request(
-				prop.get_Supplier_key_management(), prop.get_supplier_Develepment(),
-				prop.get_supplier_warranty_return(), input.get("Functional_role_supplier"), input.get("Role_Desc"),
+		String functional_role_selected = ctx().newrequest.raise_Supplier_functional_role_request(
+				ctx().prop.get_Supplier_key_management(), ctx().prop.get_supplier_Develepment(),
+				ctx().prop.get_supplier_warranty_return(), input.get("Functional_role_supplier"), input.get("Role_Desc"),
 				input.get("company_name"), input.get("Reason_for_supplier_FR"), input.get("ECU_Supplier"));
 		return functional_role_selected;
 	}
 
 	public static String raise_Supplier_functional_role_ECU_cert(HashMap<String, String> input, String fileContent)
 			throws Throwable {
-		String functional_role_selected = newrequest.raise_Supplier_functional_role_request(
-				prop.get_Supplier_key_management(), prop.get_supplier_Develepment(),
-				prop.get_supplier_warranty_return(), input.get("Functional_role_supplier"), input.get("Role_Desc"),
+		String functional_role_selected = ctx().newrequest.raise_Supplier_functional_role_request(
+				ctx().prop.get_Supplier_key_management(), ctx().prop.get_supplier_Develepment(),
+				ctx().prop.get_supplier_warranty_return(), input.get("Functional_role_supplier"), input.get("Role_Desc"),
 				input.get("company_name"), input.get("Reason_for_supplier_FR"), fileContent);
 		return functional_role_selected;
 	}
 
 	public static List<Object> functional_role_Overview_table_validation_for_more_than_one_ECU(String select_user_type,
 			List<Object> functional_role_selected) throws Throwable {
-		f.functional_role_overview_enabled_validation();
+		ctx().f.functional_role_overview_enabled_validation();
 		List<Object> functional_role_Overview_table_validation = f
-				.functional_role_Overview_table_validation_for_more_than_one_ECU("Myself", prop.getUser_name(),
+				.functional_role_Overview_table_validation_for_more_than_one_ECU("Myself", ctx().prop.getUser_name(),
 						select_user_type, functional_role_selected);
-		softassertTrue(s, (boolean) functional_role_Overview_table_validation.get(0).equals(prop.getStatus_pending()));
+		softassertTrue(s, (boolean) functional_role_Overview_table_validation.get(0).equals(ctx().prop.getStatus_pending()));
 		test.pass("View approval status as pending once the requests created");
 		test.info("Requester details : " + functional_role_Overview_table_validation);
 		return functional_role_Overview_table_validation;
@@ -188,34 +188,34 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 			throw new RuntimeException("Invalid user_type passed: " + user_type);
 		}
 		Thread.sleep(3000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		// hari
-		// h.dropBtn();
+		// ctx().h.dropBtn();
 
 		String select_user_type = null;
 
 		if ("Internal".equalsIgnoreCase(user_type)) {
-			h.click_here_to_apply_for_functional_roles_click();
+			ctx().h.click_here_to_apply_for_functional_roles_click();
 			select_user_type = user_type;
 		} else {
 
-			select_user_type = h.select_user_type(user_type);
+			select_user_type = ctx().h.select_user_type(user_type);
 			test.log(Status.INFO, "User is selects the type:" + "<span style=\"color: blue;\"><b><i><u>"
 					+ select_user_type + "</u></i></b>");
 		}
 
 		Thread.sleep(3000);
-		gtc.gtc_page_validation();
+		ctx().gtc.gtc_page_validation();
 		test.info("User validates the gtc page");
 		logger.info("User validates the gtc page");
 		Thread.sleep(5000);
 
-		// JavascriptExecutor js = (JavascriptExecutor) driver;
+		// JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
 		// js.executeScript("document.body.style.zoom='80%'");
 
-		newrequest.select_vehicle_program_global(user_type);
-		newrequest.functional_role_page_validation(prop.get_for_whom_txt(), prop.get_myself_txt(),
-				prop.get_Functional_role_txt());
+		ctx().newrequest.select_vehicle_program_global(user_type);
+		ctx().newrequest.functional_role_page_validation(ctx().prop.get_for_whom_txt(), ctx().prop.get_myself_txt(),
+				ctx().prop.get_Functional_role_txt());
 
 		test.pass("validates the functional role page");
 		logger.info("validates the functional role page");
@@ -227,32 +227,32 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 	public static String select_user_Global(String user_type) throws Throwable {
 
 		// hari
-		h.dropBtn();
+		ctx().h.dropBtn();
 
 		String select_user_type = null;
 		logger.info("USER TYPE : "+ user_type);
 		if ("Internal".equalsIgnoreCase(user_type)) {
-			h.click_here_to_apply_for_functional_roles_click();
+			ctx().h.click_here_to_apply_for_functional_roles_click();
 			select_user_type = user_type;
 		} else {
-			select_user_type = h.select_user_type(user_type);
+			select_user_type = ctx().h.select_user_type(user_type);
 			test.log(Status.INFO, "User is selects the type:" + "<span style=\"color: blue;\"><b><i><u>"
 					+ select_user_type + "</u></i></b>");
 		}
 
 		Thread.sleep(3000);
-		gtc.gtc_page_validation();
+		ctx().gtc.gtc_page_validation();
 		test.info("User validates the gtc page");
 		logger.info("User validates the gtc page");
 		Thread.sleep(5000);
 
 		logger.info("About to zoom out");
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
 		js.executeScript("document.body.style.zoom='80%'");
 
-		newrequest.select_vehicle_program_global(user_type);
-		newrequest.functional_role_page_validation(prop.get_for_whom_txt(), prop.get_myself_txt(),
-				prop.get_Functional_role_txt());
+		ctx().newrequest.select_vehicle_program_global(user_type);
+		ctx().newrequest.functional_role_page_validation(ctx().prop.get_for_whom_txt(), ctx().prop.get_myself_txt(),
+				ctx().prop.get_Functional_role_txt());
 
 		test.pass("validates the functional role page");
 		logger.info("validates the functional role page");

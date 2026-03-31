@@ -22,7 +22,7 @@ public class TC86_SpecialEnhancedRight_Rejected extends BaseClass {
 				+ "</u></i></b>");
 		TC01_Login_MFA.login_with_addressing_MFA();
 		Thread.sleep(11000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		special.clickSpecialAccess(); 
 		special.special_access();
 		special.Special_Enhanced_right();

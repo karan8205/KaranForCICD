@@ -23,7 +23,7 @@ public class TC13_EnhanceRightAuthority_GLOBAL_Approved extends BaseClass {
 				+ "Enhance Right Authority Internal -status Approved" + "</u></i></b>");		
 		TC11_EnhanceRightAuthority_GLOBAL.create_Enhance_right_Authority_Request_Internal_test_case(input);
 		Thread.sleep(3000);
-		req.search_here(prop.getUser_name());
+		ctx().req.search_here(prop.getUser_name());
 		approve_Enhance_Right_Authority_request(input);
 		softAssertionALL();
 	}
@@ -35,9 +35,9 @@ public class TC13_EnhanceRightAuthority_GLOBAL_Approved extends BaseClass {
 				+ "Enhance Right Authority External -status Approved" + "</u></i></b>");
 
 		TC11_EnhanceRightAuthority_GLOBAL.create_Enhance_right_Authority_Request_External_test_case(input);
-		req.request_Overview();	
-		req.select_Enhance_Right();
-		req.search_here(prop.getUser_name());
+		ctx().req.request_Overview();	
+		ctx().req.select_Enhance_Right();
+		ctx().req.search_here(prop.getUser_name());
 		approve_Enhance_Right_Authority_request(input);
 		test.pass("Create Enhance right request when the status is approved");
 		logger.info("Create Enhance right request when the status is approved");
@@ -53,9 +53,9 @@ public class TC13_EnhanceRightAuthority_GLOBAL_Approved extends BaseClass {
 		
 
 		TC11_EnhanceRightAuthority_GLOBAL.create_Enhance_right_Authority_Request_Supplier_test_case(input);
-		req.search_here(prop.getUser_name());	
+		ctx().req.search_here(prop.getUser_name());	
 		
-		approve_Enhance_Right_Authority_request(input,prop.getUser_name());
+		approve_Enhance_Right_Authority_request(input,ctx().prop.getSupplierName());
 		test.pass("Create Enhance right request when the status is approved");
 		logger.info("Create Enhance right request when the status is approved");
 		softAssertionALL();
@@ -115,12 +115,12 @@ public class TC13_EnhanceRightAuthority_GLOBAL_Approved extends BaseClass {
 			} else {
 				String enhance_right_approval_status_after_level1_approval = approver_overview
 						.approveEnhanceRight_authority_Request(create_Enhance_Right_Authority_request.get(7),
-								"Enhance Right", prop.getStatus_pending(), create_Enhance_Right_Authority_request);
-				s.assertTrue(enhance_right_approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
+								"Enhance Right", ctx().prop.getStatus_pending(), create_Enhance_Right_Authority_request);
+				ctx().s.assertTrue(enhance_right_approval_status_after_level1_approval.equals(ctx().prop.getStatus_Approved()));
 				test.pass("User is able to view the approval status as Approved after 1st level approval");
 				logger.info("User is able to view the approval status as Approved after 1st level approval");
-				req.navigate_to_request_Overview_page_and_verify_approval_status_ER(prop.getStatus_Approved(), "N/A",
-						"N/A", "Enhance Right", prop.getUser_name());
+				ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_ER(ctx().prop.getStatus_Approved(), "N/A",
+						"N/A", "Enhance Right", ctx().prop.getSupplierName());
 				test.pass(
 						"View navigate to request overview page and status is approved after 1st level approval");
 				logger.info(
@@ -134,25 +134,25 @@ public class TC13_EnhanceRightAuthority_GLOBAL_Approved extends BaseClass {
 			List<Object> create_and_approve_Internal_FR_request, List<Object> create_Enhance_Right_Authority_request) throws Throwable {
 		String enhance_right_approval_status_after_level1_approval = approver_overview
 				.approveEnhanceRight_authority_Request(create_Enhance_Right_Authority_request.get(7),
-						"Enhance Right", prop.getStatus_pending(), create_Enhance_Right_Authority_request);
-		s.assertTrue(enhance_right_approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
+						"Enhance Right", ctx().prop.getStatus_pending(), create_Enhance_Right_Authority_request);
+		ctx().s.assertTrue(enhance_right_approval_status_after_level1_approval.equals(ctx().prop.getStatus_Approved()));
 		test.pass("View the approval status as Approved after 1st level approval");
 		logger.info("View the approval status as Approved after 1st level approval");
-		req.navigate_to_request_Overview_page_and_verify_approval_status_ER(prop.getStatus_pending(), "N/A",
-				"N/A", "Enhance Right", prop.getUser_name());
+		ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_ER(ctx().prop.getStatus_pending(), "N/A",
+				"N/A", "Enhance Right", ctx().prop.getUser_name());
 		test.pass(
 				"View navigate to request overview page and status is pending after 1st level approval");
 		logger.info(
 				"View navigate to request overview page and status is pending after 1st level approval");
 		String enhance_right_approval_status_after_level2_approval = approver_overview
 				.approveEnhanceRight_authority_Request(create_Enhance_Right_Authority_request.get(7),
-						"Enhance Right", prop.getStatus_pending(), create_Enhance_Right_Authority_request);
-		s.assertTrue(enhance_right_approval_status_after_level2_approval.equals(prop.getStatus_Approved()));
+						"Enhance Right", ctx().prop.getStatus_pending(), create_Enhance_Right_Authority_request);
+		ctx().s.assertTrue(enhance_right_approval_status_after_level2_approval.equals(ctx().prop.getStatus_Approved()));
 		test.pass("View the approval status as Approved after 2nd level approval");
 		logger.info("View the approval status as Approved after 2nd level approval");
 		String todays_date = todays_date();
-		req.navigate_to_request_Overview_page_and_verify_approval_status_ER(prop.getStatus_Approved(),
-				todays_date, "N/A", "Enhance Right", prop.getUser_name());
+		ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_ER(ctx().prop.getStatus_Approved(),
+				todays_date, "N/A", "Enhance Right", ctx().prop.getUser_name());
 		test.pass(
 				"View navigate to request overview page and status is approved after 2nd level approval");
 		logger.info(
@@ -161,7 +161,7 @@ public class TC13_EnhanceRightAuthority_GLOBAL_Approved extends BaseClass {
 	}
 	public static void two_level_approval_Enhance_right(HashMap<String, String> input) throws Throwable {
 		
-		List<String> applicantNumber=req.getMultipleApplicantNumber();
+		List<String> applicantNumber=ctx().req.getMultipleApplicantNumber();
 		logger.info("EA Request Number : "+applicantNumber);
 		String userrole = input.get("User_role_EA");
 		String[] user = userrole.split("/");
@@ -172,22 +172,22 @@ public class TC13_EnhanceRightAuthority_GLOBAL_Approved extends BaseClass {
 		if(u.equalsIgnoreCase("Development ENHANCED")||u.equalsIgnoreCase("After-Sales STANDARD")) { //Development ENHANCED
 		String enhance_right_approval_status_after_level1_approval = approver_overview
 				.approveEnhanceRight_authority_Request(input,id);
-		s.assertTrue(enhance_right_approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
+		ctx().s.assertTrue(enhance_right_approval_status_after_level1_approval.equals(ctx().prop.getStatus_Approved()));
 		test.pass("View the approval status as Approved after 1st level approval");
 		logger.info("View the approval status as Approved after 1st level approval");
 				
-		req.navigate_to_request_Overview_page_and_verify_approval_status_ER(prop.getStatus_pending(), "N/A",
+		ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_ER(ctx().prop.getStatus_pending(), "N/A",
 				"N/A", "Enhance Right",id);
 		test.pass(
 				"View navigate to request overview page and status is pending after 1st level approval");
 		logger.info(
 				"View navigate to request overview page and status is pending after 1st level approval");
-		String enhance_right_approval_status_after_level2_approval = approver_overview.approveEnhanceRight_authority_Request(input,id);
-		s.assertTrue(enhance_right_approval_status_after_level2_approval.equals(prop.getStatus_Approved()));
+		String enhance_right_approval_status_after_level2_approval = ctx().approver_overview.approveEnhanceRight_authority_Request(input,id);
+		ctx().s.assertTrue(enhance_right_approval_status_after_level2_approval.equals(ctx().prop.getStatus_Approved()));
 		test.pass("View the approval status as Approved after 2nd level approval");
 		logger.info("View the approval status as Approved after 2nd level approval");
 		String todays_date = todays_date();
-		req.navigate_to_request_Overview_page_and_verify_approval_status_ER(prop.getStatus_Approved(),
+		ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_ER(ctx().prop.getStatus_Approved(),
 				todays_date, "N/A", "Enhance Right",id);
 		test.pass(
 				"View navigate to request overview page and status is approved after 2nd level approval");
@@ -197,11 +197,11 @@ public class TC13_EnhanceRightAuthority_GLOBAL_Approved extends BaseClass {
 		else {
 			String enhance_right_approval_status_after_level1_approval = approver_overview
 					.approveEnhanceRight_authority_Request(input,id);
-			s.assertTrue(enhance_right_approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
+			ctx().s.assertTrue(enhance_right_approval_status_after_level1_approval.equals(ctx().prop.getStatus_Approved()));
 			test.pass("View the approval status as Approved after 1st level approval");
 			logger.info("View the approval status as Approved after 1st level approval");
 					
-			req.navigate_to_request_Overview_page_and_verify_approval_status_ER(prop.getStatus_pending(), "N/A",
+			ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_ER(ctx().prop.getStatus_pending(), "N/A",
 					"N/A", "Enhance Right",id);
 			test.pass(
 					"View navigate to request overview page and status is pending after 1st level approval");
@@ -214,14 +214,14 @@ public class TC13_EnhanceRightAuthority_GLOBAL_Approved extends BaseClass {
 	
 public static void one_level_approval_Enhance_right(HashMap<String, String> input) throws Throwable {
 		
-		List<String> applicantNumber=req.getMultipleApplicantNumber();
+		List<String> applicantNumber=ctx().req.getMultipleApplicantNumber();
 		for(String id:applicantNumber) {
 		String enhance_right_approval_status_after_level1_approval = approver_overview
 				.approveEnhanceRight_authority_Request(input,id);
-		s.assertTrue(enhance_right_approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
+		ctx().s.assertTrue(enhance_right_approval_status_after_level1_approval.equals(ctx().prop.getStatus_Approved()));
 		test.pass("View the approval status as Approved after 1st level approval");
 		logger.info("View the approval status as Approved after 1st level approval");		
-		req.navigate_to_request_Overview_page_and_verify_approval_status_ER(prop.getStatus_pending(), "N/A",
+		ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_ER(ctx().prop.getStatus_pending(), "N/A",
 				"N/A", "Enhance Right",id);		
 		logger.info(
 				"View navigate to request overview page and status is approved after 2nd level approval");

@@ -26,7 +26,7 @@ public class TC004_SpecialAccess_TestSuite_E2E extends BaseClass {
 				+ "</u></i></b>");
 		TC01_Login_MFA.login_with_addressing_MFA_External();
 		Thread.sleep(3000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		Thread.sleep(10000);	
 		special.clickSpecialAccess();
 		windowZoomOut();
@@ -40,7 +40,7 @@ public class TC004_SpecialAccess_TestSuite_E2E extends BaseClass {
 		TC81_ADD_UpdateFR_ECU_Approved.AddFunctionalRole_Approve(input,Functional);
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Creation of Special Enhance Right Request" + "</u></i></b>");
-		TC87_SpecialEnhancedRight_Approved.SpecialEnhanceRight_Approve(input);
+		TC87_SpecialEnhancedRight_Approved.SpecialEnhanceRight_Approve(input,ctx().prop.getExternalName());
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Remove Update Functional Role Ecu Qualifier" + "</u></i></b>");
 		TC84_REMOVE_UpdateFR_ECU_Approved.removeFunctionalRole_Approve(input,Functional);

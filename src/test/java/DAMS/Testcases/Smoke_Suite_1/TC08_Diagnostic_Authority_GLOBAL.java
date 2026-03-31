@@ -36,7 +36,7 @@ public class TC08_Diagnostic_Authority_GLOBAL extends BaseClass {
 		String select_user_type = TC02_Requests_STD_GLOBAL.login_and_select_user_Global(prop.get_user_type_external());
 		String functional_role_selected =TC02_Requests_STD_GLOBAL. raise_External_functional_role(input);
 		List<Object> functional_role=	TC06_STD_GLOBAL_FRapproved.create_and_approve_External_FR_request(input);
-		create_DA_request(input, functional_role);
+		create_DA_request(input, functional_role,ctx().prop.getExternalName());
 		softAssertionALL();
 	}
 
@@ -78,14 +78,14 @@ public class TC08_Diagnostic_Authority_GLOBAL extends BaseClass {
 
 	}
 
-	public static List<String> create_DA_request(HashMap<String, String> input, List<Object> functional_role)
+	public static List<String> create_DA_request(HashMap<String, String> input, List<Object> functional_role,String username)
 			throws Throwable {
 		test.info("Diagnostic Authority request");
 		logger.info("Diagnostic Authority request");
 		myreq.select_NewPermission_request();
 		boolean request_Overview_enabled=newper.Diagnostic_Authority_External_Created(input);
 		s.assertTrue(request_Overview_enabled);
-		List<String> request_Overview_input = req.request_Overview_table_validation(prop.getUser_name(), "ALL");
+		List<String> request_Overview_input = req.request_Overview_table_validation(username, "ALL");
 		s.assertTrue(request_Overview_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("View the approval status as pending once the DA request created");
 		logger.info("View the approval status as pending once the DA request created");
@@ -99,7 +99,7 @@ public class TC08_Diagnostic_Authority_GLOBAL extends BaseClass {
 		myreq.select_NewPermission_request();
 		boolean request_Overview_enabled=newper.Diagnostic_Authority_Supplier_Created(input);
 		s.assertTrue(request_Overview_enabled);
-		List<String> request_Overview_input = req.request_Overview_table_validation(prop.getUser_name(), "ALL");
+		List<String> request_Overview_input = req.request_Overview_table_validation(ctx().prop.getSupplierName(), "ALL");
 		s.assertTrue(request_Overview_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("View the approval status as pending once the DA request created");
 		logger.info("View the approval status as pending once the DA request created");

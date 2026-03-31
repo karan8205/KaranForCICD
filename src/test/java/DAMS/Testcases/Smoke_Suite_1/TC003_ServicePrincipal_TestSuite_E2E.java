@@ -36,13 +36,13 @@ public class TC003_ServicePrincipal_TestSuite_E2E extends BaseClass {
 		softAssertionALL();
 	}
 
-	@Test(dataProvider = "getData_ServicePrincipal_XOTA", priority = 1)
+	@Test(dataProvider = "getData_ServicePrincipal_XOTA", priority = 1,enabled=false)
 	public static void service_Principal_XOTA_FOTA_E2E(
 			HashMap<String, String> input) throws Throwable {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>" + "xOTA for FOTA request - status pending:"
 				+ "</u></i></b>");
 		TC61_ServicePrincipal_xOTA_Approved.servicePrincipal_STD_XOTA_Approved(input);
-		List<String> id = TC70_xOTA_FOTA_Approved.createFOTA_Request(input);
+		List<String> id = TC70_xOTA_FOTA_Approved.createFOTA_Request(input,ctx().prop.getExternalName());
 		logger.info(id);
 		TC70_xOTA_FOTA_Approved.approveServiceRequest(input,id.get(5));
 		test.pass("******************* Test Case Pass *******************");

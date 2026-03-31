@@ -10,7 +10,7 @@ pipeline {
 
     parameters {
         choice(name: 'env', choices: ['STG', 'DEV', 'QA'], description: 'Select the Environment')
-        string(name: 'className', defaultValue: '', description: 'Enter Test Class Name (e.g., TC01_Login)')
+        string(name: 'className', defaultValue: '', description: 'Enter Fully Qualified Class Name (e.g., package.TC01_Login)')
         string(name: 'methodName', defaultValue: '', description: 'Enter Method Name (Optional)')
     }
 
@@ -56,20 +56,31 @@ pipeline {
             steps {
                 script {
 
-                    def testCmd = "-Denv=${params.env}"
+                    def cmd = "-Denv=${params.env}"
 
+                    // ✅ If class is passed → use dynamic XML parameter
                     if (params.className?.trim()) {
 
+                        cmd = "${cmd} -DclassName=${params.className}"
+
                         if (params.methodName?.trim()) {
-                            testCmd = "${testCmd} -Dtest=${params.className}#${params.methodName}"
-                        } else {
-                            testCmd = "${testCmd} -Dtest=${params.className}"
+                            cmd = "${cmd} -DmethodName=${params.methodName}"
                         }
 
-                        bat "mvn test ${testCmd}"
+                        bat """
+                        mvn test ^
+                        -Dsurefire.suiteXmlFiles=testSuites/RegressionSuite_TestNG.xml ^
+                        ${cmd}
+                        """
 
                     } else {
-                        bat "mvn test -Dsurefire.suiteXmlFiles=testSuites/RegressionSuite_TestNG.xml -Denv=${params.env}"
+
+                        // ✅ Default execution
+                        bat """
+                        mvn test ^
+                        -Dsurefire.suiteXmlFiles=testSuites/RegressionSuite_TestNG.xml ^
+                        -Denv=${params.env}
+                        """
                     }
                 }
             }

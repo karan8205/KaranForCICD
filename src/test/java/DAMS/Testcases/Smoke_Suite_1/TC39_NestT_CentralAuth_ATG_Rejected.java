@@ -21,7 +21,7 @@ public class TC39_NestT_CentralAuth_ATG_Rejected extends BaseClass {
 				+ "Nest_T Request for Internal- status rejected:" + "</u></i></b>");
 		TC07_STD_ATG_FRapproved.Funtional_role_request_approved_Internal(input);
  		List<String >create_special_cases_nestT_request=TC38_NestT_CentralAuth_ATG. create_special_cases_nestT_request(input);		
-		reject_special_cases_nestT_request(input, create_special_cases_nestT_request);
+		reject_special_cases_nestT_request(input, create_special_cases_nestT_request,ctx().prop.getInternalName());
 		test.pass("User is able to verify Nest-T request creation when the status is rejected");
 		logger.info("User is able to verify Nest-T request creation when the status is rejected");
 		softAssertionALL();
@@ -33,7 +33,7 @@ public class TC39_NestT_CentralAuth_ATG_Rejected extends BaseClass {
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Nest_T Request for Supplier - status pending:" + "</u></i></b>");
 		List<String >create_special_cases_nestT_request=TC38_NestT_CentralAuth_ATG. create_special_cases_nestT_request_Supplier(input);
-		reject_special_cases_nestT_request(input, create_special_cases_nestT_request);
+		reject_special_cases_nestT_request(input, create_special_cases_nestT_request,ctx().prop.getSupplierName());
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Nest-T Testing for Supplier- status Approved-ATG:" + "</u></i></b>");
 		softAssertionALL();
@@ -56,14 +56,14 @@ public class TC39_NestT_CentralAuth_ATG_Rejected extends BaseClass {
 	}
 
 	public static void reject_special_cases_nestT_request(HashMap<String, String> input,
-			List<String> create_special_cases_nestT_request) throws Throwable {
+			List<String> create_special_cases_nestT_request,String username) throws Throwable {
 		String NestT_approval_status_after_level1_approval = approver_overview
 				.rejecttheNestT_Request(reason_for_rejection, "Nest T Testing", create_special_cases_nestT_request);
 		s.assertTrue(NestT_approval_status_after_level1_approval.equals(prop.getStatus_rejected()));
 		test.pass("User is able to view the approval status as rejected in approver page");
 		logger.info("User is able to view the approval status as rejected in approver page");
 		req.navigate_to_request_Overview_page_and_verify_approval_status(prop.getStatus_rejected(), "N/A",
-				reason_for_rejection, "Nest-T Testing", prop.getUser_name());
+				reason_for_rejection, "Nest-T Testing", username);
 		test.pass("User is able to view the approval status as rejected in request overview page");
 		logger.info("User is able to view the approval status as rejected in request overview page");
 	}

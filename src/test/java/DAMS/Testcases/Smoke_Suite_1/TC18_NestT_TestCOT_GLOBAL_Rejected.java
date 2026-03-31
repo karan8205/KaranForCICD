@@ -23,8 +23,8 @@ public class TC18_NestT_TestCOT_GLOBAL_Rejected extends BaseClass {
 				+ "Nest_T Request for Internal- status rejected:" + "</u></i></b>");
 
 		TC06_STD_GLOBAL_FRapproved.Functional_role_request_approved_Internal(input);
- 		List<String >create_special_cases_nestT_request=TC17_NestT_TestCOT_GLOBAL. create_special_cases_nestT_request(input);		
-		reject_special_cases_nestT_request(input, create_special_cases_nestT_request);
+ 		List<String >create_special_cases_nestT_request=TC17_NestT_TestCOT_GLOBAL. create_special_cases_nestT_request(input,ctx().prop.getInternalName());
+		reject_special_cases_nestT_request(input, create_special_cases_nestT_request,ctx().prop.getInternalName());
 		test.pass("User is able to verify Nest-T request creation when the status is rejected");
 		logger.info("User is able to verify Nest-T request creation when the status is rejected");
 		softAssertionALL();
@@ -36,7 +36,7 @@ public class TC18_NestT_TestCOT_GLOBAL_Rejected extends BaseClass {
 				+ "</u></i></b>");
 		TC06_STD_GLOBAL_FRapproved.Functional_role_request_approved_External(input);
 		List<String >create_special_cases_nestT_request=TC17_NestT_TestCOT_GLOBAL.create_special_cases_nestT_request_External(input);
-		reject_special_cases_nestT_request(input, create_special_cases_nestT_request);
+		reject_special_cases_nestT_request(input, create_special_cases_nestT_request,ctx().prop.getInternalName());
 
 		test.pass("User is able to verify Nest-T request creation when the status is in pending");
 		logger.info("User is able to verify Nest-T request creation when the status is in pending");
@@ -54,7 +54,7 @@ public class TC18_NestT_TestCOT_GLOBAL_Rejected extends BaseClass {
 
 		List<String> create_special_cases_nestT_request = TC17_NestT_TestCOT_GLOBAL
 				.create_special_cases_nestT_request_Supplier(input);
-		reject_special_cases_nestT_request(input, create_special_cases_nestT_request);
+		reject_special_cases_nestT_request(input, create_special_cases_nestT_request,ctx().prop.getInternalName());
 //		myreq.select_NewPermission_request();
 		test.pass("User is able to verify Nest-T request creation when the status is rejected");
 		logger.info("User is able to verify Nest-T request creation when the status is rejected");
@@ -88,14 +88,14 @@ public class TC18_NestT_TestCOT_GLOBAL_Rejected extends BaseClass {
 	}
 
 	public static void reject_special_cases_nestT_request(HashMap<String, String> input,
-			List<String> create_special_cases_nestT_request) throws Throwable {
+			List<String> create_special_cases_nestT_request,String username) throws Throwable {
 		String NestT_approval_status_after_level1_approval = approver_overview
 				.rejecttheNestT_Request(reason_for_rejection, "Nest T Testing", create_special_cases_nestT_request);
 		s.assertTrue(NestT_approval_status_after_level1_approval.equals(prop.getStatus_rejected()));
 		test.pass("User is able to view the approval status as rejected in approver page");
 		logger.info("User is able to view the approval status as rejected in approver page");
 		req.navigate_to_request_Overview_page_and_verify_approval_status(prop.getStatus_rejected(), "N/A",
-				reason_for_rejection, "Nest-T Testing", prop.getUser_name());
+				reason_for_rejection, "Nest-T Testing", username);
 		test.pass("User is able to view the approval status as rejected in request overview page");
 		logger.info("User is able to view the approval status as rejected in request overview page");
 	}

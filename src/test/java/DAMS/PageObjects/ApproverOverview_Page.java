@@ -1,8 +1,12 @@
 package DAMS.PageObjects;
 
-import DAMS.ObjectManager.PageObjectManager;
-import DAMS.Resources.AbstractComponents;
-import DAMS.Resources.BaseClass;
+import static DAMS.Resources.Listeners.test;
+
+import java.time.Duration;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
@@ -11,29 +15,23 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.testng.Assert;
+import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.asserts.SoftAssert;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-
-import static DAMS.Resources.Listeners.test;
+import DAMS.Resources.AbstractComponents;
+import DAMS.Resources.BaseClass;
 
 public class ApproverOverview_Page extends AbstractComponents {
-	WebDriver driver;
 	public static Logger logger = Logger.getLogger("DAMS");
 	String approval_date_txt;
 	String approval_status;
 
 	public ApproverOverview_Page(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(BaseClass.getDriver());
 	}
 
-	
 	@FindBy(xpath = "//mat-grid-tile-header[text()=\" Approver Overview\"]")
 	private WebElement approver_Overview_title;
 
@@ -91,9 +89,10 @@ public class ApproverOverview_Page extends AbstractComponents {
 	@FindBy(xpath = "//span[text()='Approver Overview']")
 	private WebElement menu_Id_Approver_Overview1;
 
-//	@FindBy(xpath = "//mat-card-content[1]/div/div[2]/mat-form-field/div/div[1]/div[3]/mat-select/div/div[1]")
-//	private WebElement Authorization_dropdown;
-	
+	// @FindBy(xpath =
+	// "//mat-card-content[1]/div/div[2]/mat-form-field/div/div[1]/div[3]/mat-select/div/div[1]")
+	// private WebElement Authorization_dropdown;
+
 	@FindBy(xpath = "//mat-select-trigger[text()=' Pending Permission Requests ']")
 	private WebElement Authorization_dropdown;
 
@@ -155,7 +154,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 	private WebElement Approver_Overview_filter_search;
 	@FindBy(xpath = "//mat-checkbox[.=' PENDING ']")
 	private WebElement Approver_Overview_filter_checkbox;
-	
+
 	@FindBy(xpath = "//span[text()=\"Apply Filter\"]")
 	private WebElement Approver_Overview_apply_filter;
 
@@ -176,7 +175,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 
 	@FindBy(xpath = "//div[text()=\"Approval Status\"]")
 	private WebElement Approver_Overview_Approval_Status;
-	
+
 	@FindBy(xpath = "//span[@class='mat-sort-header ng-tns-c162-60 ng-star-inserted']")
 	private WebElement ECU_Chain_Of_Trust_Type;
 
@@ -240,7 +239,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 	@FindBy(xpath = "//div[text()=\"Reason for Replacement Package Request\"]")
 	private WebElement Approver_Overview_Reason_for_Replacement_Package_Request;
 
-	@FindBy(xpath = "//table/tbody/tr/td[contains(@class,\"Requester-ID \")]")
+	@FindBy(xpath = "//table/tbody/tr/td[contains(@class,'Requester-ID')]")
 	private WebElement Approver_Overview_Requester_ID_txt;
 
 	@FindBy(xpath = "//table/tbody/tr/td[contains(@class,\"User-Type \")]")
@@ -260,7 +259,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 
 	@FindBy(xpath = "//table/tbody/tr/td[contains(@class,\"Application-Number\")]")
 	private WebElement Approver_Overview_applicant_number_txt;
-	
+
 	@FindBy(xpath = "//table/tbody/tr/td[contains(@class,\"Application-Number\")]")
 	private List<WebElement> Approver_Overview_applicant_numbers_txt;
 
@@ -455,22 +454,21 @@ public class ApproverOverview_Page extends AbstractComponents {
 
 	@FindBy(xpath = "//div[text()=\"Reason for ECU Certificate Request\"]")
 	private WebElement Approver_Overview_Reason_for_ECU_Certificate_Request;
-	
+
 	@FindBy(xpath = "//*[text()=\"Submit\"]")
 	private WebElement Submit;
-	
+
 	@FindBy(xpath = "//textarea[@placeholder='Maximum character limit is 500']")
 	private WebElement RejectionTxt;
-	
+
 	@FindBy(xpath = "//button[@aria-label='toggle row']")
 	private WebElement ApproverOverviewTable_Toggle;
-	
+
 	@FindBy(xpath = "//b[text()='Request Date:']")
 	private WebElement Table_Inside_RequestType;
-	
+
 	@FindBy(xpath = "//span[text()=' Approve']")
 	private WebElement approveBtn;
-	
 
 	public String change_request_status() throws InterruptedException {
 		Thread.sleep(5000);
@@ -480,11 +478,11 @@ public class ApproverOverview_Page extends AbstractComponents {
 	}
 
 	public void approver_Overview_reject() throws InterruptedException {
-//		Scrollright_waitForWebElementToAppear(Approver_Overview_Approval_Status);
+		// Scrollright_waitForWebElementToAppear(Approver_Overview_Approval_Status);
 		Thread.sleep(3000);
 		AbstractComponents.waitForelementToBeClickable(reject);
 		Thread.sleep(2000);
-//		click(reject);
+		// click(reject);
 		reject.click();
 	}
 
@@ -520,7 +518,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 			AbstractComponents.waitForelementToBeClickable(Approver_Overview_apply_filter);
 		}
 	}
-	
+
 	public void ECU_search(String status) throws Throwable {
 		try {
 			waitForWebElementToAppear(Approver_Overview_ECU_Qualifier_filter);
@@ -563,7 +561,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 
 	public void Authorization_roledropdown(String name) throws InterruptedException {
 		waitForWebElementToAppear(Authorization_dropdown);
-		logger.info("***Authorization_List: "+name);
+		logger.info("***Authorization_List: " + name);
 		clickJS(Authorization_dropdown);
 		clickelementmatchingtext(Authorization_List, name);
 	}
@@ -583,7 +581,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 
 	public void User_type(String type) {
 		String user_type = String.format("//span[contains(text(),'%s')]", type);
-		clickJS(driver.findElement(By.xpath(user_type)));
+		clickJS(BaseClass.getDriver().findElement(By.xpath(user_type)));
 
 	}
 
@@ -595,19 +593,19 @@ public class ApproverOverview_Page extends AbstractComponents {
 
 	public void internal_type() {
 
-//		clickJS(internal_type);
+		// clickJS(internal_type);
 
 	}
 
 	public void external_type() {
 
-//		clickJS(external_type);
+		// clickJS(external_type);
 
 	}
 
 	public void supplier_type() {
 
-//		clickJS(supplier_type);
+		// clickJS(supplier_type);
 
 	}
 
@@ -628,7 +626,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 
 		try {
 			Thread.sleep(5000);
-			waitForPageLoad(driver);
+			waitForPageLoad(BaseClass.getDriver());
 			AbstractComponents.waitForWebElementToAppear(Approver_Overview_approve_request);
 			AbstractComponents.waitForelementToBeClickable(Approver_Overview_approve_request);
 			clickJS(Approver_Overview_approve_request);
@@ -641,30 +639,30 @@ public class ApproverOverview_Page extends AbstractComponents {
 		}
 
 	}
-	
-	public void onBoard_Approval(String value,String id) throws InterruptedException {
-	
+
+	public void onBoard_Approval(String value, String id) throws InterruptedException {
+
 		approver_Overview_enabled1();
 		Authorization_roledropdown(value);
 		search_here(id);
-//		complete_btn();
+		// complete_btn();
 		Scrollright_waitForWebElementToAppear(Approver_Overview_Reason_for_Rejection);
 		click(Approver_Overview_approve_request);
-		Thread.sleep(1000);	
+		Thread.sleep(1000);
 	}
-	
-	public void Pending_Request_Approval(String value,String id) throws InterruptedException {
-		
+
+	public void Pending_Request_Approval(String value, String id) throws InterruptedException {
+
 		approver_Overview_enabled1();
 		Authorization_roledropdown(value);
 		search_here(id);
-//		complete_btn();
+		// complete_btn();
 		Thread.sleep(2000);
 		Scrollright_waitForWebElementToAppear(Approver_Overview_approve_request);
 		click(Approver_Overview_approve_request);
-		Thread.sleep(1000);	
+		Thread.sleep(1000);
 	}
-	
+
 	public void TwoLevelApprovel() throws Throwable {
 		AbstractComponents.waitForelementToBeClickable(Approver_Overview_approve_request);
 
@@ -674,12 +672,13 @@ public class ApproverOverview_Page extends AbstractComponents {
 		Thread.sleep(4000);
 		AbstractComponents.waitForelementToBeClickable(Approver_Overview_approve_request);
 		click(Approver_Overview_approve_request);
-		
+
 	}
+
 	public void TwoLevelApprovel_Service(String applicationNumber) throws Throwable {
 		ArrayList<String> al = new ArrayList<>();
 		Thread.sleep(3000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		waitForWebElementToAppear(Approver_Overview_approve_request);
 		AbstractComponents.waitForelementToBeClickable(Approver_Overview_approve_request);
 		click(Approver_Overview_approve_request);
@@ -688,7 +687,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 		Thread.sleep(4000);
 		AbstractComponents.waitForelementToBeClickable(Approver_Overview_approve_request);
 		f.functional_role_Overview_enabled1();
-		String id =f.functionalValidation(applicationNumber);
+		String id = f.functionalValidation(applicationNumber);
 		al.add(id);
 		al.add(applicationNumber);
 		approver_overview.approver_Overview_enabled1();
@@ -696,7 +695,9 @@ public class ApproverOverview_Page extends AbstractComponents {
 		AbstractComponents.waitForelementToBeClickable(Approver_Overview_approve_request);
 		click(Approver_Overview_approve_request);
 	}
-	public void TwoLevelApprovel_Service_DA_EA(String applicationNumber,String requesttype,String approval_status,String approval_date, String userrole) throws Throwable {
+
+	public void TwoLevelApprovel_Service_DA_EA(String applicationNumber, String requesttype, String approval_status,
+			String approval_date, String userrole) throws Throwable {
 		ArrayList<String> al = new ArrayList<>();
 		AbstractComponents.waitForelementToBeClickable(Approver_Overview_approve_request);
 		click(Approver_Overview_approve_request);
@@ -704,13 +705,14 @@ public class ApproverOverview_Page extends AbstractComponents {
 		logger.info("User is able to approve 1st level approval");
 		Thread.sleep(4000);
 		AbstractComponents.waitForelementToBeClickable(Approver_Overview_approve_request);
-		req.request_Overview_page_ServicePrincipal(requesttype,applicationNumber,approval_status,approval_date,userrole);
+		req.request_Overview_page_ServicePrincipal(requesttype, applicationNumber, approval_status, approval_date,
+				userrole);
 		approver_overview.approver_Overview_enabled1();
 		approver_overview.search_here(applicationNumber);
 		AbstractComponents.waitForelementToBeClickable(Approver_Overview_approve_request);
 		click(Approver_Overview_approve_request);
 	}
-	
+
 	public void search_ECU(String status) throws Throwable {
 
 		try {
@@ -732,7 +734,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 		search_item.sendKeys(object);
 		type(search_item, Keys.ENTER);
 	}
-	
+
 	public void rejectiontxt(String object) {
 		RejectionTxt.sendKeys(object);
 		type(RejectionTxt, Keys.ENTER);
@@ -744,15 +746,34 @@ public class ApproverOverview_Page extends AbstractComponents {
 		}
 	}
 
+//	public String Approver_Overview_Requester_ID_txt() {
+//		try {
+//			Thread.sleep(2000);
+//		
+//		waitForWebElementToAppear(Approver_Overview_Requester_ID_txt);
+//		return Approver_Overview_Requester_ID_txt.getText().trim();
+//		}catch(Exception e) {
+//			waitForWebElementToAppear(Approver_Overview_Requester_ID_txt);
+//			return Approver_Overview_Requester_ID_txt.getText().trim();
+//		}
+//
+//	}
 	public String Approver_Overview_Requester_ID_txt() {
-		try {
-			Thread.sleep(2000);
-		} catch (InterruptedException e) {
-			e.printStackTrace();
-		}
-		waitForWebElementToAppear(Approver_Overview_Requester_ID_txt);
-		return Approver_Overview_Requester_ID_txt.getText().trim();
+	    WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(30));
+	    int attempts = 0;
 
+	    while (attempts < 3) {
+	        try {
+	            wait.until(ExpectedConditions.refreshed(
+	                    ExpectedConditions.visibilityOf(Approver_Overview_Requester_ID_txt)
+	            ));
+	            return Approver_Overview_Requester_ID_txt.getText();
+	        } catch (StaleElementReferenceException e) {
+	            attempts++;
+	            PageFactory.initElements(new AjaxElementLocatorFactory(getDriver(), 10), this);
+	        }
+	    }
+	    throw new RuntimeException("Element still stale");
 	}
 
 	public String Approver_Overview_Usertype_txt() {
@@ -1053,47 +1074,48 @@ public class ApproverOverview_Page extends AbstractComponents {
 		} else {
 			supplier_type();
 		}
-//		complete_btn();
+		// complete_btn();
 		search_here(functional_role_Overview_table_input.get(1).toString());
-		
-		//Hari Start new ApproverOverview EXPANDABLE
-		
-//		Thread.sleep(2000);
-//		clickJS(ApproverOverviewTable_Toggle);
-//		Thread.sleep(3000);
-////		scrollDown(Table_Inside_RequestType);
-//		Thread.sleep(2000);
-//		scrollUp(Approver_Overview_Requester_id);
-//		Thread.sleep(2000);
-//		clickJS(ApproverOverviewTable_Toggle);
-		
-		//Hari End new ApproverOverview EXPANDABLE
+
+		// Hari Start new ApproverOverview EXPANDABLE
+
+		// Thread.sleep(2000);
+		// clickJS(ApproverOverviewTable_Toggle);
+		// Thread.sleep(3000);
+		//// scrollDown(Table_Inside_RequestType);
+		// Thread.sleep(2000);
+		// scrollUp(Approver_Overview_Requester_id);
+		// Thread.sleep(2000);
+		// clickJS(ApproverOverviewTable_Toggle);
+
+		// Hari End new ApproverOverview EXPANDABLE
 		Approver_Overview_Requester_ID_txt().equals(functional_role_Overview_table_input.get(2).toString());
-////		Approver_username_txt().equals(functional_role_Overview_table_input.get(5).toString());
-//		Approver_department_txt().equals(functional_role_Overview_table_input.get(6).toString());
-//		Approver_applicant_type_txt().equals(functional_role_Overview_table_input.get(7).toString());
-//		Approver_Overview_applicant_number_txt().equals(functional_role_Overview_table_input.get(1).toString());
-//		Approver_Overview_Functional_role_txt().equals(functional_role_Overview_table_input.get(8).toString());
-//		Approver_Overview_reason_for_Functional_Role_Request_txt().equals(funational_role_Overview_table_input.get(16).toString());
-		
-//		Approver_Overview_approval_status_txt().equals(functional_role_Overview_table_input.get(0).toString());
-//		Approver_Overview_standard_permission_cert_txt().equals(functional_role_Overview_table_input.get(15).toString());
-//		
-//		Approver_Overview_request_date_txt().equals(functional_role_Overview_table_input.get(13).toString());
-//		approval_date_txt = Approver_Overview_approval_date_txt();
-//		approval_date_txt.equals(functional_role_Overview_table_input.get(14).toString());
+		//// Approver_username_txt().equals(functional_role_Overview_table_input.get(5).toString());
+		// Approver_department_txt().equals(functional_role_Overview_table_input.get(6).toString());
+		// Approver_applicant_type_txt().equals(functional_role_Overview_table_input.get(7).toString());
+		// Approver_Overview_applicant_number_txt().equals(functional_role_Overview_table_input.get(1).toString());
+		// Approver_Overview_Functional_role_txt().equals(functional_role_Overview_table_input.get(8).toString());
+		// Approver_Overview_reason_for_Functional_Role_Request_txt().equals(funational_role_Overview_table_input.get(16).toString());
+
+		// Approver_Overview_approval_status_txt().equals(functional_role_Overview_table_input.get(0).toString());
+		// Approver_Overview_standard_permission_cert_txt().equals(functional_role_Overview_table_input.get(15).toString());
+		//
+		// Approver_Overview_request_date_txt().equals(functional_role_Overview_table_input.get(13).toString());
+		// approval_date_txt = Approver_Overview_approval_date_txt();
+		// approval_date_txt.equals(functional_role_Overview_table_input.get(14).toString());
 		Thread.sleep(2000);
 
 	}
 
 	public void approverOverviewPage_for_more_than_one_ECU(String authorization_value,
-			List<Object> funational_role_Overview_table_input, String functional_role_selected, String status, String eCU_selected2)
+			List<Object> funational_role_Overview_table_input, String functional_role_selected, String status,
+			String eCU_selected2)
 			throws Throwable {
 		approver_Overview_enabled1();
 		Authorization_roledropdown(authorization_value);
-//		complete_btn();
+		// complete_btn();
 		search_here(funational_role_Overview_table_input.get(1).toString());
-		List<List<String>> secondTableValues = BaseClass.getTableValuesExcludingLastColumn(driver,
+		List<List<String>> secondTableValues = BaseClass.getTableValuesExcludingLastColumn(BaseClass.getDriver(),
 				By.xpath("//table/tbody"));
 		boolean allFirstTableValuesPresentInSecondTable = BaseClass.checkFirstTableValuesPresenceSkippingCertainColumns(
 				(List<List<String>>) funational_role_Overview_table_input.get(4), secondTableValues);
@@ -1136,7 +1158,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 			String functional_role_selected, String status, String ECU_selected) throws Throwable {
 
 		approverOverviewPage_for_more_than_one_ECU(authorization_value, username, functional_role_selected,
-				status,ECU_selected);
+				status, ECU_selected);
 		return approve_request_for_more_than_one_ECU(ECU_selected);
 	}
 
@@ -1186,11 +1208,11 @@ public class ApproverOverview_Page extends AbstractComponents {
 			reset_filter();
 			Thread.sleep(200);
 			reset_filter();
-//			test.pass("APprover is able to approve the request");
-//			String done_status = change_request_status();
-//			if (done_status.trim().equals("Done")) {
-//				test.info("status changed to done");
-//			}
+			// test.pass("APprover is able to approve the request");
+			// String done_status = change_request_status();
+			// if (done_status.trim().equals("Done")) {
+			// test.info("status changed to done");
+			// }
 		} catch (StaleElementReferenceException e) {
 			approve_Request1(status);
 			reset_filter();
@@ -1220,8 +1242,8 @@ public class ApproverOverview_Page extends AbstractComponents {
 		approval_status = Approver_Overview_approval_status_txt();
 		return approval_status;
 	}
-	
-	public String approvetheDA_Request(String authorization_value, String status, String id)throws Throwable {	
+
+	public String approvetheDA_Request(String authorization_value, String status, String id) throws Throwable {
 		approver_Overview_enabled1();
 		Thread.sleep(2000);
 		Authorization_roledropdown(authorization_value);
@@ -1243,29 +1265,29 @@ public class ApproverOverview_Page extends AbstractComponents {
 			throws Throwable {
 		approver_Overview_enabled1();
 		Authorization_roledropdown(authorization_value);
-//		if (create_DA_request.get(4).equals("Internal")) {
-//			internal_type();
-//		} else if (create_DA_request.get(4).equals("External")) {
-//			external_type();
-//		} else {
-//			supplier_type();
-//		}
-//		complete_btn();
+		// if (create_DA_request.get(4).equals("Internal")) {
+		// internal_type();
+		// } else if (create_DA_request.get(4).equals("External")) {
+		// external_type();
+		// } else {
+		// supplier_type();
+		// }
+		// complete_btn();
 		search_here(create_DA_request.get(5));
-//		Approver_Overview_Requester_ID_txt().equals(create_DA_request.get(1));
-//		Approver_username_txt().equals(create_DA_request.get(2));
-//		Approver_Overview_Usertype_txt().equals(create_DA_request.get(9));
-//		Approver_department_txt().equals(create_DA_request.get(3));
-//		Approver_applicant_type_txt().equals(create_DA_request.get(4));
-//		Approver_Overview_Functional_role_txt().equals(create_DA_request.get(11));
-//		Approver_Overview_applicant_number_txt().equals(create_DA_request.get(5));
-//		Approver_Overview_user_role_txt().equals(create_DA_request.get(13));
-//		Approver_Overview_ECU_Qualifier_txt().equals(create_DA_request.get(12));
-//		Approver_Overview_approval_status_txt().equals(create_DA_request.get(0));
-//		Approver_Overview_Reason_for_Diagnostic_Authority_Request_txt().equals(create_DA_request.get(14));
-//		Approver_Overview_Reason_for_Rejection_txt().equals(create_DA_request.get(6));
-//		Approver_Overview_request_date_txt().equals(create_DA_request.get(7));
-//		Approver_Overview_approval_date_txt().equals(create_DA_request.get(8));
+		// Approver_Overview_Requester_ID_txt().equals(create_DA_request.get(1));
+		// Approver_username_txt().equals(create_DA_request.get(2));
+		// Approver_Overview_Usertype_txt().equals(create_DA_request.get(9));
+		// Approver_department_txt().equals(create_DA_request.get(3));
+		// Approver_applicant_type_txt().equals(create_DA_request.get(4));
+		// Approver_Overview_Functional_role_txt().equals(create_DA_request.get(11));
+		// Approver_Overview_applicant_number_txt().equals(create_DA_request.get(5));
+		// Approver_Overview_user_role_txt().equals(create_DA_request.get(13));
+		// Approver_Overview_ECU_Qualifier_txt().equals(create_DA_request.get(12));
+		// Approver_Overview_approval_status_txt().equals(create_DA_request.get(0));
+		// Approver_Overview_Reason_for_Diagnostic_Authority_Request_txt().equals(create_DA_request.get(14));
+		// Approver_Overview_Reason_for_Rejection_txt().equals(create_DA_request.get(6));
+		// Approver_Overview_request_date_txt().equals(create_DA_request.get(7));
+		// Approver_Overview_approval_date_txt().equals(create_DA_request.get(8));
 
 	}
 
@@ -1282,17 +1304,18 @@ public class ApproverOverview_Page extends AbstractComponents {
 		refresh();
 		return approval_status;
 	}
-	public String rejecttheDA_Request(String authorization_value, String reason,String search)
+
+	public String rejecttheDA_Request(String authorization_value, String reason, String search)
 			throws Throwable {
-		//hari
-//		approverOverviewPage_for_DA(authorization_value, create_DA_request);
+		// hari
+		// approverOverviewPage_for_DA(authorization_value, create_DA_request);
 		approver_Overview_enabled1();
 		Thread.sleep(2000);
 		Authorization_roledropdown(authorization_value);
 		Thread.sleep(2000);
 		System.out.println(search);
-		search_here(search);		
-//		complete_btn();	
+		search_here(search);
+		// complete_btn();
 		approver_Overview_reject();
 		reason_for_rejection(reason);
 		String done_status = change_request_status();
@@ -1319,22 +1342,23 @@ public class ApproverOverview_Page extends AbstractComponents {
 		approval_status = Approver_Overview_approval_status_txt();
 		return approval_status;
 	}
-	public String approveEnhanceRight_authority_Request(HashMap<String, String> input,String id) throws Throwable {
-//		approverOverviewPage_for_Enhance_right_authority(input);
-//		String id = input.get("Application Number");	
+
+	public String approveEnhanceRight_authority_Request(HashMap<String, String> input, String id) throws Throwable {
+		// approverOverviewPage_for_Enhance_right_authority(input);
+		// String id = input.get("Application Number");
 		approver_Overview_enabled1();
 		Authorization_roledropdown("Enhance Right");
 		Thread.sleep(2000);
-//		complete_btn();
+		// complete_btn();
 		Thread.sleep(2000);
 		search_here(id);
 		Thread.sleep(2000);
 		approve_Request(prop.getStatus_pending());
-//		Thread.sleep(3000);
-//		req.scrollForReason();
+		// Thread.sleep(3000);
+		// req.scrollForReason();
 		test.pass("Approver is able to approve the request");
 		reset_filter();
-		//reset_filter();
+		// reset_filter();
 		String done_status = change_request_status();
 		if (done_status.trim().equals("Done")) {
 			test.info("status changed to done");
@@ -1344,12 +1368,12 @@ public class ApproverOverview_Page extends AbstractComponents {
 		Thread.sleep(5000);
 		return approval_status;
 	}
-	
+
 	public void approverOverviewPage_for_Enhance_right_authority(Object object, String authorization_value,
 			List<Object> create_Enhance_Right_Authority_request) throws Throwable {
 		approver_Overview_enabled1();
 		Authorization_roledropdown(authorization_value);
-//		complete_btn();
+		// complete_btn();
 		search_here(create_Enhance_Right_Authority_request.get(7).toString());
 		Approver_Overview_Requester_ID_txt().equals(create_Enhance_Right_Authority_request.get(1));
 		Approver_username_txt().equals(create_Enhance_Right_Authority_request.get(2));
@@ -1366,27 +1390,28 @@ public class ApproverOverview_Page extends AbstractComponents {
 		Approver_Overview_approval_date_txt().equals(create_Enhance_Right_Authority_request.get(15));
 
 	}
+
 	public void approverOverviewPage_for_Enhance_right_authority(HashMap<String, String> input) throws Throwable {
 		approver_Overview_enabled1();
 		Authorization_roledropdown("Enhance Right");
 		Thread.sleep(2000);
-//		complete_btn();
+		// complete_btn();
 		Thread.sleep(2000);
 		String id = input.get("Application Number");
 		search_here(id);
-//		Approver_Overview_Requester_ID_txt().equals(create_Enhance_Right_Authority_request.get(1));
-//		Approver_username_txt().equals(create_Enhance_Right_Authority_request.get(2));
-//		Approver_department_txt().equals(create_Enhance_Right_Authority_request.get(5));
-//		Approver_applicant_type_txt().equals(create_Enhance_Right_Authority_request.get(6));
-//		Approver_Overview_applicant_number_txt().equals(create_Enhance_Right_Authority_request.get(7));
-//		Approver_Overview_Target_ECU_ID_txt().equals(create_Enhance_Right_Authority_request.get(8));
-//		Approver_Overview_Service_IDs_txt().equals(create_Enhance_Right_Authority_request.get(9));
-//		Approver_Overview_Validity_txt().equals(create_Enhance_Right_Authority_request.get(11));
-//		Approver_Overview_approval_status_txt().equals(create_Enhance_Right_Authority_request.get(0));
-//		Approver_Overview__DiagAuth_Certificatetxt().equals(create_Enhance_Right_Authority_request.get(10));
-//		Approver_Overview_Reason_for_Rejection_txt().equals(create_Enhance_Right_Authority_request.get(13));
-//		Approver_Overview_request_date_txt().equals(create_Enhance_Right_Authority_request.get(14));
-//		Approver_Overview_approval_date_txt().equals(create_Enhance_Right_Authority_request.get(15));
+		// Approver_Overview_Requester_ID_txt().equals(create_Enhance_Right_Authority_request.get(1));
+		// Approver_username_txt().equals(create_Enhance_Right_Authority_request.get(2));
+		// Approver_department_txt().equals(create_Enhance_Right_Authority_request.get(5));
+		// Approver_applicant_type_txt().equals(create_Enhance_Right_Authority_request.get(6));
+		// Approver_Overview_applicant_number_txt().equals(create_Enhance_Right_Authority_request.get(7));
+		// Approver_Overview_Target_ECU_ID_txt().equals(create_Enhance_Right_Authority_request.get(8));
+		// Approver_Overview_Service_IDs_txt().equals(create_Enhance_Right_Authority_request.get(9));
+		// Approver_Overview_Validity_txt().equals(create_Enhance_Right_Authority_request.get(11));
+		// Approver_Overview_approval_status_txt().equals(create_Enhance_Right_Authority_request.get(0));
+		// Approver_Overview__DiagAuth_Certificatetxt().equals(create_Enhance_Right_Authority_request.get(10));
+		// Approver_Overview_Reason_for_Rejection_txt().equals(create_Enhance_Right_Authority_request.get(13));
+		// Approver_Overview_request_date_txt().equals(create_Enhance_Right_Authority_request.get(14));
+		// Approver_Overview_approval_date_txt().equals(create_Enhance_Right_Authority_request.get(15));
 
 	}
 
@@ -1403,16 +1428,16 @@ public class ApproverOverview_Page extends AbstractComponents {
 		approval_status = Approver_Overview_approval_status_txt();
 		return approval_status;
 	}
-	
+
 	public String reject_Enhance_right_Request(String reason) throws Throwable {
-	
+
 		approver_Overview_reject();
 		reason_for_rejection(reason);
 		String done_status = change_request_status();
 		if (done_status.trim().equals("Done")) {
 			test.info("status changed to done");
 		}
-		approval_status = Approver_Overview_approval_status_txt();		
+		approval_status = Approver_Overview_approval_status_txt();
 		refresh();
 		return approval_status;
 	}
@@ -1436,23 +1461,23 @@ public class ApproverOverview_Page extends AbstractComponents {
 			List<String> create_replacement_package_request) throws Throwable {
 		approver_Overview_enabled1();
 		Authorization_roledropdown(authorization);
-//		User_type(type);
-//		complete_btn();
+		// User_type(type);
+		// complete_btn();
 		search_here(create_replacement_package_request.get(5));
-//		Thread.sleep(3000);
-//		Approver_Overview_Requester_ID_txt().equals(create_replacement_package_request.get(1));
-//		Approver_username_txt().equals(create_replacement_package_request.get(2));
-//		Approver_department_txt().equals(create_replacement_package_request.get(3));
-//		Approver_applicant_type_txt().equals(create_replacement_package_request.get(4));
-//		Approver_Overview_applicant_number_txt().equals(create_replacement_package_request.get(5));
-//		Approver_Overview__Origin_COT_txt().equals(create_replacement_package_request.get(6));
-//		Approver_Overview_Target_COT_txt().equals(create_replacement_package_request.get(7));
-//		Approver_Overview_ECU_Qualifier_txt().equals(create_replacement_package_request.get(8));
-//		Approver_Overview_approval_status_txt().equals(create_replacement_package_request.get(0));
-//		Approver_Overview_Replacement_Package_Request_txt().equals(create_replacement_package_request.get(9));
-//		Approver_Overview_Reason_for_Rejection_txt().equals(create_replacement_package_request.get(10));
-//		Approver_Overview_request_date_txt().equals(create_replacement_package_request.get(11));
-//		Approver_Overview_approval_date_txt().equals(create_replacement_package_request.get(12));
+		// Thread.sleep(3000);
+		// Approver_Overview_Requester_ID_txt().equals(create_replacement_package_request.get(1));
+		// Approver_username_txt().equals(create_replacement_package_request.get(2));
+		// Approver_department_txt().equals(create_replacement_package_request.get(3));
+		// Approver_applicant_type_txt().equals(create_replacement_package_request.get(4));
+		// Approver_Overview_applicant_number_txt().equals(create_replacement_package_request.get(5));
+		// Approver_Overview__Origin_COT_txt().equals(create_replacement_package_request.get(6));
+		// Approver_Overview_Target_COT_txt().equals(create_replacement_package_request.get(7));
+		// Approver_Overview_ECU_Qualifier_txt().equals(create_replacement_package_request.get(8));
+		// Approver_Overview_approval_status_txt().equals(create_replacement_package_request.get(0));
+		// Approver_Overview_Replacement_Package_Request_txt().equals(create_replacement_package_request.get(9));
+		// Approver_Overview_Reason_for_Rejection_txt().equals(create_replacement_package_request.get(10));
+		// Approver_Overview_request_date_txt().equals(create_replacement_package_request.get(11));
+		// Approver_Overview_approval_date_txt().equals(create_replacement_package_request.get(12));
 
 	}
 
@@ -1472,8 +1497,8 @@ public class ApproverOverview_Page extends AbstractComponents {
 	}
 
 	public String approvethenestT_Request(String authorization, String status,
-			List<String> create_special_cases_nestT_request) throws Throwable {
-		approverOverviewPage_for_NestT(authorization, create_special_cases_nestT_request);
+			List<String> create_special_cases_nestT_request,String username) throws Throwable {
+		approverOverviewPage_for_NestT(authorization, create_special_cases_nestT_request,username);
 		Thread.sleep(3000);
 		approve_Request(status);
 		test.pass("Approver is able to approve the request");
@@ -1487,43 +1512,23 @@ public class ApproverOverview_Page extends AbstractComponents {
 		approval_status = Approver_Overview_approval_status_txt();
 		return approval_status;
 	}
-	
-	public String approve_Multiple_nestT_Request(String authorization,String request_type, String status) throws Throwable {
-		
+
+	public String approve_Multiple_nestT_Request(String authorization, String request_type, String status,
+			String userName) throws Throwable {
+
 		req.request_Overview();
 		req.select_request_type(request_type);
-		search_here(prop.getUser_name());
+		search_here(userName);
 		filter_search(prop.getStatus_pending());
-		List<String > applicantNumber = new ArrayList<>();
+		List<String> applicantNumber = new ArrayList<>();
 		Thread.sleep(5000);
-		for(WebElement element : Approver_Overview_applicant_numbers_txt) {
-			if(!element.getText().isEmpty()){
-			applicantNumber.add(element.getText());}
+		for (WebElement element : Approver_Overview_applicant_numbers_txt) {
+			if (!element.getText().isEmpty()) {
+				applicantNumber.add(element.getText());
+			}
 		}
-		logger.info("************ Nest-T Approver Id's: "+applicantNumber);
-		for(String id:applicantNumber) {
-		approver_Overview_enabled1();
-		refresh();
-		Thread.sleep(8000);
-		Authorization_roledropdown(authorization);
-		search_here(id);
-		approve_Request(status);
-				test.pass("Approver is able to approve the request");
-				reset_filter();
-				reset_filter();
-				String done_status = change_request_status();
-				if (done_status.trim().equals("Done")) {
-					test.info("status changed to done");
-				}
-		}	
-				
-		
-		approval_status = Approver_Overview_approval_status_txt();
-		return approval_status;
-	}
-
-	public String multiple_Approve_Request(String authorization,String status,List<String> applicantNumber) throws Throwable {
-		for(String id:applicantNumber) {
+		logger.info("************ Nest-T Approver Id's: " + applicantNumber);
+		for (String id : applicantNumber) {
 			approver_Overview_enabled1();
 			refresh();
 			Thread.sleep(8000);
@@ -1536,55 +1541,78 @@ public class ApproverOverview_Page extends AbstractComponents {
 			String done_status = change_request_status();
 			if (done_status.trim().equals("Done")) {
 				test.info("status changed to done");
-			}		
-		}
-			approval_status = Approver_Overview_approval_status_txt();
-			return approval_status;
+			}
 		}
 
-	
-	public void approverOverviewPage_for_NestT(String authorization, List<String> create_special_cases_nestT_request)
+		approval_status = Approver_Overview_approval_status_txt();
+		return approval_status;
+	}
+
+	public String multiple_Approve_Request(String authorization, String status, List<String> applicantNumber)
+			throws Throwable {
+		for (String id : applicantNumber) {
+			approver_Overview_enabled1();
+			refresh();
+			Thread.sleep(8000);
+			Authorization_roledropdown(authorization);
+			search_here(id);
+			approve_Request(status);
+			test.pass("Approver is able to approve the request");
+			reset_filter();
+			reset_filter();
+			String done_status = change_request_status();
+			if (done_status.trim().equals("Done")) {
+				test.info("status changed to done");
+			}
+		}
+		approval_status = Approver_Overview_approval_status_txt();
+		return approval_status;
+	}
+
+	public void approverOverviewPage_for_NestT(String authorization, List<String> create_special_cases_nestT_request,
+			String userName)
 			throws Throwable {
 		approver_Overview_enabled1();
 		Thread.sleep(3000);
 		Thread.sleep(3000);
 		Authorization_roledropdown(authorization);
-//		if (create_special_cases_nestT_request.get(4).equals("Internal")) {
-//			internal_type();
-//		} else if (create_special_cases_nestT_request.get(4).equals("External")) {
-//			external_type();
-//		} else {
-//			supplier_type();
-//		}
-//		complete_btn();
-		search_here(prop.getUser_name());
+		// if (create_special_cases_nestT_request.get(4).equals("Internal")) {
+		// internal_type();
+		// } else if (create_special_cases_nestT_request.get(4).equals("External")) {
+		// external_type();
+		// } else {
+		// supplier_type();
+		// }
+		// complete_btn();
+		search_here(userName);
 		Thread.sleep(3000);
-//		Approver_Overview_Requester_ID_txt().equals(create_special_cases_nestT_request.get(1));
-//		Approver_username_txt().equals(create_special_cases_nestT_request.get(2));
-//		Approver_department_txt().equals(create_special_cases_nestT_request.get(3));
-//		Approver_applicant_type_txt().equals(create_special_cases_nestT_request.get(4));
-//		Approver_Overview_applicant_number_txt().equals(create_special_cases_nestT_request.get(5));
-//		Approver_Overview_ECU_Qualifier_txt().equals(create_special_cases_nestT_request.get(7));
-//		Approver_Overview_approval_status_txt().equals(create_special_cases_nestT_request.get(5));
-//		Approver_Overview_Reason_for_NestT_Request_NestT().equals(create_special_cases_nestT_request.get(6));
-//		Approver_Overview_Reason_for_Rejection_txt().equals(create_special_cases_nestT_request.get(8));
-//		Approver_Overview_request_date_txt().equals(create_special_cases_nestT_request.get(9));
-//		Approver_Overview_approval_date_txt().equals(create_special_cases_nestT_request.get(10));
+		// Approver_Overview_Requester_ID_txt().equals(create_special_cases_nestT_request.get(1));
+		// Approver_username_txt().equals(create_special_cases_nestT_request.get(2));
+		// Approver_department_txt().equals(create_special_cases_nestT_request.get(3));
+		// Approver_applicant_type_txt().equals(create_special_cases_nestT_request.get(4));
+		// Approver_Overview_applicant_number_txt().equals(create_special_cases_nestT_request.get(5));
+		// Approver_Overview_ECU_Qualifier_txt().equals(create_special_cases_nestT_request.get(7));
+		// Approver_Overview_approval_status_txt().equals(create_special_cases_nestT_request.get(5));
+		// Approver_Overview_Reason_for_NestT_Request_NestT().equals(create_special_cases_nestT_request.get(6));
+		// Approver_Overview_Reason_for_Rejection_txt().equals(create_special_cases_nestT_request.get(8));
+		// Approver_Overview_request_date_txt().equals(create_special_cases_nestT_request.get(9));
+		// Approver_Overview_approval_date_txt().equals(create_special_cases_nestT_request.get(10));
 	}
 
 	public String rejecttheNestT_Request(String reason, String authorization,
 			List<String> create_special_cases_nestT_request) throws Throwable {
-//		approverOverviewPage_for_NestT(authorization, create_special_cases_nestT_request);
-		for(String id : create_special_cases_nestT_request) {
-		Reject_Request(id);
-		Thread.sleep(3000);
-//		reason_for_rejection(reason);
-//		Thread.sleep(3000);
-//		String done_status = change_request_status();
-//		if (done_status.trim().equals("Done")) {
-//			test.info("status changed to done");
-//		}
-//		approval_status = Approver_Overview_approval_status_txt();
+		// approverOverviewPage_for_NestT(authorization,
+		// create_special_cases_nestT_request);
+		for (String id : create_special_cases_nestT_request) {
+			Reject_Request(id);
+			Thread.sleep(3000);
+			// reason_for_rejection(reason);
+			// Thread.sleep(3000);
+			// String done_status = change_request_status();
+			// if (done_status.trim().equals("Done")) {
+			// test.info("status changed to done");
+			// }
+			// approval_status = Approver_Overview_approval_status_txt();
 		}
 		return approval_status;
 	}
@@ -1717,7 +1745,7 @@ public class ApproverOverview_Page extends AbstractComponents {
 		Approver_Overview_ECU_Qualifier_txt().equals(request_Overview_table_FOTA.get(9));
 		Approver_Overview_Additional_Service_IDs_txt().equals(request_Overview_table_FOTA.get(10));
 		Approver_Overview_Permission_Validity_Days_txt().equals(request_Overview_table_FOTA.get(11));
-	//	Approver_Overview_Permission_Validity_Status_txt().equals(request_Overview_table_FOTA.get(12));
+		// Approver_Overview_Permission_Validity_Status_txt().equals(request_Overview_table_FOTA.get(12));
 		Approver_Overview_Enhance_Cert_validity_txt().equals(request_Overview_table_FOTA.get(13));
 		Approver_Overview_Reason_for_FOTA_Request_txt().equals(request_Overview_table_FOTA.get(14));
 		Approver_Overview_approval_status_txt().equals(request_Overview_table_FOTA.get(0));
@@ -1751,11 +1779,12 @@ public class ApproverOverview_Page extends AbstractComponents {
 		Thread.sleep(3000);
 		String done_status = change_request_status();
 		if (done_status.trim().equals("Done")) {
-			test.info("status changed to done"); 
+			test.info("status changed to done");
 		}
 		approval_status = Approver_Overview_approval_status_txt();
 		return approval_status;
 	}
+
 	public String approve_Multiple_special_enhanced_right_Request(String authorization_value, String status,
 			String id) throws Throwable {
 		approverOverviewPage_for_special_enhanced_right(authorization_value, id);
@@ -1764,14 +1793,16 @@ public class ApproverOverview_Page extends AbstractComponents {
 		Thread.sleep(3000);
 		String done_status = change_request_status();
 		if (done_status.trim().equals("Done")) {
-			test.info("status changed to done"); 
+			test.info("status changed to done");
 		}
 		approval_status = Approver_Overview_approval_status_txt();
 		return approval_status;
 	}
+
 	public String approve_Update_Functional_Role(String authorization_value, String status,
 			List<String> create_DA_request) throws Throwable {
-//		approverOverviewPage_for_update_functional_role(authorization_value, create_DA_request);
+		// approverOverviewPage_for_update_functional_role(authorization_value,
+		// create_DA_request);
 		approver_Overview_enabled1();
 		Thread.sleep(3000);
 		approve_Request(status);
@@ -1779,14 +1810,13 @@ public class ApproverOverview_Page extends AbstractComponents {
 		Thread.sleep(3000);
 		reset_filter();
 		reset_filter();
-//		String done_status = change_request_status();
-//		if (done_status.trim().equals("Done")) {
-//			test.info("status changed to done");
-//		}
+		// String done_status = change_request_status();
+		// if (done_status.trim().equals("Done")) {
+		// test.info("status changed to done");
+		// }
 		approval_status = Approver_Overview_approval_status_txt();
 		return approval_status;
 	}
-	
 
 	public void approverOverviewPage_for_special_enhanced_right(String authorization_value,
 			List<String> create_DA_request) throws Throwable {
@@ -1796,10 +1826,11 @@ public class ApproverOverview_Page extends AbstractComponents {
 
 		Thread.sleep(3000);
 		Authorization_roledropdown(authorization_value);
-//		complete_btn();
+		// complete_btn();
 		search_here(create_DA_request.get(5));
 		Thread.sleep(3000);
 	}
+
 	public void approverOverviewPage_for_special_enhanced_right(String authorization_value,
 			String create_DA_request) throws Throwable {
 		approver_Overview_enabled1();
@@ -1808,12 +1839,11 @@ public class ApproverOverview_Page extends AbstractComponents {
 
 		Thread.sleep(3000);
 		Authorization_roledropdown(authorization_value);
-//		complete_btn();
+		// complete_btn();
 		search_here(create_DA_request);
 		Thread.sleep(3000);
 	}
 
-	
 	public void approverOverviewPage_for_Special_Access(String authorization_value,
 			String publisher) throws Throwable {
 		approver_Overview_enabled1();
@@ -1826,12 +1856,13 @@ public class ApproverOverview_Page extends AbstractComponents {
 		Thread.sleep(3000);
 		approve_Request("PENDING");
 	}
+
 	public void approverOverviewPage_for_update_functional_role(String authorization_value,
 			List<String> create_DA_request) throws Throwable {
 		approver_Overview_enabled1();
 		Thread.sleep(3000);
-//		Thread.sleep(3000);
-//		Authorization_roledropdown(authorization_value);
+		// Thread.sleep(3000);
+		// Authorization_roledropdown(authorization_value);
 		complete_btn();
 		search_here(create_DA_request.get(5));
 		Thread.sleep(3000);
@@ -1917,10 +1948,13 @@ public class ApproverOverview_Page extends AbstractComponents {
 		approval_status = Approver_Overview_approval_status_txt();
 		return approval_status;
 	}
-	
-	public String approveECU_Certificate_Request_for_more_than_one(Object object, String authorization_value, String status,
-			List<List<String>> request_Overview_table_values_ECU_certificate_request_for_more_than_one, String ecu) throws Throwable {
-		approverOverviewPage_for_ECU_certificate_request_for_more_than_one(object, authorization_value, request_Overview_table_values_ECU_certificate_request_for_more_than_one,ecu);
+
+	public String approveECU_Certificate_Request_for_more_than_one(Object object, String authorization_value,
+			String status,
+			List<List<String>> request_Overview_table_values_ECU_certificate_request_for_more_than_one, String ecu)
+			throws Throwable {
+		approverOverviewPage_for_ECU_certificate_request_for_more_than_one(object, authorization_value,
+				request_Overview_table_values_ECU_certificate_request_for_more_than_one, ecu);
 		search_ECU(ecu);
 		approve_Request(status);
 		test.pass("APprover is able to approve the request");
@@ -1935,10 +1969,12 @@ public class ApproverOverview_Page extends AbstractComponents {
 		approval_status = Approver_Overview_approval_status_txt();
 		return approval_status;
 	}
-	
+
 	public String approveECU_Certificate_Request_for_grouping(Object object, String authorization_value, String status,
-			List<List<String>> request_Overview_table_values_ECU_certificate_request_for_more_than_one, Object object2) throws Throwable {
-		approverOverviewPage_for_ECU_certificate_request_for_grouping(object, authorization_value, request_Overview_table_values_ECU_certificate_request_for_more_than_one,object2);
+			List<List<String>> request_Overview_table_values_ECU_certificate_request_for_more_than_one, Object object2)
+			throws Throwable {
+		approverOverviewPage_for_ECU_certificate_request_for_grouping(object, authorization_value,
+				request_Overview_table_values_ECU_certificate_request_for_more_than_one, object2);
 		search_ECU(object2.toString());
 		approve_Request(status);
 		test.pass("APprover is able to approve the request");
@@ -1977,19 +2013,21 @@ public class ApproverOverview_Page extends AbstractComponents {
 		Approver_Overview_approval_date_txt().equals(create_ECU_Cert_request.get(13));
 
 	}
-	
-	public void approverOverviewPage_for_ECU_certificate_request_for_more_than_one(Object object, String authorization_value,
-			List<List<String>> request_Overview_table_values_ECU_certificate_request_for_more_than_one, String ecu) throws Throwable {
+
+	public void approverOverviewPage_for_ECU_certificate_request_for_more_than_one(Object object,
+			String authorization_value,
+			List<List<String>> request_Overview_table_values_ECU_certificate_request_for_more_than_one, String ecu)
+			throws Throwable {
 		approver_Overview_enabled1();
 		Authorization_roledropdown(authorization_value);
 		complete_btn();
 		search_here(ecu);
 		// Approver_overview_list_of_columns(authorization_value,
 		// create_ECU_Cert_request.get(4));
-		List<List<String>> secondTableValues = BaseClass.getTableValuesExcludingLastColumn(driver,
+		List<List<String>> secondTableValues = BaseClass.getTableValuesExcludingLastColumn(BaseClass.getDriver(),
 				By.xpath("//table/tbody"));
 		boolean allFirstTableValuesPresentInSecondTable = BaseClass.checkFirstTableValuesPresenceSkippingCertainColumns(
-				 request_Overview_table_values_ECU_certificate_request_for_more_than_one, secondTableValues);
+				request_Overview_table_values_ECU_certificate_request_for_more_than_one, secondTableValues);
 		if (allFirstTableValuesPresentInSecondTable) {
 			test.info("All values from the first table are present in the second table.");
 		} else {
@@ -1997,19 +2035,20 @@ public class ApproverOverview_Page extends AbstractComponents {
 		}
 
 	}
-	
+
 	public void approverOverviewPage_for_ECU_certificate_request_for_grouping(Object object, String authorization_value,
-			List<List<String>> request_Overview_table_values_ECU_certificate_request_for_more_than_one, Object object2) throws Throwable {
+			List<List<String>> request_Overview_table_values_ECU_certificate_request_for_more_than_one, Object object2)
+			throws Throwable {
 		approver_Overview_enabled1();
 		Authorization_roledropdown(authorization_value);
 		complete_btn();
 		search_here(object2.toString());
 		// Approver_overview_list_of_columns(authorization_value,
 		// create_ECU_Cert_request.get(4));
-		List<List<String>> secondTableValues = BaseClass.getTableValuesExcludingLastColumn(driver,
+		List<List<String>> secondTableValues = BaseClass.getTableValuesExcludingLastColumn(BaseClass.getDriver(),
 				By.xpath("//table/tbody"));
 		boolean allFirstTableValuesPresentInSecondTable = BaseClass.checkFirstTableValuesPresenceSkippingCertainColumns(
-				 request_Overview_table_values_ECU_certificate_request_for_more_than_one, secondTableValues);
+				request_Overview_table_values_ECU_certificate_request_for_more_than_one, secondTableValues);
 		if (allFirstTableValuesPresentInSecondTable) {
 			test.info("All values from the first table are present in the second table.");
 		} else {
@@ -2112,8 +2151,8 @@ public class ApproverOverview_Page extends AbstractComponents {
 			waitForWebElementToAppear(Approver_Overview_Reason_for_ECU_Certificate_Request);
 		}
 	}
-	
-public void Reject_Request_Approval(String value,String id) throws InterruptedException {
+
+	public void Reject_Request_Approval(String value, String id) throws InterruptedException {
 		approver_Overview_enabled1();
 		Authorization_roledropdown(value);
 		search_here(id);
@@ -2121,34 +2160,31 @@ public void Reject_Request_Approval(String value,String id) throws InterruptedEx
 		Scrollright_waitForWebElementToAppear(Approver_Overview_Request_Date);
 		Thread.sleep(2000);
 		try {
-		waitForelementToBeClickable(reject);
-		click(reject);
-		Thread.sleep(1000);	
-		rejectiontxt("Reject");
-		}catch(Exception e) {
+			waitForelementToBeClickable(reject);
+			click(reject);
+			Thread.sleep(1000);
+			rejectiontxt("Reject");
+		} catch (Exception e) {
 			clickJS(reject);
-			Thread.sleep(1000);	
+			Thread.sleep(1000);
 			rejectiontxt("Reject");
 		}
 		waitForWebElementToAppear(Submit);
 		click(Submit);
-		}
-public void Reject_Request(String id) throws InterruptedException {	
-	approver_Overview_enabled1();
-	search_here(id);
-//	complete_btn();
-//	Scrollright_waitForWebElementToAppear(Approver_Overview_Request_Date);
-	Thread.sleep(1000);
-	waitForelementToBeClickable(reject);
-	reject.click();
-	Thread.sleep(1000);	
-	rejectiontxt("Reject");
-	waitForWebElementToAppear(Submit);
-	click(Submit);
-}
+	}
 
-
-
-
+	public void Reject_Request(String id) throws InterruptedException {
+		approver_Overview_enabled1();
+		search_here(id);
+		// complete_btn();
+		// Scrollright_waitForWebElementToAppear(Approver_Overview_Request_Date);
+		Thread.sleep(1000);
+		waitForelementToBeClickable(reject);
+		reject.click();
+		Thread.sleep(1000);
+		rejectiontxt("Reject");
+		waitForWebElementToAppear(Submit);
+		click(Submit);
+	}
 
 }

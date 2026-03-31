@@ -2,25 +2,17 @@ package DAMS.PageObjects;
 
 import static DAMS.Resources.Listeners.test;
 
-import java.time.Duration;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import DAMS.Resources.AbstractComponents;
+import DAMS.Resources.BaseClass;
 
 public class LoginPage extends AbstractComponents {
 
-	WebDriver driver;
-
 	public LoginPage(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(BaseClass.getDriver());
 	}
 	//MFA
 	@FindBy(xpath = "//button[text()=\"Login with Daimler Truck Account\"]")
@@ -43,7 +35,7 @@ public class LoginPage extends AbstractComponents {
 	WebElement verifyButton;
 
 	public void goTo(String url){
-		driver.get(url);
+		BaseClass.getDriver().get(url);
 	}
 //	public void cleanup(String username, String password,String url) throws Throwable {
 //		loginApplicationasRequester_MFA(username, password, url);

@@ -1,29 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="0" failed="2" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-23T23:13:26 IST" name="DynamicSuite" finished-at="2026-02-23T23:57:33 IST" duration-ms="2647749">
+  <suite started-at="2026-03-31T13:06:31 IST" name="Suite" finished-at="2026-03-31T13:06:54 IST" duration-ms="22555">
     <groups>
     </groups>
-    <test started-at="2026-02-23T23:13:26 IST" name="RunDynamicClass" finished-at="2026-02-23T23:57:33 IST" duration-ms="2647749">
-      <class name="DAMS.Testcases.Regression_Suite.Overall.TC001_OverAll_Internal_External_Supplier_Global_ATG">
-        <test-method is-config="true" signature="configure(java.lang.String, java.lang.reflect.Method)[pri:0, instance:DAMS.Testcases.Regression_Suite.Overall.TC001_OverAll_Internal_External_Supplier_Global_ATG@30af5b6b]" started-at="2026-02-23T23:13:26 IST" name="configure" finished-at="2026-02-23T23:13:27 IST" duration-ms="1021" status="PASS">
+    <test started-at="2026-03-31T13:06:31 IST" name="RunDynamicClass" finished-at="2026-03-31T13:06:54 IST" duration-ms="22555">
+      <class name="DAMS.Testcases.Regression_Suite.Internal.TC001_Internal_Development_FR_Global">
+        <test-method is-config="true" signature="configure(java.lang.String, java.lang.reflect.Method)[pri:0, instance:DAMS.Testcases.Regression_Suite.Internal.TC001_Internal_Development_FR_Global@19835e64]" started-at="2026-03-31T13:06:32 IST" name="configure" finished-at="2026-03-31T13:06:33 IST" duration-ms="1045" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[qa]]>
+                <![CDATA[dev]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[public static void DAMS.Testcases.Regression_Suite.Overall.TC001_OverAll_Internal_External_Supplier_Global_ATG.Overall_Global_ATG_Regression_E2E_Internal(java.util.HashMap) throws java.lang.Throwable]]>
+                <![CDATA[public static void DAMS.Testcases.Regression_Suite.Internal.TC001_Internal_Development_FR_Global.development_Global_Regression_E2E_Internal(java.util.HashMap) throws java.lang.Throwable]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configure -->
-        <test-method signature="Overall_Global_ATG_Regression_E2E_Internal(java.util.HashMap)[pri:0, instance:DAMS.Testcases.Regression_Suite.Overall.TC001_OverAll_Internal_External_Supplier_Global_ATG@30af5b6b]" started-at="2026-02-23T23:13:27 IST" name="Overall_Global_ATG_Regression_E2E_Internal" data-provider="getData_Internal" finished-at="2026-02-23T23:17:53 IST" duration-ms="266236" status="PASS">
+        <test-method signature="development_Global_Regression_E2E_Internal(java.util.HashMap)[pri:0, instance:DAMS.Testcases.Regression_Suite.Internal.TC001_Internal_Development_FR_Global@19835e64]" started-at="2026-03-31T13:06:33 IST" name="development_Global_Regression_E2E_Internal" data-provider="getData_Internal" finished-at="2026-03-31T13:06:52 IST" duration-ms="19312" status="FAIL">
           <params>
             <param index="0">
               <value>
@@ -31,64 +31,167 @@
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=146.0.7680.80)
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'DESKTOP-05DVESU', ip: '192.168.31.39', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d7b79fa96a65c1052147125904966919, get {url=https://dams-dev.azurewebsites.net/dams/}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 146.0.7680.80, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56621}, goog:processID: 27376, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56621/devtoo..., se:cdpVersion: 146.0.7680.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d7b79fa96a65c1052147125904966919]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: target frame detached
+  (failed to check if window was closed: disconnected: Unable to receive message from renderer)
+  (Session info: chrome=146.0.7680.80)
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'DESKTOP-05DVESU', ip: '192.168.31.39', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [d7b79fa96a65c1052147125904966919, get {url=https://dams-dev.azurewebsites.net/dams/}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 146.0.7680.80, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56621}, goog:processID: 27376, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56621/devtoo..., se:cdpVersion: 146.0.7680.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: d7b79fa96a65c1052147125904966919
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:569)
+at org.openqa.selenium.remote.RemoteWebDriver.get(RemoteWebDriver.java:332)
+at DAMS.PageObjects.LoginPage.goTo(LoginPage.java:38)
+at DAMS.PageObjects.LoginPage.loginApplicationasRequester_MFA(LoginPage.java:48)
+at DAMS.Resources.BaseClass.login(BaseClass.java:418)
+at DAMS.Resources.BaseClass.login_MFA_Incognito_Internal(BaseClass.java:347)
+at DAMS.Testcases.Smoke_Suite_1.TC01_Login_MFA.login_with_addressing_MFA_Internal(TC01_Login_MFA.java:35)
+at DAMS.Testcases.Smoke_Suite_1.TC02_Requests_STD_GLOBAL.login_and_select_user_Global(TC02_Requests_STD_GLOBAL.java:180)
+at DAMS.Testcases.Smoke_Suite_1.TC06_STD_GLOBAL_FRapproved.Functional_role_request_approved_Internal(TC06_STD_GLOBAL_FRapproved.java:23)
+at DAMS.Testcases.Regression_Suite.Internal.TC001_Internal_Development_FR_Global.development_Global_Regression_E2E_Internal(TC001_Internal_Development_FR_Global.java:37)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Overall_Global_ATG_Regression_E2E_Internal -->
-        <test-method is-config="true" signature="configure(java.lang.String, java.lang.reflect.Method)[pri:0, instance:DAMS.Testcases.Regression_Suite.Overall.TC001_OverAll_Internal_External_Supplier_Global_ATG@30af5b6b]" started-at="2026-02-23T23:17:53 IST" name="configure" finished-at="2026-02-23T23:17:54 IST" duration-ms="1014" status="PASS">
+        </test-method> <!-- development_Global_Regression_E2E_Internal -->
+      </class> <!-- DAMS.Testcases.Regression_Suite.Internal.TC001_Internal_Development_FR_Global -->
+      <class name="DAMS.Testcases.Regression_Suite.External.TC008_External_Development_FR_ATG">
+        <test-method is-config="true" signature="configure(java.lang.String, java.lang.reflect.Method)[pri:0, instance:DAMS.Testcases.Regression_Suite.External.TC008_External_Development_FR_ATG@68b32e3e]" started-at="2026-03-31T13:06:32 IST" name="configure" finished-at="2026-03-31T13:06:33 IST" duration-ms="1045" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[qa]]>
+                <![CDATA[dev]]>
               </value>
             </param>
             <param index="1">
               <value>
-                <![CDATA[public static void DAMS.Testcases.Regression_Suite.Overall.TC001_OverAll_Internal_External_Supplier_Global_ATG.Overall_Global_ATG_Regression_E2E_External(java.util.HashMap) throws java.lang.Throwable]]>
+                <![CDATA[public static void DAMS.Testcases.Regression_Suite.External.TC008_External_Development_FR_ATG.development_ATG_Regression_E2E_External(java.util.HashMap) throws java.lang.Throwable]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- configure -->
-        <test-method signature="Overall_Global_ATG_Regression_E2E_External(java.util.HashMap)[pri:1, instance:DAMS.Testcases.Regression_Suite.Overall.TC001_OverAll_Internal_External_Supplier_Global_ATG@30af5b6b]" started-at="2026-02-23T23:17:54 IST" name="Overall_Global_ATG_Regression_E2E_External" data-provider="getData_External" finished-at="2026-02-23T23:35:20 IST" duration-ms="1045456" status="PASS">
+        <test-method signature="development_ATG_Regression_E2E_External(java.util.HashMap)[pri:0, instance:DAMS.Testcases.Regression_Suite.External.TC008_External_Development_FR_ATG@68b32e3e]" started-at="2026-03-31T13:06:33 IST" name="development_ATG_Regression_E2E_External" data-provider="getData_External" finished-at="2026-03-31T13:06:54 IST" duration-ms="20962" status="FAIL">
           <params>
             <param index="0">
               <value>
-                <![CDATA[{NO=0, Service_ID=BF0123, SpecialCase=Replacement Package, Target_COT=Root T2, User_Type=External, ECU_Restriction_DA=ACM311T, ECU_Qualifier_for_RP=AAGW01T, ECU_Qualifier_for_Root_link=AAGW01T, BU=DTE, Daimler_name=testing, Role_Desc=Person/Pool-ID from an external service provider, who supports the Daimler Truck development department. This service provided is conducted by Daimler Truck. This is not the ECU supplier. On applying for the functional role, the user should automatically receive After-Sales ENHANCED for all the Cebid ECU's, After-Sales STANDARD Certificates as Standard Permissions., User_role_DA=Development ENHANCED, Reason_for_RP=Certificate Request for Replacement Package, Daimler_email=testing123@gmail.com, Reason_for_DA=Certificate Request for Diagnostic Authority, BackendTarget_COT=Backend T2B, NestT_TestingCase=Nest-T Test COT/Nest-T Test COT/Nest-T Series COT, ECU_Restriction_EA=ACM311T, BackendOrigin_COT=Backend T2A, ECU_Qualifier_nestT=AAGW01T/ACM311T/CGW05T, Functional_role_External=Development External Support, SpecialCase_nestT=Nest-T Testing, Mode=Global, ECU_Qualifier_for_Backend_link=ALT48V01T, BackendRoot_COT=Root T2, Reason_for_nestT=Certificate Request for NEST-T, User_Example=Production,After-Sales BASIC,EPTI(Electronical Periodical Technical Inspection),TCU(Telemetics Control Unit),After-Sales ENHANCED,After-Sales STANDARD, Reason_for_ER=Certificate Request for EnhanceRightAuthority, Validity=10, Functional_role_Certificate=Development External Support, company_name=Robert Bosch, Reason_for_External_FR=Functional role request for Development External Support, User_role_EA=Development ENHANCED, Orgin_COT=Root T1}]]>
+                <![CDATA[{NO=7, Service_ID=BF0123, SpecialCase=Replacement Package, Target_COT=Root E2, User_Type=External, ECU_Restriction_DA=AAGW01T, ECU_Qualifier_for_RP=AAGW01T, ECU_Qualifier_for_Root_link=AAGW01T, BU=DTE, Daimler_name=testing, Role_Desc=Person/Pool-ID from an external service provider in the development department, associated with ATG project at Daimler Truck. Info: it does not automatically mean that this person works in the development team for the related AP4 ECU project, but this could be possible. On applying for the functional role, the user should automatically receive After-Sales ENHANCED as Standard Permissions., User_role_DA=Development ENHANCED, Reason_for_RP=Certificate Request for Replacement Package, Daimler_email=testing123@gmail.com, Reason_for_DA=Certificate Request for Diagnostic Authority, BackendTarget_COT=Backend E2B, NestT_TestingCase=Nest-T Test COT, ECU_Restriction_EA=AAGW01T, BackendOrigin_COT=Backend E2A, ECU_Qualifier_nestT=AAGW01T, Functional_role_External=Development - ATG External, SpecialCase_nestT=Nest-T Testing, Mode=ATG, ECU_Qualifier_for_Backend_link=AAGW01T, BackendRoot_COT=Root E2, Reason_for_nestT=Certificate Request for NEST-T, User_Example=Production,After-Sales BASIC,EPTI(Electronical Periodical Technical Inspection),TCU(Telemetics Control Unit),After-Sales ENHANCED,After-Sales STANDARD, Reason_for_ER=Certificate Request for EnhanceRightAuthority, Validity=10, Functional_role_Certificate=Development - ATG External, company_name=Robert Bosch, Reason_for_External_FR=Functional role request for Development ATG External Support, User_role_EA=Development ENHANCED, Orgin_COT=Root E1}]]>
               </value>
             </param>
           </params>
+          <exception class="org.openqa.selenium.NoSuchSessionException">
+            <message>
+              <![CDATA[invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=146.0.7680.80)
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'DESKTOP-05DVESU', ip: '192.168.31.39', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6a34c35c7e3bfe7adfcc4081d6045120, findElement {using=xpath, value=//button[text()="Login with Daimler Truck Account"]}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 146.0.7680.80, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56620}, goog:processID: 25676, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56620/devtoo..., se:cdpVersion: 146.0.7680.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6a34c35c7e3bfe7adfcc4081d6045120]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchSessionException: invalid session id: session deleted as the browser has closed the connection
+from disconnected: not connected to DevTools
+  (Session info: chrome=146.0.7680.80)
+Build info: version: '4.3.0', revision: 'a4995e2c09*'
+System info: host: 'DESKTOP-05DVESU', ip: '192.168.31.39', os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6a34c35c7e3bfe7adfcc4081d6045120, findElement {using=xpath, value=//button[text()="Login with Daimler Truck Account"]}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 146.0.7680.80, chrome: {chromedriverVersion: 146.0.7680.165 (4b989da09e1..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56620}, goog:processID: 25676, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:56620/devtoo..., se:cdpVersion: 146.0.7680.80, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 6a34c35c7e3bfe7adfcc4081d6045120
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:569)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:387)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:379)
+at DAMS.Resources.ThreadLocalElementLocator.findElement(ThreadLocalElementLocator.java:20)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy21.click(Unknown Source)
+at DAMS.PageObjects.LoginPage.loginApplicationasRequester_MFA(LoginPage.java:51)
+at DAMS.Resources.BaseClass.login(BaseClass.java:418)
+at DAMS.Resources.BaseClass.login_MFA_Incognito_External(BaseClass.java:357)
+at DAMS.Testcases.Smoke_Suite_1.TC01_Login_MFA.login_with_addressing_MFA_External(TC01_Login_MFA.java:42)
+at DAMS.Testcases.Smoke_Suite_1.TC03_Requests_STD_ATG_FR.login_and_select_user_ATG(TC03_Requests_STD_ATG_FR.java:188)
+at DAMS.Testcases.Smoke_Suite_1.TC07_STD_ATG_FRapproved.create_and_approve_External_FR_request(TC07_STD_ATG_FRapproved.java:88)
+at DAMS.Testcases.Smoke_Suite_1.TC07_STD_ATG_FRapproved.Funtional_role_request_approved_External(TC07_STD_ATG_FRapproved.java:34)
+at DAMS.Testcases.Regression_Suite.External.TC008_External_Development_FR_ATG.development_ATG_Regression_E2E_External(TC008_External_Development_FR_ATG.java:41)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:134)
+at org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:597)
+at org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)
+at org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)
+at org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:816)
+at org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+at java.base/java.lang.Thread.run(Thread.java:833)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchSessionException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- Overall_Global_ATG_Regression_E2E_External -->
-        <test-method is-config="true" signature="configure(java.lang.String, java.lang.reflect.Method)[pri:0, instance:DAMS.Testcases.Regression_Suite.Overall.TC001_OverAll_Internal_External_Supplier_Global_ATG@30af5b6b]" started-at="2026-02-23T23:35:20 IST" name="configure" finished-at="2026-02-23T23:35:21 IST" duration-ms="1067" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[qa]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[public static void DAMS.Testcases.Regression_Suite.Overall.TC001_OverAll_Internal_External_Supplier_Global_ATG.Overall_Global_ATG_Regression_E2E_Supplier(java.util.HashMap) throws java.lang.Throwable]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- configure -->
-        <test-method signature="Overall_Global_ATG_Regression_E2E_Supplier(java.util.HashMap)[pri:2, instance:DAMS.Testcases.Regression_Suite.Overall.TC001_OverAll_Internal_External_Supplier_Global_ATG@30af5b6b]" started-at="2026-02-23T23:35:21 IST" name="Overall_Global_ATG_Regression_E2E_Supplier" data-provider="getData_Supplier" finished-at="2026-02-23T23:57:33 IST" duration-ms="1332643" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[{NO=0, Service_ID=BF0123, SpecialCase=Replacement Package, Target_COT=Root T2, User_Type=Supplier, ECU_Restriction_DA=AAGW01T, ECU_Supplier=AAGW01T, ECU_Qualifier_for_RP=AAGW01T, ECU_Qualifier_for_Root_link=AAGW01T, Reason_for_supplier_FR=Functional role request for ECU Supplier - Development, Role_Desc=Person at the ECU supplier who is responsible for managing keys at the supplier side for the related ECU project. Eg storing the ECU private key into the Key Management System (KMS) at the supplier. On applying for the functional role, the user should automatically receive Supplier, Development ENHANCED, Production, After-Sales ENHANCED for all the Own ECU's, After-Sales STANDARD Certificates as Standard Permissions., User_role_DA=After-Sales BASIC, Reason_for_RP=Certificate Request for Replacement Package, Reason_for_DA=Certificate Request for Diagnostic Authority, BackendTarget_COT=Backend T2B, ECU_Restriction_EA=AAGW01T, BackendOrigin_COT=Backend T2A, Mode=Global, ECU_Qualifier_for_Backend_link=ALT48V01T, BackendRoot_COT=Root T2, ECU_Supplier1=ACM311T, User_Example=Production,After-Sales BASIC,EPTI(Electronical Periodical Technical Inspection),TCU(Telemetics Control Unit),After-Sales ENHANCED,After-Sales STANDARD, Reason_for_ER=Certificate Request for EnhanceRightAuthority, Validity=10, Functional_role_Certificate=ECU Supplier - Key Management - AAGW01T, company_name=Robert Bosch, Functional_role_supplier=ECU Supplier - Key Management, User_role_EA=After-Sales ENHANCED, Orgin_COT=Root T1}]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- Overall_Global_ATG_Regression_E2E_Supplier -->
-      </class> <!-- DAMS.Testcases.Regression_Suite.Overall.TC001_OverAll_Internal_External_Supplier_Global_ATG -->
+        </test-method> <!-- development_ATG_Regression_E2E_External -->
+      </class> <!-- DAMS.Testcases.Regression_Suite.External.TC008_External_Development_FR_ATG -->
     </test> <!-- RunDynamicClass -->
-  </suite> <!-- DynamicSuite -->
+  </suite> <!-- Suite -->
 </testng-results>

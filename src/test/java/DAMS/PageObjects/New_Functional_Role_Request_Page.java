@@ -9,7 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Random;
 
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -23,33 +22,29 @@ import DAMS.Resources.AbstractComponents;
 import DAMS.Resources.BaseClass;
 
 public class New_Functional_Role_Request_Page extends AbstractComponents {
-	WebDriver driver;
 
 	public New_Functional_Role_Request_Page(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(BaseClass.getDriver());
 	}
-	
+
 	@FindBy(xpath = "//span[text()='Please select ECU Chain of Trust Type']")
 	private WebElement ECU_Chain_of_Trust_Type;
-	
+
 	@FindBy(xpath = "//span[text()=' ATG ']")
 	private WebElement ECU_Chain_of_Trust_Type_ATG;
-	
+
 	@FindBy(xpath = "//span[text()=' GLOBAL ']")
 	private WebElement ECU_Chain_of_Trust_Type_Global;
-	
+
 	@FindBy(xpath = "//mat-select[@placeholder='Please select your functional role']")
 	private WebElement select_Functional_Role;
-	
+
 	@FindBy(xpath = "//span[text()=' Development ']")
 	private WebElement select_Functional_Role_Development;
-	
+
 	@FindBy(xpath = "//span[@class='mat-option-text']")
 	private WebElement vehicle_program_list;
-	//>Hari
-	
+	// >Hari
 
 	@FindBy(xpath = " //*[text()=\" New Functional Role Request\"]")
 	private WebElement new_Functional_Role_Request;
@@ -140,7 +135,7 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 
 	@FindBy(xpath = "//mat-error[text()=\" Reason cannot start with a space \"]")
 	private WebElement FR_reason_field_error_message;
-	
+
 	@FindBy(xpath = "//span[contains(text(),\"Are you sure\")]")
 	private WebElement cancel_confirmation_text;
 
@@ -149,35 +144,36 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 
 	@FindBy(xpath = "//span[text()=\"Back\"]")
 	private WebElement cancel_dismiss;
-	
 
 	@FindBy(xpath = "//span[text()=\"Cancel\"]")
 	private WebElement cancel_button;
-	
+
 	@FindBy(xpath = "//input[@placeholder='Enter Service Principal ID']")
 	private WebElement servicePrincipal;
-	
+
 	@FindBy(xpath = "//mat-select[@placeholder='Please select ECU Chain of Trust Type']")
 	private WebElement chainTrustType;
-	
-    public String raiseFunctionalForService(String BU,String Reason_for_internal_FR,String chainType,String functionalRole) throws Throwable {
+
+	public String raiseFunctionalForService(String BU, String Reason_for_internal_FR, String chainType,
+			String functionalRole) throws Throwable {
 		waitForWebElementToAppear(servicePrincipal);
 		click(servicePrincipal);
-//	    String randomServiceId = generateRandomServiceId();
-	    Random rand = new Random();
-	    int randomNum = 1000 + rand.nextInt(9000); 
+		// String randomServiceId = generateRandomServiceId();
+		Random rand = new Random();
+		int randomNum = 1000 + rand.nextInt(9000);
 		String serviceId;
 		if ("Production".equalsIgnoreCase(functionalRole)) {
-		    serviceId = "TEC_DEMO_PROD_" + randomNum;
+			serviceId = "TEC_DEMO_PROD_" + randomNum;
 		} else {
-		    serviceId = "TEC_DEMO_XOTA_" + randomNum;
+			serviceId = "TEC_DEMO_XOTA_" + randomNum;
 		}
-	    servicePrincipal.sendKeys(serviceId);
+		servicePrincipal.sendKeys(serviceId);
 		test.pass("Verified the role description in Functional Overview page");
-			
-		WebElement BU_path = driver.findElement(By.xpath("//div/span[text()='Please select your business unit']"));
-   		select_BU();		
-   		select_Matching_Element(BU);			
+
+		WebElement BU_path = BaseClass.getDriver()
+				.findElement(By.xpath("//div/span[text()='Please select your business unit']"));
+		select_BU();
+		select_Matching_Element(BU);
 		click(chainTrustType);
 		Thread.sleep(1000);
 		select_Matching_Element(chainType);
@@ -186,7 +182,7 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 		Thread.sleep(500);
 		select_Matching_Element(functionalRole);
 		Thread.sleep(500);
-		reason_field(Reason_for_internal_FR); 
+		reason_field(Reason_for_internal_FR);
 		Thread.sleep(500);
 		submit_button();
 		return serviceId;
@@ -221,12 +217,12 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 		return new_Functional_Role_Request.getText();
 
 	}
-	
-	//Hari
+
+	// Hari
 	public void select_vehicle_program_global(String user_type) throws InterruptedException, AWTException {
 		logger.info("User is Select the ECU Chain of Trust Type");
 		Thread.sleep(2000);
-//		ECU_Chain_of_Trust_Type.isDisplayed();
+		// ECU_Chain_of_Trust_Type.isDisplayed();
 		waitForWebElementToAppear(ECU_Chain_of_Trust_Type);
 
 		Thread.sleep(2000);
@@ -239,41 +235,40 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 		ECU_Chain_of_Trust_Type_Global.isDisplayed();
 		waitForWebElementToAppear(ECU_Chain_of_Trust_Type_Global);
 		Thread.sleep(2000);
-		if(!ECU_Chain_of_Trust_Type_Global.getText().contains("Limit")){
-		try {
-			clickJS(ECU_Chain_of_Trust_Type_Global);
-		} catch (Exception e) {
-			doubleClick(ECU_Chain_of_Trust_Type_Global);
-		}
-		}
-		else {
+		if (!ECU_Chain_of_Trust_Type_Global.getText().contains("Limit")) {
+			try {
+				clickJS(ECU_Chain_of_Trust_Type_Global);
+			} catch (Exception e) {
+				doubleClick(ECU_Chain_of_Trust_Type_Global);
+			}
+		} else {
 			try {
 				clickJS(ECU_Chain_of_Trust_Type_Global);
 			} catch (Exception e) {
 				doubleClick(ECU_Chain_of_Trust_Type_Global);
 			}
 			Thread.sleep(3000);
-		h.select_home_tab();
-		h.dropBtn();
-		 String select_user_type = null;
+			h.select_home_tab();
+			h.dropBtn();
+			String select_user_type = null;
 
-		    if ("Internal".equalsIgnoreCase(user_type)) {
-		        h.click_here_to_apply_for_functional_roles_click();
-		        select_user_type = user_type;
-		    } else {
-		        select_user_type = h.select_user_type(user_type);
-		        test.log(Status.INFO, "User is selects the type:" + "<span style=\"color: blue;\"><b><i><u>"
-		                + select_user_type + "</u></i></b>");
-		    }
-		    
-		    Thread.sleep(3000);
-		    gtc.gtc_page_validation();
-		    test.info("User validates the gtc page");
-		    logger.info("User validates the gtc page");
-		    Thread.sleep(5000);
-		    logger.info("User is Select the ECU Chain of Trust Type");
+			if ("Internal".equalsIgnoreCase(user_type)) {
+				h.click_here_to_apply_for_functional_roles_click();
+				select_user_type = user_type;
+			} else {
+				select_user_type = h.select_user_type(user_type);
+				test.log(Status.INFO, "User is selects the type:" + "<span style=\"color: blue;\"><b><i><u>"
+						+ select_user_type + "</u></i></b>");
+			}
+
+			Thread.sleep(3000);
+			gtc.gtc_page_validation();
+			test.info("User validates the gtc page");
+			logger.info("User validates the gtc page");
+			Thread.sleep(5000);
+			logger.info("User is Select the ECU Chain of Trust Type");
 			Thread.sleep(2000);
-//			ECU_Chain_of_Trust_Type.isDisplayed();
+			// ECU_Chain_of_Trust_Type.isDisplayed();
 			waitForWebElementToAppear(ECU_Chain_of_Trust_Type);
 
 			Thread.sleep(2000);
@@ -290,41 +285,40 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 			} catch (Exception e) {
 				doubleClick(ECU_Chain_of_Trust_Type_Global);
 			}
-			}
-			
-//				try {
-//					clickJS(ECU_Chain_of_Trust_Type_Global);
-//				} catch (Exception e) {
-//					doubleClick(ECU_Chain_of_Trust_Type_Global);
-//				}
 		}
-	
-	
+
+		// try {
+		// clickJS(ECU_Chain_of_Trust_Type_Global);
+		// } catch (Exception e) {
+		// doubleClick(ECU_Chain_of_Trust_Type_Global);
+		// }
+	}
+
 	public void select_vehicle_program_ATG(String user_type) throws InterruptedException, AWTException {
-//		logger.info("User is Select the ECU Chain of Trust Type");
-//
-//		ECU_Chain_of_Trust_Type.isDisplayed();
-//		waitForWebElementToAppear(ECU_Chain_of_Trust_Type);
-//
-//		Thread.sleep(2000);
-//		AbstractComponents.waitForelementToBeClickable(ECU_Chain_of_Trust_Type);
-//		try {
-//			clickJS(ECU_Chain_of_Trust_Type);
-//		} catch (Exception e) {
-//			doubleClick(ECU_Chain_of_Trust_Type);
-//		}
-//		ECU_Chain_of_Trust_Type_ATG.isDisplayed();
-//		waitForWebElementToAppear(ECU_Chain_of_Trust_Type_ATG);
-//		Thread.sleep(2000);
-//		try {
-//			clickJS(ECU_Chain_of_Trust_Type_ATG);
-//		} catch (Exception e) {
-//			doubleClick(ECU_Chain_of_Trust_Type_ATG);
-//		}
+		// logger.info("User is Select the ECU Chain of Trust Type");
+		//
+		// ECU_Chain_of_Trust_Type.isDisplayed();
+		// waitForWebElementToAppear(ECU_Chain_of_Trust_Type);
+		//
+		// Thread.sleep(2000);
+		// AbstractComponents.waitForelementToBeClickable(ECU_Chain_of_Trust_Type);
+		// try {
+		// clickJS(ECU_Chain_of_Trust_Type);
+		// } catch (Exception e) {
+		// doubleClick(ECU_Chain_of_Trust_Type);
+		// }
+		// ECU_Chain_of_Trust_Type_ATG.isDisplayed();
+		// waitForWebElementToAppear(ECU_Chain_of_Trust_Type_ATG);
+		// Thread.sleep(2000);
+		// try {
+		// clickJS(ECU_Chain_of_Trust_Type_ATG);
+		// } catch (Exception e) {
+		// doubleClick(ECU_Chain_of_Trust_Type_ATG);
+		// }
 
 		logger.info("User is Select the ECU Chain of Trust Type");
 		Thread.sleep(2000);
-//		ECU_Chain_of_Trust_Type.isDisplayed();
+		// ECU_Chain_of_Trust_Type.isDisplayed();
 		waitForWebElementToAppear(ECU_Chain_of_Trust_Type);
 
 		Thread.sleep(2000);
@@ -337,40 +331,39 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 		ECU_Chain_of_Trust_Type_ATG.isDisplayed();
 		waitForWebElementToAppear(ECU_Chain_of_Trust_Type_ATG);
 		Thread.sleep(2000);
-		if(!ECU_Chain_of_Trust_Type_ATG.getText().contains("Limit")){
-		try {
-			clickJS(ECU_Chain_of_Trust_Type_ATG);
-		} catch (Exception e) {
-			doubleClick(ECU_Chain_of_Trust_Type_ATG);
-		}
-		}
-		else {
+		if (!ECU_Chain_of_Trust_Type_ATG.getText().contains("Limit")) {
 			try {
 				clickJS(ECU_Chain_of_Trust_Type_ATG);
 			} catch (Exception e) {
 				doubleClick(ECU_Chain_of_Trust_Type_ATG);
-			}	
-		h.select_home_tab();
-		h.dropBtn();
-		 String select_user_type = null;
+			}
+		} else {
+			try {
+				clickJS(ECU_Chain_of_Trust_Type_ATG);
+			} catch (Exception e) {
+				doubleClick(ECU_Chain_of_Trust_Type_ATG);
+			}
+			h.select_home_tab();
+			h.dropBtn();
+			String select_user_type = null;
 
-		    if ("Internal".equalsIgnoreCase(user_type)) {
-		        h.click_here_to_apply_for_functional_roles_click();
-		        select_user_type = user_type;
-		    } else {
-		        select_user_type = h.select_user_type(user_type);
-		        test.log(Status.INFO, "User is selects the type:" + "<span style=\"color: blue;\"><b><i><u>"
-		                + select_user_type + "</u></i></b>");
-		    }
-		    
-		    Thread.sleep(8000);
-		    gtc.gtc_page_validation();
-		    test.info("User validates the gtc page");
-		    logger.info("User validates the gtc page");
-		    Thread.sleep(5000);
-		    logger.info("User is Select the ECU Chain of Trust Type");
+			if ("Internal".equalsIgnoreCase(user_type)) {
+				h.click_here_to_apply_for_functional_roles_click();
+				select_user_type = user_type;
+			} else {
+				select_user_type = h.select_user_type(user_type);
+				test.log(Status.INFO, "User is selects the type:" + "<span style=\"color: blue;\"><b><i><u>"
+						+ select_user_type + "</u></i></b>");
+			}
+
+			Thread.sleep(8000);
+			gtc.gtc_page_validation();
+			test.info("User validates the gtc page");
+			logger.info("User validates the gtc page");
+			Thread.sleep(5000);
+			logger.info("User is Select the ECU Chain of Trust Type");
 			Thread.sleep(2000);
-//			ECU_Chain_of_Trust_Type.isDisplayed();
+			// ECU_Chain_of_Trust_Type.isDisplayed();
 			waitForWebElementToAppear(ECU_Chain_of_Trust_Type);
 
 			Thread.sleep(2000);
@@ -387,17 +380,17 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 			} catch (Exception e) {
 				doubleClick(ECU_Chain_of_Trust_Type_ATG);
 			}
-			}
-//			
-//				try {
-//					clickJS(ECU_Chain_of_Trust_Type_ATG);
-//				} catch (Exception e) {
-//					doubleClick(ECU_Chain_of_Trust_Type_ATG);
-//				}
-		
+		}
+		//
+		// try {
+		// clickJS(ECU_Chain_of_Trust_Type_ATG);
+		// } catch (Exception e) {
+		// doubleClick(ECU_Chain_of_Trust_Type_ATG);
+		// }
+
 	}
-	//Hari
-	
+	// Hari
+
 	public void select_Functional_role() throws InterruptedException {
 		please_Select_Your_Functional_role.isDisplayed();
 		waitForWebElementToAppear(please_Select_Your_Functional_role);
@@ -427,7 +420,7 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 	}
 
 	public String select_user_type(String name) throws InterruptedException {
-		logger.info("User Type :"+name);
+		logger.info("User Type :" + name);
 		String Str = clickelementmatchingtext(Functional_role_type, name);
 		return Str;
 	}
@@ -437,9 +430,9 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 		for (int i = 0; i < elements.size(); i++) {
 			WebElement txt = elements.get(i);
 			String usertype = txt.getText().trim();
-			String name=names.trim();
-			logger.info("user type "+usertype+" name "+name);
-			
+			String name = names.trim();
+			logger.info("user type " + usertype + " name " + name);
+
 			if (usertype.equalsIgnoreCase(name)) {
 				usertype1 = usertype;
 				Thread.sleep(1000);
@@ -539,27 +532,31 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 	}
 
 	public void select_business_unit(String name) throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		logger.info("BU : "+name);	
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		logger.info("BU : " + name);
 		try {
 			clickelementmatchingtext(BU_Option, name);
 		} catch (Exception ex) {
 			String xpathExpression = String.format("//span[contains(text(),'%s')]", name);
-			clickJS(driver.findElement(By.xpath(xpathExpression)));
+			clickJS(BaseClass.getDriver().findElement(By.xpath(xpathExpression)));
 		}
 
 	}
+
 	public void select_Matching_Element(String name) throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		try {
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		try {
 			clickelementmatchingtext(BU_Option, name);
 		} catch (Exception ex) {
 			String xpathExpression = String.format("//span[contains(text(),'%s')]", name);
-			clickJS(driver.findElement(By.xpath(xpathExpression)));
+			clickJS(BaseClass.getDriver().findElement(By.xpath(xpathExpression)));
 		}
 
 	}
 
 	public void clickelementmatchingtext_BU(List<WebElement> elements, String name) {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		if (elements.size() != 0) {
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		if (elements.size() != 0) {
 			for (int i = 0; i < elements.size(); i++) {
 				WebElement txt = elements.get(i);
 				String usertype = txt.getText();
@@ -577,8 +574,8 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 			waitForWebElementToAppear(submit_button);
 			AbstractComponents.waitForelementToBeClickable(submit_button);
 			focusClick(submit_button);
-//			submit_button.click();
-			} catch (Exception ex) {
+			// submit_button.click();
+		} catch (Exception ex) {
 			scrollDown(submit_button);
 			AbstractComponents.waitForelementToBeClickable(submit_button);
 			clickJS(submit_button);
@@ -591,7 +588,7 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 		if (txt.equals("Vehicle Validation External Support") || txt.equals("Production External")
 				|| txt.equals("DiagnosticLink Tool Development External Support")
 				|| txt.equals("Xentry Tool Development External Support")
-				|| txt.equals("QM(Quality Management) External") || txt.equals("Development External Support") 
+				|| txt.equals("QM(Quality Management) External") || txt.equals("Development External Support")
 				|| txt.equals("Development - ATG External")) {
 			waitForWebElementToAppear(role_description);
 			waitForWebElementToAppear(business_unit);
@@ -609,7 +606,8 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 	}
 
 	public void daimler_Internal_name(String txt) {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));		scrollUp(Daimler_Internal_name);
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		scrollUp(Daimler_Internal_name);
 		clickJS(Daimler_Internal_name);
 		Daimler_Internal_name.sendKeys(txt);
 	}
@@ -697,7 +695,7 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 			String get_bus, String BU) throws Throwable {
 		select_Functional_role();
 		String st = user_type();
-		logger.info("***Functional role : "+st);
+		logger.info("***Functional role : " + st);
 		String st1 = select_user_type(Functional_role_internal);
 		logger.info(st1);
 		test.log(Status.INFO,
@@ -708,20 +706,21 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 		role_Desc.equalsIgnoreCase(Role_Desc);
 		test.pass("Verified the role description in Functional Overview page");
 		try {
-			if(!st1.equalsIgnoreCase("")) {
-			WebElement BU_path = driver.findElement(By.xpath("//div/span[text()='Please select your business unit']"));
-			if (BU_path.isDisplayed()) {
-				select_BU();
-				String st2 = business_unit();
-				st2.contains(get_DTE);
-				st2.contains(get_dtna);
-				st2.contains(get_fuso);
-				st2.contains(get_bus);
-				select_business_unit(BU);
-				ClickTab();
-				submit_button();
-				test.pass("Functional role is created successfully");
-			}
+			if (!st1.equalsIgnoreCase("")) {
+				WebElement BU_path = BaseClass.getDriver()
+						.findElement(By.xpath("//div/span[text()='Please select your business unit']"));
+				if (BU_path.isDisplayed()) {
+					select_BU();
+					String st2 = business_unit();
+					st2.contains(get_DTE);
+					st2.contains(get_dtna);
+					st2.contains(get_fuso);
+					st2.contains(get_bus);
+					select_business_unit(BU);
+					ClickTab();
+					submit_button();
+					test.pass("Functional role is created successfully");
+				}
 			} else {
 				submit_button();
 				test.pass("Functional role is created successfully");
@@ -736,12 +735,13 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 
 	}
 
-	public String raise_External_functional_role_request(String Functional_role_External, String Reason_for_External_FR, String Role_Desc, String company_name,
+	public String raise_External_functional_role_request(String Functional_role_External, String Reason_for_External_FR,
+			String Role_Desc, String company_name,
 			String Daimler_name, String Daimler_email, String get_DTE, String get_dtna, String get_fuso, String get_bus,
 			String BU) throws Throwable {
 		select_Functional_role();
 		String st = user_type();
-		logger.info("functional Role : "+Functional_role_External);
+		logger.info("functional Role : " + Functional_role_External);
 		String st1 = select_user_type(Functional_role_External);
 		test.pass("User selected the functional role:  " + st1);
 		functional_role_external();
@@ -751,13 +751,14 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 		logger.info("****** Company Selection *********");
 		Thread.sleep(2000);
 		select_company_name(company_name);
-		logger.info("******** Company Selected ***********"+company_name);
+		logger.info("******** Company Selected ***********" + company_name);
 		daimler_Internal_name(Daimler_name);
 		daimler_Internal_email(Daimler_email);
 		Thread.sleep(200);
 		reason_field(Functional_role_External);
 		try {
-			WebElement BU_path = driver.findElement(By.xpath("//div/span[text()='Please select your business unit']"));
+			WebElement BU_path = BaseClass.getDriver()
+					.findElement(By.xpath("//div/span[text()='Please select your business unit']"));
 			if (BU_path.isDisplayed()) {
 				select_BU();
 				String st2 = business_unit();
@@ -767,7 +768,7 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 				st2.contains(get_bus);
 				select_business_unit(BU);
 				ClickTab();
-//				Thread.sleep(500);
+				// Thread.sleep(500);
 			}
 		} catch (Exception e) {
 			select_BU();
@@ -777,11 +778,11 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 			st2.contains(get_fuso);
 			st2.contains(get_bus);
 			select_business_unit(BU);
-//			Thread.sleep(500);
+			// Thread.sleep(500);
 		}
 		submit_button();
 		test.pass("Functional role is created successfully");
-//		Thread.sleep(3000);
+		// Thread.sleep(3000);
 		return st1;
 	}
 
@@ -793,9 +794,9 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 		String st = user_type();
 		System.out.println(Functional_role_supplier);
 		logger.info(Functional_role_supplier);
-//		st.contains(Supplier_key_management);
-//		st.contains(supplier_Development);
-//		st.contains(supplier_warranty_return);
+		// st.contains(Supplier_key_management);
+		// st.contains(supplier_Development);
+		// st.contains(supplier_warranty_return);
 		String st1 = select_user_type(Functional_role_supplier);
 		test.pass("User selected the functional role:  " + st1);
 		functional_role_supplier();
@@ -805,18 +806,18 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 		Thread.sleep(500);
 		select_company();
 		select_business_unit(company_name);
-//		Thread.sleep(500);
+		// Thread.sleep(500);
 		reason_field(Reason_for_supplier_FR);
-//		Thread.sleep(3000);
+		// Thread.sleep(3000);
 		select_ECU_Qualifier();
-//		Thread.sleep(2000);
+		// Thread.sleep(2000);
 		String space = " ";
 		String fn_ECU_Qualifier = st1.concat(" - ").concat(ECU_Supplier).concat(space);
 		select_business_unit(ECU_Supplier);
 		ClickTab();
 		submit_button();
 		test.pass("Functional role is created successfully");
-//		Thread.sleep(3000);
+		// Thread.sleep(3000);
 		return fn_ECU_Qualifier;
 	}
 
@@ -830,30 +831,30 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 		String role_Desc = role_desc_text();
 		role_Desc.equalsIgnoreCase(Role_Desc);
 		test.pass("Verified the role description in Functional Overview page");
-//		Thread.sleep(500);
+		// Thread.sleep(500);
 		select_company();
 		select_business_unit(company_name);
-//		Thread.sleep(500);
+		// Thread.sleep(500);
 		reason_field(Reason_for_supplier_FR);
 		select_ECU_Qualifier();
-//		Thread.sleep(2000);
+		// Thread.sleep(2000);
 		String fn_ECU_Qualifier = null;
 		int selectedoptionCount = 0;
 		List<String> selectedoptions = new ArrayList<>();
 		for (String string : eCU_Qualifiers2) {
 			String st = string.concat(" ");
-			WebElement alloptions = driver
+			WebElement alloptions = BaseClass.getDriver()
 					.findElement(By.xpath("//span[@class=\"mat-option-text\" and text()='" + st + "']"));
 			String space = " ";
 			fn_ECU_Qualifier = st1.concat(" - ").concat(string).concat(space);
 			alloptions.click();
-//			Thread.sleep(3000);
+			// Thread.sleep(3000);
 			selectedoptionCount++;
 			selectedoptions.add(string);
 		}
 		submit_button();
 		test.pass("Functional role is created successfully");
-//		Thread.sleep(3000);
+		// Thread.sleep(3000);
 		return Arrays.asList(fn_ECU_Qualifier, selectedoptions, selectedoptionCount);
 
 	}
@@ -869,10 +870,10 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 		select_business_unit(get_DTE);
 		select_Functional_role();
 		String st = user_type();
-//		Thread.sleep(500);
+		// Thread.sleep(500);
 		String st1 = select_user_type(Functional_role);
 		test.pass("User selected the functional role:  " + st1);
-//		Thread.sleep(200);
+		// Thread.sleep(200);
 		String role_Desc = role_desc_text();
 		role_Desc.equalsIgnoreCase(Role_Desc);
 		test.pass("Verified the role description in Functional Overview page");
@@ -880,14 +881,14 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 		reason_field(reason);
 		submit_button();
 		test.pass("Technical User Functional role is created successfully");
-//		Thread.sleep(3000);
-//		Thread.sleep(3000);
+		// Thread.sleep(3000);
+		// Thread.sleep(3000);
 		return random;
 
 	}
 
 	public void functional_role_Internal_refresh() throws InterruptedException {
-//		Thread.sleep(3000);
+		// Thread.sleep(3000);
 		refresh();
 		functional_role_request_internal_after_refresh_or_cancel();
 	}
@@ -912,7 +913,7 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 	}
 
 	public void functional_role_External_refresh() throws InterruptedException {
-//		Thread.sleep(3000);
+		// Thread.sleep(3000);
 		refresh();
 		functional_role_request_external_after_refresh_or_cancel();
 
@@ -935,7 +936,7 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 	}
 
 	public void functional_role_Supplier_refresh() throws InterruptedException {
-//		Thread.sleep(3000);
+		// Thread.sleep(3000);
 		refresh();
 		functional_role_request_supplier_after_refresh_or_cancel();
 	}
@@ -962,27 +963,25 @@ public class New_Functional_Role_Request_Page extends AbstractComponents {
 		waitForWebElementToAppear(cancel_confirmation_text);
 		clickJS(cancel_dismiss);
 	}
-	
+
 	public void select_company_name(String name) throws InterruptedException {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		try {
 			select_Company.isEnabled();
 			waitForWebElementToAppear(select_Company);
 			click(select_Company);
+		}catch(Exception e) {
+			waitForWebElementToAppear(select_Company);
+			clickJS(select_Company);	
+		}
+		try {
 			Thread.sleep(2000);
 			clickelementmatchingtext(BU_Option, name);
 		} catch (Exception ex) {
 			String xpathExpression = String.format("//span[contains(text(),'%s')]", name);
-			clickJS(driver.findElement(By.xpath(xpathExpression)));
+			clickJS(BaseClass.getDriver().findElement(By.xpath(xpathExpression)));
 		}
 
 	}
-	
-	
-	
-	
-	
-	
-	
-	
+
 }

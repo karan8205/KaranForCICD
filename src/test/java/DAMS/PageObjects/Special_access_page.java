@@ -26,7 +26,6 @@ import DAMS.Resources.AbstractComponents;
 import DAMS.Resources.BaseClass;
 
 public class Special_access_page extends AbstractComponents {
-	WebDriver driver;
 	String requesterID;
 	String username;
 	String department;
@@ -45,9 +44,7 @@ public class Special_access_page extends AbstractComponents {
 	String Approval_date;
 
 	public Special_access_page(WebDriver driver) {
-		super(driver);
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
+		super(BaseClass.getDriver());
 	}
 
 	// special access
@@ -852,7 +849,7 @@ public class Special_access_page extends AbstractComponents {
 
 	public void clickSpecialAccess() throws InterruptedException {
 		Thread.sleep(4000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		waitForWebElementToAppear(Special_Access);
 		waitForelementToBeClickable(Special_Access);
 		// windowZoomOut();
@@ -992,7 +989,7 @@ public class Special_access_page extends AbstractComponents {
 
 	public void selectECU_Chain(String name) throws Throwable {
 		Thread.sleep(2000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		waitForWebElementToAppear(ECU_Chain);
 		waitForelementToBeClickable(ECU_Chain);
 		clickJS(ECU_Chain);
@@ -1001,7 +998,7 @@ public class Special_access_page extends AbstractComponents {
 
 	public void selectECU_Chain_ViewPublisher(String name) throws Throwable {
 		// waitForWebElementToAppear(ECU_Type_ViewPublisher);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		waitForWebElementToAppear(ECU_Type_ViewPublisher);
 		waitForelementToBeClickable(ECU_Type_ViewPublisher);
 		Thread.sleep(2000);
@@ -1015,7 +1012,7 @@ public class Special_access_page extends AbstractComponents {
 		waitForelementToBeClickable(please_Select_Your_role);
 		clickJS(please_Select_Your_role);
 		String xpathExpression = String.format("//span[text()=' %s ']", name);
-		clickJS(driver.findElement(By.xpath(xpathExpression)));
+		clickJS(BaseClass.getDriver().findElement(By.xpath(xpathExpression)));
 		return name;
 		// clickelementmatchingtext(Functional_role_type, name);
 	}
@@ -1042,7 +1039,7 @@ public class Special_access_page extends AbstractComponents {
 	public void Ecu_qualifier_after_removed(String name) throws Throwable {
 		clickJS(Please_select_the_required_ECU);
 		String xpathExpression = String.format("//span[contains(text(),'%s')]", name);
-		waitForWebElementToAppear(driver.findElement(By.xpath(xpathExpression)));
+		waitForWebElementToAppear(BaseClass.getDriver().findElement(By.xpath(xpathExpression)));
 	}
 
 	public String clickelementmatchingtext(List<WebElement> elements, String name) throws InterruptedException {
@@ -1454,7 +1451,7 @@ public class Special_access_page extends AbstractComponents {
 			throws Throwable {
 		Thread.sleep(3000);
 		refresh();
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		Thread.sleep(5000);
 		update_functional_role();
 		request_Overview_update();
@@ -1660,7 +1657,7 @@ public class Special_access_page extends AbstractComponents {
 	public void View_Publisher_Onboarding_validation(String BU, String publisher_name, String functional_role2,
 			String new_permission, String remark) {
 		String[] expectedData = { BU, publisher_name, functional_role2, new_permission, remark };
-		WebElement firstrow = driver.findElement(By.xpath("//table/tbody/tr[1]"));
+		WebElement firstrow = BaseClass.getDriver().findElement(By.xpath("//table/tbody/tr[1]"));
 		List<WebElement> cells = firstrow.findElements(By.tagName("td"));
 		boolean alldatamatch = true;
 		for (int i = 0; i < cells.size() - 1; i++) {

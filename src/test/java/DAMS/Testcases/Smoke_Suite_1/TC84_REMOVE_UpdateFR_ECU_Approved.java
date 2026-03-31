@@ -22,7 +22,7 @@ public class TC84_REMOVE_UpdateFR_ECU_Approved extends BaseClass {
 				+ "</u></i></b>");
 		TC01_Login_MFA.login_with_addressing_MFA_External();
 		Thread.sleep(10000);
-		waitForPageLoad(driver);
+		waitForPageLoad(BaseClass.getDriver());
 		special.clickSpecialAccess();
 		windowZoomOut(); 
 		removeFunctionalRole_Approve(input);

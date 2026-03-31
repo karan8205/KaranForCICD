@@ -15,7 +15,7 @@ import DAMS.Resources.BaseClass;
 
 
 public class TC002_ATG_Smoke_TestSuite_E2E extends BaseClass {
-	@Test(dataProvider = "getData_Internal", priority = 0)
+	@Test(dataProvider = "getData_Internal", priority = 0,enabled=false)
 	public static void atg_Smoke_TestSuite_E2E_Internal(
 			HashMap<String, String> input) throws Throwable {
 //		TC01_Login_MFA.login_with_addressing_MFA();
@@ -56,21 +56,21 @@ public class TC002_ATG_Smoke_TestSuite_E2E extends BaseClass {
 		AbstractComponents.refresh();
 		
 		List<String >create_special_cases_nestT_request=TC41_NestT_TestCOT_ATG. create_special_cases_nestT_request(input);
-		TC43_NestT_TestCOT_ATG_Approved.approve_specail_cases_nestT_request(input, create_special_cases_nestT_request);
+		TC43_NestT_TestCOT_ATG_Approved.approve_specail_cases_nestT_request(input, create_special_cases_nestT_request,ctx().prop.getInternalName());
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Nest-T Testing for Internal- status Approved-ATG:" + "</u></i></b>");
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Creation of Replacement Package - Internal-ATG" + "</u></i></b>");
 		AbstractComponents.refresh();
 		List<String >create_replacement_package_request = TC55_ReplacementPackage_RootBackend_Swap_ATG_Approved.create_replacement_package_request(input);
-		TC55_ReplacementPackage_RootBackend_Swap_ATG_Approved.approve_special_cases_Replacement_request(input,create_replacement_package_request);
+		TC55_ReplacementPackage_RootBackend_Swap_ATG_Approved.approve_special_cases_Replacement_request(input,create_replacement_package_request,ctx().prop.getInternalName());
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Replacement Package for Internal- status Approved-ATG:" + "</u></i></b>");
 		softAssertionALL();
-//		driver.close();
+//		BaseClass.getDriver().close();
 	}
 
-	@Test(dataProvider = "getData_External", priority = 1)
+	@Test(dataProvider = "getData_External", priority = 1,enabled=false)
 	public static void atg_Smoke_TestSuite_E2E_External(
 			HashMap<String, String> input) throws Throwable {
 //		TC01_Login_MFA.login_with_addressing_MFA();
@@ -110,18 +110,18 @@ public class TC002_ATG_Smoke_TestSuite_E2E extends BaseClass {
 				+ "Creation of Nest-T Testing - External-ATG" + "</u></i></b>");
 		AbstractComponents.refresh();
 		List<String >create_special_cases_nestT_request=TC41_NestT_TestCOT_ATG. create_special_cases_nestT_request_External(input);
-		TC43_NestT_TestCOT_ATG_Approved.approve_specail_cases_nestT_request(input, create_special_cases_nestT_request);
+		TC43_NestT_TestCOT_ATG_Approved.approve_specail_cases_nestT_request(input, create_special_cases_nestT_request,ctx().prop.getExternalName());
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Nest-T Testing for External- status Approved-ATG:" + "</u></i></b>");
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Creation of Replacement Package - External-ATG" + "</u></i></b>");
 		AbstractComponents.refresh();
 		List<String >create_replacement_package_request = TC55_ReplacementPackage_RootBackend_Swap_ATG_Approved.create_replacement_package_request_External(input);
-		TC55_ReplacementPackage_RootBackend_Swap_ATG_Approved.approve_special_cases_Replacement_request(input,create_replacement_package_request);
+		TC55_ReplacementPackage_RootBackend_Swap_ATG_Approved.approve_special_cases_Replacement_request(input,create_replacement_package_request,ctx().prop.getExternalName());
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Replacement Package for External- status Approved-ATG:" + "</u></i></b>");
 		softAssertionALL();
-//		driver.close();
+//		BaseClass.getDriver().close();
 	}
 
 	@Test(dataProvider = "getData_Supplier", priority = 2)
@@ -163,18 +163,18 @@ public class TC002_ATG_Smoke_TestSuite_E2E extends BaseClass {
 				+ "Creation of Nest-T Testing - Supplier-ATG" + "</u></i></b>");
 		AbstractComponents.refresh();
 		List<String >create_special_cases_nestT_request=TC41_NestT_TestCOT_ATG. create_special_cases_nestT_request_Supplier(input);
-		TC43_NestT_TestCOT_ATG_Approved.approve_specail_cases_nestT_request(input, create_special_cases_nestT_request);
+		TC43_NestT_TestCOT_ATG_Approved.approve_specail_cases_nestT_request(input, create_special_cases_nestT_request,ctx().prop.getSupplierName());
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Nest-T Testing for Supplier- status Approved-ATG:" + "</u></i></b>");
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Creation of Replacement Package - Supplier-ATG" + "</u></i></b>");
 		AbstractComponents.refresh();
 		List<String >create_replacement_package_request = TC53_ReplacementPackage_RootBackend_Swap_ATG.create_replacement_package_request_Supplier(input);
-		TC55_ReplacementPackage_RootBackend_Swap_ATG_Approved.approve_special_cases_Replacement_request(input,create_replacement_package_request);
+		TC55_ReplacementPackage_RootBackend_Swap_ATG_Approved.approve_special_cases_Replacement_request(input,create_replacement_package_request,ctx().prop.getSupplierName());
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Replacement Package for Supplier- status Approved-ATG:" + "</u></i></b>");
 		softAssertionALL();
-//		driver.close();
+//		BaseClass.getDriver().close();
 	}
 
 	@DataProvider

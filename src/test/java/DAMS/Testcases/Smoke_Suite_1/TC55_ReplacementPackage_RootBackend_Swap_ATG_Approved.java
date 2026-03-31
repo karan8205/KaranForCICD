@@ -23,7 +23,7 @@ public class TC55_ReplacementPackage_RootBackend_Swap_ATG_Approved extends BaseC
 				+ "Replacment package request Internal- status pending" + "</u></i></b>");
 		TC07_STD_ATG_FRapproved.Funtional_role_request_approved_Internal(input);
 		List<String >create_replacement_package_request = create_replacement_package_request(input);
-		approve_special_cases_Replacement_request(input,create_replacement_package_request);	
+		approve_special_cases_Replacement_request(input,create_replacement_package_request,ctx().prop.getInternalName());
 		test.pass("User is able to create Replacement package request when the status is pending");
 		logger.info("User is able to create Replacement package request when the status is pending");
 		softAssertionALL();
@@ -35,7 +35,7 @@ public class TC55_ReplacementPackage_RootBackend_Swap_ATG_Approved extends BaseC
 				+ "Replacment package request External- status pending" + "</u></i></b>");
 		TC07_STD_ATG_FRapproved.Funtional_role_request_approved_External(input);
 		List<String >create_replacement_package_request = create_replacement_package_request_External(input);
-		approve_special_cases_Replacement_request(input,create_replacement_package_request);		
+		approve_special_cases_Replacement_request(input,create_replacement_package_request,ctx().prop.getExternalName());
 		test.pass("User is able to create Replacement package request when the status is pending");
 		logger.info("User is able to create Replacement package request when the status is pending");
 		softAssertionALL();
@@ -46,7 +46,7 @@ public class TC55_ReplacementPackage_RootBackend_Swap_ATG_Approved extends BaseC
 		test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 				+ "Replacment package request Supplier- status pending" + "</u></i></b>");
 		List<String >create_replacement_package_request = TC53_ReplacementPackage_RootBackend_Swap_ATG.create_replacement_package_request_Supplier(input);
-		approve_special_cases_Replacement_request(input,create_replacement_package_request);
+		approve_special_cases_Replacement_request(input,create_replacement_package_request,ctx().prop.getSupplierName());
 		test.pass("User is able to create Replacement package request when the status is Approved");
 		logger.info("User is able to create Replacement package request when the status is Approved");
 		softAssertionALL();
@@ -86,7 +86,7 @@ public class TC55_ReplacementPackage_RootBackend_Swap_ATG_Approved extends BaseC
 		test.info("Request overview tab enabled");
 		logger.info("Request overview tab enabled");
 		List<String> replacement_package_table_input = req
-				.request_Overview_table_validation_for_replacement_package("Replacement Package", prop.getUser_name());
+				.request_Overview_table_validation_for_replacement_package("Replacement Package", prop.getUser_name(),ctx().prop.getInternalName());
 		Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the Replacement package request created");
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");
@@ -103,7 +103,7 @@ public class TC55_ReplacementPackage_RootBackend_Swap_ATG_Approved extends BaseC
 		test.info("Request overview tab enabled");
 		logger.info("Request overview tab enabled");
 		List<String> replacement_package_table_input = req
-				.request_Overview_table_validation_for_replacement_package("Replacement Package", prop.getUser_name());
+				.request_Overview_table_validation_for_replacement_package("Replacement Package", ctx().prop.getExternalName(),ctx().prop.getExternalName());
 		Assert.assertTrue(replacement_package_table_input.get(0).equals(prop.getStatus_pending()));
 		test.pass("User is able to view the approval status as pending once the Replacement package request created");
 		logger.info("User is able to view the approval status as pending once the Replacement package request created");
@@ -111,13 +111,13 @@ public class TC55_ReplacementPackage_RootBackend_Swap_ATG_Approved extends BaseC
 	}
 	
 	public static void approve_special_cases_Replacement_request(HashMap<String, String> input,
-			List<String> create_special_cases_Replacement_request) throws Throwable {
+			List<String> create_special_cases_Replacement_request,String username) throws Throwable {
 		String Replacement_approval_status_after_level1_approval = approver_overview.approve_replacement_Package_Request(prop.get_user_type_Internal(),prop.getStatus_pending(),input.get("SpecialCase"), create_special_cases_Replacement_request);
 		s.assertTrue(Replacement_approval_status_after_level1_approval.equals(prop.getStatus_Approved()));
 		test.pass("User is able to view the approval status as Approved after 1st level approval");
 		logger.info("User is able to view the approval status as Approved after 1st level approval");
 		req.navigate_to_request_Overview_page_and_verify_approval_status_RP_NestT(prop.getStatus_pending(), "N/A", "N/A",
-				input.get("SpecialCase"), prop.getUser_name());
+				input.get("SpecialCase"), username);
 		test.pass(
 				"User is able to view navigate to request role overview page and check if the status is pending after 1st level approval");
 		logger.info(
@@ -128,7 +128,7 @@ public class TC55_ReplacementPackage_RootBackend_Swap_ATG_Approved extends BaseC
 		logger.info("User is able to view the approval status as Approved after 2nd level approval");
 		String todays_date = todays_date();
 		req.navigate_to_request_Overview_page_and_verify_approval_status_RP_NestT(prop.getStatus_Approved(), todays_date, "N/A",
-				input.get("SpecialCase"), prop.getUser_name());
+				input.get("SpecialCase"), username);
 		test.pass(
 				"User is able to view navigate to request role overview page and check if the status is approved after 2nd level approval");
 		logger.info(

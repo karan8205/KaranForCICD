@@ -22,7 +22,7 @@ public class TC36_EnhanceRightAuthority_ATG_Rejected extends BaseClass {
 				+ "Enhance Right AUthority Internal -status Rejected" + "</u></i></b>");
 
 		TC35_EnhanceRightAuthority_ATG.create_Enhance_right_Authority_Request_Internal_test_case(input);
-		req.search_here(prop.getUser_name());		
+		req.search_here(prop.getUser_name());
 		reject_Enhance_Right_Authority_request(input);
 		test.pass("User is able to create Enhance right request when the status is rejected");
 		logger.info("User is able to create Enhance right request when the status is rejected");
@@ -80,7 +80,7 @@ public class TC36_EnhanceRightAuthority_ATG_Rejected extends BaseClass {
 	}
 
 	public static void reject_Enhance_Right_Authority_request(HashMap<String, String> input,
-			List<Object> create_Enhance_Right_Authority_request) throws Throwable {
+			List<Object> create_Enhance_Right_Authority_request,String username) throws Throwable {
 		String approval_status_after_level1_rejection = approver_overview.reject_Enhance_right_Request(
 				create_Enhance_Right_Authority_request.get(7), "Enhance Right", reason_for_rejection,
 				create_Enhance_Right_Authority_request);
@@ -88,7 +88,7 @@ public class TC36_EnhanceRightAuthority_ATG_Rejected extends BaseClass {
 		test.pass("User is able to view the approval status as rejected in approver page");
 		logger.info("User is able to view the approval status as rejected in approver page");
 		req.navigate_to_request_Overview_page_and_verify_approval_status_ER(prop.getStatus_rejected(), "N/A",
-				reason_for_rejection, "Enhance Right", prop.getUser_name());
+				reason_for_rejection, "Enhance Right", username);
 		test.pass("User is able to view the approval status as rejected in request overview page");
 		logger.info("User is able to view the approval status as rejected in request overview page");
 

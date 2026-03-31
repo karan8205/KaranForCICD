@@ -40,67 +40,63 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class AbstractComponents extends BaseClass{
-	static WebDriver driver;
 	public AbstractComponents(WebDriver driver) {
-
-		this.driver = driver;
-		PageFactory.initElements(driver, this);
-
+		PageFactory.initElements(new ThreadLocalElementLocatorFactory(), this);
 	}
 
 	public void waitForElementToAppear(By findBy) {
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(BaseClass.getDriver(), Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.visibilityOfElementLocated(findBy));
 
 	} 
 
 	public static void waitForWebElementToAppear(WebElement findBy) {
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(45));
+		WebDriverWait wait = new WebDriverWait(BaseClass.getDriver(), Duration.ofSeconds(45));
 		wait.until(ExpectedConditions.visibilityOf(findBy));
 
 	}
 	
 	public static void waitForurltext(String text) {
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(BaseClass.getDriver(), Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.urlContains(text));
 
 	}
 
 	public static void waitForelementToBeClickable(WebElement findBy) {
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		WebDriverWait wait = new WebDriverWait(BaseClass.getDriver(), Duration.ofSeconds(60));
 		wait.until(ExpectedConditions.elementToBeClickable(findBy));
 
 	}
 
 	public void waitForWebElementnotToAppear(WebElement findBy) {
 
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+		WebDriverWait wait = new WebDriverWait(BaseClass.getDriver(), Duration.ofSeconds(5));
 		wait.until(ExpectedConditions.invisibilityOfAllElements(findBy));
 
 	}
 
 	public void switchToFrameByindex(int index) {
-		driver.switchTo().frame(index);
+		BaseClass.getDriver().switchTo().frame(index);
 	}
 
 	public void switchToFrameByName(String name) {
-		driver.switchTo().frame(name);
+		BaseClass.getDriver().switchTo().frame(name);
 	}
 
 	public void switchToFrameByElement(WebElement element) {
-		driver.switchTo().frame(element);
+		BaseClass.getDriver().switchTo().frame(element);
 	}
 
 	public void switchToFrameById(String id) {
-		driver.switchTo().frame(id);
+		BaseClass.getDriver().switchTo().frame(id);
 	}
 
 	public void switchToDefault() {
-		driver.switchTo().parentFrame();
+		BaseClass.getDriver().switchTo().parentFrame();
 	}
 
 	public boolean isDisplayed(WebElement element) {
@@ -112,15 +108,15 @@ public class AbstractComponents extends BaseClass{
 	}
 
 	public void loadUrl(String Url) {
-		driver.get(Url);
+		BaseClass.getDriver().get(Url);
 	}
 
 	public void maximize() {
-		driver.manage().window().maximize();
+		BaseClass.getDriver().manage().window().maximize();
 	}
 
 	public void implicitWait(long time) {
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(time));
+		BaseClass.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(time));
 	}
 
 	public void type(WebElement element, Object values) {
@@ -153,16 +149,16 @@ public class AbstractComponents extends BaseClass{
 	}
 
 	public int framesCount() {
-		List<WebElement> framescount = driver.findElements(By.tagName("iframe"));
+		List<WebElement> framescount = BaseClass.getDriver().findElements(By.tagName("iframe"));
 		return framescount.size();
 	}
 
 	public void quit() {
-		driver.quit();
+		BaseClass.getDriver().quit();
 	}
 
 	public void close() {
-		driver.close();
+		BaseClass.getDriver().close();
 	}
 
 	public void selectBytext(WebElement element, String data) {
@@ -190,118 +186,118 @@ public class AbstractComponents extends BaseClass{
 	}
 
 	public String getTitle() {
-		return driver.getTitle();
+		return BaseClass.getDriver().getTitle();
 	}
 
 	public String getUrl() {
-		return driver.getCurrentUrl();
+		return BaseClass.getDriver().getCurrentUrl();
 	}
 
 	public static void scrollDown(WebElement element) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
 		js.executeScript("arguments[0].scrollIntoView(true)", element);
 	}
 
 	public void scrollUp(WebElement element) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
 		js.executeScript("arguments[0].scrollIntoView(false)", element);
 	}
 
 	public void typeJS(WebElement element, String data) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
 		js.executeScript("arguments[0].setAttribute('value','" + data + "')", element);
 	}
 
 	public void clickJS(WebElement element) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
 		waitForelementToBeClickable(element);
 		js.executeScript("arguments[0].click()", element);
 		
 	}
 	public void focusClick(WebElement element) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
 		waitForelementToBeClickable(element);
 		js.executeScript("arguments[0].focus();", element);
 		element.click();
 		
 	}
 	public void moveToElement(WebElement element) {
-		Actions ac = new Actions(driver);
+		Actions ac = new Actions(BaseClass.getDriver());
 		ac.moveToElement(element).perform();
 
 	}
 	public void actionClick(WebElement element) {
-		Actions ac = new Actions(driver);
+		Actions ac = new Actions(BaseClass.getDriver());
 		ac.moveToElement(element).click().perform();
 
 	}
 
 	public void dragAndDrop(WebElement scr, WebElement desc) {
-		Actions ac = new Actions(driver);
+		Actions ac = new Actions(BaseClass.getDriver());
 		ac.dragAndDrop(scr, desc).perform();
 
 	}
 
 	public void rightClick(WebElement element) {
-		Actions ac = new Actions(driver);
+		Actions ac = new Actions(BaseClass.getDriver());
 		ac.contextClick(element).perform();
 
 	}
 
 	public void doubleClick(WebElement element) {
-		Actions ac = new Actions(driver);
+		Actions ac = new Actions(BaseClass.getDriver());
 		ac.doubleClick(element).perform();
 
 	}
 
 	public void actionsType(WebElement element, String data) {
-		Actions ac = new Actions(driver);
+		Actions ac = new Actions(BaseClass.getDriver());
 		ac.sendKeys(element, data).perform();
 
 	}
 
 	public void acceptAlert() {
-		Alert al = driver.switchTo().alert();
+		Alert al = BaseClass.getDriver().switchTo().alert();
 		al.accept();
 
 	}
 
 	public void dismissAlert() {
-		Alert al = driver.switchTo().alert();
+		Alert al = BaseClass.getDriver().switchTo().alert();
 		al.dismiss();
 
 	}
 
 	public String getTextAlert() {
-		Alert al = driver.switchTo().alert();
+		Alert al = BaseClass.getDriver().switchTo().alert();
 		return al.getText();
 
 	}
 
 	public void navigateBack() {
-		driver.navigate().back();
+		BaseClass.getDriver().navigate().back();
 
 	}
 
 	public void navigateURL(String url) {
-		driver.navigate().to(url);
+		BaseClass.getDriver().navigate().to(url);
 
 	}
 
 	public void navigateForward() {
-		driver.navigate().forward();
+		BaseClass.getDriver().navigate().forward();
 
 	}
 
 	public static void refresh() {
-		driver.navigate().refresh();
+		BaseClass.getDriver().navigate().refresh();
 
 	}
 
 	public static void Scrollright_waitForWebElementToAppear(WebElement findBy) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) BaseClass.getDriver();
 		js.executeScript("arguments[0].scrollIntoView();", findBy);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(BaseClass.getDriver(), Duration.ofSeconds(10));
 		wait.until(ExpectedConditions.visibilityOf(findBy));
 
 	}
@@ -333,7 +329,7 @@ public class AbstractComponents extends BaseClass{
 
 	public WebElement dynmaic_xpath(String textvalue) {
 		String xpath = String.format("//span[contains(text(),'%s')]", textvalue);
-		return driver.findElement(By.xpath(xpath));
+		return BaseClass.getDriver().findElement(By.xpath(xpath));
 	}
 	
 	public String getRandomServiceId() {
