@@ -1,6 +1,8 @@
 pipeline {
 
-    agent { label 'DAMS' }
+    agent { label 'DAMS'
+     customWorkspace 'C:/JenkinsWorkspace/DAMS_Pipeline_Latest'
+     }
 
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))

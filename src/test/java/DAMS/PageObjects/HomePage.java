@@ -160,7 +160,11 @@ public class HomePage extends AbstractComponents {
 
 	public void please_select_your_user_type() throws InterruptedException {
 		Thread.sleep(2000);
+		try {
 		click(please_select_your_user_type);
+		}catch(Exception e) {
+			clickJS(please_select_your_user_type);
+		}
 		Thread.sleep(1000);
 		//please_select_your_user_type.click();
 	}
