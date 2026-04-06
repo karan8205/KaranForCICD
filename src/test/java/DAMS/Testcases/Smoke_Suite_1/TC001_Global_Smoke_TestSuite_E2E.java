@@ -77,7 +77,7 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 		// BaseClass.getDriver().quit();
 	}
 
-	@Test(dataProvider = "getData_External", priority = 1)
+	@Test(dataProvider = "getData_External")
 	public static void global_Smoke_TestSuite_E2E_External(
 			HashMap<String, String> input) throws Throwable {
 //		 TC01_Login_MFA.login_with_addressing_MFA_External();
