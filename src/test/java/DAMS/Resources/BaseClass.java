@@ -364,7 +364,7 @@ public class BaseClass {
         byte[] passwordEncode = Base64.getDecoder().decode(ctx().prop.getPassword_MFA_Supplier());
         String password = new String(passwordEncode);
         initializeDriver("incognito"); // sets ctx().driver
-        login(username, password, ctx().prop.getUrl());
+        login_Supplier(username, password, ctx().prop.getUrl());
     }
 
     public static void login_MFA_Normal(String username_MFA, String password_MFA, String url)
@@ -416,6 +416,43 @@ public class BaseClass {
         s = ctx().s;
 
         ctx().l.loginApplicationasRequester_MFA(username_MFA, password_MFA, url);
+    }
+    
+    public static void login_Supplier(String username_MFA, String password_MFA, String url) throws InterruptedException {
+        ctx().pageObjectManager = new PageObjectManager(getDriver());
+        ctx().l = ctx().pageObjectManager.getLoginPage();
+        ctx().h = ctx().pageObjectManager.getHomePage();
+        ctx().gtc = ctx().pageObjectManager.getGtcPage();
+        ctx().f = ctx().pageObjectManager.getfunctional_role_page();
+        ctx().newrequest = ctx().pageObjectManager.getNewFunctionalRoleRequestPage();
+        ctx().approver_overview = ctx().pageObjectManager.getapproverOverview_page();
+        ctx().newper = ctx().pageObjectManager.getNewPermission_Request_Page();
+        ctx().req = ctx().pageObjectManager.getRequest_overview_page();
+        ctx().myreq = ctx().pageObjectManager.getmyRequest_Page();
+        ctx().onboard_new_ECU = ctx().pageObjectManager.getonboard_new_ECU_page();
+        ctx().deputy = ctx().pageObjectManager.getMyDeputy_page();
+        ctx().special = ctx().pageObjectManager.getSpecial_access_page();
+        ctx().read = ctx().pageObjectManager.getReadView_Permission_Page();
+        ctx().s = creatsoftAssert();
+
+        // Also update legacy static aliases so non-parallel TCs keep working
+        pageObjectManager = ctx().pageObjectManager;
+        l = ctx().l;
+        h = ctx().h;
+        gtc = ctx().gtc;
+        f = ctx().f;
+        newrequest = ctx().newrequest;
+        approver_overview = ctx().approver_overview;
+        newper = ctx().newper;
+        req = ctx().req;
+        myreq = ctx().myreq;
+        onboard_new_ECU = ctx().onboard_new_ECU;
+        deputy = ctx().deputy;
+        special = ctx().special;
+        read = ctx().read;
+        s = ctx().s;
+
+        ctx().l.loginApplicationasRequester_MFA_Supplier(username_MFA, password_MFA, url);
     }
 
     // ─────────────────────────────────────────────────────────────────────────

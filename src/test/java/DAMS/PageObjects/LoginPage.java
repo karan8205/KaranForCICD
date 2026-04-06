@@ -33,7 +33,27 @@ public class LoginPage extends AbstractComponents {
 	WebElement otpField;
 	@FindBy(xpath = "//input[@type=\"submit\"]")
 	WebElement verifyButton;
-
+	//hari
+	@FindBy(xpath = "//input[@id='signInName']")
+	WebElement BusinessID_UserID;
+	@FindBy(xpath = "//button[@type='button']")
+	WebElement BusinessID_UserID_Continue;
+	@FindBy(xpath = "//input[@id='password']")
+	WebElement BusinessID_Password;
+	@FindBy(xpath = "//button[@type='submit']")
+	WebElement BusinessID_Password_Continue;
+	@FindBy(xpath = "//input[@value='secondaryEmail']")
+	WebElement BusinessID_SecondaryEmail;
+	@FindBy(xpath = "//button[@id='continue']")
+	WebElement BusinessID_Email_Continue;
+	@FindBy(xpath = "//button[text()='Send verification code']")
+	WebElement BusinessID_VerificationCode;
+	@FindBy(xpath = "//input[@id='verificationCode']")
+	WebElement BusinessID_VerificationCodeInput;
+	@FindBy(xpath = "//button[text()='Verify code']")
+	WebElement BusinessID_VerifyCodeBtn;
+	
+	
 	public void goTo(String url){
 		BaseClass.getDriver().get(url);
 	}
@@ -63,10 +83,54 @@ public class LoginPage extends AbstractComponents {
 //		verification_code.click();
 //		otpField.click();
 	}
+	public void loginApplicationasRequester_MFA_Supplier(String username, String password,String url) throws InterruptedException {
+		
+		logger.info("URL : "+url);
+		goTo(url);
+		Thread.sleep(3000);
+		clickJS(BusinessID_UserID);
+		type(BusinessID_UserID, username);
+		clickJS(BusinessID_UserID_Continue);
+		test.pass("User is able to enter username and clicks on Continue button");
+		clickJS(BusinessID_Password);
+		type(BusinessID_Password, password);
+		waitForelementToBeClickable(BusinessID_Password_Continue);
+		clickJS(BusinessID_Password_Continue);
+		test.pass("User is able to enter password and clicks on Continue button");
+		Thread.sleep(3000);
+		waitForWebElementToAppear(BusinessID_SecondaryEmail);
+		waitForelementToBeClickable(BusinessID_SecondaryEmail);
+		Thread.sleep(2000);
+		click(BusinessID_SecondaryEmail);
+		clickJS(BusinessID_Email_Continue);
+		waitForelementToBeClickable(BusinessID_VerificationCode);
+		clickJS(BusinessID_VerificationCode);
+		
+		String authCode = null;
+        try {
+            authCode = DAMS.Resources.EmailUtil.getVerificationCodeFromOutlook();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        
+        if (authCode != null) {
+            enter_BusinessID_verification_code(authCode);
+        } else {
+            throw new RuntimeException("MFA Verification Code was not retrieved from Outlook.");
+        }
+		
+	}
 	public void enter_verification_code(String otp) throws InterruptedException {
 		otpField.sendKeys(otp);
 		clickJS(verifyButton);
 		test.pass("User is able to enter otp and clicks on verify button");
 
+	}
+	
+	public void enter_BusinessID_verification_code(String otp) throws InterruptedException {
+        waitForWebElementToAppear(BusinessID_VerificationCodeInput);
+		BusinessID_VerificationCodeInput.sendKeys(otp);
+		clickJS(BusinessID_VerifyCodeBtn);
+		test.pass("User is able to enter Business ID otp and clicks on verify button");
 	}
 }
