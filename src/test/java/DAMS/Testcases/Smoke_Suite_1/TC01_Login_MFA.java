@@ -6,6 +6,7 @@ import org.testng.annotations.Test;
 
 import static DAMS.Resources.Listeners.test;
 
+
 public class TC01_Login_MFA extends BaseClass {
     // @Test
     // public static void login_with_addressing_MFA() throws Throwable {
@@ -47,7 +48,7 @@ public class TC01_Login_MFA extends BaseClass {
     @Test
     public static void login_with_addressing_MFA_Supplier() throws Throwable {
         BaseClass.login_MFA_Incognito_Supplier();
-        login_with_mfa("Supplier");
+//        login_with_mfa("Supplier");
         BaseClass.getScreenshot("login", BaseClass.getDriver());
     }
 

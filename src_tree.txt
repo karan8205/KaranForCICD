@@ -1,0 +1,214 @@
+Folder PATH listing
+Volume serial number is D40B-57A7
+C:\UI-AUTOMATION-TESTING\UI-AUTOMATION-TESTING\SRC
++---test
+    +---java
+        +---DAMS
+            +---data
+            ¦       Diagnostic_Authority.json
+            ¦       ECU_Certificate.json
+            ¦       End_to-end_functionality.json
+            ¦       EnhanceRight_Authority.json
+            ¦       MyDeputy.json
+            ¦       Nest_T_Testing.json
+            ¦       New_functional_role_Request.json
+            ¦       Onboard_New_ECU.json
+            ¦       ReadView_Permission.json
+            ¦       ReplacementPackage.json
+            ¦       SpecialAccess.json
+            ¦       SpecialCase.json
+            ¦       TechnicalUser.json
+            ¦       
+            +---data_Regression
+            ¦       01_Internal_End_to-end_functionality.json
+            ¦       02_External_End_to-end_functionality.json
+            ¦       03_Supplier_End_to-end_functionality.json
+            ¦       04_ServicePrincipal_End_to-end_functionality.json
+            ¦       05_SpecialAccess_End_to-end_functionality.json
+            ¦       06_FUSO_All_End_to_end_Functionality.json
+            ¦       
+            +---ObjectManager
+            ¦       PageObjectManager.java
+            ¦       
+            +---PageObjects
+            ¦       ApproverOverview_Page.java
+            ¦       Functional_role_page.java
+            ¦       GTC_Page.java
+            ¦       HomePage.java
+            ¦       LoginPage.java
+            ¦       MyDeputy_Page.java
+            ¦       MyRequest_Page.java
+            ¦       NewPermission_Request_Page.java
+            ¦       New_Functional_Role_Request_Page.java
+            ¦       Onboard_new_ECU_page.java
+            ¦       ReadView_Permission.java
+            ¦       Request_overview_page.java
+            ¦       Special_access_page.java
+            ¦       
+            +---Resources
+            ¦       AbstractComponents.java
+            ¦       BaseClass.java
+            ¦       ExtentReporterNG.java
+            ¦       Failed.java
+            ¦       FailedAll.java
+            ¦       Listeners.java
+            ¦       MyScreenRecorder.java
+            ¦       PropertyFile.java
+            ¦       SoftAssertUtil.java
+            ¦       ThreadLocalElementLocator.java
+            ¦       ThreadLocalElementLocatorFactory.java
+            ¦       UserdefinedExpection.java
+            ¦       
+            +---Testcases
+                +---Regression_Suite
+                ¦   +---External
+                ¦   ¦       TC001_External_Development_FR_Global.java
+                ¦   ¦       TC002_External_Production_FR_Global.java
+                ¦   ¦       TC003_External_VehicleValidation_FR_Global.java
+                ¦   ¦       TC004_External_BusProductionTool_FR_Global.java
+                ¦   ¦       TC005_External_QualityManagement_FR_Global.java
+                ¦   ¦       TC006_External_DiagnosticLinkTool_FR_Global.java
+                ¦   ¦       TC007_External_XentryTool_FR_Global.java
+                ¦   ¦       TC008_External_Development_FR_ATG.java
+                ¦   ¦       TC009_External_Production_FR_ATG.java
+                ¦   ¦       TC010_External_VehicleValidation_FR_ATG.java
+                ¦   ¦       TC011_External_ComponentVerification_FR_ATG.java
+                ¦   ¦       TC012_Reject_Approve_External_Global.java
+                ¦   ¦       TC013_Reject_Approve_External_ATG.java
+                ¦   ¦       TC015_FUSO_External_Development_FR_Global.java
+                ¦   ¦       
+                ¦   +---Internal
+                ¦   ¦       TC001_Internal_Development_FR_Global.java
+                ¦   ¦       TC002_Internal_Production_FR_Global.java
+                ¦   ¦       TC003_Internal_VehicleValidation_FR_Global.java
+                ¦   ¦       TC004_Internal_BusProductionTool_FR_Global.java
+                ¦   ¦       TC005_Internal_QualityManagement_FR_Global.java
+                ¦   ¦       TC006_Internal_DiagnosticLinkTool_FR_Global.java
+                ¦   ¦       TC007_Internal_XentryTool_FR_Global.java
+                ¦   ¦       TC008_Internal_Development_FR_ATG.java
+                ¦   ¦       TC009_Internal_Production_FR_ATG.java
+                ¦   ¦       TC010_Internal_VehicleValidation_FR_ATG.java
+                ¦   ¦       TC011_Internal_ComponentVerification_FR_ATG.java
+                ¦   ¦       TC012_Reject_Approve_Internal_Global.java
+                ¦   ¦       TC013_Reject_Approve_Internal_ATG.java
+                ¦   ¦       
+                ¦   +---Overall
+                ¦   ¦       TC001_OverAll_Internal_External_Supplier_Global_ATG.java
+                ¦   ¦       TC002_Internal_OverAll_Global_ATG.java
+                ¦   ¦       TC003_External_OverAll_Global_ATG.java
+                ¦   ¦       TC004_Supplier_OverAll_Global_ATG.java
+                ¦   ¦       
+                ¦   +---Supplier
+                ¦           TC001_Supplier_KeyManagement_FR_Global.java
+                ¦           TC002_Supplier_Development_FR_Global.java
+                ¦           TC003_Supplier_WarrantyReturn_FR_Global.java
+                ¦           TC004_Supplier_KeyManagement_FR_ATG.java
+                ¦           TC005_Supplier_Development_FR_ATG.java
+                ¦           TC006_Supplier_WarrantyReturn_FR_ATG.java
+                ¦           TC007_Reject_Approve_Supplier_Global.java
+                ¦           TC008_Reject_Approve_Supplier_ATG.java
+                ¦           TC009_FUSO_Supplier_All_FR_Global.java
+                ¦           
+                +---Smoke_Suite_1
+                        TC001_Global_Smoke_TestSuite_E2E.java
+                        TC002_ATG_Smoke_TestSuite_E2E.java
+                        TC003_ServicePrincipal_TestSuite_E2E.java
+                        TC004_SpecialAccess_TestSuite_E2E.java
+                        TC01_Login_MFA.java
+                        TC02_Requests_STD_GLOBAL.java
+                        TC03_Requests_STD_ATG_FR.java
+                        TC04_STD_ATG_FRrejected.java
+                        TC05_STD_GLOBAL_FRrejected.java
+                        TC06_STD_GLOBAL_FRapproved.java
+                        TC07_STD_ATG_FRapproved.java
+                        TC08_Diagnostic_Authority_GLOBAL.java
+                        TC09_Diagnostic_Authority_GLOBAL_Rejected.java
+                        TC10_Diagnostic_Authority_GLOBAL_Approved.java
+                        TC11_EnhanceRightAuthority_GLOBAL.java
+                        TC12_EnhanceRightAuthority_GLOBAL_Rejected.java
+                        TC13_EnhanceRightAuthority_GLOBAL_Approved.java
+                        TC14_NestT_CentralAuth_GLOBAL.java
+                        TC15_NestT_CentralAuth_GLOBAL_Rejected.java
+                        TC16_NestT_CentralAuth_GLOBAL_Approved.java
+                        TC17_NestT_TestCOT_GLOBAL.java
+                        TC18_NestT_TestCOT_GLOBAL_Rejected.java
+                        TC19_NestT_TestCOT_GLOBAL_Approved.java
+                        TC20_NestT_SeriesCOT_GLOBAL.java
+                        TC21_NestT_SeriesCOT_GLOBAL_Rejected.java
+                        TC22_NestT_SeriesCOT_GLOBAL_Approved.java
+                        TC23_ReplacementPackage_RootLink_GLOBAL.java
+                        TC24_ReplacementPackage_RootLink_GLOBAL_Rejected.java
+                        TC25_ReplacementPackage_RootLink_GLOBAL_Approved.java
+                        TC26_ReplacementPackage_BackendLink_GLOBAL.java
+                        TC27_ReplacementPackage_BackendLink_GLOBAL_Rejected.java
+                        TC28_ReplacementPackage_BackendLink_GLOBAL_Approved.java
+                        TC29_ReplacementPackage_RootBackend_Swap_GLOBAL.java
+                        TC30_ReplacementPackage_RootBackend_Swap_Swap_GLOBAL_Rejected.java
+                        TC31_ReplacementPackage_RootBackend_Swap_Swap_GLOBAL_Approved.java
+                        TC32_DiagnosticAuthority_ATG.java
+                        TC33_DiagnosticAuthority_ATG_Rejected.java
+                        TC34_DiagnosticAuthority_ATG_Approved.java
+                        TC35_EnhanceRightAuthority_ATG.java
+                        TC36_EnhanceRightAuthority_ATG_Rejected.java
+                        TC37_EnhanceRightAuthority_ATG_Approved.java
+                        TC38_NestT_CentralAuth_ATG.java
+                        TC39_NestT_CentralAuth_ATG_Rejected.java
+                        TC40_NestT_CentralAuth_ATG_Approved.java
+                        TC41_NestT_TestCOT_ATG.java
+                        TC42_NestT_TestCOT_ATG_Rejected.java
+                        TC43_NestT_TestCOT_ATG_Approved.java
+                        TC44_NestT_SeriesCOT_ATG.java
+                        TC45_NestT_SeriesCOT_ATG_Rejected.java
+                        TC46_NestT_SeriesCOT_ATG_Approved.java
+                        TC47_ReplacementPackage_RootLink_ATG.java
+                        TC48_ReplacementPackage_RootLink_ATG_Rejected.java
+                        TC49_ReplacementPackage_RootLink_ATG_Approved.java
+                        TC50_ReplacementPackage_BackendLink_ATG.java
+                        TC51_ReplacementPackage_BackendLink_ATG_Rejected.java
+                        TC52_ReplacementPackage_BackendLink_ATG_Approved.java
+                        TC53_ReplacementPackage_RootBackend_Swap_ATG.java
+                        TC54_ReplacementPackage_RootBackend_Swap_ATG_Rejected.java
+                        TC55_ReplacementPackage_RootBackend_Swap_ATG_Approved.java
+                        TC56_ServicePrinciple_Production_Pending.java
+                        TC57_ServicePrinciple_Production_Reject.java
+                        TC58_ServicePrinciple_Production_Approved.java
+                        TC59_ServicePrincipal_xOTA_Pending.java
+                        TC60_ServicePrincipal_xOTA_Rejected.java
+                        TC61_ServicePrincipal_xOTA_Approved.java
+                        TC62_ServicePrincipal_Production_DA_Pending.java
+                        TC63_ServicePrincipal_Production_DA_Rejected.java
+                        TC64_ServicePrincipal_Production_DA_Approved.java
+                        TC65_ServicePrincipal_Production_EA_Pending.java
+                        TC66_ServicePrincipal_Production_EA_Rejected.java
+                        TC67_ServicePrincipal_Production_EA_Approved.java
+                        TC68_xOTA_FOTA_Pending.java
+                        TC69_xOTA_FOTA_Rejected.java
+                        TC70_xOTA_FOTA_Approved.java
+                        TC71_OnboardNewECU_Pending.java
+                        TC72_OnboardNewECU_Rejected.java
+                        TC73_OnboardNewECU_Approved.java
+                        TC74_FunctionalRole_ViewPermission.java
+                        TC75_ThirdParty_Publisher.java
+                        TC76_ViewPublisher_Onboarding_Edit.java
+                        TC77_ViewPublisher_Onboarding_Delete.java
+                        TC78_ViewPublisher_Onboarding.java
+                        TC79_ADD_UpdateFR_ECU_Pending.java
+                        TC80_ADD_UpdateFR_ECU_Rejected.java
+                        TC81_ADD_UpdateFR_ECU_Approved.java
+                        TC82_REMOVE_UpdateFR_ECU_Pending.java
+                        TC83_REMOVE_UpdateFR_ECU_Rejected.java
+                        TC84_REMOVE_UpdateFR_ECU_Approved.java
+                        TC85_SpecialEnhancedRight_Pending.java
+                        TC86_SpecialEnhancedRight_Rejected.java
+                        TC87_SpecialEnhancedRight_Approved.java
+                        TC88_ADD_UpdateGlobalEnhance_Pending.java
+                        TC89_ADD_UpdateGlobalEnhance_Rejected.java
+                        TC90_ADD_UpdateGlobalEnhance_Approved.java
+                        TC91_DELETE_UpdateGlobalEnhance_Approved.java
+                        TC92_ECU_MetaData.java
+                        TC93_MyDeputy.java
+                        TC94_ReadView_Permission.java
+                        TC95_ECU_Certificate_Request_Pending.java
+                        TC96_ECU_Certificate_Request_Rejected.java
+                        TC97_ECU_Certificate_Request_Approved.java
+                        
