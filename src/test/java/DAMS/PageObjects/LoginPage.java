@@ -74,7 +74,7 @@ public class LoginPage extends AbstractComponents {
 		click(next_MFA);
 		test.pass("User is able to enter username and clicks on next button");
 		Thread.sleep(3000);
-		password_MFA.click();
+		clickJS(password_MFA);
 		type(password_MFA, password);
 		click(Signin_Submit_MFA);
 //		test.pass("User is able to enter password and clicks on sign-in button");
