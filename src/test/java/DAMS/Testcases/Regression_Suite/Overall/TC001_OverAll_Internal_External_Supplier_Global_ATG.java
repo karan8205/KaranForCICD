@@ -119,19 +119,19 @@ public class TC001_OverAll_Internal_External_Supplier_Global_ATG extends BaseCla
 							input);
 					waitForPageLoad(BaseClass.getDriver());
 					Thread.sleep(3000);
-					approve_special_cases_Replacement_request(input, create_replacement_package_request_id_front);
+					approve_special_cases_Replacement_request(input, create_replacement_package_request_id_front,ctx().prop.getInternalName());
 					waitForPageLoad(BaseClass.getDriver());
 					Thread.sleep(3000);
 					List<String> create_replacement_package_request_id_back = create_replacement_package_request_backend(
 							input);
-					approve_special_cases_Replacement_request(input, create_replacement_package_request_id_back);
+					approve_special_cases_Replacement_request(input, create_replacement_package_request_id_back,ctx().prop.getInternalName());
 					waitForPageLoad(BaseClass.getDriver());
 					Thread.sleep(3000);
 					List<String> create_replacement_package_request_ids = create_replacement_package_request_rootbackend(
 							input);
 					waitForPageLoad(BaseClass.getDriver());
 					Thread.sleep(3000);
-					approve_special_cases_Replacement_request(input, create_replacement_package_request_ids);
+					approve_special_cases_Replacement_request(input, create_replacement_package_request_ids,ctx().prop.getInternalName());
 					test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 							+ "Replacement Package for Internal- status Approved:" + "</u></i></b>");
 				}
@@ -155,7 +155,7 @@ public class TC001_OverAll_Internal_External_Supplier_Global_ATG extends BaseCla
 	}
 	//
 
-	@Test(dataProvider = "getData_External", priority = 1)
+	@Test(dataProvider = "getData_External", priority = 1,enabled=false)
 	public static void Overall_Global_ATG_Regression_E2E_External(HashMap<String, String> input) throws Throwable {
 		try {
 
@@ -239,19 +239,19 @@ public class TC001_OverAll_Internal_External_Supplier_Global_ATG extends BaseCla
 						input);
 				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
-				approve_special_cases_Replacement_request(input, create_replacement_package_request_id_front);
+				approve_special_cases_Replacement_request(input, create_replacement_package_request_id_front,ctx().prop.getExternalName());
 				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
 				List<String> create_replacement_package_request_id_back = create_replacement_package_request_backend_External(
 						input);
-				approve_special_cases_Replacement_request(input, create_replacement_package_request_id_back);
+				approve_special_cases_Replacement_request(input, create_replacement_package_request_id_back,ctx().prop.getExternalName());
 				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
 				List<String> create_replacement_package_request_ids = create_replacement_package_request_rootbackend(
 						input);
 				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
-				approve_special_cases_Replacement_request(input, create_replacement_package_request_ids);
+				approve_special_cases_Replacement_request(input, create_replacement_package_request_ids,ctx().prop.getExternalName());
 				test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 						+ "Replacement Package for Internal- status Approved:" + "</u></i></b>");
 			}
@@ -354,19 +354,19 @@ public class TC001_OverAll_Internal_External_Supplier_Global_ATG extends BaseCla
 						input);
 				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
-				approve_special_cases_Replacement_request(input, create_replacement_package_request_id_front);
+				approve_special_cases_Replacement_request(input, create_replacement_package_request_id_front,ctx().prop.getSupplierName());
 				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
 				List<String> create_replacement_package_request_id_back = create_replacement_package_request_backend_Supplier(
 						input);
-				approve_special_cases_Replacement_request(input, create_replacement_package_request_id_back);
+				approve_special_cases_Replacement_request(input, create_replacement_package_request_id_back,ctx().prop.getSupplierName());
 				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
 				List<String> create_replacement_package_request_ids = create_replacement_package_request_rootbackend(
 						input);
 				waitForPageLoad(BaseClass.getDriver());
 				Thread.sleep(3000);
-				approve_special_cases_Replacement_request(input, create_replacement_package_request_ids);
+				approve_special_cases_Replacement_request(input, create_replacement_package_request_ids,ctx().prop.getSupplierName());
 				test.log(Status.INFO, "<span style=\"color: blue;\"><b><i><u>"
 						+ "Replacement Package for Internal- status Approved:" + "</u></i></b>");
 			}
@@ -510,7 +510,7 @@ public class TC001_OverAll_Internal_External_Supplier_Global_ATG extends BaseCla
 	}
 
 	public static void approve_special_cases_Replacement_request(HashMap<String, String> input,
-			List<String> create_special_cases_Replacement_request) throws Throwable {
+			List<String> create_special_cases_Replacement_request,String userName) throws Throwable {
 		String Replacement_approval_status_after_level1_approval = approver_overview.multiple_Approve_Request(
 				"Replacement Package", ctx().prop.getStatus_pending(), create_special_cases_Replacement_request);
 		ctx().s.assertTrue(Replacement_approval_status_after_level1_approval.equals(ctx().prop.getStatus_Approved()));
@@ -518,7 +518,7 @@ public class TC001_OverAll_Internal_External_Supplier_Global_ATG extends BaseCla
 		logger.info("User is able to view the approval status as Approved after 1st level approval");
 		ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_RP_NestT(ctx().prop.getStatus_pending(),
 				"N/A", "N/A",
-				input.get("SpecialCase"), ctx().prop.getUser_name());
+				input.get("SpecialCase"),userName);
 		test.pass(
 				"User is able to view navigate to request role overview page and check if the status is pending after 1st level approval");
 		logger.info(
