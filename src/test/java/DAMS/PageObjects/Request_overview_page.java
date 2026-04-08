@@ -1216,9 +1216,11 @@ public class Request_overview_page extends AbstractComponents {
 		Thread.sleep(2000);
 		req.scrollForReason();
 		Thread.sleep(1000);
-		refresh_button.click();
+//		refresh_button.click();
 		Thread.sleep(3000);
-		waitForPageLoad(getDriver());
+//		waitForPageLoad(getDriver());
+//		waitForPageLoad(getDriver());
+//		Thread.sleep(3000);
 		waitForWebElementToAppear(Request_Overview_approval_status_txt);
 		click(Request_Overview_approval_status_txt);
 		Thread.sleep(3000);

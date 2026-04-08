@@ -33,7 +33,7 @@ public class TC001_OverAll_Internal_External_Supplier_Global_ATG extends BaseCla
 	
 	// public static Map<String, Object> input;
 
-	@Test(dataProvider = "getData_Internal", priority = 0)
+	@Test(dataProvider = "getData_Internal")
 	public static void Overall_Global_ATG_Regression_E2E_Internal(HashMap<String, String> input) throws Throwable {
 		try {
 		String	select_user_type = String.valueOf(input.get("User_Type")).trim().toLowerCase();
@@ -155,7 +155,7 @@ public class TC001_OverAll_Internal_External_Supplier_Global_ATG extends BaseCla
 	}
 	//
 
-	@Test(dataProvider = "getData_External", priority = 1,enabled=false)
+	@Test(dataProvider = "getData_External")
 	public static void Overall_Global_ATG_Regression_E2E_External(HashMap<String, String> input) throws Throwable {
 		try {
 
