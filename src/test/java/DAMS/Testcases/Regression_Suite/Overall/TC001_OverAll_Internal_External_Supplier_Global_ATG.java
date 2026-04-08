@@ -155,7 +155,7 @@ public class TC001_OverAll_Internal_External_Supplier_Global_ATG extends BaseCla
 	}
 	//
 
-	@Test(dataProvider = "getData_External",enabled=false)
+	@Test(dataProvider = "getData_External")
 	public static void Overall_Global_ATG_Regression_E2E_External(HashMap<String, String> input) throws Throwable {
 		try {
 
