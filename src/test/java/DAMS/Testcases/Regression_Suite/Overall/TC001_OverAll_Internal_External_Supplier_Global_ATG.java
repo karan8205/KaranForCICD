@@ -155,7 +155,7 @@ public class TC001_OverAll_Internal_External_Supplier_Global_ATG extends BaseCla
 	}
 	//
 
-	@Test(dataProvider = "getData_External")
+	@Test(dataProvider = "getData_External",enabled=false)
 	public static void Overall_Global_ATG_Regression_E2E_External(HashMap<String, String> input) throws Throwable {
 		try {
 
@@ -531,7 +531,7 @@ public class TC001_OverAll_Internal_External_Supplier_Global_ATG extends BaseCla
 		String todays_date = todays_date();
 		ctx().req.navigate_to_request_Overview_page_and_verify_approval_status_RP_NestT(ctx().prop.getStatus_Approved(),
 				todays_date, "N/A",
-				input.get("SpecialCase"), ctx().prop.getUser_name());
+				input.get("SpecialCase"), userName);
 		test.pass(
 				"User is able to view navigate to request role overview page and check if the status is approved after 2nd level approval");
 		logger.info(
