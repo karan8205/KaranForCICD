@@ -507,7 +507,11 @@ public class NewPermission_Request_Page extends AbstractComponents {
 		waitForPageLoad(BaseClass.getDriver());
 		waitForWebElementToAppear(NestT_ECUQualifier);
 		// waitForelementToBeClickable(NestT_ECUQualifier);
+		try {
 		click(NestT_ECUQualifier);
+		}catch(Exception e) {
+			clickJS(NestT_ECUQualifier);	
+		}
 		// NestT_ECUQualifier.click();
 		String str = clickelementmatchingtext(ECU_dropdown_option, name);
 		return str;
