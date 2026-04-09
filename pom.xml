@@ -39,6 +39,7 @@
       <artifactId>selenium-java</artifactId>
       <version>4.3.0</version>
     </dependency>
+    
 
     <!-- TOTP (kept both as requested) -->
     <dependency>
@@ -140,61 +141,52 @@
 
   </dependencies>
 
-  <!-- ===== Build ===== -->
   <build>
-    <plugins>
+  <plugins>
 
-      <!-- Compiler -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.11.0</version>
-        <configuration>
-          <source>${maven.compiler.source}</source>
-          <target>${maven.compiler.target}</target>
-          <annotationProcessorPaths>
-            <path>
-              <groupId>org.projectlombok</groupId>
-              <artifactId>lombok</artifactId>
-              <version>1.18.38</version>
-            </path>
-          </annotationProcessorPaths>
-        </configuration>
-      </plugin>
+    <!-- Compiler -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-compiler-plugin</artifactId>
+      <version>3.11.0</version>
+      <configuration>
+        <source>${maven.compiler.source}</source>
+        <target>${maven.compiler.target}</target>
+      </configuration>
+    </plugin>
 
-      <!-- Surefire Plugin (Parallel Enabled) -->
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-surefire-plugin</artifactId>
-        <version>3.2.5</version>
+    <!-- Surefire Plugin -->
+    <plugin>
+      <groupId>org.apache.maven.plugins</groupId>
+      <artifactId>maven-surefire-plugin</artifactId>
+      <version>3.2.5</version>
 
-        <configuration>
+      <configuration>
 
-          <!-- Run via TestNG XML -->
-          <suiteXmlFiles>
-            <suiteXmlFile>${testng.suite}</suiteXmlFile>
-          </suiteXmlFiles>
+        <!-- ❌ REMOVE XML -->
+        <!-- suiteXmlFiles removed -->
 
-          <!-- ✅ Parallel Execution -->
-          <parallel>methods</parallel>
-          <threadCount>3</threadCount>
+        <!-- ✅ Parallel Execution -->
+        <parallel>methods</parallel>
+        <threadCount>3</threadCount>
 
-          <!-- Listener -->
-          <properties>
-            <property>
-              <name>listener</name>
-              <value>DAMS.Resources.Listeners</value>
-            </property>
-          </properties>
+        <!-- ✅ Listener -->
+        <properties>
+          <property>
+            <name>listener</name>
+            <value>DAMS.Resources.Listeners</value>
+          </property>
+        </properties>
 
-          <useSystemClassLoader>true</useSystemClassLoader>
-          <forkCount>1</forkCount>
-          <reuseForks>true</reuseForks>
+        <!-- Optional but safe -->
+        <useSystemClassLoader>true</useSystemClassLoader>
+        <forkCount>1</forkCount>
+        <reuseForks>true</reuseForks>
 
-        </configuration>
-      </plugin>
+      </configuration>
+    </plugin>
 
-    </plugins>
-  </build>
+  </plugins>
+</build>
 
 </project>

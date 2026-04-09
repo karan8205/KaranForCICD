@@ -1,6 +1,7 @@
+
 pipeline {
 
-    agent { label 'DAMS'}
+    agent { label 'DAMS' }
 
     options {
         buildDiscarder(logRotator(numToKeepStr: '10'))
@@ -10,7 +11,7 @@ pipeline {
 
     parameters {
         choice(name: 'env', choices: ['STG', 'DEV', 'QA'], description: 'Select the Environment')
-        string(name: 'className', defaultValue: '', description: 'Enter Fully Qualified Class Name (e.g., package.TC01_Login)')
+        string(name: 'className', defaultValue: '', description: 'Enter Fully Qualified Class Name (e.g., com.automation.tests.LoginTest)')
         string(name: 'methodName', defaultValue: '', description: 'Enter Method Name (Optional)')
     }
 
@@ -32,10 +33,10 @@ pipeline {
             steps {
                 bat 'echo Project Name: %PROJECT_NAME%'
                 bat 'echo Project URL: %PROJECT_URL%'
-                bat 'java -version'
                 bat 'echo Environment: %env%'
                 bat 'echo Class Name: %className%'
                 bat 'echo Method Name: %methodName%'
+                bat 'java -version'
             }
         }
 
@@ -56,32 +57,20 @@ pipeline {
             steps {
                 script {
 
-                    def cmd = "-Denv=${params.env}"
+                    def cmd = "mvn clean test -Denv=${params.env}"
 
-                    // ✅ If class is passed → use dynamic XML parameter
+                    // If class provided
                     if (params.className?.trim()) {
 
-                        cmd = "${cmd} -DclassName=${params.className}"
-
                         if (params.methodName?.trim()) {
-                            cmd = "${cmd} -DmethodName=${params.methodName}"
+                            cmd = "${cmd} -Dtest=${params.className}#${params.methodName}"
+                        } else {
+                            cmd = "${cmd} -Dtest=${params.className}"
                         }
 
-                        bat """
-                        mvn test ^
-                        -Dsurefire.suiteXmlFiles=testSuites/RegressionSuite_TestNG.xml ^
-                        ${cmd}
-                        """
-
-                    } else {
-
-                        // ✅ Default execution
-                        bat """
-                        mvn test ^
-                        -Dsurefire.suiteXmlFiles=testSuites/CICD.xml ^
-                        -Denv=${params.env}
-                        """
                     }
+
+                    bat "${cmd}"
                 }
             }
 
@@ -113,3 +102,4 @@ pipeline {
         }
     }
 }
+
