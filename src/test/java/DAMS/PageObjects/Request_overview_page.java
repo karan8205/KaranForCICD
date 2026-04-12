@@ -961,9 +961,9 @@ public class Request_overview_page extends AbstractComponents {
 
 	    while (attempts < 3) {
 	        try {
-	            wait.until(ExpectedConditions.refreshed(
+	            wait.until(
 	                    ExpectedConditions.visibilityOf(RequestOvewview_ApplicantType)
-	            ));
+	            );
 
 	            clickJS(RequestOvewview_ApplicantType);
 
