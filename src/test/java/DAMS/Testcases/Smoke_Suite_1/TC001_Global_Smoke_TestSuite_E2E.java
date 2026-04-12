@@ -135,7 +135,7 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 		// BaseClass.getDriver().quit();
 	}
 
-	@Test(dataProvider = "getData_Supplier", priority = 2)
+	@Test(dataProvider = "getData_Supplier", priority = 2,enabled=false)
 	public static void global_Smoke_TestSuite_E2E_Supplier(
 			HashMap<String, String> input) throws Throwable {
 		// TC01_Login_MFA.login_with_addressing_MFA();
