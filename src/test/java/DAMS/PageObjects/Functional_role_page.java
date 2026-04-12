@@ -277,6 +277,8 @@ public class Functional_role_page extends AbstractComponents {
 	
 	public void selectApplicantType() throws InterruptedException {
 		waitForWebElementToAppear(applicantvalue);
+		waitForWebElementToAppear(applicantvalue);
+		waitForelementToBeClickable(applicantvalue);
 		String txt = applicantvalue.getText();
 		if(!txt.equalsIgnoreCase("Myself")) {
 			click(applicantvalue);

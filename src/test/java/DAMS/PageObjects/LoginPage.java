@@ -63,7 +63,7 @@ public class LoginPage extends AbstractComponents {
 //		enter_verification_code(generate_OTP_for_MFA);
 //	}
 	public void loginApplicationasRequester_MFA(String username, String password,String url) throws InterruptedException {
-		
+        test.info("Environment : " + url);
 		logger.info("URL : "+url);
 		goTo(url);
 //		test.pass("Navigate to URL"+ url);
@@ -84,7 +84,8 @@ public class LoginPage extends AbstractComponents {
 //		otpField.click();
 	}
 	public void loginApplicationasRequester_MFA_Supplier(String username, String password,String url) throws InterruptedException {
-		
+        
+		test.info("Environment : " + url);
 		logger.info("URL : "+url);
 		goTo(url);
 		Thread.sleep(3000);

@@ -1,5 +1,7 @@
 package DAMS.Resources;
 
+import static DAMS.Resources.Listeners.test;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -130,22 +132,17 @@ public class BaseClass {
     public static WebDriver initializeDriver(String mode) throws IOException {
         logger = Logger.getLogger("DAMS");
         PropertyConfigurator.configure("log4j.properties");
-
         Properties prop = new Properties();
         FileInputStream fis = new FileInputStream("./Configuration/config.properties");
         prop.load(fis);
-
         String browserName = prop.getProperty("browser");
-
         if (browserName.equalsIgnoreCase("chrome")) {
             downloadPath = System.getProperty("user.dir");
-
             Map<String, Object> chromePrefs = new HashMap<>();
             chromePrefs.put("profile.default_content_settings.popups", 0);
             chromePrefs.put("download.default_directory", downloadPath);
             chromePrefs.put("download.prompt_for_download", false);
             chromePrefs.put("safebrowsing.enabled", true);
-
             ChromeOptions options = new ChromeOptions();
             options.setAcceptInsecureCerts(true);
             options.setExperimentalOption("prefs", chromePrefs);
@@ -357,16 +354,29 @@ public class BaseClass {
         login(username, password, ctx().prop.getUrl());
     }
 
-    public static void login_MFA_Incognito_Supplier()
-            throws IOException, InterruptedException {
-        byte[] decodedBytes = Base64.getDecoder().decode(ctx().prop.getUsername_MFA_Supplier());
-        String username = new String(decodedBytes);
-        byte[] passwordEncode = Base64.getDecoder().decode(ctx().prop.getPassword_MFA_Supplier());
-        String password = new String(passwordEncode);
-        initializeDriver("incognito"); // sets ctx().driver
-//        login(username_MFA, password_MFA, url);
-        login_Supplier(username, password, ctx().prop.getUrl());
-    }
+//    public static void login_MFA_Incognito_Supplier()
+//            throws IOException, InterruptedException {
+//        byte[] decodedBytes = Base64.getDecoder().decode(ctx().prop.getUsername_MFA_Supplier());
+//        String username = new String(decodedBytes);
+//        byte[] passwordEncode = Base64.getDecoder().decode(ctx().prop.getPassword_MFA_Supplier());
+//        String password = new String(passwordEncode);
+//        initializeDriver("incognito"); // sets ctx().driver
+////        login(username_MFA, password_MFA, url);
+//        login_Supplier(username, password, ctx().prop.getUrl());
+//    }
+	public static void login_MFA_Incognito_Supplier() throws IOException, InterruptedException {
+		String supplierUserName = ctx().prop.getSupplierName(); // Q9XRKVP
+		byte[] decodedBytes = Base64.getDecoder().decode(ctx().prop.getUsername_MFA_Supplier());
+		String mfaUserName = new String(decodedBytes);
+		byte[] passwordEncode = Base64.getDecoder().decode(ctx().prop.getPassword_MFA_Supplier());
+		String password = new String(passwordEncode);
+		initializeDriver("incognito");
+		if (supplierUserName != null && supplierUserName.startsWith("Q9X")) {
+			login_Supplier(mfaUserName, password, ctx().prop.getUrl());
+		} else {
+			login(mfaUserName, password, ctx().prop.getUrl());
+		}
+	}
 
     public static void login_MFA_Normal(String username_MFA, String password_MFA, String url)
             throws IOException, InterruptedException {
@@ -415,7 +425,6 @@ public class BaseClass {
         special = ctx().special;
         read = ctx().read;
         s = ctx().s;
-
         ctx().l.loginApplicationasRequester_MFA(username_MFA, password_MFA, url);
     }
     
@@ -452,7 +461,6 @@ public class BaseClass {
         special = ctx().special;
         read = ctx().read;
         s = ctx().s;
-
         ctx().l.loginApplicationasRequester_MFA_Supplier(username_MFA, password_MFA, url);
     }
 
