@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite thread-count="3" parallel="methods" name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <parameter name="env" value="dev"/>
+  <parameter name="env" value="LOCAL"/>
   <listeners>
     <listener class-name="DAMS.Resources.Listeners"/>
   </listeners>
   <test thread-count="3" parallel="methods" name="RunDynamicClass(failed)">
     <classes>
-      <class name="DAMS.Testcases.Regression_Suite.Overall.TC001_OverAll_Internal_External_Supplier_Global_ATG">
+      <class name="DAMS.Testcases.Smoke_Suite_1.TC001_Global_Smoke_TestSuite_E2E">
         <methods>
-          <include name="Overall_Global_ATG_Regression_E2E_Internal" invocation-numbers="0"/>
           <include name="configure"/>
+          <include name="global_Smoke_TestSuite_E2E_Supplier" invocation-numbers="0"/>
         </methods>
-      </class> <!-- DAMS.Testcases.Regression_Suite.Overall.TC001_OverAll_Internal_External_Supplier_Global_ATG -->
+      </class> <!-- DAMS.Testcases.Smoke_Suite_1.TC001_Global_Smoke_TestSuite_E2E -->
     </classes>
   </test> <!-- RunDynamicClass(failed) -->
 </suite> <!-- Failed suite [Suite] -->

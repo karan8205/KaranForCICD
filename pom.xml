@@ -1,192 +1,157 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
-         xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xmlns:xsi="https://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>DAMS</groupId>
+	<artifactId>DAMS_UI-Application_Automation</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>DAMS_UI-Application_Automation</name>
+	<url>http://www.example.com</url>
+	<!-- ===== Properties ===== -->
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<!-- Java Version -->
+		<maven.compiler.source>17</maven.compiler.source>
+		<maven.compiler.target>17</maven.compiler.target>
+		<!-- Default TestNG Suite -->
+		<testng.suite>testSuites/SmokeSuite_TestNG.xml</testng.suite>
+	</properties>
+	<!-- ===== Dependencies ===== -->
+	<dependencies>
+		<dependency>
+			<groupId>org.jline</groupId>
+			<artifactId>jline</artifactId>
+			<version>3.23.0</version>
+		</dependency>
+		<!-- Selenium -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>4.3.0</version>
+		</dependency>
 
-  <modelVersion>4.0.0</modelVersion>
-
-  <groupId>DAMS</groupId>
-  <artifactId>DAMS_UI-Application_Automation</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-
-  <name>DAMS_UI-Application_Automation</name>
-  <url>http://www.example.com</url>
-
-  <!-- ===== Properties ===== -->
-  <properties>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-    <!-- Java Version -->
-    <maven.compiler.source>17</maven.compiler.source>
-    <maven.compiler.target>17</maven.compiler.target>
-
-    <!-- Default TestNG Suite -->
-    <testng.suite>testSuites/SmokeSuite_TestNG.xml</testng.suite>
-  </properties>
-
-  <!-- ===== Dependencies ===== -->
-  <dependencies>
-
-    <dependency>
-      <groupId>org.jline</groupId>
-      <artifactId>jline</artifactId>
-      <version>3.23.0</version>
-    </dependency>
-
-    <!-- Selenium -->
-    <dependency>
-      <groupId>org.seleniumhq.selenium</groupId>
-      <artifactId>selenium-java</artifactId>
-      <version>4.3.0</version>
-    </dependency>
-    
-
-    <!-- TOTP (kept both as requested) -->
-    <dependency>
-      <groupId>dev.samstevens.totp</groupId>
-      <artifactId>totp</artifactId>
-      <version>1.7.1</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.jboss.aerogear</groupId>
-      <artifactId>aerogear-otp-java</artifactId>
-      <version>1.0.0</version>
-    </dependency>
-
-    <!-- TestNG (UPDATED) -->
-    <dependency>
-  <groupId>org.testng</groupId>
-  <artifactId>testng</artifactId>
-  <version>7.1.0</version>
-  <scope>test</scope>
-</dependency>	
-
-    <!-- Cucumber -->
-    <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-java</artifactId>
-      <version>7.5.0</version>
-    </dependency>
-
-    <dependency>
-      <groupId>io.cucumber</groupId>
-      <artifactId>cucumber-testng</artifactId>
-      <version>7.5.0</version>
-      <scope>test</scope>
-    </dependency>
-
-    <!-- Utilities -->
-    <dependency>
-      <groupId>commons-io</groupId>
-      <artifactId>commons-io</artifactId>
-      <version>2.11.0</version>
-    </dependency>
-
-    <!-- PDF -->
-    <dependency>
-      <groupId>org.apache.pdfbox</groupId>
-      <artifactId>pdfbox</artifactId>
-      <version>2.0.27</version>
-    </dependency>
-
-    <dependency>
-      <groupId>org.apache.pdfbox</groupId>
-      <artifactId>fontbox</artifactId>
-      <version>2.0.24</version>
-    </dependency>
-
-    <!-- Screen Recording -->
-    <dependency>
-      <groupId>com.github.stephenc.monte</groupId>
-      <artifactId>monte-screen-recorder</artifactId>
-      <version>0.7.7.0</version>
-    </dependency>
-
-    <!-- Reports -->
-    <dependency>
-      <groupId>com.aventstack</groupId>
-      <artifactId>extentreports</artifactId>
-      <version>5.1.2</version>
-    </dependency>
-
-    <!-- WebDriver Manager -->
-    <dependency>
-      <groupId>io.github.bonigarcia</groupId>
-      <artifactId>webdrivermanager</artifactId>
-      <version>5.8.0</version>
-    </dependency>
-
-    <!-- Jackson -->
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>2.13.3</version>
-    </dependency>
-
-    <!-- Log4j (kept as-is) -->
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>1.2.17</version>
-    </dependency>
-
-    <!-- Lombok -->
-    <dependency>
-      <groupId>org.projectlombok</groupId>
-      <artifactId>lombok</artifactId>
-      <version>1.18.38</version>
-      <scope>provided</scope>
-    </dependency>
-
-  </dependencies>
-
-  <build>
-  <plugins>
-
-    <!-- Compiler -->
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-compiler-plugin</artifactId>
-      <version>3.11.0</version>
-      <configuration>
-        <source>${maven.compiler.source}</source>
-        <target>${maven.compiler.target}</target>
-      </configuration>
-    </plugin>
-
-    <!-- Surefire Plugin -->
-    <plugin>
-      <groupId>org.apache.maven.plugins</groupId>
-      <artifactId>maven-surefire-plugin</artifactId>
-      <version>3.2.5</version>
-
-      <configuration>
-
-        <!-- ❌ REMOVE XML -->
-        <!-- suiteXmlFiles removed -->
-
-        <!-- ✅ Parallel Execution -->
-        <parallel>methods</parallel>
-        <threadCount>3</threadCount>
-
-        <!-- ✅ Listener -->
-        <properties>
-          <property>
-            <name>listener</name>
-            <value>DAMS.Resources.Listeners</value>
-          </property>
-        </properties>
-
-        <!-- Optional but safe -->
-        <useSystemClassLoader>true</useSystemClassLoader>
-        <forkCount>1</forkCount>
-        <reuseForks>true</reuseForks>
-
-      </configuration>
-    </plugin>
-
-  </plugins>
-</build>
-
+		<!-- TOTP (kept both as requested) -->
+		<dependency>
+			<groupId>dev.samstevens.totp</groupId>
+			<artifactId>totp</artifactId>
+			<version>1.7.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.aerogear</groupId>
+			<artifactId>aerogear-otp-java</artifactId>
+			<version>1.0.0</version>
+		</dependency>
+		<!-- TestNG (UPDATED) -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.1.0</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- Cucumber -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>7.5.0</version>
+		</dependency>
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>7.5.0</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- Utilities -->
+		<dependency>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.11.0</version>
+		</dependency>
+		<!-- PDF -->
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>pdfbox</artifactId>
+			<version>2.0.27</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.pdfbox</groupId>
+			<artifactId>fontbox</artifactId>
+			<version>2.0.24</version>
+		</dependency>
+		<!-- Screen Recording -->
+		<dependency>
+			<groupId>com.github.stephenc.monte</groupId>
+			<artifactId>monte-screen-recorder</artifactId>
+			<version>0.7.7.0</version>
+		</dependency>
+		<!-- Reports -->
+		<dependency>
+			<groupId>com.aventstack</groupId>
+			<artifactId>extentreports</artifactId>
+			<version>5.1.2</version>
+		</dependency>
+		<!-- WebDriver Manager -->
+		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>5.8.0</version>
+		</dependency>
+		<!-- Jackson -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.13.3</version>
+		</dependency>
+		<!-- Log4j (kept as-is) -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<!-- Lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<version>1.18.38</version>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<!-- Compiler -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.11.0</version>
+				<configuration>
+					<source>${maven.compiler.source}</source>
+					<target>${maven.compiler.target}</target>
+				</configuration>
+			</plugin>
+			<!-- Surefire Plugin -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.2.5</version>
+				<configuration>
+					<!-- ❌ REMOVE XML -->
+					<!-- suiteXmlFiles removed -->
+					<!-- ✅ Parallel Execution -->
+					<parallel>methods</parallel>
+					<threadCount>3</threadCount>
+					<!-- ✅ Listener -->
+					<properties>
+						<property>
+							<name>listener</name>
+							<value>DAMS.Resources.Listeners</value>
+						</property>
+					</properties>
+					<!-- Optional but safe -->
+					<useSystemClassLoader>true</useSystemClassLoader>
+					<forkCount>1</forkCount>
+					<reuseForks>true</reuseForks>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
 </project>

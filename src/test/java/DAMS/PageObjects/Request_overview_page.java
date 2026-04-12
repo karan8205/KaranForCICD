@@ -968,6 +968,7 @@ public class Request_overview_page extends AbstractComponents {
 	            clickJS(RequestOvewview_ApplicantType);
 
 	            // wait for dropdown options to reload
+	            Thread.sleep(3000);
 	            wait.until(ExpectedConditions.refreshed(
 	                    ExpectedConditions.visibilityOfAllElements(request_drpdwn_option)
 	            ));

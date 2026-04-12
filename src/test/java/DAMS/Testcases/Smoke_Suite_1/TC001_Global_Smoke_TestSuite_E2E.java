@@ -16,7 +16,7 @@ import DAMS.Resources.BaseClass;
 
 public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 
-	@Test(dataProvider = "getData_Internal")
+	@Test(dataProvider = "getData_Internal", priority = 0)
 	public static void global_Smoke_TestSuite_E2E_Internal(
 			HashMap<String, String> input) throws Throwable {
 		// TC01_Login_MFA.login_with_addressing_MFA_Internal();
@@ -77,7 +77,7 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 		// BaseClass.getDriver().quit();
 	}
 
-	@Test(dataProvider = "getData_External")
+	@Test(dataProvider = "getData_External", priority = 1)
 	public static void global_Smoke_TestSuite_E2E_External(
 			HashMap<String, String> input) throws Throwable {
 //		 TC01_Login_MFA.login_with_addressing_MFA_External();
@@ -135,7 +135,7 @@ public class TC001_Global_Smoke_TestSuite_E2E extends BaseClass {
 		// BaseClass.getDriver().quit();
 	}
 
-	@Test(dataProvider = "getData_Supplier", priority = 2,enabled=false)
+	@Test(dataProvider = "getData_Supplier", priority = 2)
 	public static void global_Smoke_TestSuite_E2E_Supplier(
 			HashMap<String, String> input) throws Throwable {
 		// TC01_Login_MFA.login_with_addressing_MFA();

@@ -33166,3 +33166,1212 @@
 2026-04-08 19:55:11,260 - DAMS -INFO - Replacement Package
 2026-04-08 19:55:25,654 - DAMS -INFO - User is able to view the approval status as Approved after 2nd level approval
 2026-04-08 19:55:44,247 - DAMS -INFO - Replacement Package
+2026-04-09 19:00:38,432 - DAMS -INFO - ************* Env : DEV
+2026-04-09 19:00:38,485 - DAMS -INFO - ************* Env : DEV
+2026-04-09 19:00:39,223 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
+2026-04-09 19:00:39,223 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
+2026-04-09 19:01:02,497 - DAMS -INFO - User is login to application
+2026-04-09 19:01:02,498 - DAMS -INFO - USER TYPE Internal
+2026-04-09 19:01:02,498 - DAMS -INFO - b2q5zydq7yvjcdrf
+2026-04-09 19:01:03,091 - DAMS -INFO - User is login to application
+2026-04-09 19:01:03,093 - DAMS -INFO - USER TYPE External
+2026-04-09 19:01:03,093 - DAMS -INFO - m6kxhsnb6hssxztq
+2026-04-09 19:01:04,928 - DAMS -INFO - User enters the verification code and click on verify button
+2026-04-09 19:01:05,757 - DAMS -INFO - User enters the verification code and click on verify button
+2026-04-10 00:01:06,662 - DAMS -INFO - ************* Env : DEV
+2026-04-10 00:01:06,664 - DAMS -INFO - ************* Env : DEV
+2026-04-10 00:01:09,099 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
+2026-04-10 00:01:09,099 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
+2026-04-10 00:05:54,375 - DAMS -INFO - ************* Env : DEV
+2026-04-10 00:05:54,553 - DAMS -INFO - ************* Env : DEV
+2026-04-10 00:05:54,865 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
+2026-04-10 00:05:54,872 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
+2026-04-10 00:06:14,167 - DAMS -INFO - User is login to application
+2026-04-10 00:06:14,176 - DAMS -INFO - USER TYPE External
+2026-04-10 00:06:14,177 - DAMS -INFO - m6kxhsnb6hssxztq
+2026-04-10 00:06:15,053 - DAMS -INFO - User is login to application
+2026-04-10 00:06:15,059 - DAMS -INFO - USER TYPE Internal
+2026-04-10 00:06:15,066 - DAMS -INFO - b2q5zydq7yvjcdrf
+2026-04-10 00:06:16,149 - DAMS -INFO - User enters the verification code and click on verify button
+2026-04-10 00:06:17,096 - DAMS -INFO - User enters the verification code and click on verify button
+2026-04-10 00:06:36,351 - DAMS -INFO - https://dams-dev.azurewebsites.net/dams/#/functional-role/gtc
+2026-04-10 00:06:36,353 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 00:06:38,108 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-04-10 00:06:42,158 - DAMS -INFO - https://dams-dev.azurewebsites.net/dams/#/functional-role/gtc
+2026-04-10 00:06:42,160 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 00:06:44,708 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 00:06:44,709 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 00:06:44,711 - DAMS -INFO - User validates the gtc page
+2026-04-10 00:06:49,716 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 00:06:49,724 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 00:06:49,725 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 00:06:49,727 - DAMS -INFO - User validates the gtc page
+2026-04-10 00:06:54,738 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 00:11:24,427 - DAMS -INFO - ************* Env : DEV
+2026-04-10 00:11:24,430 - DAMS -INFO - ************* Env : DEV
+2026-04-10 00:11:24,906 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
+2026-04-10 00:11:24,906 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
+2026-04-10 00:11:45,221 - DAMS -INFO - User is login to application
+2026-04-10 00:11:45,223 - DAMS -INFO - USER TYPE External
+2026-04-10 00:11:45,223 - DAMS -INFO - m6kxhsnb6hssxztq
+2026-04-10 00:11:46,604 - DAMS -INFO - User enters the verification code and click on verify button
+2026-04-10 00:11:47,774 - DAMS -INFO - User is login to application
+2026-04-10 00:11:47,774 - DAMS -INFO - USER TYPE Internal
+2026-04-10 00:11:47,776 - DAMS -INFO - b2q5zydq7yvjcdrf
+2026-04-10 00:11:49,903 - DAMS -INFO - User enters the verification code and click on verify button
+2026-04-10 00:12:06,475 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-04-10 00:12:09,269 - DAMS -INFO - https://dams-dev.azurewebsites.net/dams/#/functional-role/gtc
+2026-04-10 00:12:09,269 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 00:12:10,519 - DAMS -INFO - https://dams-dev.azurewebsites.net/dams/#/functional-role/gtc
+2026-04-10 00:12:10,519 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 00:12:16,784 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 00:12:16,788 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 00:12:16,790 - DAMS -INFO - User validates the gtc page
+2026-04-10 00:12:17,577 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 00:12:17,578 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 00:12:17,582 - DAMS -INFO - User validates the gtc page
+2026-04-10 00:12:21,791 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 00:12:22,589 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 00:12:35,158 - DAMS -INFO - 2
+2026-04-10 00:12:35,576 - DAMS -INFO - 2
+2026-04-10 00:12:52,053 - DAMS -INFO - https://dams-dev.azurewebsites.net/dams/#/functional-role/gtc
+2026-04-10 00:12:52,055 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 00:12:54,759 - DAMS -INFO - External
+2026-04-10 00:12:54,860 - DAMS -INFO - Supplier
+2026-04-10 00:12:54,881 - DAMS -INFO - User is able to view User_types in dropdown
+2026-04-10 00:12:58,711 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-04-10 00:12:59,334 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 00:12:59,336 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 00:12:59,337 - DAMS -INFO - User validates the gtc page
+2026-04-10 00:13:02,769 - DAMS -INFO - https://dams-dev.azurewebsites.net/dams/#/functional-role/gtc
+2026-04-10 00:13:02,770 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 00:13:04,353 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 00:13:09,359 - DAMS -INFO - validates the functional role page
+2026-04-10 00:13:09,361 - DAMS -INFO - *************Internal
+2026-04-10 00:13:10,115 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 00:13:10,117 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 00:13:10,120 - DAMS -INFO - User validates the gtc page
+2026-04-10 00:13:12,411 - DAMS -INFO - ***Functional role : Xentry Tool Development
+2026-04-10 00:13:12,412 - DAMS -INFO - User Type :Development
+2026-04-10 00:13:12,488 - DAMS -INFO - user type Bus Production Tool Development name Development
+2026-04-10 00:13:12,559 - DAMS -INFO - user type Development name Development
+2026-04-10 00:13:13,725 - DAMS -INFO - Development
+2026-04-10 00:13:15,121 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 00:13:20,133 - DAMS -INFO - validates the functional role page
+2026-04-10 00:13:20,134 - DAMS -INFO - *************External
+2026-04-10 00:13:20,788 - DAMS -INFO - BU : DTE
+2026-04-10 00:13:20,855 - DAMS -INFO - user type BUS name DTE
+2026-04-10 00:13:20,925 - DAMS -INFO - user type DTE name DTE
+2026-04-10 00:13:23,127 - DAMS -INFO - functional Role : Development External Support
+2026-04-10 00:13:23,128 - DAMS -INFO - User Type :Development External Support
+2026-04-10 00:13:23,197 - DAMS -INFO - user type Bus Production Tool Development External name Development External Support
+2026-04-10 00:13:23,273 - DAMS -INFO - user type Development External Support name Development External Support
+2026-04-10 00:13:24,767 - DAMS -INFO - ****** Company Selection *********
+2026-04-10 00:13:29,400 - DAMS -INFO - user type A&D Technology name Robert Bosch
+2026-04-10 00:13:29,453 - DAMS -INFO - user type Actalent name Robert Bosch
+2026-04-10 00:13:29,524 - DAMS -INFO - user type ADC Automotive Distance name Robert Bosch
+2026-04-10 00:13:29,575 - DAMS -INFO - user type AKKODIS name Robert Bosch
+2026-04-10 00:13:29,632 - DAMS -INFO - user type Anstalt für Verbrennungskraftmaschinen List (AVL) name Robert Bosch
+2026-04-10 00:13:29,681 - DAMS -INFO - user type APTIV COMPONENTS INDIA PVT.LTD name Robert Bosch
+2026-04-10 00:13:29,746 - DAMS -INFO - user type ARTECH name Robert Bosch
+2026-04-10 00:13:29,798 - DAMS -INFO - user type ASK Industries S.p.A. name Robert Bosch
+2026-04-10 00:13:29,855 - DAMS -INFO - user type AUO Corporation name Robert Bosch
+2026-04-10 00:13:29,911 - DAMS -INFO - user type BCS Automotive Interface Solutions name Robert Bosch
+2026-04-10 00:13:29,969 - DAMS -INFO - user type Bendix name Robert Bosch
+2026-04-10 00:13:30,028 - DAMS -INFO - user type Calex name Robert Bosch
+2026-04-10 00:13:30,085 - DAMS -INFO - user type Calex-DCDC name Robert Bosch
+2026-04-10 00:13:30,139 - DAMS -INFO - user type CellCentric name Robert Bosch
+2026-04-10 00:13:30,191 - DAMS -INFO - user type Contemporary Amperex name Robert Bosch
+2026-04-10 00:13:30,248 - DAMS -INFO - user type Continental name Robert Bosch
+2026-04-10 00:13:30,308 - DAMS -INFO - user type Danfoss name Robert Bosch
+2026-04-10 00:13:30,366 - DAMS -INFO - user type Engbras Software e Projetos name Robert Bosch
+2026-04-10 00:13:30,428 - DAMS -INFO - user type FEV GmBH name Robert Bosch
+2026-04-10 00:13:30,504 - DAMS -INFO - user type Knorr-Bremse Systeme für name Robert Bosch
+2026-04-10 00:13:30,569 - DAMS -INFO - user type Marquardt GmbH name Robert Bosch
+2026-04-10 00:13:30,621 - DAMS -INFO - user type Meta System S.p.A. name Robert Bosch
+2026-04-10 00:13:30,675 - DAMS -INFO - user type Munich Electrification name Robert Bosch
+2026-04-10 00:13:30,729 - DAMS -INFO - user type Murata name Robert Bosch
+2026-04-10 00:13:30,788 - DAMS -INFO - user type Optimabit name Robert Bosch
+2026-04-10 00:13:30,848 - DAMS -INFO - user type Robert Bosch name Robert Bosch
+2026-04-10 00:13:31,925 - DAMS -INFO - ******** Company Selected ***********Robert Bosch
+2026-04-10 00:13:38,548 - DAMS -INFO - BU : DTE
+2026-04-10 00:13:38,596 - DAMS -INFO - user type BUS name DTE
+2026-04-10 00:13:38,638 - DAMS -INFO - user type DTE name DTE
+2026-04-10 00:14:11,080 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-04-10 00:14:11,080 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 4073, PU_S_PID1BD7, DAMS_User, N/A, PU_S PID1BD7, TT/S45-22, Internal, Development, DTE, null, null, true, 04/09/2026, N/A, N/A, N/A, N/A]</u></i></b>
+2026-04-10 00:14:11,080 - DAMS -INFO - User is able to raise the request for the functional role Development
+2026-04-10 00:14:12,312 - DAMS -INFO - Clicked
+2026-04-10 00:16:00,197 - DAMS -INFO - ************* Env : DEV
+2026-04-10 00:16:00,236 - DAMS -INFO - ************* Env : DEV
+2026-04-10 00:16:00,659 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
+2026-04-10 00:16:00,663 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
+2026-04-10 00:16:21,493 - DAMS -INFO - User is login to application
+2026-04-10 00:16:21,498 - DAMS -INFO - USER TYPE Internal
+2026-04-10 00:16:21,507 - DAMS -INFO - b2q5zydq7yvjcdrf
+2026-04-10 00:16:23,710 - DAMS -INFO - User is login to application
+2026-04-10 00:16:23,710 - DAMS -INFO - USER TYPE External
+2026-04-10 00:16:23,713 - DAMS -INFO - m6kxhsnb6hssxztq
+2026-04-10 00:16:24,255 - DAMS -INFO - User enters the verification code and click on verify button
+2026-04-10 00:16:25,577 - DAMS -INFO - User enters the verification code and click on verify button
+2026-04-10 00:16:45,326 - DAMS -INFO - https://dams-dev.azurewebsites.net/dams/#/functional-role/gtc
+2026-04-10 00:16:45,329 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 00:16:46,843 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-04-10 00:16:50,894 - DAMS -INFO - https://dams-dev.azurewebsites.net/dams/#/functional-role/gtc
+2026-04-10 00:16:50,894 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 00:16:52,345 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 00:16:52,349 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 00:16:52,351 - DAMS -INFO - User validates the gtc page
+2026-04-10 00:16:57,359 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 00:16:58,505 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 00:16:58,505 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 00:16:58,505 - DAMS -INFO - User validates the gtc page
+2026-04-10 00:17:03,523 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 00:17:10,253 - DAMS -INFO - 2
+2026-04-10 00:17:16,689 - DAMS -INFO - 2
+2026-04-10 00:17:26,984 - DAMS -INFO - https://dams-dev.azurewebsites.net/dams/#/functional-role/gtc
+2026-04-10 00:17:26,988 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 00:17:34,322 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 00:17:34,323 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 00:17:34,324 - DAMS -INFO - User validates the gtc page
+2026-04-10 00:17:35,206 - DAMS -INFO - External
+2026-04-10 00:17:35,318 - DAMS -INFO - Supplier
+2026-04-10 00:17:35,341 - DAMS -INFO - User is able to view User_types in dropdown
+2026-04-10 00:17:39,216 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-04-10 00:17:39,341 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 00:17:43,269 - DAMS -INFO - https://dams-dev.azurewebsites.net/dams/#/functional-role/gtc
+2026-04-10 00:17:43,270 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 00:17:44,466 - DAMS -INFO - validates the functional role page
+2026-04-10 00:17:44,466 - DAMS -INFO - *************Internal
+2026-04-10 00:17:47,664 - DAMS -INFO - ***Functional role : Xentry Tool Development
+2026-04-10 00:17:47,665 - DAMS -INFO - User Type :Development
+2026-04-10 00:17:47,766 - DAMS -INFO - user type Bus Production Tool Development name Development
+2026-04-10 00:17:47,887 - DAMS -INFO - user type Development name Development
+2026-04-10 00:17:49,080 - DAMS -INFO - Development
+2026-04-10 00:17:50,809 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 00:17:50,810 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 00:17:50,811 - DAMS -INFO - User validates the gtc page
+2026-04-10 00:17:56,040 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 00:17:56,406 - DAMS -INFO - BU : DTE
+2026-04-10 00:17:56,479 - DAMS -INFO - user type BUS name DTE
+2026-04-10 00:17:56,561 - DAMS -INFO - user type DTE name DTE
+2026-04-10 00:18:01,332 - DAMS -INFO - validates the functional role page
+2026-04-10 00:18:01,335 - DAMS -INFO - *************External
+2026-04-10 00:18:04,550 - DAMS -INFO - functional Role : Development External Support
+2026-04-10 00:18:04,550 - DAMS -INFO - User Type :Development External Support
+2026-04-10 00:18:04,639 - DAMS -INFO - user type Bus Production Tool Development External name Development External Support
+2026-04-10 00:18:04,786 - DAMS -INFO - user type Development External Support name Development External Support
+2026-04-10 00:18:06,216 - DAMS -INFO - ****** Company Selection *********
+2026-04-10 00:18:10,787 - DAMS -INFO - user type A&D Technology name Robert Bosch
+2026-04-10 00:18:10,863 - DAMS -INFO - user type Actalent name Robert Bosch
+2026-04-10 00:18:10,952 - DAMS -INFO - user type ADC Automotive Distance name Robert Bosch
+2026-04-10 00:18:11,036 - DAMS -INFO - user type AKKODIS name Robert Bosch
+2026-04-10 00:18:11,121 - DAMS -INFO - user type Anstalt für Verbrennungskraftmaschinen List (AVL) name Robert Bosch
+2026-04-10 00:18:11,196 - DAMS -INFO - user type APTIV COMPONENTS INDIA PVT.LTD name Robert Bosch
+2026-04-10 00:18:11,274 - DAMS -INFO - user type ARTECH name Robert Bosch
+2026-04-10 00:18:11,353 - DAMS -INFO - user type ASK Industries S.p.A. name Robert Bosch
+2026-04-10 00:18:11,440 - DAMS -INFO - user type AUO Corporation name Robert Bosch
+2026-04-10 00:18:11,514 - DAMS -INFO - user type BCS Automotive Interface Solutions name Robert Bosch
+2026-04-10 00:18:11,602 - DAMS -INFO - user type Bendix name Robert Bosch
+2026-04-10 00:18:11,683 - DAMS -INFO - user type Calex name Robert Bosch
+2026-04-10 00:18:11,753 - DAMS -INFO - user type Calex-DCDC name Robert Bosch
+2026-04-10 00:18:11,820 - DAMS -INFO - user type CellCentric name Robert Bosch
+2026-04-10 00:18:11,892 - DAMS -INFO - user type Contemporary Amperex name Robert Bosch
+2026-04-10 00:18:11,968 - DAMS -INFO - user type Continental name Robert Bosch
+2026-04-10 00:18:12,046 - DAMS -INFO - user type Danfoss name Robert Bosch
+2026-04-10 00:18:12,138 - DAMS -INFO - user type Engbras Software e Projetos name Robert Bosch
+2026-04-10 00:18:12,221 - DAMS -INFO - user type FEV GmBH name Robert Bosch
+2026-04-10 00:18:12,324 - DAMS -INFO - user type Knorr-Bremse Systeme für name Robert Bosch
+2026-04-10 00:18:12,402 - DAMS -INFO - user type Marquardt GmbH name Robert Bosch
+2026-04-10 00:18:12,475 - DAMS -INFO - user type Meta System S.p.A. name Robert Bosch
+2026-04-10 00:18:12,546 - DAMS -INFO - user type Munich Electrification name Robert Bosch
+2026-04-10 00:18:12,623 - DAMS -INFO - user type Murata name Robert Bosch
+2026-04-10 00:18:12,702 - DAMS -INFO - user type Optimabit name Robert Bosch
+2026-04-10 00:18:12,776 - DAMS -INFO - user type Robert Bosch name Robert Bosch
+2026-04-10 00:18:13,860 - DAMS -INFO - ******** Company Selected ***********Robert Bosch
+2026-04-10 00:18:21,134 - DAMS -INFO - BU : DTE
+2026-04-10 00:18:21,209 - DAMS -INFO - user type BUS name DTE
+2026-04-10 00:18:21,273 - DAMS -INFO - user type DTE name DTE
+2026-04-10 00:42:38,895 - DAMS -INFO - ************* Env : DEV
+2026-04-10 00:42:38,922 - DAMS -INFO - ************* Env : DEV
+2026-04-10 00:42:39,499 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
+2026-04-10 00:42:39,499 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
+2026-04-10 11:06:42,384 - DAMS -INFO - ************* Env : DEV
+2026-04-10 11:06:42,396 - DAMS -INFO - ************* Env : DEV
+2026-04-10 11:06:43,205 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
+2026-04-10 11:06:43,205 - DAMS -INFO - URL : https://dams-dev.azurewebsites.net/dams/
+2026-04-10 11:06:59,629 - DAMS -INFO - User is login to application
+2026-04-10 11:06:59,630 - DAMS -INFO - USER TYPE External
+2026-04-10 11:06:59,631 - DAMS -INFO - m6kxhsnb6hssxztq
+2026-04-10 11:06:59,691 - DAMS -INFO - User is login to application
+2026-04-10 11:06:59,692 - DAMS -INFO - USER TYPE Internal
+2026-04-10 11:06:59,692 - DAMS -INFO - b2q5zydq7yvjcdrf
+2026-04-10 11:07:01,157 - DAMS -INFO - User enters the verification code and click on verify button
+2026-04-10 11:07:01,594 - DAMS -INFO - User enters the verification code and click on verify button
+2026-04-10 11:07:17,683 - DAMS -INFO - https://dams-dev.azurewebsites.net/dams/#/functional-role/gtc
+2026-04-10 11:07:17,683 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 11:07:20,180 - DAMS -INFO - External
+2026-04-10 11:07:20,290 - DAMS -INFO - Supplier
+2026-04-10 11:07:20,306 - DAMS -INFO - User is able to view User_types in dropdown
+2026-04-10 11:07:23,816 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-04-10 11:23:47,584 - DAMS -INFO - ************* Env : LOCAL
+2026-04-10 11:23:47,604 - DAMS -INFO - ************* Env : LOCAL
+2026-04-10 11:23:47,609 - DAMS -INFO - ************* Env : LOCAL
+2026-04-10 11:23:47,780 - DAMS -INFO - https://localhost:8443/dams/#/
+2026-04-10 11:23:47,782 - DAMS -INFO - https://localhost:8443/dams/#/
+2026-04-10 11:23:47,782 - DAMS -INFO - https://localhost:8443/dams/#/
+2026-04-10 11:23:47,782 - DAMS -INFO - URL : https://localhost:8443/dams/#/
+2026-04-10 11:23:47,782 - DAMS -INFO - URL : https://localhost:8443/dams/#/
+2026-04-10 11:23:47,782 - DAMS -INFO - URL : https://localhost:8443/dams/#/
+2026-04-10 11:24:06,263 - DAMS -INFO - User is login to application
+2026-04-10 11:24:06,268 - DAMS -INFO - USER TYPE External
+2026-04-10 11:24:06,274 - DAMS -INFO - m6kxhsnb6hssxztq
+2026-04-10 11:24:07,946 - DAMS -INFO - User enters the verification code and click on verify button
+2026-04-10 11:24:08,758 - DAMS -INFO - User is login to application
+2026-04-10 11:24:08,759 - DAMS -INFO - USER TYPE Internal
+2026-04-10 11:24:08,760 - DAMS -INFO - b2q5zydq7yvjcdrf
+2026-04-10 11:24:11,378 - DAMS -INFO - User enters the verification code and click on verify button
+2026-04-10 11:24:27,144 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-04-10 11:24:28,412 - DAMS -INFO - https://localhost:8443/dams/#/functional-role/gtc
+2026-04-10 11:24:28,412 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 11:24:31,177 - DAMS -INFO - https://localhost:8443/dams/#/functional-role/gtc
+2026-04-10 11:24:31,179 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 11:24:35,205 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 11:24:35,205 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 11:24:35,206 - DAMS -INFO - User validates the gtc page
+2026-04-10 11:24:38,026 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 11:24:38,029 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 11:24:38,029 - DAMS -INFO - User validates the gtc page
+2026-04-10 11:24:40,220 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 11:24:43,045 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 11:24:53,037 - DAMS -INFO - 2
+2026-04-10 11:24:55,749 - DAMS -INFO - 2
+2026-04-10 11:25:00,216 - DAMS -INFO - External
+2026-04-10 11:25:00,300 - DAMS -INFO - Supplier
+2026-04-10 11:25:00,316 - DAMS -INFO - User is able to view User_types in dropdown
+2026-04-10 11:25:03,814 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-04-10 11:25:07,860 - DAMS -INFO - https://localhost:8443/dams/#/functional-role/gtc
+2026-04-10 11:25:07,861 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 11:25:09,324 - DAMS -INFO - https://localhost:8443/dams/#/functional-role/gtc
+2026-04-10 11:25:09,324 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 11:25:14,022 - DAMS -INFO - External
+2026-04-10 11:25:14,081 - DAMS -INFO - Supplier
+2026-04-10 11:25:14,091 - DAMS -INFO - User is able to view User_types in dropdown
+2026-04-10 11:25:14,481 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 11:25:14,482 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 11:25:14,482 - DAMS -INFO - User validates the gtc page
+2026-04-10 11:25:15,983 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 11:25:15,984 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 11:25:15,985 - DAMS -INFO - User validates the gtc page
+2026-04-10 11:25:17,420 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-04-10 11:25:19,493 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 11:25:21,000 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 11:25:21,458 - DAMS -INFO - https://localhost:8443/dams/#/functional-role/gtc
+2026-04-10 11:25:21,458 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 11:25:25,450 - DAMS -INFO - validates the functional role page
+2026-04-10 11:25:25,451 - DAMS -INFO - *************Internal
+2026-04-10 11:25:26,153 - DAMS -INFO - validates the functional role page
+2026-04-10 11:25:26,153 - DAMS -INFO - *************Supplier
+2026-04-10 11:25:27,888 - DAMS -INFO - ***Functional role : Xentry Tool Development
+2026-04-10 11:25:27,888 - DAMS -INFO - User Type :Development
+2026-04-10 11:25:27,912 - DAMS -INFO - user type Bus Production Tool Development name Development
+2026-04-10 11:25:27,936 - DAMS -INFO - user type Development name Development
+2026-04-10 11:25:28,015 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 11:25:28,016 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 11:25:28,016 - DAMS -INFO - User validates the gtc page
+2026-04-10 11:25:29,035 - DAMS -INFO - Development
+2026-04-10 11:25:33,031 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 11:25:33,557 - DAMS -INFO - ECU Supplier – Development
+2026-04-10 11:25:33,557 - DAMS -INFO - User Type :ECU Supplier – Development
+2026-04-10 11:25:33,590 - DAMS -INFO - user type ECU Supplier - Key Management name ECU Supplier – Development
+2026-04-10 11:25:33,621 - DAMS -INFO - user type ECU Supplier - Warranty Return name ECU Supplier – Development
+2026-04-10 11:25:33,654 - DAMS -INFO - user type ECU Supplier – Development name ECU Supplier – Development
+2026-04-10 11:25:34,991 - DAMS -INFO - BU : DTE
+2026-04-10 11:25:35,027 - DAMS -INFO - user type BUS name DTE
+2026-04-10 11:25:35,060 - DAMS -INFO - user type DTE name DTE
+2026-04-10 11:25:35,529 - DAMS -INFO - BU : Robert Bosch
+2026-04-10 11:25:35,588 - DAMS -INFO - user type A&D Technology name Robert Bosch
+2026-04-10 11:25:35,641 - DAMS -INFO - user type Actalent name Robert Bosch
+2026-04-10 11:25:35,700 - DAMS -INFO - user type ADC Automotive Distance name Robert Bosch
+2026-04-10 11:25:35,746 - DAMS -INFO - user type AKKODIS name Robert Bosch
+2026-04-10 11:25:35,795 - DAMS -INFO - user type Anstalt für Verbrennungskraftmaschinen List (AVL) name Robert Bosch
+2026-04-10 11:25:35,830 - DAMS -INFO - user type APTIV COMPONENTS INDIA PVT.LTD name Robert Bosch
+2026-04-10 11:25:35,866 - DAMS -INFO - user type ARTECH name Robert Bosch
+2026-04-10 11:25:35,899 - DAMS -INFO - user type ASK Industries S.p.A. name Robert Bosch
+2026-04-10 11:25:35,926 - DAMS -INFO - user type AUO Corporation name Robert Bosch
+2026-04-10 11:25:35,955 - DAMS -INFO - user type BCS Automotive Interface Solutions name Robert Bosch
+2026-04-10 11:25:35,988 - DAMS -INFO - user type Bendix name Robert Bosch
+2026-04-10 11:25:36,019 - DAMS -INFO - user type Calex name Robert Bosch
+2026-04-10 11:25:36,049 - DAMS -INFO - user type Calex-DCDC name Robert Bosch
+2026-04-10 11:25:36,081 - DAMS -INFO - user type CellCentric name Robert Bosch
+2026-04-10 11:25:36,110 - DAMS -INFO - user type Contemporary Amperex name Robert Bosch
+2026-04-10 11:25:36,140 - DAMS -INFO - user type Continental name Robert Bosch
+2026-04-10 11:25:36,175 - DAMS -INFO - user type DAIMIA name Robert Bosch
+2026-04-10 11:25:36,235 - DAMS -INFO - user type Danfoss name Robert Bosch
+2026-04-10 11:25:36,277 - DAMS -INFO - user type Engbras Software e Projetos name Robert Bosch
+2026-04-10 11:25:36,317 - DAMS -INFO - user type FEV GmBH name Robert Bosch
+2026-04-10 11:25:36,359 - DAMS -INFO - user type Knorr-Bremse Systeme für name Robert Bosch
+2026-04-10 11:25:36,398 - DAMS -INFO - user type Marquardt GmbH name Robert Bosch
+2026-04-10 11:25:36,439 - DAMS -INFO - user type Meta System S.p.A. name Robert Bosch
+2026-04-10 11:25:36,480 - DAMS -INFO - user type Munich Electrification name Robert Bosch
+2026-04-10 11:25:36,523 - DAMS -INFO - user type Murata name Robert Bosch
+2026-04-10 11:25:36,566 - DAMS -INFO - user type Optimabit name Robert Bosch
+2026-04-10 11:25:36,602 - DAMS -INFO - user type Robert Bosch name Robert Bosch
+2026-04-10 11:25:37,554 - DAMS -INFO - validates the functional role page
+2026-04-10 11:25:37,554 - DAMS -INFO - *************External
+2026-04-10 11:25:40,082 - DAMS -INFO - functional Role : Development External Support
+2026-04-10 11:25:40,082 - DAMS -INFO - User Type :Development External Support
+2026-04-10 11:25:40,124 - DAMS -INFO - user type Bus Production Tool Development External name Development External Support
+2026-04-10 11:25:40,170 - DAMS -INFO - user type Development External Support name Development External Support
+2026-04-10 11:25:41,275 - DAMS -INFO - BU : AAGW01T
+2026-04-10 11:25:41,316 - DAMS -INFO - user type AAGW01T name AAGW01T
+2026-04-10 11:25:41,396 - DAMS -INFO - ****** Company Selection *********
+2026-04-10 11:25:45,737 - DAMS -INFO - user type A&D Technology name Robert Bosch
+2026-04-10 11:25:45,773 - DAMS -INFO - user type Actalent name Robert Bosch
+2026-04-10 11:25:45,810 - DAMS -INFO - user type ADC Automotive Distance name Robert Bosch
+2026-04-10 11:25:45,862 - DAMS -INFO - user type AKKODIS name Robert Bosch
+2026-04-10 11:25:45,904 - DAMS -INFO - user type Anstalt für Verbrennungskraftmaschinen List (AVL) name Robert Bosch
+2026-04-10 11:25:45,938 - DAMS -INFO - user type APTIV COMPONENTS INDIA PVT.LTD name Robert Bosch
+2026-04-10 11:25:45,971 - DAMS -INFO - user type ARTECH name Robert Bosch
+2026-04-10 11:25:46,003 - DAMS -INFO - user type ASK Industries S.p.A. name Robert Bosch
+2026-04-10 11:25:46,039 - DAMS -INFO - user type AUO Corporation name Robert Bosch
+2026-04-10 11:25:46,089 - DAMS -INFO - user type BCS Automotive Interface Solutions name Robert Bosch
+2026-04-10 11:25:46,121 - DAMS -INFO - user type Bendix name Robert Bosch
+2026-04-10 11:25:46,157 - DAMS -INFO - user type Calex name Robert Bosch
+2026-04-10 11:25:46,196 - DAMS -INFO - user type Calex-DCDC name Robert Bosch
+2026-04-10 11:25:46,255 - DAMS -INFO - user type CellCentric name Robert Bosch
+2026-04-10 11:25:46,291 - DAMS -INFO - user type Contemporary Amperex name Robert Bosch
+2026-04-10 11:25:46,323 - DAMS -INFO - user type Continental name Robert Bosch
+2026-04-10 11:25:46,359 - DAMS -INFO - user type DAIMIA name Robert Bosch
+2026-04-10 11:25:46,391 - DAMS -INFO - user type Danfoss name Robert Bosch
+2026-04-10 11:25:46,423 - DAMS -INFO - user type Engbras Software e Projetos name Robert Bosch
+2026-04-10 11:25:46,452 - DAMS -INFO - user type FEV GmBH name Robert Bosch
+2026-04-10 11:25:46,479 - DAMS -INFO - user type Knorr-Bremse Systeme für name Robert Bosch
+2026-04-10 11:25:46,504 - DAMS -INFO - user type Marquardt GmbH name Robert Bosch
+2026-04-10 11:25:46,529 - DAMS -INFO - user type Meta System S.p.A. name Robert Bosch
+2026-04-10 11:25:46,558 - DAMS -INFO - user type Munich Electrification name Robert Bosch
+2026-04-10 11:25:46,597 - DAMS -INFO - user type Murata name Robert Bosch
+2026-04-10 11:25:46,647 - DAMS -INFO - user type Optimabit name Robert Bosch
+2026-04-10 11:25:46,702 - DAMS -INFO - user type Robert Bosch name Robert Bosch
+2026-04-10 11:25:47,764 - DAMS -INFO - ******** Company Selected ***********Robert Bosch
+2026-04-10 11:25:54,018 - DAMS -INFO - BU : DTE
+2026-04-10 11:25:54,055 - DAMS -INFO - user type BUS name DTE
+2026-04-10 11:25:54,090 - DAMS -INFO - user type DTE name DTE
+2026-04-10 11:26:20,657 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-04-10 11:26:20,658 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3968, PU_S_PID1BD7, DAMS_User, N/A, PU_S PID1BD7, TT/S45-22, Internal, Development, DTE, null, null, true, 04/10/2026, N/A, N/A, N/A, N/A]</u></i></b>
+2026-04-10 11:26:20,659 - DAMS -INFO - User is able to raise the request for the functional role Development
+2026-04-10 11:26:21,923 - DAMS -INFO - Clicked
+2026-04-10 11:26:26,976 - DAMS -INFO - ***Authorization_List: Functional Role
+2026-04-10 11:26:27,077 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:26:27,077 - DAMS -INFO - Functional Role
+2026-04-10 11:26:27,132 - DAMS -INFO - Functional Role
+2026-04-10 11:26:27,132 - DAMS -INFO - Functional Role
+2026-04-10 11:26:27,443 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-04-10 11:26:27,443 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3969, Q9XRKVP, DAMS_User, N/A, TEST SUPPLIER_AUTOMATE, N/A, Supplier, ECU Supplier – Development, null, Robert Bosch, AAGW01T, true, 04/10/2026, N/A, N/A, AAGW01T, N/A]</u></i></b>
+2026-04-10 11:26:27,445 - DAMS -INFO - User is able to raise the request for the functional role ECU Supplier – Development - AAGW01T 
+2026-04-10 11:26:28,589 - DAMS -INFO - Clicked
+2026-04-10 11:26:33,639 - DAMS -INFO - ***Authorization_List: Functional Role
+2026-04-10 11:26:33,741 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:26:33,741 - DAMS -INFO - Functional Role
+2026-04-10 11:26:33,810 - DAMS -INFO - Functional Role
+2026-04-10 11:26:33,810 - DAMS -INFO - Functional Role
+2026-04-10 11:26:38,907 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-04-10 11:26:38,907 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3970, HARNAGA, DAMS_User, N/A, Hariharan Nagarajan, TT/ICS-X4, External, Development External Support, DTE, Robert Bosch, null, true, 04/10/2026, N/A, N/A, Robert Bosch, N/A]</u></i></b>
+2026-04-10 11:26:38,907 - DAMS -INFO - User is able to raise the request for the functional role Development External Support
+2026-04-10 11:26:40,108 - DAMS -INFO - Clicked
+2026-04-10 11:26:43,664 - DAMS -INFO - User is able to approve 1st level approval
+2026-04-10 11:26:45,146 - DAMS -INFO - ***Authorization_List: Functional Role
+2026-04-10 11:26:45,256 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:26:45,256 - DAMS -INFO - Functional Role
+2026-04-10 11:26:45,327 - DAMS -INFO - Functional Role
+2026-04-10 11:26:45,329 - DAMS -INFO - Functional Role
+2026-04-10 11:26:50,441 - DAMS -INFO - User is able to approve 1st level approval
+2026-04-10 11:27:01,791 - DAMS -INFO - User is able to approve 1st level approval
+2026-04-10 11:27:12,688 - DAMS -INFO - User navigate to Functional role overview page and check if the status is pending after 1st level approval
+2026-04-10 11:27:13,931 - DAMS -INFO - Clicked
+2026-04-10 11:27:18,981 - DAMS -INFO - ***Authorization_List: Functional Role
+2026-04-10 11:27:19,137 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:27:19,137 - DAMS -INFO - Functional Role
+2026-04-10 11:27:19,203 - DAMS -INFO - Functional Role
+2026-04-10 11:27:19,203 - DAMS -INFO - Functional Role
+2026-04-10 11:27:19,774 - DAMS -INFO - User navigate to Functional role overview page and check if the status is pending after 1st level approval
+2026-04-10 11:27:21,018 - DAMS -INFO - Clicked
+2026-04-10 11:27:26,036 - DAMS -INFO - ***Authorization_List: Functional Role
+2026-04-10 11:27:26,136 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:27:26,136 - DAMS -INFO - Functional Role
+2026-04-10 11:27:26,203 - DAMS -INFO - Functional Role
+2026-04-10 11:27:26,203 - DAMS -INFO - Functional Role
+2026-04-10 11:27:30,601 - DAMS -INFO - User navigate to Functional role overview page and check if the status is pending after 1st level approval
+2026-04-10 11:27:31,798 - DAMS -INFO - Clicked
+2026-04-10 11:27:35,932 - DAMS -INFO - User is able to approve 2nd level approval
+2026-04-10 11:27:36,839 - DAMS -INFO - ***Authorization_List: Functional Role
+2026-04-10 11:27:36,985 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:27:36,985 - DAMS -INFO - Functional Role
+2026-04-10 11:27:37,054 - DAMS -INFO - Functional Role
+2026-04-10 11:27:37,054 - DAMS -INFO - Functional Role
+2026-04-10 11:27:42,931 - DAMS -INFO - User is able to approve 2nd level approval
+2026-04-10 11:27:53,471 - DAMS -INFO - User is able to approve 2nd level approval
+2026-04-10 11:27:54,449 - DAMS -INFO - Requestor details : []
+2026-04-10 11:27:54,449 - DAMS -INFO - Verified the Certificate of the Functional role
+2026-04-10 11:28:01,445 - DAMS -INFO - Requestor details : []
+2026-04-10 11:28:01,445 - DAMS -INFO - Verified the Certificate of the Functional role
+2026-04-10 11:28:05,216 - DAMS -INFO - User is able to view the Standard Certificate for the raised functional roleAfter-Sales STANDARD,After-Sales ENHANCED
+2026-04-10 11:28:11,993 - DAMS -INFO - Requestor details : []
+2026-04-10 11:28:11,993 - DAMS -INFO - Verified the Certificate of the Functional role
+2026-04-10 11:28:12,231 - DAMS -INFO - User is able to view the Standard Certificate for the raised functional roleSupplier,Development ENHANCED,Production,After-Sales ENHANCED,After-Sales STANDARD
+2026-04-10 11:28:12,231 - DAMS -INFO - User is able to verify click here to apply for functional role disbled for approved request
+2026-04-10 11:28:15,100 - DAMS -INFO - User is able to select New permission request
+2026-04-10 11:28:16,620 - DAMS -INFO - value selected : Development
+2026-04-10 11:28:16,620 - DAMS -INFO - [ALT48V01T]
+2026-04-10 11:28:16,620 - DAMS -INFO - [Development ENHANCED]
+2026-04-10 11:28:22,162 - DAMS -INFO - User is able to select New permission request
+2026-04-10 11:28:22,660 - DAMS -INFO - User is able to view the Standard Certificate for the raised functional roleAfter-Sales STANDARD,After-Sales ENHANCED
+2026-04-10 11:28:22,660 - DAMS -INFO - User is able to verify click here to apply for functional role disbled for approved request
+2026-04-10 11:28:24,648 - DAMS -INFO - **** functional role value :Development
+2026-04-10 11:28:26,016 - DAMS -INFO - Development ENHANCED
+2026-04-10 11:28:26,178 - DAMS -INFO - value selected : ECU Supplier – Development - AAGW01T
+2026-04-10 11:28:26,178 - DAMS -INFO - [ALT48V01T]
+2026-04-10 11:28:26,179 - DAMS -INFO - [Development ENHANCED]
+2026-04-10 11:28:29,875 - DAMS -INFO - usertype: Development ENHANCED *** name : Development ENHANCED
+2026-04-10 11:28:31,201 - DAMS -INFO - **** functional role value :ECU Supplier – Development - AAGW01T
+2026-04-10 11:28:32,401 - DAMS -INFO - User is able to select New permission request
+2026-04-10 11:28:32,604 - DAMS -INFO - Development ENHANCED
+2026-04-10 11:28:33,925 - DAMS -INFO - value selected : Development External Support
+2026-04-10 11:28:33,925 - DAMS -INFO - [ACM311T]
+2026-04-10 11:28:33,925 - DAMS -INFO - [Development ENHANCED]
+2026-04-10 11:28:36,295 - DAMS -INFO - usertype: AAGW01T *** name : ALT48V01T
+2026-04-10 11:28:36,493 - DAMS -INFO - usertype: Development ENHANCED *** name : Development ENHANCED
+2026-04-10 11:28:36,942 - DAMS -INFO - **** functional role value :Development External Support
+2026-04-10 11:28:37,874 - DAMS -INFO - usertype: ACM311T *** name : ALT48V01T
+2026-04-10 11:28:38,211 - DAMS -INFO - Development ENHANCED
+2026-04-10 11:28:39,469 - DAMS -INFO - usertype: ALT48V01T *** name : ALT48V01T
+2026-04-10 11:28:40,189 - DAMS -INFO - selcted ECU is ALT48V01T
+2026-04-10 11:28:40,697 - DAMS -INFO - reason : DA Request Global
+2026-04-10 11:28:41,930 - DAMS -INFO - usertype: Development ENHANCED *** name : Development ENHANCED
+2026-04-10 11:28:42,929 - DAMS -INFO - usertype: ACM311T *** name : ALT48V01T
+2026-04-10 11:28:44,521 - DAMS -INFO - usertype: ALT48V01T *** name : ALT48V01T
+2026-04-10 11:28:45,209 - DAMS -INFO - selcted ECU is ALT48V01T
+2026-04-10 11:28:48,224 - DAMS -INFO - reason : Certificate Request for Diagnostic Authority
+2026-04-10 11:28:48,272 - DAMS -INFO - usertype: AAGW01T *** name : ACM311T
+2026-04-10 11:28:49,843 - DAMS -INFO - usertype: ACM311T *** name : ACM311T
+2026-04-10 11:28:50,479 - DAMS -INFO - selcted ECU is ACM311T
+2026-04-10 11:28:53,485 - DAMS -INFO - reason : Certificate Request for Diagnostic Authority
+2026-04-10 11:28:57,833 - DAMS -INFO - Myself
+2026-04-10 11:29:05,286 - DAMS -INFO - Myself
+2026-04-10 11:29:11,381 - DAMS -INFO - Myself
+2026-04-10 11:29:18,214 - DAMS -INFO - 1
+2026-04-10 11:29:18,214 - DAMS -INFO -  ************* Development ENHANCED
+2026-04-10 11:29:18,214 - DAMS -INFO -  ************* 11706
+2026-04-10 11:29:19,429 - DAMS -INFO - Clicked
+2026-04-10 11:29:23,959 - DAMS -INFO - 1
+2026-04-10 11:29:23,959 - DAMS -INFO -  ************* Development ENHANCED
+2026-04-10 11:29:23,959 - DAMS -INFO -  ************* 11707
+2026-04-10 11:29:25,206 - DAMS -INFO - Clicked
+2026-04-10 11:29:26,517 - DAMS -INFO - ***Authorization_List: Diagnostic Authority
+2026-04-10 11:29:26,680 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:29:26,680 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:29:26,776 - DAMS -INFO - Functional Role
+2026-04-10 11:29:26,776 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:29:26,830 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:29:26,830 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:29:29,393 - DAMS -INFO - 1
+2026-04-10 11:29:29,393 - DAMS -INFO -  ************* Development ENHANCED
+2026-04-10 11:29:29,393 - DAMS -INFO -  ************* 11708
+2026-04-10 11:29:30,576 - DAMS -INFO - Clicked
+2026-04-10 11:29:32,269 - DAMS -INFO - ***Authorization_List: Diagnostic Authority
+2026-04-10 11:29:32,443 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:29:32,443 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:29:32,543 - DAMS -INFO - Functional Role
+2026-04-10 11:29:32,543 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:29:32,618 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:29:32,618 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:29:37,625 - DAMS -INFO - ***Authorization_List: Diagnostic Authority
+2026-04-10 11:29:37,742 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:29:37,742 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:29:37,807 - DAMS -INFO - Functional Role
+2026-04-10 11:29:37,807 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:29:37,869 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:29:37,869 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:29:45,990 - DAMS -INFO - User is able to view the approval status as Approved after 1st level approval
+2026-04-10 11:29:51,820 - DAMS -INFO - User is able to view the approval status as Approved after 1st level approval
+2026-04-10 11:29:56,939 - DAMS -INFO - User is able to view the approval status as Approved after 1st level approval
+2026-04-10 11:30:04,555 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:30:10,413 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:30:15,375 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:30:37,309 - DAMS -INFO - User is able to view navigate to request overview page and check if the status is pending after 1st level approval
+2026-04-10 11:30:38,447 - DAMS -INFO - Clicked
+2026-04-10 11:30:43,221 - DAMS -INFO - User is able to view navigate to request overview page and check if the status is pending after 1st level approval
+2026-04-10 11:30:44,400 - DAMS -INFO - Clicked
+2026-04-10 11:30:45,518 - DAMS -INFO - ***Authorization_List: Diagnostic Authority
+2026-04-10 11:30:45,662 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:30:45,676 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:30:45,762 - DAMS -INFO - Functional Role
+2026-04-10 11:30:45,762 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:30:45,843 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:30:45,844 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:30:48,130 - DAMS -INFO - User is able to view navigate to request overview page and check if the status is pending after 1st level approval
+2026-04-10 11:30:49,297 - DAMS -INFO - Clicked
+2026-04-10 11:30:51,444 - DAMS -INFO - ***Authorization_List: Diagnostic Authority
+2026-04-10 11:30:51,566 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:30:51,566 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:30:51,624 - DAMS -INFO - Functional Role
+2026-04-10 11:30:51,626 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:30:51,698 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:30:51,698 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:30:56,344 - DAMS -INFO - ***Authorization_List: Diagnostic Authority
+2026-04-10 11:30:56,499 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:30:56,499 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:30:56,543 - DAMS -INFO - Functional Role
+2026-04-10 11:30:56,543 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:30:56,595 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:30:56,595 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:31:05,044 - DAMS -INFO - User is able to view the approval status as Approved after 2nd level approval
+2026-04-10 11:31:10,754 - DAMS -INFO - User is able to view the approval status as Approved after 2nd level approval
+2026-04-10 11:31:15,669 - DAMS -INFO - User is able to view the approval status as Approved after 2nd level approval
+2026-04-10 11:31:23,540 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:31:29,194 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:31:34,230 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:31:46,483 - DAMS -INFO - Element Not Enabled
+2026-04-10 11:31:51,827 - DAMS -INFO - Element Not Enabled
+2026-04-10 11:31:55,185 - DAMS -INFO - User is able to view navigae to request overview page and check if the status is approved after 2nd level approval
+2026-04-10 11:31:55,512 - DAMS -INFO - Enhance_Right_Authority_request
+2026-04-10 11:31:57,007 - DAMS -INFO - Element Not Enabled
+2026-04-10 11:32:00,396 - DAMS -INFO - User is able to view navigae to request overview page and check if the status is approved after 2nd level approval
+2026-04-10 11:32:00,849 - DAMS -INFO - Enhance_Right_Authority_request
+2026-04-10 11:32:04,949 - DAMS -INFO - User is able to select New permission request
+2026-04-10 11:32:05,637 - DAMS -INFO - User is able to view navigae to request overview page and check if the status is approved after 2nd level approval
+2026-04-10 11:32:05,889 - DAMS -INFO - Enhance_Right_Authority_request
+2026-04-10 11:32:09,242 - DAMS -INFO - functional role selectedDevelopment
+2026-04-10 11:32:09,244 - DAMS -INFO - [ALT48V01T]
+2026-04-10 11:32:09,245 - DAMS -INFO - [Development ENHANCED]
+2026-04-10 11:32:10,237 - DAMS -INFO - User is able to select New permission request
+2026-04-10 11:32:12,452 - DAMS -INFO - Development ENHANCED
+2026-04-10 11:32:14,267 - DAMS -INFO - **** functional role value :Development
+2026-04-10 11:32:14,456 - DAMS -INFO - ALT48V01T
+2026-04-10 11:32:15,389 - DAMS -INFO - User is able to select New permission request
+2026-04-10 11:32:15,593 - DAMS -INFO - Development ENHANCED
+2026-04-10 11:32:16,459 - DAMS -INFO - functional role selectedECU Supplier – Development - AAGW01T
+2026-04-10 11:32:16,459 - DAMS -INFO - [ALT48V01T]
+2026-04-10 11:32:16,460 - DAMS -INFO - [Development ENHANCED]
+2026-04-10 11:32:18,467 - DAMS -INFO - **** functional role value :ECU Supplier – Development - AAGW01T
+2026-04-10 11:32:19,683 - DAMS -INFO - functional role selectedDevelopment External Support
+2026-04-10 11:32:19,683 - DAMS -INFO - [ACM311T]
+2026-04-10 11:32:19,683 - DAMS -INFO - [Development ENHANCED]
+2026-04-10 11:32:19,741 - DAMS -INFO - Development ENHANCED
+2026-04-10 11:32:21,702 - DAMS -INFO - **** functional role value :Development External Support
+2026-04-10 11:32:22,144 - DAMS -INFO - ALT48V01T
+2026-04-10 11:32:23,041 - DAMS -INFO - Development ENHANCED
+2026-04-10 11:32:23,952 - DAMS -INFO - usertype: ALT48V01T *** name : ALT48V01T
+2026-04-10 11:32:24,603 - DAMS -INFO - ECu selectedALT48V01T
+2026-04-10 11:32:25,449 - DAMS -INFO - User is able to enter serviceID,validity and reason
+2026-04-10 11:32:27,856 - DAMS -INFO - usertype: AAGW01T *** name : ALT48V01T
+2026-04-10 11:32:28,569 - DAMS -INFO - EnhancedRightAuthority Request is Created
+2026-04-10 11:32:29,409 - DAMS -INFO - usertype: ALT48V01T *** name : ALT48V01T
+2026-04-10 11:32:30,045 - DAMS -INFO - ECU selectedALT48V01T
+2026-04-10 11:32:30,677 - DAMS -INFO - View the approval status as pending once the DA request created
+2026-04-10 11:32:30,725 - DAMS -INFO - User is able to enter serviceID,validity and reason
+2026-04-10 11:32:30,833 - DAMS -INFO - EnhancedRightAuthority Request is Created
+2026-04-10 11:32:31,204 - DAMS -INFO - usertype: ACM311T *** name : ACM311T
+2026-04-10 11:32:31,889 - DAMS -INFO - ECU selectedACM311T
+2026-04-10 11:32:32,755 - DAMS -INFO - User is able to enter serviceID,validity and reason
+2026-04-10 11:32:32,849 - DAMS -INFO - EnhancedRightAuthority Request is Created
+2026-04-10 11:32:47,109 - DAMS -INFO - Enhance Right
+2026-04-10 11:32:49,286 - DAMS -INFO - Enhance Right
+2026-04-10 11:32:51,419 - DAMS -INFO - Enhance Right
+2026-04-10 11:32:58,568 - DAMS -INFO - Myself
+2026-04-10 11:33:00,629 - DAMS -INFO - Myself
+2026-04-10 11:33:02,904 - DAMS -INFO - Myself
+2026-04-10 11:33:18,823 - DAMS -INFO - EA Request Number : [1216]
+2026-04-10 11:33:18,823 - DAMS -INFO - EA User Role : [Development ENHANCED]
+2026-04-10 11:33:18,827 - DAMS -INFO - EA Request Number : [1215]
+2026-04-10 11:33:18,827 - DAMS -INFO - EA User Role : [Development ENHANCED]
+2026-04-10 11:33:19,941 - DAMS -INFO - Clicked
+2026-04-10 11:33:19,942 - DAMS -INFO - Clicked
+2026-04-10 11:33:21,253 - DAMS -INFO - EA Request Number : [1217]
+2026-04-10 11:33:21,253 - DAMS -INFO - EA User Role : [Development ENHANCED]
+2026-04-10 11:33:22,460 - DAMS -INFO - Clicked
+2026-04-10 11:33:24,997 - DAMS -INFO - ***Authorization_List: Enhance Right
+2026-04-10 11:33:24,997 - DAMS -INFO - ***Authorization_List: Enhance Right
+2026-04-10 11:33:25,091 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:33:25,097 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:25,117 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:33:25,118 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:25,147 - DAMS -INFO - Functional Role
+2026-04-10 11:33:25,148 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:25,168 - DAMS -INFO - Functional Role
+2026-04-10 11:33:25,168 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:25,193 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:33:25,193 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:25,214 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:33:25,214 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:25,236 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:33:25,236 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:25,254 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:33:25,254 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:25,285 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:25,285 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:25,304 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:25,304 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:27,511 - DAMS -INFO - ***Authorization_List: Enhance Right
+2026-04-10 11:33:27,676 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:33:27,676 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:27,778 - DAMS -INFO - Functional Role
+2026-04-10 11:33:27,778 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:27,851 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:33:27,851 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:27,946 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:33:27,946 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:28,026 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:28,026 - DAMS -INFO - Enhance Right
+2026-04-10 11:33:50,744 - DAMS -INFO - View the approval status as Approved after 1st level approval
+2026-04-10 11:33:50,793 - DAMS -INFO - View the approval status as Approved after 1st level approval
+2026-04-10 11:33:53,721 - DAMS -INFO - View the approval status as Approved after 1st level approval
+2026-04-10 11:34:01,971 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:02,058 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:05,011 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:08,119 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:08,237 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:11,237 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:19,555 - DAMS -INFO - Myself
+2026-04-10 11:34:19,610 - DAMS -INFO - Myself
+2026-04-10 11:34:22,743 - DAMS -INFO - Myself
+2026-04-10 11:34:38,712 - DAMS -INFO - View navigate to request overview page and status is pending after 1st level approval
+2026-04-10 11:34:38,849 - DAMS -INFO - View navigate to request overview page and status is pending after 1st level approval
+2026-04-10 11:34:39,889 - DAMS -INFO - Clicked
+2026-04-10 11:34:40,015 - DAMS -INFO - Clicked
+2026-04-10 11:34:42,243 - DAMS -INFO - View navigate to request overview page and status is pending after 1st level approval
+2026-04-10 11:34:43,456 - DAMS -INFO - Clicked
+2026-04-10 11:34:44,936 - DAMS -INFO - ***Authorization_List: Enhance Right
+2026-04-10 11:34:45,050 - DAMS -INFO - ***Authorization_List: Enhance Right
+2026-04-10 11:34:45,067 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:34:45,067 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:45,109 - DAMS -INFO - Functional Role
+2026-04-10 11:34:45,109 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:45,162 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:34:45,162 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:45,182 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:34:45,182 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:45,217 - DAMS -INFO - Functional Role
+2026-04-10 11:34:45,217 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:45,226 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:34:45,226 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:45,268 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:34:45,268 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:45,277 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:45,277 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:45,319 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:34:45,319 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:45,377 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:45,377 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:48,514 - DAMS -INFO - ***Authorization_List: Enhance Right
+2026-04-10 11:34:48,658 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:34:48,658 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:48,726 - DAMS -INFO - Functional Role
+2026-04-10 11:34:48,726 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:48,842 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:34:48,842 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:48,947 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:34:48,949 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:49,019 - DAMS -INFO - Enhance Right
+2026-04-10 11:34:49,019 - DAMS -INFO - Enhance Right
+2026-04-10 11:35:10,623 - DAMS -INFO - View the approval status as Approved after 2nd level approval
+2026-04-10 11:35:10,858 - DAMS -INFO - View the approval status as Approved after 2nd level approval
+2026-04-10 11:35:14,545 - DAMS -INFO - View the approval status as Approved after 2nd level approval
+2026-04-10 11:35:21,853 - DAMS -INFO - Enhance Right
+2026-04-10 11:35:22,093 - DAMS -INFO - Enhance Right
+2026-04-10 11:35:25,799 - DAMS -INFO - Enhance Right
+2026-04-10 11:35:27,988 - DAMS -INFO - Enhance Right
+2026-04-10 11:35:28,301 - DAMS -INFO - Enhance Right
+2026-04-10 11:35:32,044 - DAMS -INFO - Enhance Right
+2026-04-10 11:35:39,341 - DAMS -INFO - Myself
+2026-04-10 11:35:39,820 - DAMS -INFO - Myself
+2026-04-10 11:35:43,503 - DAMS -INFO - Myself
+2026-04-10 11:35:58,374 - DAMS -INFO - View navigate to request overview page and status is approved after 2nd level approval
+2026-04-10 11:35:59,392 - DAMS -INFO - View navigate to request overview page and status is approved after 2nd level approval
+2026-04-10 11:36:03,173 - DAMS -INFO - View navigate to request overview page and status is approved after 2nd level approval
+2026-04-10 11:36:08,054 - DAMS -INFO - User is able to select New permission request
+2026-04-10 11:36:09,201 - DAMS -INFO - User is able to select New permission request
+2026-04-10 11:36:10,232 - DAMS -INFO - ECU Supplier – Development - AAGW01T
+2026-04-10 11:36:11,492 - DAMS -INFO - Development
+2026-04-10 11:36:12,250 - DAMS -INFO - **** functional role value :ECU Supplier – Development - AAGW01T
+2026-04-10 11:36:12,934 - DAMS -INFO - User is able to select New permission request
+2026-04-10 11:36:13,501 - DAMS -INFO - **** functional role value :Development
+2026-04-10 11:36:13,503 - DAMS -INFO - ECU Supplier – Development - AAGW01T
+2026-04-10 11:36:13,503 - DAMS -INFO - Nest-T Testing
+2026-04-10 11:36:14,828 - DAMS -INFO - Development
+2026-04-10 11:36:14,828 - DAMS -INFO - Nest-T Testing
+2026-04-10 11:36:15,269 - DAMS -INFO - Development External Support
+2026-04-10 11:36:17,233 - DAMS -INFO - usertype: Nest-T Testing *** name : Nest-T Testing
+2026-04-10 11:36:17,283 - DAMS -INFO - **** functional role value :Development External Support
+2026-04-10 11:36:17,897 - DAMS -INFO - SpecialCase:  Nest-T Testing
+2026-04-10 11:36:18,603 - DAMS -INFO - usertype: Nest-T Testing *** name : Nest-T Testing
+2026-04-10 11:36:18,619 - DAMS -INFO - Development External Support
+2026-04-10 11:36:18,619 - DAMS -INFO - Nest-T Testing
+2026-04-10 11:36:19,299 - DAMS -INFO - SpecialCase:  Nest-T Testing
+2026-04-10 11:36:22,462 - DAMS -INFO - usertype: Nest-T Testing *** name : Nest-T Testing
+2026-04-10 11:36:23,171 - DAMS -INFO - SpecialCase:  Nest-T Testing
+2026-04-10 11:36:31,683 - DAMS -INFO - usertype: Nest-T Central Authentication *** name : Nest-T Test COT
+2026-04-10 11:36:33,164 - DAMS -INFO - usertype: Nest-T Central Authentication *** name : Nest-T Test COT
+2026-04-10 11:36:33,246 - DAMS -INFO - usertype: Nest-T Test COT *** name : Nest-T Test COT
+2026-04-10 11:36:33,871 - DAMS -INFO - Nest_T:  Nest-T Test COT
+2026-04-10 11:36:33,871 - DAMS -INFO - ECUQualifier:  AAGW01T
+2026-04-10 11:36:34,727 - DAMS -INFO - usertype: Nest-T Test COT *** name : Nest-T Test COT
+2026-04-10 11:36:35,412 - DAMS -INFO - Nest_T:  Nest-T Test COT
+2026-04-10 11:36:35,413 - DAMS -INFO - ECUQualifier:  AAGW01T
+2026-04-10 11:36:36,978 - DAMS -INFO - usertype: Nest-T Test COT *** name : Nest-T Test COT
+2026-04-10 11:36:37,677 - DAMS -INFO - Nest_T:  Nest-T Test COT
+2026-04-10 11:36:37,677 - DAMS -INFO - ECUQualifier:  AAGW01T
+2026-04-10 11:36:38,665 - DAMS -INFO - usertype: AAGW01T *** name : AAGW01T
+2026-04-10 11:36:39,288 - DAMS -INFO - ECUQualifier:  AAGW01T
+2026-04-10 11:36:40,292 - DAMS -INFO - usertype: AAGW01T *** name : AAGW01T
+2026-04-10 11:36:40,917 - DAMS -INFO - ECUQualifier:  AAGW01T
+2026-04-10 11:36:41,728 - DAMS -INFO - NEST_T SpecialCase Request is Created
+2026-04-10 11:36:42,448 - DAMS -INFO - usertype: AAGW01T *** name : AAGW01T
+2026-04-10 11:36:43,162 - DAMS -INFO - ECUQualifier:  AAGW01T
+2026-04-10 11:36:43,462 - DAMS -INFO - NEST_T SpecialCase Request is Created
+2026-04-10 11:36:45,680 - DAMS -INFO - NEST_T SpecialCase Request is Created
+2026-04-10 11:37:00,215 - DAMS -INFO - Nest-T Testing
+2026-04-10 11:37:02,056 - DAMS -INFO - Nest-T Testing
+2026-04-10 11:37:04,622 - DAMS -INFO - Nest-T Testing
+2026-04-10 11:37:19,984 - DAMS -INFO - User is able to view the approval status as pending once the nestT request created
+2026-04-10 11:37:21,169 - DAMS -INFO - Clicked
+2026-04-10 11:37:22,111 - DAMS -INFO - User is able to view the approval status as pending once the nestT request created
+2026-04-10 11:37:23,312 - DAMS -INFO - Clicked
+2026-04-10 11:37:23,596 - DAMS -INFO - User is able to view the approval status as pending once the nestT request created
+2026-04-10 11:37:24,763 - DAMS -INFO - Clicked
+2026-04-10 11:37:32,233 - DAMS -INFO - ***Authorization_List: Nest T Testing
+2026-04-10 11:37:32,345 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:37:32,346 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:32,392 - DAMS -INFO - Functional Role
+2026-04-10 11:37:32,392 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:32,435 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:37:32,435 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:32,481 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:37:32,482 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:32,510 - DAMS -INFO - Enhance Right
+2026-04-10 11:37:32,510 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:32,559 - DAMS -INFO - FOTA
+2026-04-10 11:37:32,559 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:32,590 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:32,590 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:34,376 - DAMS -INFO - ***Authorization_List: Nest T Testing
+2026-04-10 11:37:34,561 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:37:34,561 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:34,650 - DAMS -INFO - Functional Role
+2026-04-10 11:37:34,650 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:34,728 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:37:34,729 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:34,807 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:37:34,807 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:34,902 - DAMS -INFO - Enhance Right
+2026-04-10 11:37:34,902 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:34,981 - DAMS -INFO - FOTA
+2026-04-10 11:37:34,981 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:35,069 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:35,069 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:35,867 - DAMS -INFO - ***Authorization_List: Nest T Testing
+2026-04-10 11:37:36,067 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:37:36,067 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:36,161 - DAMS -INFO - Functional Role
+2026-04-10 11:37:36,161 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:36,251 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:37:36,251 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:36,327 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:37:36,327 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:36,406 - DAMS -INFO - Enhance Right
+2026-04-10 11:37:36,406 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:36,479 - DAMS -INFO - FOTA
+2026-04-10 11:37:36,479 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:36,550 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:36,550 - DAMS -INFO - Nest T Testing
+2026-04-10 11:37:55,742 - DAMS -INFO - User is able to view the approval status as Approved after 1st level approval
+2026-04-10 11:37:58,626 - DAMS -INFO - User is able to view the approval status as Approved after 1st level approval
+2026-04-10 11:38:00,013 - DAMS -INFO - User is able to view the approval status as Approved after 1st level approval
+2026-04-10 11:38:14,151 - DAMS -INFO - Nest-T Testing
+2026-04-10 11:38:17,210 - DAMS -INFO - Nest-T Testing
+2026-04-10 11:38:18,469 - DAMS -INFO - Nest-T Testing
+2026-04-10 11:38:40,616 - DAMS -INFO - User is able to view navigate to request role overview page and check if the status is pending after 1st level approval
+2026-04-10 11:38:41,843 - DAMS -INFO - Clicked
+2026-04-10 11:38:43,727 - DAMS -INFO - User is able to view navigate to request role overview page and check if the status is pending after 1st level approval
+2026-04-10 11:38:44,934 - DAMS -INFO - Clicked
+2026-04-10 11:38:45,026 - DAMS -INFO - User is able to view navigate to request role overview page and check if the status is pending after 1st level approval
+2026-04-10 11:38:46,245 - DAMS -INFO - Clicked
+2026-04-10 11:38:52,910 - DAMS -INFO - ***Authorization_List: Nest T Testing
+2026-04-10 11:38:53,066 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:38:53,066 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:53,162 - DAMS -INFO - Functional Role
+2026-04-10 11:38:53,162 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:53,266 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:38:53,266 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:53,362 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:38:53,362 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:53,440 - DAMS -INFO - Enhance Right
+2026-04-10 11:38:53,440 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:53,511 - DAMS -INFO - FOTA
+2026-04-10 11:38:53,511 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:53,590 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:53,590 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:56,003 - DAMS -INFO - ***Authorization_List: Nest T Testing
+2026-04-10 11:38:56,121 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:38:56,121 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:56,204 - DAMS -INFO - Functional Role
+2026-04-10 11:38:56,205 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:56,287 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:38:56,287 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:56,360 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:38:56,360 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:56,437 - DAMS -INFO - Enhance Right
+2026-04-10 11:38:56,437 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:56,504 - DAMS -INFO - FOTA
+2026-04-10 11:38:56,504 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:56,587 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:56,587 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:57,316 - DAMS -INFO - ***Authorization_List: Nest T Testing
+2026-04-10 11:38:57,521 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:38:57,521 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:57,656 - DAMS -INFO - Functional Role
+2026-04-10 11:38:57,656 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:57,753 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:38:57,753 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:57,854 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:38:57,854 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:57,943 - DAMS -INFO - Enhance Right
+2026-04-10 11:38:57,943 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:58,025 - DAMS -INFO - FOTA
+2026-04-10 11:38:58,025 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:58,116 - DAMS -INFO - Nest T Testing
+2026-04-10 11:38:58,116 - DAMS -INFO - Nest T Testing
+2026-04-10 11:39:17,140 - DAMS -INFO - User is able to view the approval status as Approved after 2nd level approval
+2026-04-10 11:39:20,019 - DAMS -INFO - User is able to view the approval status as Approved after 2nd level approval
+2026-04-10 11:39:21,689 - DAMS -INFO - User is able to view the approval status as Approved after 2nd level approval
+2026-04-10 11:39:35,735 - DAMS -INFO - Nest-T Testing
+2026-04-10 11:39:38,532 - DAMS -INFO - Nest-T Testing
+2026-04-10 11:39:40,310 - DAMS -INFO - Nest-T Testing
+2026-04-10 11:40:02,237 - DAMS -INFO - User is able to view navigate to request role overview page and check if the status is appproved after 2nd level approval
+2026-04-10 11:40:02,553 - DAMS -INFO - Replacement package request
+2026-04-10 11:40:05,141 - DAMS -INFO - User is able to view navigate to request role overview page and check if the status is appproved after 2nd level approval
+2026-04-10 11:40:05,418 - DAMS -INFO - Replacement package request
+2026-04-10 11:40:07,122 - DAMS -INFO - User is able to view navigate to request role overview page and check if the status is appproved after 2nd level approval
+2026-04-10 11:40:07,426 - DAMS -INFO - Replacement package request
+2026-04-10 11:40:12,092 - DAMS -INFO - User is able to select New permission request
+2026-04-10 11:40:14,414 - DAMS -INFO - **** functional role value :ECU Supplier – Development - AAGW01T
+2026-04-10 11:40:15,014 - DAMS -INFO - User is able to select New permission request
+2026-04-10 11:40:16,924 - DAMS -INFO - User is able to select New permission request
+2026-04-10 11:40:17,330 - DAMS -INFO - **** functional role value :Development
+2026-04-10 11:40:19,232 - DAMS -INFO - **** functional role value :Development External Support
+2026-04-10 11:40:19,662 - DAMS -INFO - usertype: Nest-T Testing *** name : Replacement Package
+2026-04-10 11:40:21,213 - DAMS -INFO - usertype: Replacement Package *** name : Replacement Package
+2026-04-10 11:40:21,871 - DAMS -INFO - SpecialCase:  Replacement Package
+2026-04-10 11:40:22,511 - DAMS -INFO - usertype: Nest-T Testing *** name : Replacement Package
+2026-04-10 11:40:24,076 - DAMS -INFO - usertype: Replacement Package *** name : Replacement Package
+2026-04-10 11:40:24,466 - DAMS -INFO - usertype: Nest-T Testing *** name : Replacement Package
+2026-04-10 11:40:24,775 - DAMS -INFO - SpecialCase:  Replacement Package
+2026-04-10 11:40:26,014 - DAMS -INFO - usertype: Replacement Package *** name : Replacement Package
+2026-04-10 11:40:26,712 - DAMS -INFO - SpecialCase:  Replacement Package
+2026-04-10 11:40:30,195 - DAMS -INFO - usertype: Root T1 *** name : Root T1
+2026-04-10 11:40:30,881 - DAMS -INFO - User selected the origin_cot: Root T1
+2026-04-10 11:40:33,115 - DAMS -INFO - usertype: Root T1 *** name : Root T1
+2026-04-10 11:40:33,797 - DAMS -INFO - User selected the origin_cot: Root T1
+2026-04-10 11:40:34,924 - DAMS -INFO - usertype: Root T2 *** name : Root T1
+2026-04-10 11:40:36,492 - DAMS -INFO - usertype: Root T1 *** name : Root T1
+2026-04-10 11:40:37,159 - DAMS -INFO - User selected the origin_cot: Root T1
+2026-04-10 11:40:40,501 - DAMS -INFO - usertype: Root T1 *** name : Root T2
+2026-04-10 11:40:42,112 - DAMS -INFO - usertype: Root T2 *** name : Root T2
+2026-04-10 11:40:43,516 - DAMS -INFO - usertype: Root T1 *** name : Root T2
+2026-04-10 11:40:45,084 - DAMS -INFO - usertype: Root T2 *** name : Root T2
+2026-04-10 11:40:46,844 - DAMS -INFO - usertype: Root T1 *** name : Root T2
+2026-04-10 11:40:47,783 - DAMS -INFO - usertype: Backend T2A *** name : Backend T2A
+2026-04-10 11:40:48,410 - DAMS -INFO - usertype: Root T2 *** name : Root T2
+2026-04-10 11:40:50,676 - DAMS -INFO - usertype: Backend T2A *** name : Backend T2A
+2026-04-10 11:40:51,828 - DAMS -INFO - usertype: Backend T2B *** name : Backend T2B
+2026-04-10 11:40:53,971 - DAMS -INFO - usertype: Backend T2A *** name : Backend T2A
+2026-04-10 11:40:54,680 - DAMS -INFO - usertype: Backend T2B *** name : Backend T2B
+2026-04-10 11:40:57,378 - DAMS -INFO - usertype: AAGW01T *** name : AAGW01T
+2026-04-10 11:40:58,024 - DAMS -INFO - usertype: Backend T2B *** name : Backend T2B
+2026-04-10 11:40:58,179 - DAMS -INFO - Certificate Request for Replacement Package
+2026-04-10 11:41:00,193 - DAMS -INFO - usertype: AAGW01T *** name : BRC02T
+2026-04-10 11:41:01,563 - DAMS -INFO - Replacement Package SpecialCase Request is Created
+2026-04-10 11:41:01,754 - DAMS -INFO - usertype: ACM311T *** name : BRC02T
+2026-04-10 11:41:03,307 - DAMS -INFO - usertype: ALT48V01T *** name : BRC02T
+2026-04-10 11:41:03,585 - DAMS -INFO - usertype: AAGW01T *** name : AAGW01T
+2026-04-10 11:41:03,681 - DAMS -INFO - Request overview tab enabled
+2026-04-10 11:41:04,332 - DAMS -INFO - Certificate Request for Replacement Package
+2026-04-10 11:41:04,875 - DAMS -INFO - usertype: APS401T *** name : BRC02T
+2026-04-10 11:41:06,457 - DAMS -INFO - usertype: APS501T *** name : BRC02T
+2026-04-10 11:41:07,794 - DAMS -INFO - Replacement Package SpecialCase Request is Created
+2026-04-10 11:41:08,042 - DAMS -INFO - usertype: APS5R01T *** name : BRC02T
+2026-04-10 11:41:09,623 - DAMS -INFO - usertype: ASAT02T *** name : BRC02T
+2026-04-10 11:41:09,911 - DAMS -INFO - Request overview tab enabled
+2026-04-10 11:41:11,192 - DAMS -INFO - usertype: BMS002T,BMS102T,BMS202T,BMS302T *** name : BRC02T
+2026-04-10 11:41:12,759 - DAMS -INFO - usertype: BMS103T,BMS203T,BMS303T,BMS403T,BMS503T,BMS603T,BMS703T,BMS803T *** name : BRC02T
+2026-04-10 11:41:14,351 - DAMS -INFO - usertype: BMS104T,BMS204T *** name : BRC02T
+2026-04-10 11:41:15,922 - DAMS -INFO - usertype: BRC02T *** name : BRC02T
+2026-04-10 11:41:16,658 - DAMS -INFO - Certificate Request for Replacement Package
+2026-04-10 11:41:20,107 - DAMS -INFO - Replacement Package SpecialCase Request is Created
+2026-04-10 11:41:20,507 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:22,210 - DAMS -INFO - Request overview tab enabled
+2026-04-10 11:41:26,738 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:39,019 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:40,480 - DAMS -INFO - User is able to view the approval status as pending once the Replacement package request created
+2026-04-10 11:41:41,602 - DAMS -INFO - Clicked
+2026-04-10 11:41:46,534 - DAMS -INFO - User is able to view the approval status as pending once the Replacement package request created
+2026-04-10 11:41:46,646 - DAMS -INFO - ***Authorization_List: Replacement Package
+2026-04-10 11:41:46,773 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:41:46,773 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:46,839 - DAMS -INFO - Functional Role
+2026-04-10 11:41:46,839 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:46,896 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:41:46,896 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:46,950 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:41:46,950 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:47,000 - DAMS -INFO - Enhance Right
+2026-04-10 11:41:47,000 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:47,057 - DAMS -INFO - FOTA
+2026-04-10 11:41:47,060 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:47,120 - DAMS -INFO - Nest T Testing
+2026-04-10 11:41:47,120 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:47,187 - DAMS -INFO - Onboard New ECU
+2026-04-10 11:41:47,187 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:47,255 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:47,255 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:47,693 - DAMS -INFO - Clicked
+2026-04-10 11:41:52,752 - DAMS -INFO - ***Authorization_List: Replacement Package
+2026-04-10 11:41:52,875 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:41:52,877 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:52,930 - DAMS -INFO - Functional Role
+2026-04-10 11:41:52,930 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:52,977 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:41:52,978 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:53,032 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:41:53,033 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:53,155 - DAMS -INFO - Enhance Right
+2026-04-10 11:41:53,155 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:53,231 - DAMS -INFO - FOTA
+2026-04-10 11:41:53,231 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:53,273 - DAMS -INFO - Nest T Testing
+2026-04-10 11:41:53,273 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:53,323 - DAMS -INFO - Onboard New ECU
+2026-04-10 11:41:53,323 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:53,359 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:53,359 - DAMS -INFO - Replacement Package
+2026-04-10 11:41:59,005 - DAMS -INFO - User is able to view the approval status as pending once the Replacement package request created
+2026-04-10 11:42:00,187 - DAMS -INFO - Clicked
+2026-04-10 11:42:01,313 - DAMS -INFO - User is able to view the approval status as Approved after 1st level approval
+2026-04-10 11:42:05,250 - DAMS -INFO - ***Authorization_List: Replacement Package
+2026-04-10 11:42:05,420 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:42:05,420 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:05,487 - DAMS -INFO - Functional Role
+2026-04-10 11:42:05,487 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:05,553 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:42:05,553 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:05,606 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:42:05,606 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:05,672 - DAMS -INFO - Enhance Right
+2026-04-10 11:42:05,672 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:05,736 - DAMS -INFO - FOTA
+2026-04-10 11:42:05,736 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:05,832 - DAMS -INFO - Nest T Testing
+2026-04-10 11:42:05,832 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:05,910 - DAMS -INFO - Onboard New ECU
+2026-04-10 11:42:05,910 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:05,968 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:05,968 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:07,722 - DAMS -INFO - User is able to view the approval status as Approved after 1st level approval
+2026-04-10 11:42:19,721 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:20,482 - DAMS -INFO - User is able to view the approval status as Approved after 1st level approval
+2026-04-10 11:42:26,252 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:39,081 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:45,802 - DAMS -INFO - User is able to view navigate to request role overview page and check if the status is pending after 1st level approval
+2026-04-10 11:42:47,013 - DAMS -INFO - Clicked
+2026-04-10 11:42:52,058 - DAMS -INFO - ***Authorization_List: Replacement Package
+2026-04-10 11:42:52,187 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:42:52,187 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:52,253 - DAMS -INFO - Functional Role
+2026-04-10 11:42:52,253 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:52,320 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:42:52,320 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:52,370 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:42:52,370 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:52,436 - DAMS -INFO - Enhance Right
+2026-04-10 11:42:52,436 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:52,503 - DAMS -INFO - FOTA
+2026-04-10 11:42:52,503 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:52,593 - DAMS -INFO - Nest T Testing
+2026-04-10 11:42:52,594 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:52,649 - DAMS -INFO - Onboard New ECU
+2026-04-10 11:42:52,649 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:52,698 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:52,698 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:52,825 - DAMS -INFO - User is able to view navigate to request role overview page and check if the status is pending after 1st level approval
+2026-04-10 11:42:54,067 - DAMS -INFO - Clicked
+2026-04-10 11:42:59,146 - DAMS -INFO - ***Authorization_List: Replacement Package
+2026-04-10 11:42:59,269 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:42:59,269 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:59,386 - DAMS -INFO - Functional Role
+2026-04-10 11:42:59,386 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:59,467 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:42:59,467 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:59,549 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:42:59,549 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:59,607 - DAMS -INFO - Enhance Right
+2026-04-10 11:42:59,607 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:59,652 - DAMS -INFO - FOTA
+2026-04-10 11:42:59,652 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:59,706 - DAMS -INFO - Nest T Testing
+2026-04-10 11:42:59,706 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:59,752 - DAMS -INFO - Onboard New ECU
+2026-04-10 11:42:59,752 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:59,819 - DAMS -INFO - Replacement Package
+2026-04-10 11:42:59,819 - DAMS -INFO - Replacement Package
+2026-04-10 11:43:05,626 - DAMS -INFO - User is able to view navigate to request role overview page and check if the status is pending after 1st level approval
+2026-04-10 11:43:06,857 - DAMS -INFO - User is able to view the approval status as Approved after 2nd level approval
+2026-04-10 11:43:06,890 - DAMS -INFO - Clicked
+2026-04-10 11:43:11,927 - DAMS -INFO - ***Authorization_List: Replacement Package
+2026-04-10 11:43:12,054 - DAMS -INFO - Pending Permission Requests
+2026-04-10 11:43:12,054 - DAMS -INFO - Replacement Package
+2026-04-10 11:43:12,116 - DAMS -INFO - Functional Role
+2026-04-10 11:43:12,116 - DAMS -INFO - Replacement Package
+2026-04-10 11:43:12,207 - DAMS -INFO - Diagnostic Authority
+2026-04-10 11:43:12,208 - DAMS -INFO - Replacement Package
+2026-04-10 11:43:12,290 - DAMS -INFO - ECU Certificate Request
+2026-04-10 11:43:12,291 - DAMS -INFO - Replacement Package
+2026-04-10 11:43:12,350 - DAMS -INFO - Enhance Right
+2026-04-10 11:43:12,350 - DAMS -INFO - Replacement Package
+2026-04-10 11:43:12,416 - DAMS -INFO - FOTA
+2026-04-10 11:43:12,416 - DAMS -INFO - Replacement Package
+2026-04-10 11:43:12,485 - DAMS -INFO - Nest T Testing
+2026-04-10 11:43:12,485 - DAMS -INFO - Replacement Package
+2026-04-10 11:43:12,531 - DAMS -INFO - Onboard New ECU
+2026-04-10 11:43:12,531 - DAMS -INFO - Replacement Package
+2026-04-10 11:43:12,631 - DAMS -INFO - Replacement Package
+2026-04-10 11:43:12,631 - DAMS -INFO - Replacement Package
+2026-04-10 11:43:14,381 - DAMS -INFO - User is able to view the approval status as Approved after 2nd level approval
+2026-04-10 11:43:25,284 - DAMS -INFO - Replacement Package
+2026-04-10 11:43:27,147 - DAMS -INFO - User is able to view the approval status as Approved after 2nd level approval
+2026-04-10 11:43:32,978 - DAMS -INFO - Replacement Package
+2026-04-10 11:43:45,727 - DAMS -INFO - Replacement Package
+2026-04-10 11:43:51,296 - DAMS -INFO - User is able to view navigate to request role overview page and check if the status is appproved after 2nd level approval
+2026-04-10 11:43:51,296 - DAMS -INFO - ************************************ Global End to End Completed *************************
+2026-04-10 11:43:59,645 - DAMS -INFO - User is able to view navigate to request role overview page and check if the status is appproved after 2nd level approval
+2026-04-10 11:43:59,645 - DAMS -INFO - ************************************ Global End to End Completed *************************
+2026-04-10 11:44:12,262 - DAMS -INFO - User is able to view navigate to request role overview page and check if the status is appproved after 2nd level approval
+2026-04-10 11:44:12,262 - DAMS -INFO - ************************************ Global End to End Completed *************************
+2026-04-10 15:27:42,394 - DAMS -INFO - ************* Env : LOCAL
+2026-04-10 15:27:42,678 - DAMS -INFO - ************* Env : LOCAL
+2026-04-10 15:27:42,897 - DAMS -INFO - ************* Env : LOCAL
+2026-04-10 15:27:43,440 - DAMS -INFO - URL : https://localhost:8443/dams/#/
+2026-04-10 15:27:43,440 - DAMS -INFO - URL : https://localhost:8443/dams/#/
+2026-04-10 15:27:43,503 - DAMS -INFO - URL : https://localhost:8443/dams/#/
+2026-04-10 15:28:09,390 - DAMS -INFO - User is login to application
+2026-04-10 15:28:09,396 - DAMS -INFO - USER TYPE External
+2026-04-10 15:28:09,400 - DAMS -INFO - m6kxhsnb6hssxztq
+2026-04-10 15:28:10,889 - DAMS -INFO - User enters the verification code and click on verify button
+2026-04-10 15:28:12,778 - DAMS -INFO - User is login to application
+2026-04-10 15:28:12,779 - DAMS -INFO - USER TYPE Internal
+2026-04-10 15:28:12,781 - DAMS -INFO - b2q5zydq7yvjcdrf
+2026-04-10 15:28:14,769 - DAMS -INFO - User enters the verification code and click on verify button
+2026-04-10 15:28:35,366 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-04-10 15:28:38,011 - DAMS -INFO - https://localhost:8443/dams/#/functional-role/gtc
+2026-04-10 15:28:38,012 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 15:28:39,401 - DAMS -INFO - https://localhost:8443/dams/#/functional-role/gtc
+2026-04-10 15:28:39,402 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 15:28:44,874 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 15:28:44,875 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 15:28:44,879 - DAMS -INFO - User validates the gtc page
+2026-04-10 15:28:46,324 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 15:28:46,325 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 15:28:46,325 - DAMS -INFO - User validates the gtc page
+2026-04-10 15:28:49,888 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 15:28:51,341 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 15:29:02,684 - DAMS -INFO - 2
+2026-04-10 15:29:04,237 - DAMS -INFO - 2
+2026-04-10 15:43:57,697 - DAMS -INFO - ************* Env : LOCAL
+2026-04-10 15:43:58,005 - DAMS -INFO - URL : https://localhost:8443/dams/#/
+2026-04-10 15:45:11,133 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-04-10 15:45:15,176 - DAMS -INFO - https://localhost:8443/dams/#/functional-role/gtc
+2026-04-10 15:45:15,177 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 15:45:21,852 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 15:45:21,852 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 15:45:21,854 - DAMS -INFO - User validates the gtc page
+2026-04-10 15:45:26,860 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 15:45:39,679 - DAMS -INFO - 3
+2026-04-10 15:45:57,823 - DAMS -INFO - External
+2026-04-10 15:45:57,882 - DAMS -INFO - Supplier
+2026-04-10 15:45:57,895 - DAMS -INFO - User is able to view User_types in dropdown
+2026-04-10 15:46:01,372 - DAMS -INFO - Click here to apply for functional roles is enabled
+2026-04-10 15:46:05,410 - DAMS -INFO - https://localhost:8443/dams/#/functional-role/gtc
+2026-04-10 15:46:05,410 - DAMS -INFO - User is successfully redirected into GTC Page
+2026-04-10 15:46:12,137 - DAMS -INFO - Proceed Button Clicked
+2026-04-10 15:46:12,138 - DAMS -INFO - User is able to see the proceed button enabled after selecting the checkbox
+2026-04-10 15:46:12,140 - DAMS -INFO - User validates the gtc page
+2026-04-10 15:46:17,152 - DAMS -INFO - User is Select the ECU Chain of Trust Type
+2026-04-10 15:46:21,735 - DAMS -INFO - validates the functional role page
+2026-04-10 15:46:21,736 - DAMS -INFO - *************Supplier
+2026-04-10 15:46:29,090 - DAMS -INFO - ECU Supplier – Development
+2026-04-10 15:46:29,093 - DAMS -INFO - User Type :ECU Supplier – Development
+2026-04-10 15:46:29,146 - DAMS -INFO - user type ECU Supplier - Key Management name ECU Supplier – Development
+2026-04-10 15:46:29,229 - DAMS -INFO - user type ECU Supplier - Warranty Return name ECU Supplier – Development
+2026-04-10 15:46:29,264 - DAMS -INFO - user type ECU Supplier – Development name ECU Supplier – Development
+2026-04-10 15:46:31,207 - DAMS -INFO - BU : Robert Bosch
+2026-04-10 15:46:31,264 - DAMS -INFO - user type A&D Technology name Robert Bosch
+2026-04-10 15:46:31,319 - DAMS -INFO - user type Actalent name Robert Bosch
+2026-04-10 15:46:31,364 - DAMS -INFO - user type ADC Automotive Distance name Robert Bosch
+2026-04-10 15:46:31,419 - DAMS -INFO - user type AKKODIS name Robert Bosch
+2026-04-10 15:46:31,484 - DAMS -INFO - user type Anstalt für Verbrennungskraftmaschinen List (AVL) name Robert Bosch
+2026-04-10 15:46:31,553 - DAMS -INFO - user type APTIV COMPONENTS INDIA PVT.LTD name Robert Bosch
+2026-04-10 15:46:31,616 - DAMS -INFO - user type ARTECH name Robert Bosch
+2026-04-10 15:46:31,674 - DAMS -INFO - user type ASK Industries S.p.A. name Robert Bosch
+2026-04-10 15:46:31,723 - DAMS -INFO - user type AUO Corporation name Robert Bosch
+2026-04-10 15:46:31,784 - DAMS -INFO - user type BCS Automotive Interface Solutions name Robert Bosch
+2026-04-10 15:46:31,839 - DAMS -INFO - user type Bendix name Robert Bosch
+2026-04-10 15:46:31,883 - DAMS -INFO - user type Calex name Robert Bosch
+2026-04-10 15:46:31,928 - DAMS -INFO - user type Calex-DCDC name Robert Bosch
+2026-04-10 15:46:31,999 - DAMS -INFO - user type CellCentric name Robert Bosch
+2026-04-10 15:46:32,031 - DAMS -INFO - user type Contemporary Amperex name Robert Bosch
+2026-04-10 15:46:32,076 - DAMS -INFO - user type Continental name Robert Bosch
+2026-04-10 15:46:32,105 - DAMS -INFO - user type DAIMIA name Robert Bosch
+2026-04-10 15:46:32,164 - DAMS -INFO - user type Danfoss name Robert Bosch
+2026-04-10 15:46:32,218 - DAMS -INFO - user type Engbras Software e Projetos name Robert Bosch
+2026-04-10 15:46:32,293 - DAMS -INFO - user type FEV GmBH name Robert Bosch
+2026-04-10 15:46:32,354 - DAMS -INFO - user type Knorr-Bremse Systeme für name Robert Bosch
+2026-04-10 15:46:32,401 - DAMS -INFO - user type Marquardt GmbH name Robert Bosch
+2026-04-10 15:46:32,461 - DAMS -INFO - user type Meta System S.p.A. name Robert Bosch
+2026-04-10 15:46:32,526 - DAMS -INFO - user type Munich Electrification name Robert Bosch
+2026-04-10 15:46:32,592 - DAMS -INFO - user type Murata name Robert Bosch
+2026-04-10 15:46:32,642 - DAMS -INFO - user type Optimabit name Robert Bosch
+2026-04-10 15:46:32,693 - DAMS -INFO - user type Robert Bosch name Robert Bosch
+2026-04-10 15:46:37,325 - DAMS -INFO - BU : AAGW01T
+2026-04-10 15:46:37,386 - DAMS -INFO - user type AAGW01T name AAGW01T
+2026-04-10 15:47:22,739 - DAMS -INFO - User is able to view the approval status as pending once the request created
+2026-04-10 15:47:22,740 - DAMS -INFO - Requestor details : <span style="color: blue;"><b><i><u>[PENDING, 3971, Q9XRKVP, DAMS_User, N/A, TEST SUPPLIER_AUTOMATE, N/A, Supplier, ECU Supplier – Development, null, Robert Bosch, AAGW01T, true, 04/10/2026, N/A, N/A, AAGW01T, N/A]</u></i></b>
+2026-04-10 15:47:22,741 - DAMS -INFO - User is able to raise the request for the functional role ECU Supplier – Development - AAGW01T 
+2026-04-10 15:47:23,882 - DAMS -INFO - Clicked
+2026-04-10 15:47:28,929 - DAMS -INFO - ***Authorization_List: Functional Role
+2026-04-10 15:47:29,041 - DAMS -INFO - Pending Permission Requests
+2026-04-10 15:47:29,043 - DAMS -INFO - Functional Role
+2026-04-10 15:47:29,085 - DAMS -INFO - Functional Role
+2026-04-10 15:47:29,085 - DAMS -INFO - Functional Role
+2026-04-10 15:47:45,394 - DAMS -INFO - User is able to approve 1st level approval
+2026-04-10 15:48:14,183 - DAMS -INFO - User navigate to Functional role overview page and check if the status is pending after 1st level approval
+2026-04-10 15:48:15,368 - DAMS -INFO - Clicked
+2026-04-10 15:48:20,410 - DAMS -INFO - ***Authorization_List: Functional Role
+2026-04-10 15:48:20,521 - DAMS -INFO - Pending Permission Requests
+2026-04-10 15:48:20,521 - DAMS -INFO - Functional Role
+2026-04-10 15:48:20,574 - DAMS -INFO - Functional Role
+2026-04-10 15:48:20,575 - DAMS -INFO - Functional Role
+2026-04-10 15:48:37,036 - DAMS -INFO - User is able to approve 2nd level approval
+2026-04-10 15:48:55,439 - DAMS -INFO - Requestor details : []
+2026-04-10 15:48:55,440 - DAMS -INFO - Verified the Certificate of the Functional role
+2026-04-10 15:49:05,957 - DAMS -INFO - User is able to view the Standard Certificate for the raised functional roleSupplier,Development ENHANCED,Production,After-Sales ENHANCED,After-Sales STANDARD
+2026-04-10 15:49:05,958 - DAMS -INFO - User is able to verify click here to apply for functional role disbled for approved request
+2026-04-10 15:49:15,629 - DAMS -INFO - User is able to select New permission request
+2026-04-10 15:49:19,641 - DAMS -INFO - value selected : ECU Supplier – Development - AAGW01T
+2026-04-10 15:49:19,642 - DAMS -INFO - [ALT48V01T]
+2026-04-10 15:49:19,643 - DAMS -INFO - [Development ENHANCED]
+2026-04-10 15:49:24,681 - DAMS -INFO - **** functional role value :ECU Supplier – Development - AAGW01T
+2026-04-10 15:49:25,933 - DAMS -INFO - Development ENHANCED
+2026-04-10 15:49:29,653 - DAMS -INFO - usertype: Development ENHANCED *** name : Development ENHANCED
+2026-04-10 15:49:36,022 - DAMS -INFO - usertype: ACM311T *** name : ALT48V01T
+2026-04-10 15:49:37,586 - DAMS -INFO - usertype: ALT48V01T *** name : ALT48V01T
+2026-04-10 15:49:38,296 - DAMS -INFO - selcted ECU is ALT48V01T
+2026-04-10 15:49:41,300 - DAMS -INFO - reason : Certificate Request for Diagnostic Authority
+2026-04-10 15:50:01,329 - DAMS -INFO - Myself

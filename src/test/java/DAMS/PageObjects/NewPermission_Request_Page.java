@@ -413,9 +413,9 @@ public class NewPermission_Request_Page extends AbstractComponents {
 		waitForWebElementToAppear(SpecialCase_dropdown);
 		Thread.sleep(2000);
 		try {
-		click(SpecialCase_dropdown);}
-		catch(Exception e) {
-		clickJS(SpecialCase_dropdown);
+			click(SpecialCase_dropdown);
+		} catch (Exception e) {
+			clickJS(SpecialCase_dropdown);
 		}
 		// SpecialCase_dropdown.click();
 		String str = clickelementmatchingtext(ECU_dropdown_option, name);
@@ -426,11 +426,20 @@ public class NewPermission_Request_Page extends AbstractComponents {
 		Thread.sleep(3000);
 		// scrollDown(SpecialCase_NestT_dropdown);
 		waitForPageLoad(BaseClass.getDriver());
-		waitForWebElementToAppear(SpecialCase_NestT_dropdown);
-		waitForelementToBeClickable(SpecialCase_NestT_dropdown);
-		Thread.sleep(4000);
-		// clickJS(SpecialCase_NestT_dropdown);
-		SpecialCase_NestT_dropdown.click();
+		waitForPageLoad(BaseClass.getDriver());
+		try {
+			waitForWebElementToAppear(SpecialCase_NestT_dropdown);
+			waitForelementToBeClickable(SpecialCase_NestT_dropdown);
+			Thread.sleep(4000);
+			// clickJS(SpecialCase_NestT_dropdown);
+			SpecialCase_NestT_dropdown.click();
+		} catch (Exception e) {
+			Thread.sleep(4000);
+			waitForWebElementToAppear(SpecialCase_NestT_dropdown);
+			waitForelementToBeClickable(SpecialCase_NestT_dropdown);
+			Thread.sleep(4000);
+			clickJS(SpecialCase_NestT_dropdown);
+		}
 		String str = clickelementmatchingtext(ECU_dropdown_option, name);
 		return str;
 	}
@@ -508,9 +517,9 @@ public class NewPermission_Request_Page extends AbstractComponents {
 		waitForWebElementToAppear(NestT_ECUQualifier);
 		// waitForelementToBeClickable(NestT_ECUQualifier);
 		try {
-		click(NestT_ECUQualifier);
-		}catch(Exception e) {
-			clickJS(NestT_ECUQualifier);	
+			click(NestT_ECUQualifier);
+		} catch (Exception e) {
+			clickJS(NestT_ECUQualifier);
 		}
 		// NestT_ECUQualifier.click();
 		String str = clickelementmatchingtext(ECU_dropdown_option, name);
@@ -843,8 +852,7 @@ public class NewPermission_Request_Page extends AbstractComponents {
 	}
 
 	public List<Object> raise_Enhance_Right_Request(HashMap<String, String> input, String[] cert, Object object,
-			String Target_ECU, String Service_ID, String Validity, String Reason_for_ER)
-			throws InterruptedException {
+			String Target_ECU, String Service_ID, String Validity, String Reason_for_ER) throws InterruptedException {
 		EnhanceRight__Authority_display();
 		String value_selected = input.get("Functional_role_internal");
 		// String functional_role = null;
@@ -906,8 +914,7 @@ public class NewPermission_Request_Page extends AbstractComponents {
 
 	}
 
-	public List<Object> raise_Enhance_Right_Request(HashMap<String, String> input)
-			throws InterruptedException {
+	public List<Object> raise_Enhance_Right_Request(HashMap<String, String> input) throws InterruptedException {
 		EnhanceRight__Authority_display();
 		// BaseClass.minimize_window();
 		String value_selected = input.get("Functional_role_internal");
@@ -1118,10 +1125,9 @@ public class NewPermission_Request_Page extends AbstractComponents {
 
 	}
 
-	public boolean raise_replacement_package_Request(String functionalRole, String Special_Case,
-			String Orgin_COT, String Reason_for_RP, String Target_COT, String ECU_Qualifier_for_RP,
-			String BackendRoot_COT, String BackendOrigin_COT, String BackendTarget_COT)
-			throws InterruptedException, Throwable {
+	public boolean raise_replacement_package_Request(String functionalRole, String Special_Case, String Orgin_COT,
+			String Reason_for_RP, String Target_COT, String ECU_Qualifier_for_RP, String BackendRoot_COT,
+			String BackendOrigin_COT, String BackendTarget_COT) throws InterruptedException, Throwable {
 		SpecialCase_display();
 		select_functional_role(functionalRole);
 		String SpecialCase = select_SpecialCase(Special_Case);
@@ -1289,8 +1295,8 @@ public class NewPermission_Request_Page extends AbstractComponents {
 		return Request_Overview_enabled();
 	}
 
-	public boolean raise_replacement_package_Request(String functionalRole, String Special_Case,
-			String Orgin_COT, String Reason_for_RP, String Target_COT, String ECU_Qualifier_for_RP)
+	public boolean raise_replacement_package_Request(String functionalRole, String Special_Case, String Orgin_COT,
+			String Reason_for_RP, String Target_COT, String ECU_Qualifier_for_RP)
 			throws InterruptedException, Throwable {
 		SpecialCase_display();
 		select_functional_role(functionalRole);
@@ -1396,8 +1402,7 @@ public class NewPermission_Request_Page extends AbstractComponents {
 		return Request_Overview_enabled();
 	}
 
-	public boolean raise_nestT_Request_Supplier_Multiple(Map<String, String> input)
-			throws InterruptedException {
+	public boolean raise_nestT_Request_Supplier_Multiple(Map<String, String> input) throws InterruptedException {
 		// SpecialCase_display();
 		Thread.sleep(2000);
 		// hari
@@ -1434,8 +1439,7 @@ public class NewPermission_Request_Page extends AbstractComponents {
 	}
 
 	public boolean raise_nestT_Request_Central(String SpecialCase_nestT, String NestT_TestingCase,
-			String ECU_Qualifier_nestT,
-			String Reason_for_nestT, String value_selected) throws InterruptedException {
+			String ECU_Qualifier_nestT, String Reason_for_nestT, String value_selected) throws InterruptedException {
 		SpecialCase_display();
 		Thread.sleep(2000);
 		// hari

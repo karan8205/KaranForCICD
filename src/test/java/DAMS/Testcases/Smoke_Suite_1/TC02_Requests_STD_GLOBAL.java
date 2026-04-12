@@ -176,13 +176,13 @@ public class TC02_Requests_STD_GLOBAL extends BaseClass {
 	public static String login_and_select_user_Global(String user_type) throws Throwable {
 		// TC01_Login_MFA.login_with_addressing_MFA();
 		if ("Internal".equalsIgnoreCase(user_type)) {
-
+			test.info ("UserType : " + user_type);
 			TC01_Login_MFA.login_with_addressing_MFA_Internal();
 		} else if ("External".equalsIgnoreCase(user_type)) {
-
+			test.info ("UserType : " + user_type);
 			TC01_Login_MFA.login_with_addressing_MFA_External();
 		} else if ("Supplier".equalsIgnoreCase(user_type)) {
-
+			test.info ("UserType : " + user_type);
 			TC01_Login_MFA.login_with_addressing_MFA_Supplier();
 		} else {
 			throw new RuntimeException("Invalid user_type passed: " + user_type);
